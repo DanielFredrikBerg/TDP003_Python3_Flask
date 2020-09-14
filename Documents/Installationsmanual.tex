@@ -1,0 +1,103 @@
+\documentclass{TDP003mall}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+\usepackage{graphicx}
+
+
+\newcommand{\version}{Version 1.0}
+\author{Daniel Huber, \url{danhu849@liu.se}\\
+  Jens Öhnell, \url{jenoh242@liu.se}}
+\title{Installationsmanual}
+\date{2020-09-14}
+\rhead{Daniel Huber\\
+Jens Öhnell}
+
+
+
+\begin{document}
+\projectpage
+\section{Revisionshistorik}
+\begin{table}[!h]
+\begin{tabularx}{\linewidth}{|l|X|l|}
+\hline
+Ver. & Revisionsbeskrivning & Datum \\\hline
+1.0 & Installationsmanual för TDP003 & 200914 \\\hline
+\end{tabularx}
+\end{table}
+
+\section{Förutsättningar}
+Denna manual förutsätter att en Linux distribution är det valda operativsystemet och utgår ifrån Ubuntu 20.04.
+
+\section{Vad behövs?}
+För att få att kunna komma åt, använda och underhålla portföljen behövs följande programvaror installerade:
+\begin{itemize}
+  \item Python3
+  \item pip
+  \item emacs
+  \item git
+  \item flask
+  \item jinja2   
+\end{itemize}
+
+\section{Installation}
+Öppna en terminal med \emph{Ctrl Alt T} och uppdatera och uppgradera systemet till de senaste programvaruuppdateringarna. Skriv \bold{sudo apt update && sudo apt upgrade} i terminalfönstret och tryck ENTER. Skriv in användarlösenordet vid behov och vänta på att systemet uppdaterar sig.
+
+\subsection{Python3 och pip3}
+Python3 ska vara förinstallerat på ubuntu. Kontrollera att det är det genom att skriva \bold{python3 -V} i terminalen och tryck ENTER. Skriv sedan \bold{pip3 --version}. Är python3 och pip3 installerade kommer det upp vilket version som finns installerad enligt bild nedan.
+\begin{figure}[htbp]
+  \centerline{\includegraphics{~/Pictures/python3-and_pip3_check.png}}
+  \caption{Visar versionen av Python3 på systemet.}
+  \label{fig}
+\end{figure}
+
+Ifall python3 eller pip3 \bold{INTE} är installerat, installera dessa nu genom att skriva \bold{sudo apt-get install python3.8 python3-pip} i terminalfönstret.
+\begin{figure}[htbp]
+  \centerline{\includegraphics{~/Pictures/install-Python3.png}}
+  \caption{Installera Python3 via terminalen.}
+  \label{fig}
+\end{figure}
+Vänta tills installationen är klar och kolla sedan att Python3 och pip3 blev installerade korrekt genom att skriva in versionskommandona precis som innan.
+
+\subsection{Installera flask och jinja2 med pip3}
+pip3 är paketinstalleraren för python3
+
+
+
+\section{Felsökning och Underhåll}
+
+
+\subsection{Tidsåtgång - Presentativ Del}
+\begin{tabular}{|c|l|}
+  \hline
+  5h & Statisk eller dynamisk sida med bilder på /\\
+  \hline
+  8h & Dynamisk sida som sorterar och listar projekten på /list\\
+  \hline
+  2h & Visar fullständig infosida för specifikt proj med id på /project/id\\
+  \hline
+  3h & Sammanställning av alla project baserat på använda tekniker på /techniques\\
+  \hline
+\end{tabular}
+
+\subsection{Tidsåtgång - Funktioner i datalagret}
+Nedan listas den specifika tidsåtgången för implementeringar av respektive funktion i datalagret.
+
+\begin{tabular}{|c|l|}
+  \hline
+  Tid & Funktion\\
+  \hline
+  2h & load\\
+  \hline
+  1h & get\_project\_count\\
+  \hline
+  1h & get\_project\\
+  \hline
+  3h & search\\
+  \hline
+  2h & get\_techniques\\
+  \hline
+  2h & get\_technique\_stats\\
+  \hline
+\end{tabular}
+
+\end{document}
