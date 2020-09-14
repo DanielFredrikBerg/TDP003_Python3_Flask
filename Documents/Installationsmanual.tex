@@ -32,7 +32,7 @@ Denna manual förutsätter att en Linux distribution är det valda operativsyste
 För att få att kunna komma åt, använda och underhålla portföljen behövs följande programvaror installerade:
 \begin{itemize}
   \item Python3
-  \item pip
+  \item pip3
   \item emacs
   \item git
   \item flask
@@ -40,19 +40,24 @@ För att få att kunna komma åt, använda och underhålla portföljen behövs f
 \end{itemize}
 
 \section{Installation}
-Öppna en terminal med \emph{Ctrl Alt T} och uppdatera och uppgradera systemet till de senaste programvaruuppdateringarna. Skriv \bold{sudo apt update && sudo apt upgrade} i terminalfönstret och tryck ENTER. Skriv in användarlösenordet vid behov och vänta på att systemet uppdaterar sig.
-
-\subsection{Python3 och pip3}
-Python3 ska vara förinstallerat på ubuntu. Kontrollera att det är det genom att skriva \bold{python3 -V} i terminalen och tryck ENTER. Skriv sedan \bold{pip3 --version}. Är python3 och pip3 installerade kommer det upp vilket version som finns installerad enligt bild nedan.
+Öppna en terminal med \emph{Ctrl Alt T} och uppdatera och uppgradera systemet till de senaste programvaruuppdateringarna. Skriv \textbf{sudo apt update \&\& sudo apt upgrade} i terminalfönstret och tryck ENTER. Skriv in användarlösenordet vid behov och vänta på att systemet uppdaterar sig.
 \begin{figure}[htbp]
-  \centerline{\includegraphics{~/Pictures/python3-and_pip3_check.png}}
+  \centerline{\includegraphics[width=\textwidth]{/home/danhu849/Pictures/update_and_upgrade.png}}
   \caption{Visar versionen av Python3 på systemet.}
   \label{fig}
 \end{figure}
 
-Ifall python3 eller pip3 \bold{INTE} är installerat, installera dessa nu genom att skriva \bold{sudo apt-get install python3.8 python3-pip} i terminalfönstret.
+\subsection{Python3 och pip3}
+Python3 ska vara förinstallerat på ubuntu. Kontrollera att det är det genom att skriva \textbf{python3 -V} i terminalen och tryck ENTER. Skriv sedan \textbf{pip3 --version}. Är python3 och pip3 installerade kommer det upp vilket version som finns installerad enligt bild nedan.
 \begin{figure}[htbp]
-  \centerline{\includegraphics{~/Pictures/install-Python3.png}}
+  \centerline{\includegraphics[width=\textwidth]{/home/danhu849/Pictures/python3_and_pip3_check.png}}
+  \caption{Visar versionen av Python3 på systemet.}
+  \label{fig}
+\end{figure}
+
+Ifall python3 eller pip3 \textbf{INTE} är installerat, installera dessa nu genom att skriva \textbf{sudo apt-get install python3.8 python3-pip} i terminalfönstret.
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=\textwidth]{/home/danhu849/Pictures/install-Python3.png}}
   \caption{Installera Python3 via terminalen.}
   \label{fig}
 \end{figure}
