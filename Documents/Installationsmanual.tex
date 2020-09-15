@@ -47,6 +47,14 @@ För att få att kunna komma åt, använda och underhålla portföljen behövs f
   \label{fig}
 \end{figure}
 
+\subsection{Emacs eller annan editor}
+Om det redan finns preferenser gällande editor att skriva i installera den på egen hand. Annars är emacs en väldigt bra och open-source editor att använda. Tyvärr får det ej i denna installationsmanual plats att lära sig hur emacs används, men det finns gott om resurser online.
+
+Installera emacs genom att skriva \textbf{sudo apt-get install emacs} i terminalfönstret. Skriv in lösenord vid behov och kolla om emacs är installerad genom att skriva \textbf{emacs \-\-version}
+
+\subsection{Git}
+I samma öppnade terminal kolla om git är installerad genom att skriva in \textbf{git \-\-version}. Om git inte är installerad, installera git nu genom att skriva in \textbf{sudo apt-get install git} vänta tills installationen är klar och kolla versionen av git med \textbf{git \-\-version}.
+
 \subsection{Python3 och pip3}
 Python3 ska vara förinstallerat på ubuntu. Kontrollera att det är det genom att skriva \textbf{python3 -V} i terminalen och tryck ENTER. Skriv sedan \textbf{pip3 --version}. Är python3 och pip3 installerade kommer det upp vilket version som finns installerad enligt bild nedan.
 \begin{figure}[htbp]
@@ -63,8 +71,12 @@ Ifall python3 eller pip3 \textbf{INTE} är installerat, installera dessa nu geno
 \end{figure}
 Vänta tills installationen är klar och kolla sedan att Python3 och pip3 blev installerade korrekt genom att skriva in versionskommandona precis som innan.
 
-\subsection{Installera flask och jinja2 med pip3}
-pip3 är paketinstalleraren för python3
+\subsection{Installera flask och jinja2 med pip3 i virtuell miljö}
+pip3 är paketinstalleraren för python3 och paket adderar olika funktionalitet. Ett problem som dock kan uppstå är när olika paket inte fungerar med varandra. För att undvika att något sådant uppstår kommer det först upprättas en virtuell python miljö där paketen sedan installeras. Fördelen med detta är att den virtuella python miljön är avskild den huvudsakliga pythonmiljön på hårddisken. Paket som installeras virtuellt kommer inte kunna komma i konflikt med de paket vi installerar i vår huvudsakliga installation.
+
+Öppna en terminal om denna inte redan är öppen och gå in i den katalogen där portfolion ska underhållas. Skapa möjligheten att aktivera en virtuell miljö i nuvarande mapp genom att skriva \textbf{python3 -m venv venv} i terminalen. Detta skapar en katalog ''venv'' där alla pip3 relaterade paket kommer installeras. Aktivera sedan den virtuella miljön med \textbf{. venv/bin/activate}. Innan dit användarnamn i terminalen står det nu (venv) vilket betyder att vi nu är i en virtuell miljö och kan installera pythonpaket säkert.
+
+Installera först flask med pip3, \textbf{pip3 install flask}. Installera sedan jinja2, \textbf{pip3 install Jinja2}. Kontrollera att de båda installerades genom att skriva först \textbf{pip3 show flask} och se om Location är i /den_nuvarande_mappen/venv och sedan kontrollera samma för jinja2 med  \textbf{pip3 show jinja2}
 
 
 
