@@ -4,11 +4,11 @@
 \usepackage{graphicx}
 
 
-\newcommand{\version}{Version 1.1}
+\newcommand{\version}{Version 1.2}
 \author{Daniel Huber, \url{danhu849@liu.se}\\
   Jens Öhnell, \url{jenoh242@liu.se}}
 \title{Installationsmanual}
-\date{2020-09-15}
+\date{2020-09-17}
 \rhead{Daniel Huber\\
 Jens Öhnell}
 
@@ -21,6 +21,7 @@ Jens Öhnell}
 \begin{tabularx}{\linewidth}{|l|X|l|}
 \hline
 Ver. & Revisionsbeskrivning & Datum \\\hline
+1.2 & Korrigerat upplägget samt bildernas position & 200917 \\\hline
 1.1 & Adderat bilder till dokumentet. & 200915 \\\hline
 1.0 & Installationsmanual för TDP003 & 200914 \\\hline
 \end{tabularx}
@@ -54,7 +55,7 @@ Flask och Jinja2 kommer installeras i en virtuell pythonmiljö. Mer om det under
 \subsection{Emacs eller annan editor}
 Om det redan finns preferenser gällande editor att skriva i installeras den på egen hand. Annars är emacs en väldigt bra och open-source editor att använda. Tyvärr får det ej i denna installationsmanual plats att lära sig hur emacs används, men det finns gott om resurser online och en tutorial att följa i själva editorn.
 
-Installera emacs genom att skriva \textbf{sudo apt-get install emacs} i terminalfönstret. Skriv in lösenord vid behov och kolla om emacs är installerad genom att skriva \textbf{emacs \texttt{-{}-}version}
+Installera emacs genom att skriva \textbf{sudo apt-get install emacs} i terminalfönstret. Skriv in lösenord vid behov och kolla om emacs är installerad genom att skriva \textbf{emacs \texttt{-{}-}version}.
 \begin{figure}[h]
   \centerline{\includegraphics[width=8cm]{/home/danhu849/Pictures/emacs_version.png}}
   \caption{Visar versionen av emacs på systemet.}
@@ -79,7 +80,7 @@ Python3 ska vara förinstallerat på Ubuntu 20.04. Kontrollera att det är det g
   \label{fig}
 \end{figure}
 
-Ifall python3 eller pip3 \textbf{INTE} är installerat, installera dessa nu genom att skriva \textbf{sudo apt-get install python3.8 python3-pip} i terminalfönstret.
+Ifall python3 eller pip3 \textbf{INTE} är installerat, installera dessa nu genom att skriva \newline\textbf{sudo apt-get install python3.8 python3-pip} i terminalfönstret.
 
 \begin{figure}[h]
   \centerline{\includegraphics[width=8cm]{/home/danhu849/Pictures/install-Python3.png}}
@@ -92,7 +93,7 @@ Vänta tills installationen är klar och kolla sedan att Python3 och pip3 blev i
 \subsection{Installera flask och jinja2 med pip3 i virtuell miljö}
 pip3 är paketinstalleraren för python3 och olika paket adderar olika funktionalitet. Ett problem som kan uppstå är när olika paket inte fungerar med varandra. För att undvika att något sådant uppstår kommer det först upprättas en virtuell python miljö där paketen sedan installeras. Fördelen med detta är att den virtuella python miljön är avskild den huvudsakliga pythonmiljön på hårddisken. Paket som installeras virtuellt kommer inte kunna komma i konflikt med de paket vi installerar i vår huvudsakliga installation.
 
-Öppna en terminal om denna inte redan är öppen och gå in i den katalogen där portfolion ska underhållas. Skapa möjligheten att aktivera en virtuell miljö i nuvarande mapp genom att skriva \textbf{python3 -m venv venv} i terminalen. Detta skapar en katalog ''venv'' där alla pip3 relaterade paket sen kommer installeras. 
+Öppna en terminal om denna inte redan är öppen och gå in i den katalogen där portfolion ska underhållas. Skapa möjligheten att aktivera en virtuell miljö i nuvarande mapp genom att skriva \newline\textbf{python3 -m venv venv} i terminalen. Detta skapar en katalog ''venv'' där alla pip3 relaterade paket sen kommer installeras. 
 
 \begin{figure}[h]
   \centerline{\includegraphics[width=8cm]{/home/danhu849/Pictures/create_venv_catalog.png}}
@@ -107,19 +108,22 @@ Installera först flask: \textbf{pip3 install flask}.
 Installera sedan jinja2: \textbf{pip3 install Jinja2}.
 
 Kontrollera att de båda installerades genom att först skriva \textbf{pip3 show flask} och se om Location innehåller \path{/den_nuvarande_mappen/venv} och kontrollera sedan samma för jinja2 med \textbf{pip3 show jinja2} .
+
+Vid behov, deaktivera den virtuella miljön genom att skriva \textbf{deactivate} i terminalen. Notera att (venv) som fanns innan framför användarnamnet i terminalfönstret nu har försvunnit.
+
 \begin{figure}[h]
   \centerline{\includegraphics[width=8cm]{/home/danhu849/Pictures/flask_jinja2_install_in_venv.png}}
   \caption{Aktivera/deaktivera en virtuell miljö och installera paket.}
   \label{fig}
 \end{figure}
 
-Vid behov, deaktivera den virtuella miljön genom att skriva deactivate. Notera att (venv) som fanns innan framför användarnamnet i terminalfönstret nu har försvunnit.
+\newpage
 
 Miljön för att göra och underhålla sin egen portfolio är nu skapad. Det går alldeles utmärkt att push:a upp katalogen som portfolioprojektet ligger i till ett git-repo.
 
 
 \section{Felsökning och Underhåll}
-Portfolions projekt sparas i en JSON-fil. Vid behov att manipulera denna data går det antingen att göra det manuellt i en editor eller genom att använda ett API skrivet i Python3 vars specifikation går att läsa sig till i ett separat dokument.
+Portfolions projekt sparas i en JSON-fil. Vid behov att manipulera denna data går det antingen att göra det manuellt i en editor eller genom att använda ett API skrivet i Python3 vars specifikation går att läsa sig till i det separata dokumentet: \emph{Systemspecifikation av portfoliosystemet}.
 
 
 \end{document}
