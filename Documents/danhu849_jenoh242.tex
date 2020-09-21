@@ -3,16 +3,23 @@
 \usepackage[swedish]{babel}
 \usepackage{graphicx}
 
+%Bra med information om vilka förutsättningar som gäller. Blir lite fel att säga att pip3 och Emacs behöver vara installerade för att komma åt, använda och underhålla portföljen. Godtycklig editor behövs, men pip3 behövs bara som följd för att installera Flask och Jinja.
 
-\newcommand{\version}{Version 1.2}
+%Bra med en virtuell miljö för flask och jinja. Skulle specifik version krävas är det passande att skriva med i manualen, och då koppla det till miljön.
+
+%Bra med bilder nära instruktionerna så man enkelt ser att det blir rätt.
+
+%Saknar felhantering och information om vad man kan göra om en installation inte går igenom.
+
+%Uppgiften är väl godkänd.
+
+\newcommand{\version}{Version 1.3}
 \author{Daniel Huber, \url{danhu849@liu.se}\\
   Jens Öhnell, \url{jenoh242@liu.se}}
 \title{Installationsmanual}
 \date{2020-09-17}
 \rhead{Daniel Huber\\
 Jens Öhnell}
-
-
 
 \begin{document}
 \projectpage
@@ -21,6 +28,7 @@ Jens Öhnell}
 \begin{tabularx}{\linewidth}{|l|X|l|}
 \hline
 Ver. & Revisionsbeskrivning & Datum \\\hline
+1.3 & Reviderat dokumentet efter feedback & 20200921 \\\hline
 1.2 & Korrigerat upplägget samt bildernas position & 200917 \\\hline
 1.1 & Adderat bilder till dokumentet. & 200915 \\\hline
 1.0 & Installationsmanual för TDP003 & 200914 \\\hline
@@ -28,7 +36,7 @@ Ver. & Revisionsbeskrivning & Datum \\\hline
 \end{table}
 
 \section{Förutsättningar}
-Denna manual förutsätter att en Linux distribution är det valda operativsystemet och utgår ifrån Ubuntu 20.04. Det förutsätts också att användaren förstår att ENTER ska tryckas ned efter varje kommando skrivits in i terminalen. Kommandon är markerade i texten med \textbf{fetstil}.
+Denna manual förutsätter att en Linux distribution är det valda operativsystemet och utgår ifrån Ubuntu 20.04. Det förutsätts också att användaren förstår att ENTER ska tryckas ned efter varje kommando skrivits in i terminalen. Kommandon är markerade i texten med \texttt{fetstil}.
 
 \section{Vad behövs?}
 För att få att kunna komma åt, använda och underhålla portföljen behövs följande programvaror installerade:
@@ -44,7 +52,11 @@ För att få att kunna komma åt, använda och underhålla portföljen behövs f
 Flask och Jinja2 kommer installeras i en virtuell pythonmiljö. Mer om det under respektive stycke.
 
 \section{Installation}
-Öppna en terminal med \emph{Ctrl Alt T} och uppdatera och uppgradera systemet till de senaste programvaruuppdateringarna. Skriv \textbf{sudo apt update \&\& sudo apt upgrade} i terminalfönstret. Skriv in användarlösenordet vid behov och vänta på att systemet uppdateras.
+Öppna en terminal med \emph{Ctrl Alt T} och uppdatera och uppgradera systemet till de senaste programvaruuppdateringarna. I terminalfönstret skriv:
+
+\texttt{sudo apt update \&\& sudo apt upgrade}
+
+Skriv in användarlösenordet vid behov och vänta på att systemet uppdateras.
 
 \begin{figure}[h]
   \centerline{\includegraphics[width=8cm]{/home/danhu849/Pictures/update_and_upgrade.png}}
@@ -55,7 +67,14 @@ Flask och Jinja2 kommer installeras i en virtuell pythonmiljö. Mer om det under
 \subsection{Emacs eller annan editor}
 Om det redan finns preferenser gällande editor att skriva i installeras den på egen hand. Annars är emacs en väldigt bra och open-source editor att använda. Tyvärr får det ej i denna installationsmanual plats att lära sig hur emacs används, men det finns gott om resurser online och en tutorial att följa i själva editorn.
 
-Installera emacs genom att skriva \textbf{sudo apt-get install emacs} i terminalfönstret. Skriv in lösenord vid behov och kolla om emacs är installerad genom att skriva \textbf{emacs \texttt{-{}-}version}.
+Installera emacs:
+
+\texttt{sudo apt-get install emacs}
+
+Skriv in lösenord vid behov. Kontrollera att emacs installerades:
+
+\texttt{emacs \texttt{-{}-}version}
+
 \begin{figure}[h]
   \centerline{\includegraphics[width=8cm]{/home/danhu849/Pictures/emacs_version.png}}
   \caption{Visar versionen av emacs på systemet.}
@@ -63,7 +82,17 @@ Installera emacs genom att skriva \textbf{sudo apt-get install emacs} i terminal
 \end{figure}
 
 \subsection{Git}
-I samma öppnade terminal kolla om git är installerad genom att skriva in \textbf{git \texttt{-{}-}version}. Om git inte är installerat, installera git nu genom att skriva in \textbf{sudo apt-get install git} vänta tills installationen är klar och kolla versionen av git med \textbf{git \texttt{-{}-}version}.
+Kontrollera att git är installerat:
+
+\texttt{git \texttt{-{}-}version}
+
+Om git inte är installerat, installera git nu:
+
+\texttt{sudo apt-get install git}
+
+Vänta tills installationen är klar och kolla versionen av git:
+
+\texttt{git \texttt{-{}-}version}
 
 \begin{figure}[h]
   \centerline{\includegraphics[width=8cm]{/home/danhu849/Pictures/git-V_install.png}}
@@ -72,7 +101,15 @@ I samma öppnade terminal kolla om git är installerad genom att skriva in \text
 \end{figure}
 
 \subsection{Python3 och pip3}
-Python3 ska vara förinstallerat på Ubuntu 20.04. Kontrollera att det är det genom att skriva \textbf{python3 -V} i terminalen. Skriv sedan \textbf{pip3 \texttt{-{}-}version}. Är python3 och pip3 installerade kommer det upp vilket version som finns installerad enligt bild nedan.
+Python3 ska vara förinstallerat på Ubuntu 20.04. Kontrollera med:
+
+\texttt{python3 -V}
+
+Och:
+
+\texttt{pip3 \texttt{-{}-}version}
+
+Är python3 och pip3 installerade kommer det upp vilket version som finns installerad enligt bild nedan.
 
 \begin{figure}[h]
   \centerline{\includegraphics[width=8cm]{/home/danhu849/Pictures/python3_and_pip3_check.png}}
@@ -80,7 +117,9 @@ Python3 ska vara förinstallerat på Ubuntu 20.04. Kontrollera att det är det g
   \label{fig}
 \end{figure}
 
-Ifall python3 eller pip3 \textbf{INTE} är installerat, installera dessa nu genom att skriva \newline\textbf{sudo apt-get install python3.8 python3-pip} i terminalfönstret.
+Ifall python3 eller pip3 \textbf{INTE} är installerade, installera dessa nu:
+
+\texttt{sudo apt-get install python3.8 python3-pip}
 
 \begin{figure}[h]
   \centerline{\includegraphics[width=8cm]{/home/danhu849/Pictures/install-Python3.png}}
@@ -93,7 +132,11 @@ Vänta tills installationen är klar och kolla sedan att Python3 och pip3 blev i
 \subsection{Installera flask och jinja2 med pip3 i virtuell miljö}
 pip3 är paketinstalleraren för python3 och olika paket adderar olika funktionalitet. Ett problem som kan uppstå är när olika paket inte fungerar med varandra. För att undvika att något sådant uppstår kommer det först upprättas en virtuell python miljö där paketen sedan installeras. Fördelen med detta är att den virtuella python miljön är avskild den huvudsakliga pythonmiljön på hårddisken. Paket som installeras virtuellt kommer inte kunna komma i konflikt med de paket vi installerar i vår huvudsakliga installation.
 
-Öppna en terminal om denna inte redan är öppen och gå in i den katalogen där portfolion ska underhållas. Skapa möjligheten att aktivera en virtuell miljö i nuvarande mapp genom att skriva \newline\textbf{python3 -m venv venv} i terminalen. Detta skapar en katalog ''venv'' där alla pip3 relaterade paket sen kommer installeras. 
+Öppna en terminal om denna inte redan är öppen och gå in i den katalogen där portfolion ska underhållas. Skapa möjligheten att aktivera en virtuell miljö i nuvarande mapp med:
+
+\texttt{python3 -m venv venv}
+
+Detta skapar en katalog ''venv'' där alla pip3 relaterade paket sen kommer installeras. 
 
 \begin{figure}[h]
   \centerline{\includegraphics[width=8cm]{/home/danhu849/Pictures/create_venv_catalog.png}}
@@ -101,23 +144,35 @@ pip3 är paketinstalleraren för python3 och olika paket adderar olika funktiona
   \label{fig}
 \end{figure}
 
-Aktivera sedan den virtuella miljön med \textbf{. venv/bin/activate}. Innan dit användarnamn i terminalen står det nu (venv) vilket betyder att vi nu är i en virtuell miljö och kan installera pythonpaket med pip3.
+Aktivera sedan den virtuella miljön:
 
-Installera först flask: \textbf{pip3 install flask}.
+\texttt{. venv/bin/activate}
 
-Installera sedan jinja2: \textbf{pip3 install Jinja2}.
+Innan dit användarnamn i terminalen står det nu (venv) vilket betyder att vi nu är i en virtuell miljö och kan installera pythonpaket med pip3 utan problem.
 
-Kontrollera att de båda installerades genom att först skriva \textbf{pip3 show flask} och se om Location innehåller \path{/den_nuvarande_mappen/venv} och kontrollera sedan samma för jinja2 med \textbf{pip3 show jinja2} .
+Installera först flask: \texttt{pip3 install flask}
 
-Vid behov, deaktivera den virtuella miljön genom att skriva \textbf{deactivate} i terminalen. Notera att (venv) som fanns innan framför användarnamnet i terminalfönstret nu har försvunnit.
+Installera sedan jinja2: \texttt{pip3 install Jinja2}
+
+Kontrollera att de båda installerades:
+
+\texttt{pip3 show flask}
+
+Se om Location innehåller \path{/den_nuvarande_mappen/venv} och kontrollera sedan samma för jinja2:
+
+\texttt{pip3 show jinja2}
+
+Vid behov, deaktivera den virtuella miljön genom:
+
+\texttt{deactivate}
+
+Notera att (venv) som fanns innan framför användarnamnet i terminalfönstret nu har försvunnit.
 
 \begin{figure}[h]
   \centerline{\includegraphics[width=8cm]{/home/danhu849/Pictures/flask_jinja2_install_in_venv.png}}
   \caption{Aktivera/deaktivera en virtuell miljö och installera paket.}
   \label{fig}
 \end{figure}
-
-\newpage
 
 Miljön för att göra och underhålla sin egen portfolio är nu skapad. Det går alldeles utmärkt att push:a upp katalogen som portfolioprojektet ligger i till ett git-repo.
 
