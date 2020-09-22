@@ -1,13 +1,14 @@
 \documentclass{TDP003mall}
 \usepackage[utf8]{inputenc}
 \usepackage[swedish]{babel}
+\usepackage[xcolor]
 
 
 \newcommand{\version}{Version 1.0}
 \author{Daniel Huber, \url{danhu849@liu.se}\\
   Jens Öhnell, \url{jenoh242@liu.se}}
-\title{Planeringsdokument}
-\date{2020-09-15}
+\title{Projektplan}
+\date{2020-09-22}
 \rhead{Daniel Huber\\
 Jens Öhnell}
 
@@ -20,7 +21,7 @@ Jens Öhnell}
 \begin{tabularx}{\linewidth}{|l|X|l|}
 \hline
 Ver. & Revisionsbeskrivning & Datum \\\hline
-1.0 & Projektplan 1:a utkast & 200915 \\\hline
+1.0 & Projektplan 1:a utkast & 200922 \\\hline
 \end{tabularx}
 \end{table}
 
@@ -44,16 +45,113 @@ Vid systemets slutförande testas systemets funktioner av två personer som ej i
 
 
 \section{Tidsplanering vecka för vecka}
+Projektplanen uppdelas i veckor. För varje vecka presenteras en mer specificerad uppskattning av tidsåtgång på deadline. För de aktiviteter som avklarats visas också den verkliga tidsåtgången. Varje uppgift med deadline är markerat i rött och under respektive deadline visas delmomenten.
 
-Nedan följer en grov uppskattning av tidsåtgång för de olika momenten nödvändiga att behandla innan projektet kan anses slutfört. Tidsuppskattningen baseras på att gruppens medlemmar dels skummat igenom innehållet för respektive ämne och sedan efter diskussion kommit fram till en förväntad tidsåtgång för att bemästra sagt ämne. Uppskattningen anses vara grov då det utgås ifrån nuvarande kunskap idag (2020-09-09).
+\subsection{Vecka 37}
+\begin{tabular}{|l|l|l|l|l|}
+  \hline
+  Vecka & Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning\\ [0.5ex]
+  \hline
+  37 & Torsdag 10/9 & 6h & 7h & Planeringsdokument & God\\
+  \hline
+\end{tabular}
+
+Tidsåtgången för planeringsdokumentet utgjordes av 6 timmar. Av dessa ägnades:
+8/9 3 tim sammanställande av vad ett planeringsdokument ska innehålla.
+8/9 2 tim skrivande av dokumentet.
+9/9 30 min åt att figurera ut hur latex dokumentet skulle kompileras.
+9/9 1 tim att ta reda på hur en git \texttt{-{}-}hard-reset reverseras.
+9/9 30 min att figurera ut hur tabeller skrivs i latex.
+
+\subsection{Vecka 38}
+\begin{tabular}{|l|l|l|l|l|}
+  \hline
+  Vecka & Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning\\ [0.5ex]
+  \hline
+  & Torsdag 17/9 & 4h & 9 tim 5 min & Grundläggande Installationsmanual & God\\
+  \hline
+  & Torsdag 17/9 & 6h & 7 tim 29 min & Lofi-prototyp & God\\
+  \hline
+\end{tabular}
+
+Den Grundläggande installationsmanualen färdigställdes på 9 tim och 5 min:
+14/9 1 tim 25 min Dokumentet skrevs
+14/9 20 min Bash-script som tog bort onödiga latex filer skrevs.
+14/9 2 tim lära sig kompilera .tex dokument innehållandes bilder samt lägga in dem och läsa på om paket.
+15/9 4 tim Dokumentet skrevs
+15/9 1 tim att ta reda på alla kommandon som visar att installtion gått som förväntat.
+15/9 15 min Dokumentet rättades och bildernas plats justerades.
+
+
+Lofi-prototypen färdigställdes på 7 tim och 29 min:
+16/9 2 tim Utkast snabbskissades för samtliga sidor.
+16/9 3 tim Skissarna förbättrades och renskrevs för hand.
+17/9 2 tim 9 min De renskrivna skisserna scannades in och sammanställdes tillsammans med förklaringar i ett Latex dokument.
+17/9 20 min Dokumentet rättades och bildernas plats justerades.
+
+
+
+
+
+\subsection{Vecka 39}
+\begin{tabular}{|l|l|l|l|l|}
+  \hline
+  Vecka & Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning\\ [0.5ex]
+  \hline
+
+  \hline
+\end{tabular}
+Gemensam installationsmanual
+Projektplan 1:a utkast
+
+
+\subsection{Vecka 40}
+\begin{tabular}{|l|l|l|l|l|}
+  \hline
+  Vecka & Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning\\ [0.5ex]
+  \hline
+
+  \hline
+\end{tabular}
+Bidra med icke-trivial förbättring git eller tester
+Korrigera eventuella brister installationsmanualen
+Korrigera Brister, Projektplanen
+Datalagret Godkänt
+
+\subsection{Vecka 41}
+
+
+\subsection{Vecka 42}
+\begin{tabular}{|l|l|l|l|l|}
+  \hline
+  Vecka & Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning\\ [0.5ex]
+  \hline
+
+  \hline
+\end{tabular}
+Portfolion Publicerad
+1:a Versionen Systemdokumentation
+
+\subsection{Vecka 43}
+\begin{tabular}{|l|l|l|l|l|}
+  \hline
+  Vecka & Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning\\ [0.5ex]
+  \hline
+
+  \hline
+\end{tabular}
+Testdokumentation inlämnad
+Individuellt Reflektionsblad
+Korrigerat event. brister i systemdokumentationen
+
 
 \subsection{Schema/Deadlines}
 
 \begin{tabular}{|l|l|l|l|l|}
   \hline
-  Vecka & Deadline Datum & Uppskattad & Beskrivning & Kunskap \\ [0.5ex]
+  Vecka & Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning\\ [0.5ex]
   \hline
-  37 & Torsdag 10/9 & 6h & Planeringsdokument & God\\
+
   \hline
   & Lördag 12/9 & 3h & Sätta emacs i python-mode & Vag\\
   \hline
@@ -63,7 +161,7 @@ Nedan följer en grov uppskattning av tidsåtgång för de olika momenten nödv�
   \hline
   & Torsdag 17/9 & 6h & Lofi-prototyp & God\\
   \hline
-  & Torsdag 17/9 & 4h & Grundläggande Installations manual & God\\
+  & Torsdag 17/9 & 4h & Grundläggande Installationsmanual & God\\
   \hline
   39 & Torsdag 24/9 & 24h & Projektplan, Första utkast & Vag\\
   \hline
