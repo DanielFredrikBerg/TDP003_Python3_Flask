@@ -2,25 +2,33 @@
 \usepackage[utf8]{inputenc}
 \usepackage[swedish]{babel}
 \usepackage[xcolor]{}
+\usepackage{enumitem}
 
-
-\newcommand{\version}{Version 1.1}
+\newcommand{\version}{Version 1.2}
 \author{Daniel Huber, \url{danhu849@liu.se}\\
   Jens Öhnell, \url{jenoh242@liu.se}}
 \title{Projektplan}
-\date{2020-09-22}
+\date{2020-09-23}
 \rhead{Daniel Huber\\
 Jens Öhnell}
 
-
+\renewcommand*\contentsname{Innehållsförteckning}
+\setlist{topsep=0pt, leftmargin=*}
 
 \begin{document}
 \projectpage
+
+\tableofcontents
+\newpage
+
+
+
 \section{Revisionshistorik}
 \begin{table}[!h]
 \begin{tabularx}{\linewidth}{|l|X|l|}
 \hline
 Ver. & Revisionsbeskrivning & Datum \\\hline
+1.2 & Innehållsförteckning och tekniker & 230920\\\hline
 1.1 & Aktiviteter lagts till för varje deadline & 220920\\\hline
 1.0 & Projektplan 1:a utkast & 200922 \\\hline
 \end{tabularx}
@@ -32,6 +40,26 @@ Projektets mål utgörs av att skapa, presentera och underhålla en webbaserad p
 
 För de avsnitt där det antingen är vagt eller inte alls specificerat vad eller hur något ska göras förväntas det att studenten tar egna initiativ. Exempel på detta är utseendet på användargränssnittet där nästintill total frihet ges.
 
+\section{Tekniker}
+För att uppfylla kravspecifikationen för detta projekt kommer följande tekniker användas:
+\begin{itemize}
+\item Python3
+\item Git
+\item HTML5
+\item CSS3
+\item Flask
+\item Jinja2
+\item venv
+\item JSON
+\item Latex
+\end{itemize}
+
+Pythonpaketet venv för att möjlggöra utveckling i virtuell miljö samt minimera risken av paketkonflikter.
+Pythonpaketet Flask tillhandahåller debugger, möjliggör bindandet av python3 funktioner till URL paths (API) och agerar webserver.
+Pythonpaketet Jinja2 för HMTL5 och CSS3 templates.
+Versionshantering sköts med git.
+En JSON fil, data.json representerar datalagret.
+Dokumentationen skrivs i Latex.
 
 \section{Kravspecifikation}
 Projektet utgörs av två delar. Dels det slutanvändaren kan se, det presentativa, och dels det som denne inte kan se, datalagringen och datahämtningen.
@@ -48,7 +76,7 @@ Vid systemets slutförande testas systemets funktioner av två personer som ej i
 
 
 \section{Tidsplanering vecka för vecka}
-Projektplanen uppdelas i veckor för lättare översikt. För varje vecka presenteras en mer specificerad uppskattning av tidsåtgång för aktiviteter som behöver vara klara innan deadline. Tidsåtgången för deadlinen inkluderar också tiden för dess aktiviteter. För de aktiviteter som avklarats visas också den verkliga tidsåtgången. Varje uppgift med deadline är markerat i rött och under respektive deadline visas delmomenten med datum för när de färdigställdes samt tidsåtgång.
+Projektplanen uppdelas i veckor för lättare översikt. För varje vecka presenteras en mer specificerad uppskattning av tidsåtgång för aktiviteter som behöver vara klara innan deadline. Tidsåtgången för deadlinen inkluderar också tiden för dess aktiviteter. För de aktiviteter som avklarats visas också den verkliga tidsåtgången samt datum för färdigställande. Varje veckas deadlines presenteras i tabeller. Ifall det saknas deadlines för någon vecka så saknas också tabell.
 
 \subsection{Vecka 37}
 \begin{tabular}{|l|l|l|l|l|}
@@ -59,13 +87,13 @@ Projektplanen uppdelas i veckor för lättare översikt. För varje vecka presen
   \hline
 \end{tabular}
 
-Tidsåtgången för planeringsdokumentet utgjordes av 6 timmar. Av dessa ägnades:\\
+Tidsåtgången för planeringsdokumentet utgjordes av 6 timmar. Av dessa ägnades:
 \begin{itemize}
- \item 8/9 3 tim sammanställande av vad ett planeringsdokument ska innehålla.\\
- \item 8/9 2 tim skrivande av dokumentet.\\
- \item 9/9 30 min åt att figurera ut hur latex dokumentet skulle kompileras.\\
- \item 9/9 1 tim att ta reda på hur en git \texttt{-{}-}hard-reset reverseras.\\
- \item 9/9 30 min att figurera ut hur tabeller skrivs i latex.\\
+ \item 8/9 3 tim sammanställande av vad ett planeringsdokument ska innehålla.
+ \item 8/9 2 tim skrivande av dokumentet.
+ \item 9/9 30 min åt att figurera ut hur latex dokumentet skulle kompileras.
+ \item 9/9 1 tim att ta reda på hur en git \texttt{-{}-}hard-reset reverseras.
+ \item 9/9 30 min att figurera ut hur tabeller skrivs i latex.
 \end{itemize}
 
 \subsection{Vecka 38}
@@ -79,24 +107,24 @@ Tidsåtgången för planeringsdokumentet utgjordes av 6 timmar. Av dessa ägnade
   \hline
 \end{tabular}
 
-Den Grundläggande installationsmanualen färdigställdes på 9 tim och 5 min:\\
+Den Grundläggande installationsmanualen färdigställdes på 9 tim och 5 min:
 \begin{itemize}
-\item 14/9 1 tim 40 min Dokumentet skrevs\\
-\item 14/9 20 min Bash-script som tog bort onödiga latex filer skrevs.\\
-\item 14/9 2 tim lära sig kompilera .tex dokument innehållandes bilder samt lägga in dem och läsa på om paket.\\
-\item 15/9 4 tim Dokumentet skrevs\\
-\item 15/9 1 tim att ta reda på alla kommandon som visar att installtion gått som förväntat.\\
+\item 14/9 1 tim 40 min Dokumentet skrevs
+\item 14/9 20 min Bash-script som tog bort onödiga latex filer skrevs.
+\item 14/9 2 tim lära sig kompilera .tex dokument innehållandes bilder samt lägga in dem och läsa på om paket.
+\item 15/9 4 tim Dokumentet skrevs
+\item 15/9 1 tim att ta reda på alla kommandon som visar att installtion gått som förväntat.
 \item 15/9 15 min Dokumentet rättades och bildernas plats justerades.\\
 \end{itemize}
 
-Lofi-prototypen färdigställdes på 7 tim och 29 min:\\
+Lofi-prototypen färdigställdes på 7 tim och 29 min:
 \begin{itemize}
-\item 16/9 2 tim Utkast snabbskissades för samtliga sidor.\\
-\item 16/9 3 tim Skissarna förbättrades och renskrevs för hand.\\
-\item 17/9 2 tim 9 min De renskrivna skisserna scannades in och sammanställdes med förklaringar Latex dokument.\\
-\item 17/9 20 min Dokumentet rättades och bildernas plats justerades.\\
+\item 16/9 2 tim Utkast snabbskissades för samtliga sidor.
+\item 16/9 3 tim Skissarna förbättrades och renskrevs för hand.
+\item 17/9 2 tim 9 min De renskrivna skisserna scannades in och sammanställdes med förklaringar i ettlatex dokument.
+\item 17/9 20 min Dokumentet rättades och bildernas plats justerades.
 \end{itemize}
-\newpage
+
 
 \subsection{Vecka 39}
 \begin{tabular}{|l|l|l|l|l|}
@@ -105,23 +133,24 @@ Lofi-prototypen färdigställdes på 7 tim och 29 min:\\
   \hline
   Torsdag 24/9 & 24h & 8h hittills & 1:a V Gemensam installationsmanual & God\\
   \hline
-  Torsdag 24/9 & 24h & ca 2h hittills & Projektplan, Första utkast & God\\
+  Torsdag 24/9 & 24h & ca 4h hittills & Projektplan, Första utkast & God\\
   \hline
 \end{tabular}
 
-Gemensam installationsmanual\\
+1:a Versionen Gemensam installationsmanual färdigställdes på 8h hittills:
 \begin{itemize}
-\item 21/9 20 min Skapa branch från master för development.\\
-\item 21/9 5 tim 31 min Skriva READMEs i markdown i både hemkatalagen och manuals katalogen. Fixa lättförståelig katalogstruktur. Felsöka initiella svårigheter att push:a upp filer.\\
+\item 21/9 20 min Skapa branch från master för development.
+\item 21/9 5 tim 31 min Skriva READMEs i markdown i både hemkatalagen och manuals katalogen. Fixa lättförståelig katalogstruktur. Felsöka initiella svårigheter att push:a upp filer.
 \item 22/9 3 tim skriva issues, hjälp med felsökning av andras problem och evaluera färdiga issues.\\
 \end{itemize}
 
-  Projektplan 1:a utkast
+  Projektplan 1:a utkast färdigställdes på 4h hittills:
   \begin{itemize}
-\item 17/9 1 tim Definera 2-3 aktiviteter inför varje deadline.\\
-\item 22/9 4 tim Skriva in aktiviteterna i dokumentet samt bestämma upplägg.\\
-\item Sätta ambitionsmål ifall projektet blir klart i förtid.\\
-\item Komma fram till riskbedömning och åtgärder.\\
+\item 17/9 1 tim Definera 2-3 aktiviteter inför varje deadline.
+\item 22/9 4 tim Skriva in aktiviteterna i dokumentet samt bestämma upplägg.
+  \item 23/9 2 tim Anteckningar renskrevs och sorterades in i dokumentet.
+\item Sätta ambitionsmål ifall projektet blir klart i förtid.
+\item Komma fram till riskbedömning och åtgärder.
 \end{itemize}
 
 \subsection{Vecka 40}
@@ -129,18 +158,18 @@ Gemensam installationsmanual\\
   \hline
   Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning & Kännedom\\ [0.5ex]
   \hline
-  Torsdag 1/10 & 1h & Bidra med icke-trivial förbättring git eller tester & God o inget\\
+  Torsdag 1/10 & 1h &  & Bidra med icke-trivial förbättring git eller tester & God o inget\\
   \hline
-  Torsdag 1/10 & 1-2h & Korrigera eventuella brister installationsmanualen & okänt\\
+  Torsdag 1/10 & 1-2h &  & Korrigera eventuella brister installationsmanualen & okänt\\
   \hline
-  Torsdag 1/10 & 1-2h & Korrigera Brister, Projektplanen & Beror på\\
+  Torsdag 1/10 & 1-2h &  & Korrigera Brister, Projektplanen & Beror på\\
   \hline
-  Torsdag 1/10 & 24h & Datalagret Godkänt & Vag\\
+  Torsdag 1/10 & 24h &  & Datalagret Godkänt & Vag\\
   \hline
 \end{tabular}
 
-Bidra med icke-trivial förbättring git eller tester\\
-Korrigera eventuella brister installationsmanualen\\
+Bidra med icke-trivial förbättring - installationsmanual eller tester\\
+Korrigera eventuella brister gemensamma installationsmanualen\\
 Korrigera Brister, Projektplanen\\
 Datalagret Godkänt\\
 
@@ -152,11 +181,11 @@ Datalagret Godkänt\\
   \hline
   Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning & Kännedom\\ [0.5ex]
   \hline
-  Torsdag 15/10 & - & Portfolion Publicerad & Vag\\
+  Torsdag 15/10 & - &  & Portfolion Publicerad & Vag\\
   \hline
-  Torsdag 15/10 & 3h & Systemdemonstration & Vag\\
+  Torsdag 15/10 & 3h &  & Systemdemonstration & Vag\\
   \hline
-  Torsdag 15/10 & 8h & 1:a Versionen Systemdokumentation & Vag\\
+  Torsdag 15/10 & 8h &  & 1:a Versionen Systemdokumentation & Vag\\
   \hline
 \end{tabular}
 
@@ -168,11 +197,11 @@ Portfolion Publicerad\\
   \hline
   Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning & Kännedom\\ [0.5ex]
   \hline
-  Torsdag 22/10 & 8h & Testdokumentation inlämnad & Vag\\
+  Torsdag 22/10 & 8h &  & Testdokumentation inlämnad & Vag\\
   \hline
-  Torsdag 22/10 & 6h & Individuellt Reflektionsblad & Vag\\
+  Torsdag 22/10 & 6h &  & Individuellt Reflektionsblad & Vag\\
   \hline
-  Torsdag 22/10 & 2-3h & Korrigerat event. brister i systemdokumentationen & Vag\\
+  Torsdag 22/10 & 2-3h &  & Korrigerat event. brister i systemdokumentationen & Vag\\
   \hline
 \end{tabular}
 
@@ -265,5 +294,8 @@ Nedan listas den specifika tidsåtgången för implementeringar av respektive fu
   2h & get\_technique\_stats\\
   \hline
 \end{tabular}
+
+\section{Riskbedömning och åtgärder}
+
 
 \end{document}

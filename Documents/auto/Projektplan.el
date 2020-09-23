@@ -8,7 +8,8 @@
     "TDP003mall"
     "TDP003mall10"
     "inputenc"
-    "babel")
+    "babel"
+    "enumitem")
    (TeX-add-symbols
     "version"))
  :latex)
