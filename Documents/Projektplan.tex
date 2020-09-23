@@ -2,15 +2,16 @@
 \usepackage[utf8]{inputenc}
 \usepackage[swedish]{babel}
 \usepackage[xcolor]{}
+\usepackage{tabularx}
 \usepackage{enumitem}
 
 \newcommand{\version}{Version 1.2}
 \author{Daniel Huber, \url{danhu849@liu.se}\\
-  Jens Öhnell, \url{jenoh242@liu.se}}
+	Jens Öhrnell, \url{jenoh242@liu.se}}
 \title{Projektplan}
 \date{2020-09-23}
 \rhead{Daniel Huber\\
-Jens Öhnell}
+Jens Öhrnell}
 
 \renewcommand*\contentsname{Innehållsförteckning}
 \setlist{topsep=0pt, leftmargin=*}
@@ -25,7 +26,7 @@ Jens Öhnell}
 
 \section{Revisionshistorik}
 \begin{table}[!h]
-\begin{tabularx}{\linewidth}{|l|X|l|}
+\begin{tabularx}{\linewidth}{|X|X|X|}
 \hline
 Ver. & Revisionsbeskrivning & Datum \\\hline
 1.2 & Innehållsförteckning och tekniker & 230920\\\hline
@@ -61,112 +62,191 @@ Versionshantering sköts med git.
 En JSON fil, data.json representerar datalagret.
 Dokumentationen skrivs i Latex.
 
+\newpage
+
 \section{Kravspecifikation}
-Projektet utgörs av två delar. Dels det slutanvändaren kan se, det presentativa, och dels det som denne inte kan se, datalagringen och datahämtningen.
+Projektet utgörs av två delar. Dels det slutanvändaren kan se, det presentativa,
+och dels det som denne inte kan se, datalagringen och datahämtningen.
 
-Av webplatsen krävs det att den utrustas med fyra html-sidor skrivna i HTML5 och CSS3. En huvudsida/första sida som antingen kan vara statiskt eller dynamisk samt 3 stycken dynamiska sidor. De tre sistnämnda utgörs av en söksida, en projektsida och en tekniksida. Krav finns att det på huvudsidan visas bilder. På söksidan kan projekt sorteras efter projektens id samt efter bokstavsordning och ålder med hjälp av knappar. På respektive projektsida visas fullständig information om det specifika projektet tillsammans med en större passande bilder. Om projektet inte finns visas relevant felkod i.e. status 404 'This page does not exist'. På tekniksidan visas information om projekten utifrån vilka tekniker som använts. Ett ambitionsmål är att kunna visa i hur stor omfattning teknikerna använts i projekten. Varje projekt ska i listningar på söksidan och tekniksidan visas med en liten bild bredvid sig. Bildtext måste finnas till varje bild. Vid fel ska dessa hanteras på ett, för slutanvändaren, informativt sätt så att denne kan förstå vad som gått fel.
+Av webplatsen krävs det att den utrustas med fyra html-sidor skrivna i HTML5 och
+ CSS3. En huvudsida/första sida som antingen kan vara statiskt eller dynamisk samt
+ 3 stycken dynamiska sidor. De tre sistnämnda utgörs av en söksida, en projektsida
+ och en tekniksida. Krav finns att det på huvudsidan visas bilder. På söksidan kan
+ projekt sorteras efter projektens id samt efter bokstavsordning och ålder med hj
+älp av knappar. På respektive projektsida visas fullständig information om det specifika
+ projektet tillsammans med en större passande bilder. Om projektet inte finns visas
+ relevant felkod i.e. status 404 'This page does not exist'. På tekniksidan visas
+ information om projekten utifrån vilka tekniker som använts. Ett ambitionsmål är
+ att kunna visa i hur stor omfattning teknikerna använts i projekten. Varje projekt
+ ska i listningar på söksidan och tekniksidan visas med en liten bild bredvid sig
+. Bildtext måste finnas till varje bild. Vid fel ska dessa hanteras på ett, för 
+slutanvändaren, informativt sätt så att denne kan förstå vad som gått fel.
 
-Datalagret utgörs av JSON-kod med UTF-8 teckenkodning i JSON-filen data.json. Varje projektinstans i JSON-koden utgörs av projektnamn, projekt-id i form av ett unikt heltalsnummer, startdatum, slutdatum, kurskod, kursnamn, kurspoäng, nyttjade tekniker, sammanfattning, full beskrivning, liten och stor bild, antal gruppmedlemmar och länk till projektsida. JSON-koden manipuleras med hjälp av ett API utgörande av sex stycken standardiserade funktioner. Samtliga namn skrivs på engelska. Funktioner som ska implementeras: load(filename), get\_project\_count(db), get\_project(db, id), search(db, sort\_by='start date', sort\_order='desc', techniques=None, search=None), get\_techniques(db), get\_technique\_stats(db). För fullständig specifikation hänvisas läsaren till dokumentet \textit{Application Programming Interface (API)} som finns på kurshemsidan.
+Datalagret utgörs av JSON-kod med UTF-8 teckenkodning i JSON-filen data.json. Varje
+ projektinstans i JSON-koden utgörs av projektnamn, projekt-id i form av ett unikt
+ heltalsnummer, startdatum, slutdatum, kurskod, kursnamn, kurspoäng, nyttjade tekniker
+, sammanfattning, full beskrivning, liten och stor bild, antal gruppmedlemmar och
+ länk till projektsida. JSON-koden manipuleras med hjälp av ett API utgörande av
+ sex stycken standardiserade funktioner. Samtliga namn skrivs på engelska. Funktioner
+ som ska implementeras: load(filename), get\_project\_count(db), get\_project(db
+, id), search(db, sort\_by='start date', sort\_order='desc', techniques=None, search
+=None), get\_techniques(db), get\_technique\_stats(db). För fullständig specifikation
+ hänvisas läsaren till dokumentet \textit{Application Programming Interface (API
+)} som finns på kurshemsidan.
 
-Vid sökning av godtyckliga termer om projektets information genereras träffar och slutanvändaren presenteras med en lista där det mest förmodade objektet presenteras högst upp eller längst ner. Tekniksidan kan sorteras på använda tekniker. Det ska noteras att funktionaliteten ska möjliggöra sökning på ett ord, sortering och filtrering av tekniker. Sökningarna ska ske samtidigt. Datum är i formatet ISO 8601. Förändringar i data.json filen ska för användaren presenteras direkt utan nödvändig omstart av webbservern. En frivillighet och alltså inte ett krav är att lägga till en administrativ sida för redigering av data.
+Vid sökning av godtyckliga termer om projektets information genereras träffar och
+ slutanvändaren presenteras med en lista där det mest förmodade objektet presenteras
+ högst upp eller längst ner. Tekniksidan kan sorteras på använda tekniker. Det ska
+ noteras att funktionaliteten ska möjliggöra sökning på ett ord, sortering och filtrering
+ av tekniker. Sökningarna ska ske samtidigt. Datum är i formatet ISO 8601. Förändringar
+ i data.json filen ska för användaren presenteras direkt utan nödvändig omstart av
+ webbservern. En frivillighet och alltså inte ett krav är att lägga till en administrativ
+ sida för redigering av data.
 
 Projektet versionshanteras med git.
 
-Vid systemets slutförande testas systemets funktioner av två personer som ej ingått i utvecklarteamet. Systemtesten och uppkomna fel dokumenteras och ska vara åtgärdade i den slutgiltiga versionen av projektet. Testerna skrivs sedan in i systemdokumentationen.
+Vid systemets slutförande testas systemets funktioner av två personer som ej ing
+ått i utvecklarteamet. Systemtesten och uppkomna fel dokumenteras och ska vara åtg
+ärdade i den slutgiltiga versionen av projektet. Testerna skrivs sedan in i systemdokumentationen.
 
 
 \section{Tidsplanering vecka för vecka}
-Projektplanen uppdelas i veckor för lättare översikt. För varje vecka presenteras en mer specificerad uppskattning av tidsåtgång för aktiviteter som behöver vara klara innan deadline. Tidsåtgången för deadlinen inkluderar också tiden för dess aktiviteter. För de aktiviteter som avklarats visas också den verkliga tidsåtgången samt datum för färdigställande. Varje veckas deadlines presenteras i tabeller. Ifall det saknas deadlines för någon vecka så saknas också tabell.
+Projektplanen uppdelas i veckor för lättare översikt. För varje vecka presenteras
+ en mer specificerad uppskattning av tidsåtgång för aktiviteter som behöver vara
+ klara innan deadline. Tidsåtgången för deadlinen inkluderar också tiden för dess
+ aktiviteter. För de aktiviteter som avklarats visas också den verkliga tidsåtgången
+ samt datum för färdigställande. Varje veckas deadlines, milstolpar och ambitionsmål presenteras
+ i tabeller. Ifall det saknas deadlines, milstolpar och ambitionsmål för någon vecka så saknas också
+ tabell. Observera att med tidsåtgång så menar vi den sammanlagda tiden för bådas arbeten.
 
 \subsection{Vecka 37}
-\begin{tabular}{|l|l|l|l|l|}
-  \hline
-  Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning & Kännedom\\ [0.5ex]
-  \hline
-  Torsdag 10/9 & 6h & 7h & Planeringsdokument & God\\
-  \hline
-\end{tabular}
+\begin{tabularx}{\linewidth}{|l|l|l|X|l|}
+	\hline
+	Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning        & Kännedom \\ [0.5ex]
+	\hline
+	Torsdag 10/9   & 6h             & 7h         & Planeringsdokument & God      \\
+	\hline
+\end{tabularx}{\linewidth}
 
 Tidsåtgången för planeringsdokumentet utgjordes av 6 timmar. Av dessa ägnades:
 \begin{itemize}
- \item 8/9 3 tim sammanställande av vad ett planeringsdokument ska innehålla.
- \item 8/9 2 tim skrivande av dokumentet.
- \item 9/9 30 min åt att figurera ut hur latex dokumentet skulle kompileras.
- \item 9/9 1 tim att ta reda på hur en git \texttt{-{}-}hard-reset reverseras.
- \item 9/9 30 min att figurera ut hur tabeller skrivs i latex.
+	\item 8/9:
+	\begin{itemize}
+		\item 3 tim sammanställande av vad ett planeringsdokument ska innehålla.
+		\item 2 tim skrivande av dokumentet.
+	\end{itemize}
+	\item 9/9:
+	\begin{itemize}
+		\item 30 min åt att figurera ut hur latex dokumentet skulle kompileras.
+		\item 1 tim att ta reda på hur en git \texttt{-{}-}hard-reset reverseras.
+		\item 30 min att figurera ut hur tabeller skrivs i latex.\\
+	\end{itemize}
 \end{itemize}
 
 \subsection{Vecka 38}
-\begin{tabular}{|l|l|l|l|l|}
-  \hline
-  Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning & Kännedom\\ [0.5ex]
-  \hline
-  Torsdag 17/9 & 4h & 9 tim 15 min & Grundläggande Installationsmanual & God\\
-  \hline
-  Torsdag 17/9 & 6h & 7 tim 29 min & Lofi-prototyp & God\\
-  \hline
-\end{tabular}
+\begin{tabularx}{\linewidth}{|l|l|l|X|l|l|}
+	\hline
+	Deadline Datum & Uppskattad tid & Tidsåtgång    & Beskrivning                       & Kännedom & Typ  \\ [0.5ex]
+	\hline
+	Torsdag 17/9   & 4h             & 9 tim 15 min  & Grundläggande Installationsmanual & God      & Hård \\
+	\hline
+                   & 6h             & 12 tim 29 min & Lofi-prototyp                     & God      & Hård \\
+	\hline
+\end{tabularx}
 
 Den Grundläggande installationsmanualen färdigställdes på 9 tim och 5 min:
 \begin{itemize}
-\item 14/9 1 tim 40 min Dokumentet skrevs
-\item 14/9 20 min Bash-script som tog bort onödiga latex filer skrevs.
-\item 14/9 2 tim lära sig kompilera .tex dokument innehållandes bilder samt lägga in dem och läsa på om paket.
-\item 15/9 4 tim Dokumentet skrevs
-\item 15/9 1 tim att ta reda på alla kommandon som visar att installtion gått som förväntat.
-\item 15/9 15 min Dokumentet rättades och bildernas plats justerades.\\
+	\item 14/9:
+	\begin{itemize}
+		\item 1 tim 40 min Dokumentet skrevs
+		\item 20 min Bash-script som tog bort onödiga latex filer skrevs.
+		\item 2 tim lära sig kompilera .tex dokument innehållandes bilder samt lägga in dem och läsa på om paket.
+	\end{itemize}
+	\item 15/9:
+	\begin{itemize}
+		\item 4 tim Dokumentet skrevs
+		\item 1 tim att ta reda på alla kommandon som visar att installtion gått som förväntat.
+		\item 15 min Dokumentet rättades och bildernas plats justerades.\\
+	\end{itemize}
 \end{itemize}
 
 Lofi-prototypen färdigställdes på 7 tim och 29 min:
 \begin{itemize}
-\item 16/9 2 tim Utkast snabbskissades för samtliga sidor.
-\item 16/9 3 tim Skissarna förbättrades och renskrevs för hand.
-\item 17/9 2 tim 9 min De renskrivna skisserna scannades in och sammanställdes med förklaringar i ettlatex dokument.
-\item 17/9 20 min Dokumentet rättades och bildernas plats justerades.
+	\item 15/9:
+	\begin{itemize}
+		\item 1 tim HTML Skrevs för förstasidan.
+		\item 4 tim CSS Skrevs för förstasidan.
+	\item 16/9:
+	\begin{itemize}
+		\item 2 tim Utkast snabbskissades för samtliga sidor.
+		\item 3 tim Skissarna förbättrades och renskrevs för hand.
+	\end{itemize}
+	\item 17/9:
+	\begin{itemize}
+		\item 2 tim 9 min De renskrivna skisserna scannades in och sammanställdes med förklaringar i ettlatex dokument.
+		\item 20 min Dokumentet rättades och bildernas plats justerades.\\
+	\end{itemize}
 \end{itemize}
 
 
 \subsection{Vecka 39}
-\begin{tabular}{|l|l|l|l|l|}
-  \hline
-  Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning & Kännedom\\ [0.5ex]
-  \hline
-  Torsdag 24/9 & 24h & 8h hittills & 1:a V Gemensam installationsmanual & God\\
-  \hline
-  Torsdag 24/9 & 24h & ca 4h hittills & Projektplan, Första utkast & God\\
-  \hline
-\end{tabular}
+\begin{tabularx}{\linewidth}{|l|l|l|X|l|}
+	\hline
+	Deadline Datum & Uppskattad tid & Tidsåtgång     & Beskrivning                        & Kännedom \\ 
+	\hline
+	Torsdag 24/9   & 24h            & 8h hittills    & 1:a V Gemensam installationsmanual & God      \\
+	\hline
+                   & 24h            & ca 4h hittills & Projektplan, Första utkast         & God      \\
+	\hline
+\end{tabularx}{\linewidth}
 
 1:a Versionen Gemensam installationsmanual färdigställdes på 8h hittills:
 \begin{itemize}
-\item 21/9 20 min Skapa branch från master för development.
-\item 21/9 5 tim 31 min Skriva READMEs i markdown i både hemkatalagen och manuals katalogen. Fixa lättförståelig katalogstruktur. Felsöka initiella svårigheter att push:a upp filer.
-\item 22/9 3 tim skriva issues, hjälp med felsökning av andras problem och evaluera färdiga issues.\\
+	\item 21/9:
+	\begin{itemize}
+		\item 20 min Skapa branch från master för development.
+		\item 5 tim 31 min Skriva READMEs i markdown i både hemkatalagen och manuals katalogen. Fixa lättförståelig katalogstruktur. Felsöka initiella svårigheter att push:a upp filer.
+	\end{itemize}
+	\item 22/9:
+	\begin{itemize}
+		\item 3 tim skriva issues, hjälp med felsökning av andras problem och evaluera färdiga issues.\\
+	\end{itemize}
 \end{itemize}
 
-  Projektplan 1:a utkast färdigställdes på 4h hittills:
-  \begin{itemize}
-\item 17/9 1 tim Definera 2-3 aktiviteter inför varje deadline.
-\item 22/9 4 tim Skriva in aktiviteterna i dokumentet samt bestämma upplägg.
-  \item 23/9 2 tim Anteckningar renskrevs och sorterades in i dokumentet.
-\item Sätta ambitionsmål ifall projektet blir klart i förtid.
-\item Komma fram till riskbedömning och åtgärder.
+	Projektplan 1:a utkast färdigställdes på 4h hittills:
+\begin{itemize}
+	\item 17/9:
+	\begin{itemize}
+		\item 9 1 tim Definera 2-3 aktiviteter inför varje deadline.
+	\end{itemize}
+	\item 22/9:
+	\begin{itemize}
+		\item 4 tim Skriva in aktiviteterna i dokumentet samt bestämma upplägg.
+	\end{itemize}
+	\item 23/9:
+	\begin{itemize}
+		\item 2 tim Anteckningar renskrevs och sorterades in i dokumentet.
+		\item 5 tim 30 min Reformaterade tabeller och listor.
+		\item 30 min Lade till ytterligare information om tidsåtgång.
+	\end{itemize}
+	\item Sätta ambitionsmål ifall projektet blir klart i förtid.
+	\item Komma fram till riskbedömning och åtgärder.
 \end{itemize}
 
 \subsection{Vecka 40}
-\begin{tabular}{|l|l|l|l|l|}
-  \hline
-  Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning & Kännedom\\ [0.5ex]
-  \hline
-  Torsdag 1/10 & 1h &  & Bidra med icke-trivial förbättring git eller tester & God o inget\\
-  \hline
-  Torsdag 1/10 & 1-2h &  & Korrigera eventuella brister installationsmanualen & okänt\\
-  \hline
-  Torsdag 1/10 & 1-2h &  & Korrigera Brister, Projektplanen & Beror på\\
-  \hline
-  Torsdag 1/10 & 24h &  & Datalagret Godkänt & Vag\\
-  \hline
-\end{tabular}
+\begin{tabularx}{\linewidth}{|l|l|l|X|l|}
+	\hline
+	Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning                                         & Kännedom    \\ [0.5ex]
+	\hline
+	Torsdag 1/10   & 1h             &            & Bidra med icke-trivial förbättring git eller tester & God o inget \\
+	\hline
+                   & 1-2h           &            & Korrigera eventuella brister installationsmanualen  & okänt       \\
+	\hline
+                   & 1-2h           &            & Korrigera Brister, Projektplanen                    & Beror på    \\
+	\hline
+                   & 24h            &            & Datalagret Godkänt                                  & Vag         \\
+	\hline
+\end{tabularx}{\linewidth}
 
 Bidra med icke-trivial förbättring - installationsmanual eller tester\\
 Korrigera eventuella brister gemensamma installationsmanualen\\
@@ -177,33 +257,33 @@ Datalagret Godkänt\\
 
 
 \subsection{Vecka 42}
-\begin{tabular}{|l|l|l|l|l|}
-  \hline
-  Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning & Kännedom\\ [0.5ex]
-  \hline
-  Torsdag 15/10 & - &  & Portfolion Publicerad & Vag\\
-  \hline
-  Torsdag 15/10 & 3h &  & Systemdemonstration & Vag\\
-  \hline
-  Torsdag 15/10 & 8h &  & 1:a Versionen Systemdokumentation & Vag\\
-  \hline
-\end{tabular}
+\begin{tabularx}{\linewidth}{|l|l|l|X|l|}
+	\hline
+	Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning                       & Kännedom \\ [0.5ex]
+	\hline
+                   & -              &            & Portfolion Publicerad             & Vag      \\
+	\hline
+                   & 3h             &            & Systemdemonstration               & Vag      \\
+	\hline
+                   & 8h             &            & 1:a Versionen Systemdokumentation & Vag      \\
+	\hline
+\end{tabularx}{\linewidth}
 
 Portfolion Publicerad\\
 1:a Versionen Systemdokumentation\\
 
 \subsection{Vecka 43}
-\begin{tabular}{|l|l|l|l|l|}
-  \hline
-  Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning & Kännedom\\ [0.5ex]
-  \hline
-  Torsdag 22/10 & 8h &  & Testdokumentation inlämnad & Vag\\
-  \hline
-  Torsdag 22/10 & 6h &  & Individuellt Reflektionsblad & Vag\\
-  \hline
-  Torsdag 22/10 & 2-3h &  & Korrigerat event. brister i systemdokumentationen & Vag\\
-  \hline
-\end{tabular}
+\begin{tabularx}{\linewidth}{|l|l|l|X|l|}
+	\hline
+	Deadline Datum & Uppskattad tid & Tidsåtgång & Beskrivning                                       & Kännedom \\ [0.5ex]
+	\hline
+	Torsdag 22/10  & 8h             &            & Testdokumentation inlämnad                        & Vag      \\
+	\hline
+                   & 6h             &            & Individuellt Reflektionsblad                      & Vag      \\
+	\hline
+                   & 2-3h           &            & Korrigerat event. brister i systemdokumentationen & Vag      \\
+	\hline
+\end{tabularx}{\linewidth}
 
 Testdokumentation inlämnad\\
 Individuellt Reflektionsblad\\
@@ -212,88 +292,88 @@ Korrigerat eventuella brister i systemdokumentationen\\
 
 \subsection{Schema/Deadlines}
 
-\begin{tabular}{|l|l|l|l|l|}
-  \hline
-  Vecka & Deadline Datum & Uppskattad tid & Beskrivning & Kännedom\\ [0.5ex]
-  \hline
-  & Lördag 12/9 & 3h & Sätta emacs i python-mode & Vag\\
-  \hline
-  & Söndag 13/9 & 2h & Inkorporera Magit i Emacs & Vag\\
-  \hline
-  38 & Tisdag 15/9 & 3h & Bekantskap med Seleniumhq.org & Vag\\
-  \hline
-  & Torsdag 17/9 & 6h & Lofi-prototyp & God\\
-  \hline
-  & Torsdag 17/9 & 4h & Grundläggande Installationsmanual & God\\
-  \hline
-  39 & Torsdag 24/9 & 24h & Projektplan, Första utkast & Vag\\
-  \hline
-  & Torsdag 24/9 & 24h & 1:a Versionen gemensam installationsmanual & God\\
-  \hline
-  & Fredag 25/9 & 2h & Flask o Jinja2 Föreläsning & Vag\\
-  \hline
-  & Söndag 27/9 & 6h & Ha deploy:at första testhemsidan med flask & Vag\\
-  \hline
-  & Söndag 27/9 & 12h & Fatta Jinja2 & Vag\\
-  \hline
-  40 & Torsdag 1/10 & 1h & Bidra med icke-trivial förbättring git eller tester & God o inget\\
-  \hline
-  & Torsdag 1/10 & 1-2h & Korrigera eventuella brister installationsmanualen & okänt\\
-  \hline
-  & Torsdag 1/10 & 1-2h & Korrigera Brister, Projektplanen & Beror på\\
-  \hline
-  & Torsdag 1/10 & 24h & Datalagret Godkänt & Vag\\
-  \hline
-  42 & Torsdag 15/10 & - & Portfolion Publicerad & Vag\\
-  \hline
-  & Torsdag 15/10 & 3h & Systemdemonstration & Vag\\
-  \hline
-  & Torsdag 15/10 & 8h & 1:a Versionen Systemdokumentation & Vag\\
-  \hline
-  43 & Torsdag 22/10 & 8h & Testdokumentation inlämnad & Vag\\
-  \hline
-  & Torsdag 22/10 & 6h & Individuellt Reflektionsblad & Vag\\
-  \hline
-  & Torsdag 22/10 & 2-3h & Korrigerat event. brister i systemdokumentationen & Vag\\
-  \hline
-  \hline
-  Alla & & 20min/dag & Dokumentera Dagbok & God\\
-  \hline
-\end{tabular}
+\begin{tabularx}{\linewidth}{|l|l|l|X|l|}
+	\hline
+	Vecka & Deadline Datum & Uppskattad tid & Beskrivning                                         & Kännedom    \\ [0.5ex]
+	\hline
+          & Lördag 12/9    & 3h             & Sätta emacs i python-mode                           & Vag         \\
+	\hline
+          & Söndag 13/9    & 2h             & Inkorporera Magit i Emacs                           & Vag         \\
+	\hline
+	38    & Tisdag 15/9    & 3h             & Bekantskap med Seleniumhq.org                       & Vag         \\
+	\hline
+          & Torsdag 17/9   & 6h             & Lofi-prototyp                                       & God         \\
+	\hline
+          &                & 4h             & Grundläggande Installationsmanual                   & God         \\
+	\hline
+	39    & Torsdag 24/9   & 24h            & Projektplan, Första utkast                          & Vag         \\
+	\hline
+          &                & 24h            & 1:a Versionen gemensam installationsmanual          & God         \\
+	\hline
+          & Fredag 25/9    & 2h             & Flask o Jinja2 Föreläsning                          & Vag         \\
+	\hline
+          & Söndag 27/9    & 6h             & Ha deploy:at första testhemsidan med flask          & Vag         \\
+	\hline
+          &                & 12h            & Fatta Jinja2                                        & Vag         \\
+	\hline
+	40    & Torsdag 1/10   & 1h             & Bidra med icke-trivial förbättring git eller tester & God o inget \\
+	\hline
+          &                & 1-2h           & Korrigera eventuella brister installationsmanualen  & okänt       \\
+	\hline
+          &                & 1-2h           & Korrigera Brister, Projektplanen                    & Beror på    \\
+	\hline
+          &                & 24h            & Datalagret Godkänt                                  & Vag         \\
+	\hline
+	42    & Torsdag 15/10  & -              & Portfolion Publicerad                               & Vag         \\
+	\hline
+          &                & 3h             & Systemdemonstration                                 & Vag         \\
+	\hline
+          &                & 8h             & 1:a Versionen Systemdokumentation                   & Vag         \\
+	\hline
+	43    & Torsdag 22/10  & 8h             & Testdokumentation inlämnad                          & Vag         \\
+	\hline
+          &                & 6h             & Individuellt Reflektionsblad                        & Vag         \\
+	\hline
+          &                & 2-3h           & Korrigerat event. brister i systemdokumentationen   & Vag         \\
+	\hline
+	\hline
+	Alla  &                & 20min/dag      & Dokumentera Dagbok                                  & God         \\
+	\hline
+\end{tabularx}{\linewidth}
 
 \subsection{Tidsåtgång - Presentativ Del}
-\begin{tabular}{|c|l|}
-  \hline
-  5h & Statisk eller dynamisk sida med bilder på /\\
-  \hline
-  8h & Dynamisk sida som sorterar och listar projekten på /list\\
-  \hline
-  2h & Visar fullständig infosida för specifikt proj med id på /project/id\\
-  \hline
-  3h & Sammanställning av alla project baserat på använda tekniker på /techniques\\
-  \hline
-\end{tabular}
+\begin{tabularx}{\linewidth}{|c|X|}
+	\hline
+	5h & Statisk eller dynamisk sida med bilder på /\\
+	\hline
+	8h & Dynamisk sida som sorterar och listar projekten på /list\\
+	\hline
+	2h & Visar fullständig infosida för specifikt proj med id på /project/id\\
+	\hline
+	3h & Sammanställning av alla project baserat på använda tekniker på /techniques\\
+	\hline
+\end{tabularx}{\linewidth}
 
 \subsection{Tidsåtgång - Funktioner i datalagret}
 Nedan listas den specifika tidsåtgången för implementeringar av respektive funktion i datalagret.
 
-\begin{tabular}{|c|l|}
-  \hline
-  Tid & Funktion\\
-  \hline
-  2h & load\\
-  \hline
-  1h & get\_project\_count\\
-  \hline
-  1h & get\_project\\
-  \hline
-  3h & search\\
-  \hline
-  2h & get\_techniques\\
-  \hline
-  2h & get\_technique\_stats\\
-  \hline
-\end{tabular}
+\begin{tabularx}{\linewidth}{|c|X|}
+	\hline
+	Tid & Funktion\\
+	\hline
+	2h & load\\
+	\hline
+	1h & get\_project\_count\\
+	\hline
+	1h & get\_project\\
+	\hline
+	3h & search\\
+	\hline
+	2h & get\_techniques\\
+	\hline
+	2h & get\_technique\_stats\\
+	\hline
+\end{tabularx}{\linewidth}
 
 \section{Riskbedömning och åtgärder}
 
