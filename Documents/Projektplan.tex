@@ -28,17 +28,19 @@ Ver. & Revisionsbeskrivning & Datum \\\hline
 
 
 \section{Introduktion}
-Projektets mål utgörs av att skapa, presentera och underhålla en webbaserad portfolio. Där presenteras de projekt som vi i och utanför universitetet ska färdigställa under de kommande 3 åren. Kravspecifikationen skrevs av programledningen och återfinns i dokumentet \textbf{DOkumentets namn här!}. För de avsnitt där det antingen är vagt eller inte alls specificerat vad eller hur något ska göras förväntas det att studenten tar egna initiativ. Exempel på detta är utseendet på användargränssnittet där nästintill total frihet ges.
+Projektets mål utgörs av att skapa, presentera och underhålla en webbaserad portfolio. Där presenteras de projekt som vi i och utanför universitetet ska färdigställa under de kommande 3 åren. Den kompletta kravspecifikationen skrevs av programledningen och återfinns i dokumentet \textit{Systemspecifikation av portfoliosystemet}. En sammanfattning finns i detta dokument.
+
+För de avsnitt där det antingen är vagt eller inte alls specificerat vad eller hur något ska göras förväntas det att studenten tar egna initiativ. Exempel på detta är utseendet på användargränssnittet där nästintill total frihet ges.
 
 
 \section{Kravspecifikation}
 Projektet utgörs av två delar. Dels det slutanvändaren kan se, det presentativa, och dels det som denne inte kan se, datalagringen och datahämtningen.
 
-Av webplatsen krävs det att den utrustas med fyra html-sidor skrivna i HTML5 och CSS3. En huvudsida/första sida som antingen kan vara statiskt eller dynamisk samt 3 stycken dynamiska sidor. De tre sistnämnda utgörs av en söksida, en projektsida och en tekniksida. Krav finns att det på huvudsidan visas biler. På söksidan finns funktionaliteten att kunna sortera projekt på projektets id samt möjliggöra sökning med hjälp av söktermer i ett formulär. På respektive projektsida visas fullständig information om det specifika projektet tillsammans med en stor passande bild. Om projektet inte finns visas relevant felkod i.e. status 404 'This page does not exist'. På tekniksidan visas information om projekten utifrån vilka tekniker och i hur stor omfattning dessa använts i projekten. Varje projekt ska i listningar på söksidan och tekniksidan visas med en liten bild bredvid sig. Bildtext måste finnas till varje bild. Vid fel ska dessa hanteras på ett, för slutanvändaren, informativt sätt så att denne kan förstå vad som gått fel.
+Av webplatsen krävs det att den utrustas med fyra html-sidor skrivna i HTML5 och CSS3. En huvudsida/första sida som antingen kan vara statiskt eller dynamisk samt 3 stycken dynamiska sidor. De tre sistnämnda utgörs av en söksida, en projektsida och en tekniksida. Krav finns att det på huvudsidan visas bilder. På söksidan kan projekt sorteras efter projektens id samt efter bokstavsordning och ålder med hjälp av knappar. På respektive projektsida visas fullständig information om det specifika projektet tillsammans med en större passande bilder. Om projektet inte finns visas relevant felkod i.e. status 404 'This page does not exist'. På tekniksidan visas information om projekten utifrån vilka tekniker som använts. Ett ambitionsmål är att kunna visa i hur stor omfattning teknikerna använts i projekten. Varje projekt ska i listningar på söksidan och tekniksidan visas med en liten bild bredvid sig. Bildtext måste finnas till varje bild. Vid fel ska dessa hanteras på ett, för slutanvändaren, informativt sätt så att denne kan förstå vad som gått fel.
 
-Datalagret utgörs av JSON-kod med UTF-8 teckenkodning i JSON-filen data.json. Varje projektinstans i JSON-koden utgörs av projektnamn, projekt-id i form av ett unikt heltalsnummer, startdatum, slutdatum, kurskod, kursnamn, kurspoäng, nyttjade tekniker, sammanfattning, full beskrivning, liten och stor bild, antal gruppmedlemmar och länk till projektsida. JSON-koden manipuleras med hjälp av ett API utgörande av sex stycken standardiserade funktioner. Samtliga namn skrivs på engelska. Funktioner som ska implementeras: load(filename), get\_project\_count(db), get\_project(db, id), search(db, sort\_by='start date', sort\_order='desc', techniques=None, search=None), get\_techniques(db), get\_technique\_stats(db). För komplett specifikation hänvisas läsaren till \textbf{Systemkravspecifikationens namn}.
+Datalagret utgörs av JSON-kod med UTF-8 teckenkodning i JSON-filen data.json. Varje projektinstans i JSON-koden utgörs av projektnamn, projekt-id i form av ett unikt heltalsnummer, startdatum, slutdatum, kurskod, kursnamn, kurspoäng, nyttjade tekniker, sammanfattning, full beskrivning, liten och stor bild, antal gruppmedlemmar och länk till projektsida. JSON-koden manipuleras med hjälp av ett API utgörande av sex stycken standardiserade funktioner. Samtliga namn skrivs på engelska. Funktioner som ska implementeras: load(filename), get\_project\_count(db), get\_project(db, id), search(db, sort\_by='start date', sort\_order='desc', techniques=None, search=None), get\_techniques(db), get\_technique\_stats(db). För fullständig specifikation hänvisas läsaren till dokumentet \textit{Application Programming Interface (API)} som finns på kurshemsidan.
 
-Vid sökning med godtyckliga termer om projektets information genereras träffar och slutanvändaren presenteras med en lista där det mest förmodade objektet presenteras högst upp eller längst ner. Söklistan kan sorteras på använda tekniker. Det ska noteras att funktionaliteten ska möjliggöra sökning på ett ord, sortering och filtrering av tekniker. Sökningarna ska ske samtidigt. Datum är i formatet ISO 8601. Förändringar i data.json filen ska för användaren presenteras direkt utan nödvändig omstart av webbservern. En frivillighet och alltså inte ett krav är att lägga till en administrativ sida för redigering av data.
+Vid sökning av godtyckliga termer om projektets information genereras träffar och slutanvändaren presenteras med en lista där det mest förmodade objektet presenteras högst upp eller längst ner. Tekniksidan kan sorteras på använda tekniker. Det ska noteras att funktionaliteten ska möjliggöra sökning på ett ord, sortering och filtrering av tekniker. Sökningarna ska ske samtidigt. Datum är i formatet ISO 8601. Förändringar i data.json filen ska för användaren presenteras direkt utan nödvändig omstart av webbservern. En frivillighet och alltså inte ett krav är att lägga till en administrativ sida för redigering av data.
 
 Projektet versionshanteras med git.
 
@@ -46,7 +48,7 @@ Vid systemets slutförande testas systemets funktioner av två personer som ej i
 
 
 \section{Tidsplanering vecka för vecka}
-Projektplanen uppdelas i veckor. För varje vecka presenteras en mer specificerad uppskattning av tidsåtgång på deadline. För de aktiviteter som avklarats visas också den verkliga tidsåtgången. Varje uppgift med deadline är markerat i rött och under respektive deadline visas delmomenten.
+Projektplanen uppdelas i veckor för lättare översikt. För varje vecka presenteras en mer specificerad uppskattning av tidsåtgång för aktiviteter som behöver vara klara innan deadline. Tidsåtgången för deadlinen inkluderar också tiden för dess aktiviteter. För de aktiviteter som avklarats visas också den verkliga tidsåtgången. Varje uppgift med deadline är markerat i rött och under respektive deadline visas delmomenten med datum för när de färdigställdes samt tidsåtgång.
 
 \subsection{Vecka 37}
 \begin{tabular}{|l|l|l|l|l|}
@@ -58,11 +60,13 @@ Projektplanen uppdelas i veckor. För varje vecka presenteras en mer specificera
 \end{tabular}
 
 Tidsåtgången för planeringsdokumentet utgjordes av 6 timmar. Av dessa ägnades:\\
-8/9 3 tim sammanställande av vad ett planeringsdokument ska innehålla.\\
-8/9 2 tim skrivande av dokumentet.\\
-9/9 30 min åt att figurera ut hur latex dokumentet skulle kompileras.\\
-9/9 1 tim att ta reda på hur en git \texttt{-{}-}hard-reset reverseras.\\
-9/9 30 min att figurera ut hur tabeller skrivs i latex.\\
+\begin{itemize}
+ \item 8/9 3 tim sammanställande av vad ett planeringsdokument ska innehålla.\\
+ \item 8/9 2 tim skrivande av dokumentet.\\
+ \item 9/9 30 min åt att figurera ut hur latex dokumentet skulle kompileras.\\
+ \item 9/9 1 tim att ta reda på hur en git \texttt{-{}-}hard-reset reverseras.\\
+ \item 9/9 30 min att figurera ut hur tabeller skrivs i latex.\\
+\end{itemize}
 
 \subsection{Vecka 38}
 \begin{tabular}{|l|l|l|l|l|}
@@ -76,20 +80,22 @@ Tidsåtgången för planeringsdokumentet utgjordes av 6 timmar. Av dessa ägnade
 \end{tabular}
 
 Den Grundläggande installationsmanualen färdigställdes på 9 tim och 5 min:\\
-14/9 1 tim 40 min Dokumentet skrevs\\
-14/9 20 min Bash-script som tog bort onödiga latex filer skrevs.\\
-14/9 2 tim lära sig kompilera .tex dokument innehållandes bilder samt lägga in dem och läsa på om paket.\\
-15/9 4 tim Dokumentet skrevs\\
-15/9 1 tim att ta reda på alla kommandon som visar att installtion gått som förväntat.\\
-15/9 15 min Dokumentet rättades och bildernas plats justerades.\\
-
+\begin{itemize}
+\item 14/9 1 tim 40 min Dokumentet skrevs\\
+\item 14/9 20 min Bash-script som tog bort onödiga latex filer skrevs.\\
+\item 14/9 2 tim lära sig kompilera .tex dokument innehållandes bilder samt lägga in dem och läsa på om paket.\\
+\item 15/9 4 tim Dokumentet skrevs\\
+\item 15/9 1 tim att ta reda på alla kommandon som visar att installtion gått som förväntat.\\
+\item 15/9 15 min Dokumentet rättades och bildernas plats justerades.\\
+\end{itemize}
 
 Lofi-prototypen färdigställdes på 7 tim och 29 min:\\
-16/9 2 tim Utkast snabbskissades för samtliga sidor.\\
-16/9 3 tim Skissarna förbättrades och renskrevs för hand.\\
-17/9 2 tim 9 min De renskrivna skisserna scannades in och sammanställdes med förklaringar Latex dokument.\\
-17/9 20 min Dokumentet rättades och bildernas plats justerades.\\
-
+\begin{itemize}
+\item 16/9 2 tim Utkast snabbskissades för samtliga sidor.\\
+\item 16/9 3 tim Skissarna förbättrades och renskrevs för hand.\\
+\item 17/9 2 tim 9 min De renskrivna skisserna scannades in och sammanställdes med förklaringar Latex dokument.\\
+\item 17/9 20 min Dokumentet rättades och bildernas plats justerades.\\
+\end{itemize}
 \newpage
 
 \subsection{Vecka 39}
@@ -104,15 +110,19 @@ Lofi-prototypen färdigställdes på 7 tim och 29 min:\\
 \end{tabular}
 
 Gemensam installationsmanual\\
-21/9 20 min Skapa branch från master för development.\\
-21/9 5 tim 31 min Skriva READMEs i markdown i både hemkatalagen och manuals katalogen. Fixa lättförståelig katalogstruktur. Felsöka initiella svårigheter att push:a upp filer.\\
-22/9 3 tim skriva issues, hjälp med felsökning av andras problem och evaluera färdiga issues.\\
+\begin{itemize}
+\item 21/9 20 min Skapa branch från master för development.\\
+\item 21/9 5 tim 31 min Skriva READMEs i markdown i både hemkatalagen och manuals katalogen. Fixa lättförståelig katalogstruktur. Felsöka initiella svårigheter att push:a upp filer.\\
+\item 22/9 3 tim skriva issues, hjälp med felsökning av andras problem och evaluera färdiga issues.\\
+\end{itemize}
 
-Projektplan 1:a utkast
-17/9 1 tim Definera 2-3 aktiviteter inför varje deadline.\\
-22/9 4 tim Skriva in aktiviteterna i dokumentet samt bestämma upplägg.\\
-Sätta ambitionsmål ifall projektet blir klart i förtid.\\
-Komma fram till riskbedömning och åtgärder.\\
+  Projektplan 1:a utkast
+  \begin{itemize}
+\item 17/9 1 tim Definera 2-3 aktiviteter inför varje deadline.\\
+\item 22/9 4 tim Skriva in aktiviteterna i dokumentet samt bestämma upplägg.\\
+\item Sätta ambitionsmål ifall projektet blir klart i förtid.\\
+\item Komma fram till riskbedömning och åtgärder.\\
+\end{itemize}
 
 \subsection{Vecka 40}
 \begin{tabular}{|l|l|l|l|l|}
