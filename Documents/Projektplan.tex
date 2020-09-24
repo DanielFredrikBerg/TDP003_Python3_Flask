@@ -5,7 +5,7 @@
 \usepackage{tabularx}
 \usepackage{enumitem}
 
-\newcommand{\version}{Version 1.2}
+\newcommand{\version}{Version 1.3}
 \author{Daniel Huber, \url{danhu849@liu.se}\\
 	Jens Öhrnell, \url{jenoh242@liu.se}}
 \title{Projektplan}
@@ -29,9 +29,10 @@ Jens Öhrnell}
 \begin{tabularx}{\linewidth}{|X|X|X|}
 \hline
 Ver. & Revisionsbeskrivning & Datum \\\hline
+1.3 & Tabellformatering, upplägg samt riskbedömning & 240920\\\hline
 1.2 & Innehållsförteckning och tekniker & 230920\\\hline
-1.1 & Aktiviteter lagts till för varje deadline & 220920\\\hline
-1.0 & Projektplan 1:a utkast & 200922 \\\hline
+1.1 & Aktiviteter inför varje deadline & 220920\\\hline
+1.0 & Kravspec och samling deadlines & 200922 \\\hline
 \end{tabularx}
 \end{table}
 
@@ -55,8 +56,8 @@ För att uppfylla kravspecifikationen för detta projekt kommer följande teknik
 \item Latex
 \end{itemize}
 
-Pythonpaketet venv för att möjlggöra utveckling i virtuell miljö samt minimera risken av paketkonflikter.
-Pythonpaketet Flask tillhandahåller debugger, möjliggör bindandet av python3 funktioner till URL paths (API) och agerar webserver.
+Pythonpaketet venv används för att möjlggöra utveckling i virtuell miljö samt minimera risken av paketkonflikter.
+Pythonpaketet Flask tillhandahåller debugger, möjliggör bindandet av python3 funktioner till URL paths (API) och agerar webbserver.
 Pythonpaketet Jinja2 för HMTL5 och CSS3 templates.
 Versionshantering sköts med git.
 En JSON fil, data.json representerar datalagret.
@@ -124,8 +125,7 @@ Projektplanen uppdelas i veckor för lättare översikt. För varje vecka presen
  klara innan deadline. Tidsåtgången för deadlinen inkluderar också tiden för dess
  aktiviteter. För de aktiviteter som avklarats visas också den verkliga tidsåtgången
  samt datum för färdigställande. Varje veckas deadlines, milstolpar och ambitionsmål presenteras
- i tabeller. Ifall det saknas deadlines, milstolpar och ambitionsmål för någon vecka så saknas också
- tabell. Observera att med tidsåtgång så menar vi den sammanlagda tiden för bådas arbeten.
+ i tabeller. Ifall det saknas deadlines, milstolpar och ambitionsmål för någon vecka så saknas också tabell. Observera att med tidsåtgång så menas den sammanlagda tiden samtliga projektmedlemmar lagt ner tillsammans.
 
 \subsection{Vecka 37}
 \begin{tabularx}{\linewidth}{|l|l|l|X|l|}
@@ -134,9 +134,9 @@ Projektplanen uppdelas i veckor för lättare översikt. För varje vecka presen
 	\hline
 	Torsdag 10/9   & 6h             & 7h         & Planeringsdokument & God      \\
 	\hline
-\end{tabularx}{\linewidth}
+\end{tabularx}
 
-Tidsåtgången för planeringsdokumentet utgjordes av 6 timmar. Av dessa ägnades:
+Tidsåtgången för planeringsdokumentet utgjordes av 7 timmar. Av dessa ägnades:
 \begin{itemize}
 	\item 8/9:
 	\begin{itemize}
@@ -147,7 +147,7 @@ Tidsåtgången för planeringsdokumentet utgjordes av 6 timmar. Av dessa ägnade
 	\begin{itemize}
 		\item 30 min åt att figurera ut hur latex dokumentet skulle kompileras.
 		\item 1 tim att ta reda på hur en git \texttt{-{}-}hard-reset reverseras.
-		\item 30 min att figurera ut hur tabeller skrivs i latex.\\
+		\item 30 min att figurera ut hur tabeller skrivs i latex och få dem rätt i texten.\\
 	\end{itemize}
 \end{itemize}
 
@@ -178,12 +178,13 @@ Den Grundläggande installationsmanualen färdigställdes på 9 tim och 5 min:
 	\end{itemize}
 \end{itemize}
 
-Lofi-prototypen färdigställdes på 7 tim och 29 min:
+Lofi-prototypen färdigställdes på 12 tim och 29 min:
 \begin{itemize}
 	\item 15/9:
 	\begin{itemize}
 		\item 1 tim HTML Skrevs för förstasidan.
 		\item 4 tim CSS Skrevs för förstasidan.
+        \end{itemize}
 	\item 16/9:
 	\begin{itemize}
 		\item 2 tim Utkast snabbskissades för samtliga sidor.
@@ -204,11 +205,11 @@ Lofi-prototypen färdigställdes på 7 tim och 29 min:
 	\hline
 	Torsdag 24/9   & 24h            & 8h hittills    & 1:a V Gemensam installationsmanual & God      \\
 	\hline
-                   & 24h            & ca 4h hittills & Projektplan, Första utkast         & God      \\
+                   & 24h            & ca 6h hittills & Projektplan, Första utkast         & God      \\
 	\hline
-\end{tabularx}{\linewidth}
+\end{tabularx}
 
-1:a Versionen Gemensam installationsmanual färdigställdes på 8h hittills:
+1:a Versionen Gemensam installationsmanual färdigställdes på 8 timmar hittills:
 \begin{itemize}
 	\item 21/9:
 	\begin{itemize}
@@ -217,28 +218,30 @@ Lofi-prototypen färdigställdes på 7 tim och 29 min:
 	\end{itemize}
 	\item 22/9:
 	\begin{itemize}
-		\item 3 tim skriva issues, hjälp med felsökning av andras problem och evaluera färdiga issues.\\
+        \item 3 tim skriva issues, hjälp med felsökning av andras problem och evaluera färdiga issues.
+          \item 50 min Kompletterat inledningen och hjälpt att lösa andras merge conflicts.\\
 	\end{itemize}
 \end{itemize}
 
-	Projektplan 1:a utkast färdigställdes på 4h hittills:
+	Projektplan 1:a utkast färdigställdes på 6 timmar hittills:
 \begin{itemize}
 	\item 17/9:
 	\begin{itemize}
-		\item 9 1 tim Definera 2-3 aktiviteter inför varje deadline.
+		\item 1 tim Minst 2-3 aktiviteter definierades inför varje deadline.
 	\end{itemize}
 	\item 22/9:
 	\begin{itemize}
-		\item 4 tim Skriva in aktiviteterna i dokumentet samt bestämma upplägg.
+		\item 4 tim Aktiviteterna för varje deadline skrevs in. Projektplanens upplägg bestämdes.
 	\end{itemize}
 	\item 23/9:
 	\begin{itemize}
 		\item 2 tim Anteckningar renskrevs och sorterades in i dokumentet.
 		\item 5 tim 30 min Reformaterade tabeller och listor.
 		\item 30 min Lade till ytterligare information om tidsåtgång.
+                \item 2 tim Riskbedömning och åtgärder skrevs in i projektplanen.
 	\end{itemize}
 	\item Sätta ambitionsmål ifall projektet blir klart i förtid.
-	\item Komma fram till riskbedömning och åtgärder.
+	
 \end{itemize}
 
 \subsection{Vecka 40}
@@ -254,12 +257,12 @@ Lofi-prototypen färdigställdes på 7 tim och 29 min:
 	\hline
                    & 24h            &            & Datalagret Godkänt                                  & Vag         \\
 	\hline
-\end{tabularx}{\linewidth}
+\end{tabularx}
 
-Bidra med icke-trivial förbättring - installationsmanual eller tester\\
-Korrigera eventuella brister gemensamma installationsmanualen\\
-Korrigera Brister, Projektplanen\\
-Datalagret Godkänt\\
+1/10 Bidra med icke-trivial förbättring - installationsmanual eller tester\\
+1/10 Korrigera eventuella brister i den gemensamma installationsmanualen\\
+1/10 Korrigera eventuella brister i Projektplanen\\
+1/10 Datalagret Godkänt\\
 
 \subsection{Vecka 41}
 
@@ -275,7 +278,7 @@ Datalagret Godkänt\\
 	\hline
                    & 8h             &            & 1:a Versionen Systemdokumentation & Vag      \\
 	\hline
-\end{tabularx}{\linewidth}
+\end{tabularx}
 
 Portfolion Publicerad\\
 1:a Versionen Systemdokumentation\\
@@ -291,7 +294,7 @@ Portfolion Publicerad\\
 	\hline
                    & 2-3h           &            & Korrigerat event. brister i systemdokumentationen & Vag      \\
 	\hline
-\end{tabularx}{\linewidth}
+\end{tabularx}
 
 Testdokumentation inlämnad\\
 Individuellt Reflektionsblad\\
@@ -347,7 +350,7 @@ Korrigerat eventuella brister i systemdokumentationen\\
 	\hline
 	Alla  &                & 20min/dag      & Dokumentera Dagbok                                  & God         \\
 	\hline
-\end{tabularx}{\linewidth}
+\end{tabularx}
 
 \subsection{Tidsåtgång - Presentativ Del}
 \begin{tabularx}{\linewidth}{|c|X|}
@@ -360,7 +363,7 @@ Korrigerat eventuella brister i systemdokumentationen\\
 	\hline
 	3h & Sammanställning av alla project baserat på använda tekniker på /techniques\\
 	\hline
-\end{tabularx}{\linewidth}
+\end{tabularx}
 
 \subsection{Tidsåtgång - Funktioner i datalagret}
 Nedan listas den specifika tidsåtgången för implementeringar av respektive funktion i datalagret.
@@ -381,9 +384,8 @@ Nedan listas den specifika tidsåtgången för implementeringar av respektive fu
 	\hline
 	2h & get\_technique\_stats\\
 	\hline
-\end{tabularx}{\linewidth}
+\end{tabularx}
 
-\section{Riskbedömning och åtgärder}
 
 
 \end{document}

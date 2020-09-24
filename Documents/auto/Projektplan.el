@@ -9,6 +9,7 @@
     "TDP003mall10"
     "inputenc"
     "babel"
+    "tabularx"
     "enumitem")
    (TeX-add-symbols
     "version"))
