@@ -4,6 +4,7 @@
 \usepackage[xcolor]{}
 \usepackage{tabularx}
 \usepackage{enumitem}
+\usepackage{makecell}
 
 \newcommand{\version}{Version 1.4}
 \author{Daniel Huber, \url{danhu849@liu.se}\\
@@ -162,11 +163,11 @@ Tidsåtgången för planeringsdokumentet utgjordes av 7 timmar. Av dessa ägnade
 
 
 \subsection{Vecka 38}
-\begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
+\begin{tabularx}{\linewidth}{|l|l|l|l|l|l|l|}
 	\hline
 	Datum & Typ           & Beskrivning                       & Uppskattad tid & Tidsåtgång    & Kännedom & Prio \\ [0.5ex]
 	\hline                                                    
-	17/9  & Hård deadline & Grundläggande Installationsmanual & 4h             & 9 tim 15 min  & God      & 1    \\
+	17/9  & Hård deadline &\makecell[tl]{Grundläggande\\Installationsmanual} & 4h             & 9 tim 15 min  & God      & 1    \\
 	\hline                                                    
           & Hård deadline & Lofi-prototyp                     & 6h             & 12 tim 29 min & God      & 1    \\
 	\hline
@@ -222,9 +223,9 @@ Ambitionsmål för veckan:
 	\hline
 	Datum & Typ           & Beskrivning                        & Uppskattad tid & Tidsåtgång     & Kännedom & Prio \\ [0.5ex]
 	\hline                                     
-	24/9  & Hård deadline & 1:a V Gemensam installationsmanual & 24h            & 8h hittills    & God      & 1    \\
+	24/9  & Hård deadline & \makecell[tl]{1:a Version Gemensam\\Installationsmanual} & 24h            & 8h hittills    & God      & 1    \\
 	\hline                                     
-          & Hård deadline & Projektplan, Första utkast         & 24h            & ca 6h hittills & God      & 1    \\
+          & Hård deadline & \makecell[tl]{Projektplan\\Första utkast}         & 24h            & ca 6h hittills & God      & 1    \\
 	\hline
 \end{tabularx}
 
@@ -281,11 +282,11 @@ Ambitionsmål för veckan:
 	\hline
 	Datum & Typ           & Beskrivning                                         & Uppskattad tid & Tidsåtgång & Kännedom    & Prio \\ [0.5ex]
 	\hline                                                      
-	1/10  & Ambitionsmål  & Bidra med icke-trivial förbättring git eller tester & 1h             &            & God o inget & 2    \\
+	1/10  & Ambitionsmål  & \makecell[tl]{Bidra med icke-trivial \\förbättring: gem. \\installationsmanual eller \\databas tester} & 1h             &            & God o inget & 2    \\
 	\hline                                                      
-          & Ambitionsmål  & Korrigera eventuella brister installationsmanualen  & 1-2h           &            & okänt       & 3    \\
+          & Ambitionsmål  & \makecell[tl]{Korrigera brister: \\installationsmanualen}  & 0-2h           &            & God       & 3    \\
 	\hline                                                      
-          & Ambitionsmål  & Korrigera Brister, Projektplanen                    & 1-2h           &            & Beror på    & 2    \\
+          & Ambitionsmål  & \makecell[tl]{Korrigera Brister: \\Projektplanen}                   & 0-2h           &            & God    & 2    \\
 	\hline                                                      
           & Hård deadline & Datalagret Godkänt                                  & 24h            &            & Vag         & 1    \\
 	\hline
@@ -297,12 +298,16 @@ Bidra med icke-trivial förbättring - installationsmanual
   \begin{itemize}
   \item 8 tim Skapa branch av master, skapa issues att göra, skriva instruktioner i READMEs i markdown, komplettera inledning.
   \end{itemize}
-\item 1/10
-  \begin{itemize}
-  \item Korrigera eventuella brister i den gemensamma installationsmanualen.
-  \item Korrigera eventuella brister i Projektplanen.
-  \item Datalagret Godkänt.
   \end{itemize}
+
+Datalagret Godkänt
+\begin{itemize}
+\item 2 tim Implementera load funktion i datalagret.
+\item 1 tim Implementera get\_project\_count funktion i datalagret.
+\item 1 tim Implementera  get\_project funktion i datalagret.
+\item 3 tim Implementera search funktion i datalagret.
+\item 2 tim Implementera get\_techniques funktion i datalagret.
+\item 2 tim Implementera get\_technique\_stats funktion i datalagret.
 \end{itemize}
 
 Ambitionsmål för veckan:
@@ -313,12 +318,20 @@ Ambitionsmål för veckan:
 \subsection{Vecka 41}
 
 Presentationslagret
+\begin{itemize}
+  \item 1 tim Diskutera potentiella ändringar av LOFI:n. 
+  \item 4 tim Fixa temasida som agerar template åt alla andra sidor samt lära sig mer om Jinja2, HTML5 och CSS3.
+  \item 3 tim Statisk eller dynamisk sida med profilbild, bild för senaste projekt och 'Om mig' text på / sidan.
+  \item 5 tim Dynamisk sida som sorterar och listar projekten på /list. Knappar som sorterar sökresultaten. Varje sökresultat har lite beskrivning och liten bild.                  
+  \item 3 tim Visar fullständig infosida för specifikt proj med id på /project/id. Samtliga projektsidor.
+  \item 3 tim Sammanställning av alla project baserat på använda tekniker på /techniques.
+\end{itemize}
 
 Ambitionsmål för veckan:
 \begin{itemize}
-  \item Fullt fungerande portfolio.
+\item 5 tim Kunna visa på tekniksidan i hur stor omfattning olika tekniker använts för ett viss projekt.
+\item 2 tim Ha ett bildspel innehållandes projektbilder på förstasidan.
 \end{itemize}
-
 
 \subsection{Vecka 42}
 \begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
@@ -329,7 +342,7 @@ Ambitionsmål för veckan:
 	\hline                                             
           & Hård deadline & Systemdemonstration               & 3h             &            & Vag      & 1    \\
 	\hline                                             
-          & Hård deadline  & 1:a Versionen Systemdokumentation & 9 tim 30 min             &            & Vag      & 3    \\
+          & Hård deadline  & \makecell[tl]{1:a Versionen\\Systemdokumentation} & 9 tim 30 min             &            & Vag      & 3    \\
 	\hline
 \end{tabularx}
 
@@ -352,8 +365,7 @@ Portfolion Publicerad
 
 Ambitionsmål för veckan:
 \begin{itemize}
-  \item 5 tim Kunna visa på tekniksidan i hur stor omfattning olika tekniker använts för ett viss projekt.
-  \item 2 tim Ha ett bildspel med projektbilder på förstasidan.
+\item 4 tim Gjort portföljerna personliga.
 \end{itemize}
 
 \subsection{Vecka 43}
@@ -363,7 +375,7 @@ Ambitionsmål för veckan:
 	\hline                                                                             
 	22/10 & Hård deadline & Testdokumentation inlämnad                        & 3 tim 30 min             &            & Vag      & 1    \\
 	\hline                                                                             
-          & Hård deadline & Individuellt Reflektionsblad                      & 5 tim             &            & Vag      & 1    \\
+          & Hård deadline & \makecell[tl]{Individuellt \\Reflektionsblad}                      & 5 tim             &            & Vag      & 1    \\
 	\hline                                                                             
           & Ambitionsmål  & Korrigerat event. brister i systemdokumentationen & 0-2 tim          &            & Vag      & 2    \\
 	\hline

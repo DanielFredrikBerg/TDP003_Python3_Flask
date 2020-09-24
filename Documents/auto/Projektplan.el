@@ -10,7 +10,8 @@
     "inputenc"
     "babel"
     "tabularx"
-    "enumitem")
+    "enumitem"
+    "makecell")
    (TeX-add-symbols
     "version"))
  :latex)
