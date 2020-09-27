@@ -57,7 +57,7 @@ def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=
 
 def get_techniques(db):
         big_t_list = [project['techniques_used'] for project in db]
-        return set(sorted([technique for mini_tech_list in big_t_list for technique in mini_tech_list]))
+        return list(dict.fromkeys(sorted([technique for mini_tech_list in big_t_list for technique in mini_tech_list])))
 
 def get_technique_stats(db):
         t_dict = {}
@@ -69,16 +69,15 @@ def get_technique_stats(db):
                         project_techniques = db[p_id]['techniques_used']
                         for p_tech in project_techniques:
                                 t_dict[p_tech].append({'id': p_id + 1, 'name': db[p_id]['project_name']})
-        #technique_stats = list(t_dict)
         return t_dict
 
 def main():
         p_list = load(sys.argv[1])
        # print(get_project_count(p_list))
         #print(get_project(p_list, 0))
-        #print(get_techniques(p_list))
+        print(get_techniques(p_list))
         #print(search(p_list, sort_by='start_date', sort_order='desc', techniques=None, search='python', search_fields=None))
-        print(get_technique_stats(p_list))
+        #print(get_technique_stats(p_list))
         
         
 
