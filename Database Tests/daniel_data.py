@@ -28,20 +28,22 @@ def get_project(db, p_id):
         return None
 
 def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=None, search_fields=None):
-        if search != None:
-                search = str(search).lower()
         search_results = []
-        if search_fields == '':
-                return ''
+        if search != None:
+                search = str(search).lower()        
+        elif techniques != None:
+                
         elif search_fields == None:
                 for project in db:
                         for key in project.keys():
                                 field_lc = str(project[key]).lower()
-                                if field_lc.__contains__(search):                                        
+                                if field_lc == None:
+                                        break
+                                elif field_lc.__contains__(search):
                                         search_results.append(project)
                                         print(field_lc)
                                         break
-        else:
+        elif search_fields != None:
                 for project in db:
                         for search_field in search_fields:
                                 search_field_lc = str(project[search_field]).lower()
