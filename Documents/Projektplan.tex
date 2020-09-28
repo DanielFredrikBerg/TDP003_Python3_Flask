@@ -12,13 +12,11 @@
 
 % FRÅGA I MEJL OM DET ÄR OK ATT LÅTA SOM VI REDAN GJORT SAKER UTAN ATT FAKTISKT HA GJORT DET (PASSIV FORM). Undvik att skriva projektplanen i "vi"-form. Det ska vara ett passivt dokument. Även undvika ord som "rusha" då det inte riktigt passar i sådana dokument.
 
-%Saknar lite information om rutiner. Hur kommer ni programmera, hur mycket används git, när kontrollerar ni om funktioner fungerar på rätt sätt?
-
 %Milstolpar bör vara mindre arbetsmässiga än deadlines, och därmed inte samma med tidigare datum.
 
 %Ni saknar figurtexter till tabeller och då även referenser till dem också. Tack vare er layout är det relativt tydligt vad som tillhör pch refererar till tabeller, men bättre att göra definitiva referenser.
 
-\newcommand{\version}{Version 1.0}
+\newcommand{\version}{Version 1.1}
 \author{Daniel Huber, \url{danhu849@liu.se}\\
 	Jens Öhrnell, \url{jenoh242@liu.se}}
 \title{Projektplan}
@@ -75,7 +73,13 @@ Dokumentationen skrivs i Latex.
 \newpage
 
 \section{Arbetsmetodik}
+Varje måndag delas arbetsuppgifterna ut över arbetslaget. Mötet hålls antingen i lektionssal på universitetet eller över telefon. Vid det tillfälle då någon arbetsuppgift avklarats senare under veckan meddelas detta till resten av arbetsgruppen och en ny arbetsuppgift diskuteras fram.
 
+Vid uppstådda problem eller missförstånd kontaktas resten av arbetslaget så snart det är möjligt.
+
+Sms och eller mejl skickas till berörd vid påbörjan och avslut av arbete på aktiviteter då merge konflikter och onödigt dubbelarbete minimeras. Icke-akuta frågor ställs via mejl eller sms. Akuta frågor ställs i telefonsamtal.
+
+Dagbok skrivs av varje enskild efter arbetsinsats av en aktivitet. Projektplanen underhålls lättare om dagboken är detaljrik.
 
 \section{Kravspecifikation}
 Projektet utgörs av två delar. Dels det slutanvändaren kan se, det presentativa,
@@ -182,11 +186,11 @@ Tidsåtgången för planeringsdokumentet utgjordes av 7 timmar. Av dessa ägnade
 \addcontentsline{toc}{subsection}{Vecka 38 - Installationsmanual och LOFI}
 \begin{tabularx}{\linewidth}{|l|l|l|l|l|l|l|}
 	\hline
-	Datum & Typ           & Beskrivning                       & Uppskattad tid & Tidsåtgång    & Kännedom & Prio\\
+	Datum & Typ & Beskrivning & Uppskattad tid & Tidsåtgång & Kännedom & Prio\\
 	\hline                                                    
-	Tors 17/9  & Hård deadline &\makecell[tl]{Grundläggande \\Installationsmanual} & 4 tim             & 9 tim 15 min  & God      & 1\\
+	Tors 17/9  & Hård deadline &\makecell[tl]{Grundläggande \\Installationsmanual} & 4 tim             & 9 tim 15 min & God & 1\\
 	\hline                                                    
-          & Hård deadline & Lofi-prototyp                     & 6 tim             & 12 tim 29 min & God      & 1\\
+          & Hård deadline & Lofi-prototyp & 6 tim & 12 tim 29 min & God & 1\\
 	\hline
 \end{tabularx}
 
@@ -239,11 +243,11 @@ Ambitionsmål för veckan:
 \addcontentsline{toc}{subsection}{Vecka 39 - Projektplan och Gem. Installationsmanual}
 \begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
 	\hline
-	Datum & Typ           & Beskrivning                        & Uppskattad tid & Tidsåtgång     & Kännedom & Prio \\ [0.5ex]
+	Datum & Typ & Beskrivning & Uppskattad tid & Tidsåtgång & Kännedom & Prio \\ [0.5ex]
 	\hline                                     
-	Tors 24/9  & Hård deadline & \makecell[tl]{1:a Version\\ Gemensam \\Installationsmanual} & 24 tim            & 8 tim    & God      & 1    \\
+	Tors 24/9  & Hård deadline & \makecell[tl]{1:a Version\\ Gemensam \\Installationsmanual} & 24 tim & 8 tim & God & 1\\
 	\hline                                     
-              & Hård deadline & \makecell[tl]{Projektplan: \\Första utkast}         & 24 tim            & 22 tim 30 min & God      & 1    \\
+              & Hård deadline & \makecell[tl]{Projektplan: \\Första utkast} & 24 tim & 22 tim 30 min & God  & 1 \\
   \hline
  & Milstolpe & \makecell[tl]{Projektplan: klar} & & & &\\
 	\hline
@@ -305,17 +309,17 @@ Ambitionsmål för veckan:
 \addcontentsline{toc}{subsection}{Vecka 40 - Datalagret och Korrigeringar}
 \begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
 	\hline
-	Datum & Typ           & Beskrivning                                         & Uppskattad tid & Tidsåtgång & Kännedom    & Prio \\ [0.5ex]
+	Datum & Typ & Beskrivning  & Uppskattad tid & Tidsåtgång & Kännedom & Prio \\ [0.5ex]
 	\hline                                                      
-	Tors 1/10  & Hård deadline  & \makecell[tl]{Bidra med icke-trivial \\förbättring: gem. \\installationsmanual / \\databas tester} & 1h             &            & God & 2    \\
+	Tors 1/10  & Hård deadline  & \makecell[tl]{Bidra med icke-trivial \\förbättring: gem. \\installationsmanual / \\databas tester} & 1h &  & God & 2\\
 	\hline                                                      
-          & Hård deadline  & \makecell[tl]{Korrigera brister: \\installationsmanualen}  & 0-2 tim           &            & God       & 3    \\
+          & Hård deadline  & \makecell[tl]{Korrigera brister: \\installationsmanualen}  & 0-2 tim & & God  & 3 \\
 	\hline                                                      
-          & Hård deadline  & \makecell[tl]{Korrigera Brister: \\Projektplanen}                   & 0-2 tim           &            & God    & 2    \\
+          & Hård deadline  & \makecell[tl]{Korrigera Brister: \\Projektplanen}  & 0-2 tim  & & God & 2\\
         \hline
           & Milstolpe & \makecell[tl]{Datalagret: Klart} & & & &\\
         \hline
-        Fre 2/10 & Hård deadline & Datalagret Godkänt                                  & 24 tim            &            & Vag         & 1    \\
+        Fre 2/10 & Hård deadline & Datalagret Godkänt & 24 tim &  & Vag & 1\\
 	\hline
 \end{tabularx}
 
@@ -348,9 +352,9 @@ Ambitionsmål för veckan:
   \addcontentsline{toc}{subsection}{Vecka 41 - Presentationslagret}
   \begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
 	\hline
-	Datum        & Typ       & Beskrivning                         & Uppskattad tid & Tidsåtgång & Kännedom & Prio \\ [0.5ex]
+	Datum & Typ & Beskrivning  & Uppskattad tid & Tidsåtgång & Kännedom & Prio \\ [0.5ex]
 	\hline                                             
-        Fre 9/10 & Milstolpe & \makecell[tl]{Presentationslagret: \\ Klart}         &            &          & Vag   & 1 \\
+        Fre 9/10 & Milstolpe & \makecell[tl]{Presentationslagret: \\ Klart} & & & Vag & 1 \\
 	\hline                                             
 \end{tabularx}
 Presentationslagret
@@ -373,13 +377,12 @@ Ambitionsmål för veckan:
 \addcontentsline{toc}{subsection}{Vecka 42 - Systemdokumentation, -demonstration och Portfolio publicering}
 \begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
 	\hline
-	Datum          & Typ           & Beskrivning                  & Uppskattad tid       & Tidsåtgång   & Kännedom & Prio \\ [0.5ex]
+	Datum & Typ & Beskrivning & Uppskattad tid & Tidsåtgång  & Kännedom & Prio \\ [0.5ex]
 	\hline                                             
-        Tors 15/10 & Hård deadline & \makecell[tl]{Portfolion    \\ Publicerad}          & -            &          & Vag   & 1 \\
+        Tors 15/10 & Hård deadline & \makecell[tl]{Portfolion    \\ Publicerad} & - & & Vag & 1 \\\hline                                             
+                   & Hård deadline & Systemdemonstration  & 3 tim &  & Vag  & 1 \\
 	\hline                                             
-                   & Hård deadline & Systemdemonstration          & 3 tim                &              & Vag      & 1    \\
-	\hline                                             
-                   & Hård deadline & \makecell[tl]{1:a Versionen \\ Systemdokumentation} & 9 tim 30 min &          & Vag   & 3 \\
+                   & Hård deadline & \makecell[tl]{1:a Versionen \\ Systemdokumentation} & 9 tim 30 min & & Vag & 3 \\
 	\hline
 \end{tabularx}
 
@@ -411,13 +414,13 @@ Ambitionsmål för veckan:
 \addcontentsline{toc}{subsection}{Vecka 43 - Reflektionsblad och Testdokumentation}
 \begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
 	\hline
-	Datum      & Typ           & Beskrivning                                        & Uppskattad tid   & Tidsåtgång & Kännedom & Prio \\ [0.5ex]
+	Datum & Typ & Beskrivning  & Uppskattad tid & Tidsåtgång & Kännedom & Prio \\ [0.5ex]
 	\hline                                                                             
-	Tors 22/10 & Hård deadline & Testdokumentation inlämnad                         & 3 tim 30 min     &            & Vag      & 1    \\
+	Tors 22/10 & Hård deadline & Testdokumentation inlämnad & 3 tim 30 min &  & Vag & 1\\
 	\hline                                                                             
-               & Hård deadline & \makecell[tl]{Individuellt                        \\ Reflektionsblad} & 5 tim      &          & Vag   & 1 \\
+               & Hård deadline & \makecell[tl]{Individuellt \\ Reflektionsblad} & 5 tim &  & Vag   & 1\\
 	\hline                                                                             
-               & Hård deadline & Korrigerat event. brister i systemdokumentationen  & 0-2 tim          &            & Vag      & 2    \\
+               & Hård deadline & Korrigerat event. brister i systemdokumentationen & 0-2 tim          &  & Vag & 2 \\
 	\hline
 \end{tabularx}
 
