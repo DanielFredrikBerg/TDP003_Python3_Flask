@@ -3,6 +3,7 @@ import json
 import sys
 
 #This file includes the implemented functions for our API
+
 def catch(func, handle=lambda e: e, *args, **kwargs):
         try:
                 return func(*args, **kwargs)
@@ -29,31 +30,59 @@ def get_project(db, p_id):
 
 def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=None, search_fields=None):
         search_results = []
+        #print(techniques, search, search_fields, marker, sep='\t')
+        if techniques==None and search==None and search_fields==None:
+                #print('returning whole database')
+                for project in db:
+                        search_results.append(project)
+                if sort_order == 'desc':
+                        sorted_search_results = sorted(search_results, key=lambda results: results[sort_by], reverse=True)
+                elif sort_order == 'asc':
+                        sorted_search_results = sorted(search_results, key=lambda results: results[sort_by])
+                return sorted_search_results
         if search != None:
-                search = str(search).lower()        
-        elif techniques != None:
-                
-        elif search_fields == None:
+                search = str(search).lower()
+                #print('Search: ' + str(search))
+        if techniques != [] and techniques != None:
+                #print('searching in techniques')
+                for project in db:
+                        for technique in techniques:
+                                if project['techniques_used'].__contains__(technique):
+                                        if search_results.__contains__(project):
+                                                break
+                                        else:
+                                                search_results.append(project)
+                                                break
+        if search_fields == None:
+                #print('searching in all search fields')
                 for project in db:
                         for key in project.keys():
                                 field_lc = str(project[key]).lower()
-                                if field_lc == None:
+                                if search == None:
                                         break
                                 elif field_lc.__contains__(search):
-                                        search_results.append(project)
-                                        print(field_lc)
-                                        break
-        elif search_fields != None:
+                                        if search_results.__contains__(project):
+                                                break
+                                        else:
+                                                search_results.append(project)
+                                                #print(field_lc)
+                                                break
+        if search_fields != None:
+                #print('searching in specific search fields')
                 for project in db:
                         for search_field in search_fields:
                                 search_field_lc = str(project[search_field]).lower()
                                 if search_field_lc.__contains__(search):
-                                        search_results.append(project)
-                                        break
+                                        if search_results.__contains__(project):
+                                                break
+                                        else:
+                                                search_results.append(project)
+                                                break
         if sort_order == 'desc':
                 sorted_search_results = sorted(search_results, key=lambda results: results[sort_by], reverse=True)
         elif sort_order == 'asc':
                 sorted_search_results = sorted(search_results, key=lambda results: results[sort_by])
+        #print('len of search_results   ' + str(len(sorted_search_results)))
         return sorted_search_results
 
 
@@ -75,16 +104,14 @@ def get_technique_stats(db):
 
 def main():
         p_list = load(sys.argv[1])
-       # print(get_project_count(p_list))
+        #print(get_project_count(p_list))
         #print(get_project(p_list, 0))
-        print(get_techniques(p_list))
-        #print(search(p_list, sort_by='start_date', sort_order='desc', techniques=None, search='python', search_fields=None))
+        #print(get_techniques(p_list))
+        print(search(p_list))
+        print(len(search(p_list)))
         #print(get_technique_stats(p_list))
         
         
-
-
-
 
 if __name__ == '__main__':
         main()

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 # Copyright (C) 2011, IDA, Linköping University
 # Copyright (C) 2011, Torbjörn Lönnemark <tobbez@ryara.net>
