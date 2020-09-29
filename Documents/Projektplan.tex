@@ -20,7 +20,7 @@
 \author{Daniel Huber, \url{danhu849@liu.se}\\
   Jens Öhrnell, \url{jenoh242@liu.se}}
 \title{Projektplan}
-\date{2020-09-28}
+\date{2020-09-29}
 \rhead{Daniel Huber\\
 Jens Öhrnell}
 
@@ -38,7 +38,7 @@ Jens Öhrnell}
 \begin{tabularx}{\linewidth}{|l|X|l|}
 \hline
   Ver. & Revisionsbeskrivning & Datum \\\hline
-  1.1 & Korrigerat Projektplanens kompletteringar & 280920 \\\hline
+  1.1 & Korrigerat Projektplanens kompletteringar & 290920 \\\hline
   1.0 & Projektplan 1:a Utkast & 240920 \\\hline
 \end{tabularx}
 \end{table}
@@ -47,10 +47,10 @@ Jens Öhrnell}
 \section{Introduktion}
 Projektets mål utgörs av att skapa, presentera och underhålla en webbaserad portfolio. Där presenteras de projekt som ska, i och utanför universitetet, färdigställas under de kommande 3 åren. Den kompletta kravspecifikationen skrevs av programledningen och återfinns i dokumentet \textit{Systemspecifikation av portfoliosystemet}. En sammanfattning finns i detta dokument.
 
-För de avsnitt där det antingen är vagt eller inte alls specificerat vad eller hur något ska göras förväntas det att studenten tar egna initiativ. Exempel på detta är utseendet på användargränssnittet där nästintill total frihet ges.
+För de avsnitt där det antingen är vagt eller inte alls specificerat vad eller hur något ska göras förväntas det av studenten att egna initiativ tas. Exempel på detta är utseendet på användargränssnittet där nästintill total frihet ges.
 
 \section{Tekniker}
-För att uppfylla kravspecifikationen för detta projekt kommer följande tekniker användas:
+Enligt projektets kravspecifikation används följande tekniker:
 \begin{itemize}
 \item Python3
 \item Git
@@ -64,10 +64,10 @@ För att uppfylla kravspecifikationen för detta projekt kommer följande teknik
 \end{itemize}
 
 Pythonpaketet venv används för att möjlggöra utveckling i virtuell miljö samt minimera risken av paketkonflikter.
-Pythonpaketet Flask tillhandahåller debugger, möjliggör bindandet av python3 funktioner till URL paths (API) och agerar webbserver.
-Pythonpaketet Jinja2 för HMTL5 och CSS3 templates.
+I pythonpaketet Flask tillhandahålls debugger, möjlighet att binda python3 funktioner till URL paths (API) och webbserver.
+Pythonpaketet Jinja2 används för HMTL5 och CSS3 templates.
 Versionshantering sköts med git.
-En JSON fil, data.json representerar datalagret.
+Datalagret representeras av en JSON fil, data.json.
 Dokumentationen skrivs i Latex.
 
 \newpage
@@ -75,9 +75,9 @@ Dokumentationen skrivs i Latex.
 \section{Arbetsmetodik}
 Varje måndag delas arbetsuppgifterna ut över arbetslaget. Mötet hålls antingen i lektionssal på universitetet eller över telefon. Vid det tillfälle då någon arbetsuppgift avklarats senare under veckan meddelas detta till resten av arbetsgruppen och en ny arbetsuppgift diskuteras fram.
 
-För de kunskapsområden som är vaga inhämtas först information ett par dagar innan ämnet först berörs i skolan. Sedan sammanställs kravspecifikationen för den specifika aktiviteten. För kodfärdigställs en tutorial hittad online av liknande storlek som aktiviteten innan aktiviteten påbörjas.
+För de kunskapsområden som är vaga inhämtas först information ett par dagar innan ämnet först berörs i skolan. Sedan sammanställs kravspecifikationen för den specifika aktiviteten. För kod färdigställs en tutorial hittad online av liknande storlek som aktiviteten innan aktiviteten påbörjas.
 
-Under arbetets gång push:as arbete kontinuerligt till projektets git-repo. Åtminstone en gång i halvtimmen eftersträvas. Aktiviteter och delmål arbetas på och avklaras huvudsakligen individuellt. Större aktiviteter kan delas upp till mindre, men det diskuteras i arbetslaget om så är nödvändigt först. Vid varje avklarad aktivitet kontrolleras den fullbordade aktiviteten mot kravspecifikationen och kompletteras om nödvändigt. Dagbok skrivs enskilt efter arbetsinsats av en aktivitet. Projektplanen underhålls lättare om dagboken är detaljrik.
+Under arbetets gång push:as arbetet kontinuerligt till projektets git-repo. Åtminstone en gång i halvtimmen eftersträvas. Aktiviteter och delmål arbetas på och avklaras huvudsakligen individuellt. Större aktiviteter kan delas upp till mindre, men det diskuteras i arbetslaget om så är nödvändigt först. Vid varje avklarad aktivitet kontrolleras den fullbordade aktiviteten mot kravspecifikationen och kompletteras om nödvändigt. Dagbok skrivs enskilt efter arbetsinsats av en aktivitet. Projektplanen underhålls lättare om dagboken är detaljrik.
 
 Sms och eller mejl skickas till berörd vid påbörjan och avslut av arbete på aktiviteter då merge konflikter och onödigt dubbelarbete minimeras. Icke-akuta frågor ställs via mejl eller sms. Vid icke lösbara problem eller missförstånd kontaktas resten av arbetslaget så snart det är möjligt via telefonsamtal.
 
@@ -91,8 +91,8 @@ Av webplatsen krävs det att den utrustas med fyra html-sidor skrivna i HTML5 oc
  och en tekniksida. Krav finns att det på huvudsidan visas bilder. På söksidan kan
  projekt sorteras efter projektens id samt efter bokstavsordning och ålder med hjälp av knappar.
  På respektive projektsida visas fullständig information om det specifika
- projektet tillsammans med en större passande bilder. Om projektet inte finns visas
- relevant felkod i.e. status 404 'This page does not exist'. På tekniksidan visas
+ projektet tillsammans med större passande bilder. Om projektet inte finns visas
+ relevant felkod status 404 'This page does not exist'. På tekniksidan visas
  information om projekten utifrån vilka tekniker som använts. Ett ambitionsmål är
  att kunna visa i hur stor omfattning teknikerna använts i projekten. Varje projekt
  ska i listningar på söksidan och tekniksidan visas med en liten bild bredvid sig
@@ -127,23 +127,22 @@ Systemtesten och uppkomna fel dokumenteras och ska vara åtgärdade i den slutgi
 Testerna skrivs sedan in i systemdokumentationen.
 
 \section{Riskbedömning och åtgärder}
-Den största risken mot att inte bli klar i tid är sjukdom som redan drabbat en del av teamet en gång när detta skrivs (23/9). Det löstes av att den andra teammedlemmen fick skynda sig att göra klart arbetet innan deadline. Till hjälp finns betyget med beröm för tidigare inlämningar. Detta gör att det i värsta fall går att lämna in senare än deadline så länge detta kommuniceras till handledare innan. Ambitionen är dock att aldrig behöva nyttja detta.
+Den största risken mot att inte bli klar i tid är sjukdom som redan drabbat en del av teamet en gång när detta skrivs (23/9). Det löstes av att den andra teammedlemmen fick skynda sig att göra klart arbetet innan deadline. Till hjälp finns betyget med beröm för tidigare inlämningar. I värsta fall kan inlämning ske efter deadline så länge detta kommuniceras till handledare innan. Ambitionen är dock att detta aldrig nyttjas.
 
-Vid skador, sjukdomar eller andra traumatiska händelser av allvarlig sort har familjemedlemmar blivit instruerade att informera handledare så fort som möjligt. Detta för att resurser från universitetet i den mån det är möjligt kan sättas in tidigt.
+Familjemedlemmar till arbetslaget har instruerats att kontakta handledare vid skador, sjukdomar eller andra traumatiska händelser av allvarlig sort. Detta för att resurser från universitetet i den mån det är möjligt kan tillsättas tidigt.
 
-Beroende på tidsåtgången att inhämta ny kunskap kan nya flaskhalsar uppstå längre bort i tiden av saker som inte kunnat förutses då kunskap saknas. För att underlätta har ambitionsmål satts att läsa om och testa tekniker en eller två veckor innan de introduceras första gången. Dessa har dock lägre prioritering än det som måste göras innan nästa deadline, men finns som en påminnelse att om tid finns så kan den användas till att underlätta framtida deadlines.
+Beroende på tidsåtgången att inhämta ny kunskap kan nya flaskhalsar uppstå längre bort i tiden av saker som inte kunnat förutses då kunskap saknats. Ambitionsmål att läsa om och testa tekniker en eller två veckor innan de introduceras första gången har satts. Dessa har dock lägre prioritering än det som måste göras innan nästa deadline, men finns som en påminnelse att om tid finns så kan de användas till att underlätta framtida deadlines.
 
-Slutligen finns risken att bli upptagen eller fastna med andra uppgifter i andra kurser. Denna projektplan täcker bara saker som måste göras för detta projekt. Risk finns att för stort fokus läggs på denna kurs så att andra kurser blir försenade och stör längre in i tiden. Vi har satt in åtgärder mot detta genom att minst en gång i veckan ha möte och diskutera ens egna deadlines för veckan i alla kurser. Det gör det lättare att se vem som kan göra vad när.
+Slutligen finns risken att bli upptagen eller fastna med andra uppgifter i andra kurser. I denna projektplan täcks bara saker som måste göras för detta projekt. Risk finns att för stort fokus läggs på detta projekt så att andra kurser försenas. Åtgärder har satts in mot detta genom att möte kring personlig tidsdisponering hålls minst en gång i veckan. Översikt ges lättare om vem som kan göra vad när.
 
 \section{Tidsplanering vecka för vecka}
 Projektplanen uppdelas i veckor för lättare översikt. För varje vecka presenteras
- en mer specificerad uppskattning av tidsåtgång för aktiviteter som behöver vara
- klara innan deadline. Tidsåtgången för deadlinen inkluderar också tiden för dess
+ en mer specificerad uppskattning av tidsåtgång för aktiviteter som behöver färdigställas innan deadline. Tidsåtgången för deadlinen inkluderar också tiden för dess
  aktiviteter. För de aktiviteter som avklarats visas också den verkliga tidsåtgången
  samt datum för färdigställande. Varje veckas deadlines och milstolpar presenteras
  i tabeller. Ifall det saknas deadlines för någon vecka så saknas också tabell. Observera att med tidsåtgång så menas den sammanlagda tiden samtliga projektmedlemmar lagt ner tillsammans.
 
- Då projektgruppens medlemmar har vitt skilda dygnsrytmer är det onödigt att bestämma dag och tid för samtliga aktiviteter i förväg. Det räcker med att veta inom vilken vecka aktiviteter ska vara klara. Tidigare inlämnade dokument samt denna projektplan är bevis tydliga nog för att så är fallet.
+ Aktiviteter fördelades ut över veckor. Specifik dag och tid för aktiviteter fastställdes ej i projektplanen då dygnsrytmen för projektgruppens medlemmar skiljs stort åt. Deadlines respekteras och god kvalitet på arbete garanteras. Detta har bevisats genom tidigare inlämnade dokument.
 
  \subsection*{Vecka 37 - Planeringsdokument}
  \addcontentsline{toc}{subsection}{Vecka 37 - Planeringsdokument}
@@ -160,22 +159,22 @@ Tidsåtgången för planeringsdokumentet utgjordes av 7 timmar. Av dessa ägnade
 \begin{itemize}
   \item Tisdag 8/9:
   \begin{itemize}
-    \item 3 tim sammanställande av vad ett planeringsdokument ska innehålla.
-    \item 2 tim skrivande av dokumentet.
+    \item 3 tim Innehåll för planeringsdokument sammanställdes.
+    \item 2 tim Planeringsdokumentet skrevs.
   \end{itemize}
   \item Onsdag 9/9:
   \begin{itemize}
-    \item 30 min åt att figurera ut hur latex dokumentet skulle kompileras.
+    \item 30 min åt att figurera ut hur latex dokumentet kompileras.
     \item 1 tim att ta reda på hur en git \texttt{-{}-}hard-reset reverseras.
-    \item 30 min att figurera ut hur tabeller skrivs i latex och få dem rätt positionerade i texten.\\
+    \item 30 min att figurera ut hur tabeller skrivs i latex och få dem att positioneras rätt i texten.\\
   \end{itemize}
 
       \end{itemize}
 
       Ambitionsmål för veckan:
       \begin{itemize}
-      \item Vara klar med Planeringsdokumentet en dag innan deadline. - Blev klara den 9/9.
-      \item Förstå hur Flask, Python3 och Jinja2 hänger ihop. - I och med tidigare inlämning lades Torsdagen 10/9 på flask tutorials.
+      \item Att planeringsdokumentet färdigställs en dag innan deadline. - Planeringsdokumentet färdigställdes den 9/9.
+      \item Förståelse för relationen mellan Flask, Python3 och Jinja2 uppnås. - I och med att planeringsdokumentet lämnades in tidigare lades Torsdagen 10/9 på flask tutorials.
       \end{itemize}
       
 
@@ -200,12 +199,12 @@ Den Grundläggande installationsmanualen färdigställdes på 9 tim och 5 min:
   \begin{itemize}
     \item 1 tim 40 min Dokumentet skrevs.
     \item 20 min Bash-script som tog bort onödiga latex filer skrevs.
-    \item 2 tim lära sig kompilera .tex dokument innehållandes bilder samt lägga in dem och läsa på om paket.
+    \item 2 tim Förståelse uppnåddes gällande hur .tex dokument innehållandes bilder kompileras.
   \end{itemize}
   \item Tisdag 15/9:
   \begin{itemize}
     \item 4 tim Dokumentet skrevs.
-    \item 1 tim att ta reda på alla kommandon som visar att installtion gått som förväntat.
+    \item 1 tim Förståelse uppnåddes gällande kommandon för kontroll av lyckad installation.
     \item 15 min Dokumentet rättades och bildernas plats justerades.
   \end{itemize}
 \end{itemize}
@@ -214,13 +213,13 @@ Lofi-prototypen färdigställdes på 12 tim och 29 min:
 \begin{itemize}
   \item Tisdag 15/9:
   \begin{itemize}
-    \item 1 tim HTML Skrevs för förstasidan.
-    \item 4 tim CSS Skrevs för förstasidan.
+    \item 1 tim HTML för förstasidan skrevs.
+    \item 4 tim CSS för förstasidan skrevs.
   \end{itemize}
   \item Onsdag 16/9:
   \begin{itemize}
-    \item 2 tim Utkast snabbskissades för samtliga sidor.
-    \item 3 tim Skissarna förbättrades och renskrevs för hand.
+    \item 2 tim Utkast för samtliga sidor snabbskissades.
+    \item 3 tim Skisserna renskrevs för hand med linjal.
   \end{itemize}
   \item Torsdag 17/9:
   \begin{itemize}
@@ -232,7 +231,7 @@ Lofi-prototypen färdigställdes på 12 tim och 29 min:
 
 Ambitionsmål för veckan:
 \begin{itemize}
-  \item Kunna presentera LOFI-prototypen i HTML5 och CSS3 format. - På grund av sjukdom kunde bara förstasidan / färdigställas.
+  \item LOFI-prototypen presenteras i HTML5 och CSS3 format. - På grund av sjukdom färdigställdes bara förstasidan.
   \end{itemize}
   
 \newpage
@@ -258,15 +257,15 @@ Egna insatser 1:a Versionen Gemensam installationsmanual färdigställdes på 8 
   \item Måndag 21/9:
   \begin{itemize}
     \item 20 min Skapa branch från master för development.
-    \item 5  tim 31 min Skriva READMEs i markdown i både hemkatalagen och manuals katalogen. Fixa lättförståelig katalogstruktur. Felsöka initiella svårigheter att push:a upp filer.
+    \item 5  tim 31 min Branch repo från master skapades. READMEs skrevs i markdown i både hemkatalagen och manuals katalogen. Lättförståelig katalogstruktur gjordes i ordning. Initiella svårigheter att push:a upp filer felsöktes.
   \end{itemize}
   \item Tisdag 22/9:
   \begin{itemize}
-                \item 3 tim skriva issues, hjälp med felsökning av andras problem och evaluera färdiga issues.
+                \item 3 tim Flertalet issues för att få igång arbetet skapades. Felsökning av andras problem gjordes.
         \end{itemize}
         \item Onsdag 23/9:
         \begin{itemize}
-                \item 50 min Kompletterat inledningen och hjälpt att lösa andras merge conflicts.\\
+                \item 50 min Inledningen kompletterades och andras merge konflikter löstes.\\
   \end{itemize}
 \end{itemize}
 
