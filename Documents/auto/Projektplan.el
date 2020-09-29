@@ -9,19 +9,20 @@
     "TDP003mall10"
     "inputenc"
     "babel"
+    "xcolor"
     "tabularx"
     "enumitem"
     "makecell")
    (TeX-add-symbols
     "version")
    (LaTeX-add-labels
-    "table:1"
-    "table:2"
-    "tabell:3"
-    "tabell:4"
-    "table:5"
-    "table:6"
-    "table:7"
-    "table:8"))
+    "tab:1"
+    "tab:2"
+    "tab:3"
+    "tab:4"
+    "tab:5"
+    "tab:6"
+    "tab:7"
+    "tab:8"))
  :latex)
 
