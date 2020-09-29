@@ -16,6 +16,10 @@
 
 %Ni saknar figurtexter till tabeller och då även referenser till dem också. Tack vare er layout är det relativt tydligt vad som tillhör pch refererar till tabeller, men bättre att göra definitiva referenser.
 
+
+
+%Kan inte formatera referenser så att det syns i det kompilerade dokumentet. //Daniel
+
 \newcommand{\version}{Version 1.1}
 \author{Daniel Huber, \url{danhu849@liu.se}\\
   Jens Öhrnell, \url{jenoh242@liu.se}}
@@ -41,6 +45,8 @@ Jens Öhrnell}
   1.1 & Korrigerat Projektplanens kompletteringar & 290920 \\\hline
   1.0 & Projektplan 1:a Utkast & 240920 \\\hline
 \end{tabularx}
+\caption{Projektplanens Revisionshistorik}
+\label{table:1}
 \end{table}
 
 
@@ -146,7 +152,8 @@ Projektplanen uppdelas i veckor för lättare översikt. För varje vecka presen
 
  \subsection*{Vecka 37 - Planeringsdokument}
  \addcontentsline{toc}{subsection}{Vecka 37 - Planeringsdokument}
- 
+
+ \begin{table}[h!]
 \begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
   \hline
   Datum     & Typ           & Beskrivning        & Uppskattad tid & Tidsåtgång & Kännedom & Prio \\ [0.5ex]
@@ -154,8 +161,11 @@ Projektplanen uppdelas i veckor för lättare översikt. För varje vecka presen
   Tors 10/9 & Hård deadline & Planeringsdokument & 6 tim          & 7 tim      & God      & 1    \\
   \hline
 \end{tabularx}
+\caption{Tabell över deadlines V.37}
+\label{table:2}
+\end{table}
 
-Tidsåtgången för planeringsdokumentet utgjordes av 7 timmar. Av dessa ägnades:
+Tidsåtgången för planeringsdokumentet utgjordes av 7 timmar \ref{table:2}. Av dessa ägnades:
 \begin{itemize}
   \item Tisdag 8/9:
   \begin{itemize}
@@ -177,11 +187,11 @@ Tidsåtgången för planeringsdokumentet utgjordes av 7 timmar. Av dessa ägnade
       \end{itemize}
       
 
-\newpage
 
 
 \subsection*{Vecka 38 - Installationsmanual och LOFI}
 \addcontentsline{toc}{subsection}{Vecka 38 - Installationsmanual och LOFI}
+\begin{table}[h!]
 \begin{tabularx}{\linewidth}{|l|l|l|l|l|l|l|}
   \hline
   Datum     & Typ           & Beskrivning                                        & Uppskattad tid & Tidsåtgång    & Kännedom & Prio\\
@@ -191,8 +201,11 @@ Tidsåtgången för planeringsdokumentet utgjordes av 7 timmar. Av dessa ägnade
             & Hård deadline & Lofi-prototyp                                      & 6 tim          & 12 tim 29 min & God      & 1\\
   \hline
 \end{tabularx}
+  \caption{Tabell över deadlines V.38}
+  \label{tabell:3}
+  \end{table}
 
-Den Grundläggande installationsmanualen färdigställdes på 9 tim och 5 min:
+Den Grundläggande installationsmanualen färdigställdes på 9 tim och 5 min \ref{table:3}:
 \begin{itemize}
   \item Måndag 14/9:
   \begin{itemize}
@@ -208,7 +221,7 @@ Den Grundläggande installationsmanualen färdigställdes på 9 tim och 5 min:
   \end{itemize}
 \end{itemize}
 
-Lofi-prototypen färdigställdes på 12 tim och 29 min:
+Lofi-prototypen färdigställdes på 12 tim och 29 min \ref{table:3}:
 \begin{itemize}
   \item Tisdag 15/9:
   \begin{itemize}
@@ -233,12 +246,13 @@ Ambitionsmål för veckan:
   \item LOFI-prototypen presenteras i HTML5 och CSS3 format. - På grund av sjukdom färdigställdes bara förstasidan.
   \end{itemize}
   
-\newpage
+
 
 
   
 \subsection*{Vecka 39 - Projektplan och Gemensam Installationsmanual}
 \addcontentsline{toc}{subsection}{Vecka 39 - Projektplan och Gem. Installationsmanual}
+\begin{table}[h!]
 \begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
   \hline
   Datum     & Typ           & Beskrivning                                                 & Uppskattad tid & Tidsåtgång    & Kännedom & Prio \\ [0.5ex]
@@ -250,8 +264,11 @@ Ambitionsmål för veckan:
             & Milstolpe     & \makecell[tl]{Projektplan: klar}                            &                &               &          & \\
   \hline
 \end{tabularx}
-
-Egna insatser 1:a Versionen Gemensam installationsmanual färdigställdes på 9 timmar och 40 minuter:
+    \caption{Tabell över deadlines samt första milstolpen V.39}
+    \label{tabell:4}
+  \end{table}
+  
+Egna insatser 1:a Versionen Gemensam installationsmanual färdigställdes på 9 timmar och 40 minuter \ref{table:4}:
 \begin{itemize}
   \item Måndag 21/9:
   \begin{itemize}
@@ -268,7 +285,7 @@ Egna insatser 1:a Versionen Gemensam installationsmanual färdigställdes på 9 
   \end{itemize}
 \end{itemize}
 
-  Projektplan 1:a utkast färdigställdes på 20 timmar 30 minuter:
+  Projektplan 1:a utkast färdigställdes på 20 timmar 30 minuter \ref{table:4}:
 \begin{itemize}
   \item Torsdag 17/9:
   \begin{itemize}
@@ -301,10 +318,11 @@ Ambitionsmål för veckan:
   \item 1 tim Projektplanens struktur omgjordes till att bli mer estetiskt tilltalande.
   \end{itemize}
 
-\newpage
+
 
 \subsection*{Vecka 40 - Datalagret och Korrigeringar}
 \addcontentsline{toc}{subsection}{Vecka 40 - Datalagret och Korrigeringar}
+\begin{table}[h!]
 \begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
   \hline
   Datum          & Typ           & Beskrivning                                                                                        & Uppskattad tid & Tidsåtgång            & Kännedom & Prio \\ [0.5ex]
@@ -320,8 +338,11 @@ Ambitionsmål för veckan:
         Fre 2/10 & Hård deadline & Datalagret Godkänt                                                                                 & 24 tim         &                       & Vag      & 1\\
   \hline
 \end{tabularx}
-
-Bidra med icke-trivial förbättring - installationsmanual
+      \caption{Tabell över deadlines samt andra milstolpen V.40}
+      \label{table:5}
+    \end{table}
+    
+Bidra med icke-trivial förbättring - installationsmanual \ref{table:4}
 \begin{itemize}
 \item Tisdag 22/9:
   \begin{itemize}
@@ -329,7 +350,7 @@ Bidra med icke-trivial förbättring - installationsmanual
   \end{itemize}
   \end{itemize}
 
-Datalagret Godkänt
+Datalagret Godkänt\ref{table:5}
 \begin{itemize}
 \item 2 tim load funktionen implementerades i datalagret.
 \item 1 tim get\_project\_count funktionen implementerades i datalagret.
@@ -339,7 +360,7 @@ Datalagret Godkänt
 \item 2 tim get\_technique\_stats funktionen implementerades i datalagret.
 \end{itemize}
 
-Korrigera brister: Projektplanen
+Korrigera brister: Projektplanen \ref{table:5}
 \begin{itemize}
 \item 1 tim 23 min Stycket om Arbetsmetodik skrevs till i projektplanen.
   \item 1 tim 43 min Projektplanens tempus skrevs om till passiv form.
@@ -350,18 +371,23 @@ Ambitionsmål för veckan:
 \item 1 tim Information om implementationen för en sqlite3 databas inhämtades för senare uppgradering av portfolions back-end.
   \end{itemize}
 
-\newpage
+
   
   \subsection*{Vecka 41 - Presentationslagret}
   \addcontentsline{toc}{subsection}{Vecka 41 - Presentationslagret}
+  \begin{table}[h!]
   \begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
   \hline
   Datum          & Typ       & Beskrivning                                                  & Uppskattad tid & Tidsåtgång & Kännedom & Prio \\ [0.5ex]
   \hline                                             
         Fre 9/10 & Milstolpe & \makecell[tl]{Presentationslagret \\fungerar med datalagret} &                &            & Vag      & 1 \\
-  \hline                                             
-\end{tabularx}
-Presentationslagret
+    \hline
+  \end{tabularx}
+          \caption{Tabell med tredje milstolpen V.41}
+          \label{table:6}
+        \end{table}
+        
+Presentationslagret \ref{table:6}
 \begin{itemize}
   \item 1 tim Potentiella ändringar av LOFI:n diskuterades. Ändringar skrevs in i ett dokument i LOFI-mappen.
   \item 4 tim Temasida som agerar template åt alla andra sidor färdigställdes. Mer kunskap kring Jinja2, HTML5 och CSS3 inhämtades.
@@ -379,6 +405,7 @@ Ambitionsmål för veckan:
 
 \subsection*{Vecka 42 - Systemdokumentation, -demonstration och Portfolio publicering}
 \addcontentsline{toc}{subsection}{Vecka 42 - Systemdokumentation, -demonstration och Portfolio publicering}
+\begin{table}[h!]
 \begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
   \hline
   Datum            & Typ           & Beskrivning                                         & Uppskattad tid & Tidsåtgång & Kännedom & Prio \\ [0.5ex]
@@ -389,8 +416,11 @@ Ambitionsmål för veckan:
                    & Hård deadline & \makecell[tl]{1:a Versionen \\ Systemdokumentation} & 9 tim 30 min   &            & Vag      & 3 \\
   \hline
 \end{tabularx}
-
-1:a Versionen Systemdokumentation
+      \caption{Tabell över deadlines V.42}
+      \label{table:7}
+    \end{table}
+    
+1:a Versionen Systemdokumentation \ref{table:7}
 \begin{itemize}
   \item 1 tim Systemdokumentationens specifika innehåll togs fram.
   \item 1 tim Mindmap samt skiss för översiktsbild gjordes.
@@ -402,7 +432,7 @@ Ambitionsmål för veckan:
   \item 30 min Bilders position rättades till och systemdokumentationen renskrevs.
 \end{itemize}
 
-Portfolion Publicerad
+Portfolion Publicerad \ref{table:7}
 \begin{itemize}
 \item 1-2 tim Potentiella buggar reddes ut.
   \end{itemize}
@@ -412,10 +442,11 @@ Ambitionsmål för veckan:
 \item 4 tim Portföljerna gjordes personliga.
 \end{itemize}
 
-\newpage
+
 
 \subsection*{Vecka 43 - Reflektionsblad och Testdokumentation}
 \addcontentsline{toc}{subsection}{Vecka 43 - Reflektionsblad och Testdokumentation}
+\begin{table}[h!]
 \begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
   \hline
   Datum      & Typ           & Beskrivning                                       & Uppskattad tid & Tidsåtgång & Kännedom & Prio \\ [0.5ex]
@@ -424,11 +455,14 @@ Ambitionsmål för veckan:
   \hline                                                                             
              & Hård deadline & \makecell[tl]{Individuellt \\ Reflektionsblad}    & 5 tim          &            & Vag      & 1\\
   \hline                                                                             
-             & Hård deadline & Korrigerat event. brister i systemdokumentationen & 0-2 tim        &            & Vag      & 2 \\
+             & Hård deadline & Korrigerat event. brister i systemdokumentationen & 0-4 tim        &            & Vag      & 2\\
   \hline
 \end{tabularx}
+      \caption{Tabell över deadlines V.43}
+      \label{table:8}
+      \end{table}
 
-Testdokumentation inlämnad
+Testdokumentation inlämnad \ref{table:8}
 \begin{itemize}
   \item 1 tim Daterad testlogg där samtliga testfall körts togs fram.
   \item 1 tim Minst ett relevant testfall per funktionellt krav dokumenteras.
@@ -436,16 +470,16 @@ Testdokumentation inlämnad
   \item 30 min Bilder och text rättades till.
 \end{itemize}
 
-Individuellt Reflektionsblad
+Individuellt Reflektionsblad \ref{table:8}
 \begin{itemize}
 \item 1 tim Relevanta delar plockades ut från dagboken.
   \item 1 tim Delarna skrevs ihop i ett latex dokument.
   \item 30 min Potentiella bilder formaterades och text rättades..
 \end{itemize}
   
-  Korrigerat eventuella brister i systemdokumentationen.
+  Korrigerat eventuella brister i systemdokumentationen. \ref{table:8}
 \begin{itemize}
-  \item 0-2 tim Potentiell brister rättades till.
+  \item 0-4 tim Potentiell brister rättades till.
 \end{itemize}
 
 Ambitionsmål för veckan:

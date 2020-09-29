@@ -13,6 +13,15 @@
     "enumitem"
     "makecell")
    (TeX-add-symbols
-    "version"))
+    "version")
+   (LaTeX-add-labels
+    "table:1"
+    "table:2"
+    "tabell:3"
+    "tabell:4"
+    "table:5"
+    "table:6"
+    "table:7"
+    "table:8"))
  :latex)
 
