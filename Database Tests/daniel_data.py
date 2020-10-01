@@ -2,13 +2,13 @@
 import json
 import sys
 
-#This file includes the implemented functions for our API
+#******This file includes the implemented functions for our API*********************
 
-def catch(func, handle=lambda e: e, *args, **kwargs):
-        try:
-                return func(*args, **kwargs)
-        except Exception as e:
-                return handle(e)
+# def catch(func, handle=lambda e: e, *args, **kwargs):
+#         try:
+#                 return func(*args, **kwargs)
+#         except Exception as e:
+#                 return handle(e)
         
 def load(json_file):
         try:
@@ -23,72 +23,83 @@ def get_project_count(db):
         return len([project['project_id'] for project in db])
 
 def get_project(db, p_id):
-        for project in db:
-                if project['project_id'] == p_id:
-                        return project
-        return None
+        aquired_project = [project for project in db if project['project_id'] == p_id]
+        return aquired_project[0] if len(aquired_project) > 0 else None
+        # for project in db:
+        #         if project['project_id'] == p_id:
+        #                 return project
+        # return None
 
 def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=None, search_fields=None):
-        search_results = []
+        #search_results = []
         #print(techniques, search, search_fields, marker, sep='\t')
         if techniques==None and search==None and search_fields==None:
                 #print('returning whole database')
-                for project in db:
-                        search_results.append(project)
+                search_results = [project for project in db]
                 if sort_order == 'desc':
-                        sorted_search_results = sorted(search_results, key=lambda results: results[sort_by], reverse=True)
+                        is_reverse = True 
                 elif sort_order == 'asc':
-                        sorted_search_results = sorted(search_results, key=lambda results: results[sort_by])
-                return sorted_search_results
+                        is_reverse = False      
+                return sorted(search_results, key=lambda results: results[sort_by], reverse=is_reverse)
         if search != None:
                 search = str(search).lower()
                 #print('Search: ' + str(search))
         if techniques != [] and techniques != None:
                 #print('searching in techniques')
-                for project in db:
-                        for technique in techniques:
-                                if project['techniques_used'].__contains__(technique):
-                                        if search_results.__contains__(project):
-                                                break
-                                        else:
-                                                search_results.append(project)
-                                                break
+                search_results = [project for project in db for technique in techniques if project['techniques_used'].__contains__(technique)]
+                #print('sEarch_result:', search_results, sep='\t')
+                # for project in db:
+                #         for technique in techniques:
+                #                 if project['techniques_used'].__contains__(technique):
+                #                         if search_results.__contains__(project):
+                #                                 break
+                #                         else:
+                #                                 search_results.append(project)
+                #                                 break
+                
         if search_fields == None:
                 #print('searching in all search fields')
-                for project in db:
-                        for key in project.keys():
-                                field_lc = str(project[key]).lower()
-                                if search == None:
-                                        break
-                                elif field_lc.__contains__(search):
-                                        if search_results.__contains__(project):
-                                                break
-                                        else:
-                                                search_results.append(project)
-                                                #print(field_lc)
-                                                break
+                if search != None:
+###################FRÅGA VARFÖR DEN INTE LÄGGER TILL DUBLETTER!!!!!!
+                        search_results = [project for project in db for key in project.keys() if str(project[key]).lower().__contains__(search)]
+                #print('sEarch_result:', search_results, sep='\t')
+                # for project in db:
+                #         for key in project.keys():
+                #                 field_lc = str(project[key]).lower()
+                #                 if search == None:
+                #                         break
+                #                 elif field_lc.__contains__(search):
+                #                         if search_results.__contains__(project):
+                #                                 break
+                #                         else:
+                #                                 search_results.append(project)
+                #                                 #print(field_lc)
+                #                                 break
         if search_fields != None:
                 #print('searching in specific search fields')
-                for project in db:
-                        for search_field in search_fields:
-                                search_field_lc = str(project[search_field]).lower()
-                                if search_field_lc.__contains__(search):
-                                        if search_results.__contains__(project):
-                                                break
-                                        else:
-                                                search_results.append(project)
-                                                break
+                search_results = [project for project in db for search_field in search_fields if str(project[search_field]).lower().__contains__(search)]
+                #print('seArch_result:', search_results, sep='\t')
+                # for project in db:
+                #         for search_field in search_fields:
+                #                 search_field_lc = str(project[search_field]).lower()
+                #                 if search_field_lc.__contains__(search):
+                #                         if search_results.__contains__(project):
+                #                                 break
+                #                         else:
+                #                                 search_results.append(project)
+                #                                 break
         if sort_order == 'desc':
-                sorted_search_results = sorted(search_results, key=lambda results: results[sort_by], reverse=True)
+                is_reverse = True
+                
         elif sort_order == 'asc':
-                sorted_search_results = sorted(search_results, key=lambda results: results[sort_by])
+                is_reverse = False
         #print('len of search_results   ' + str(len(sorted_search_results)))
-        return sorted_search_results
+        return sorted(search_results, key=lambda results: results[sort_by], reverse=is_reverse)
 
 
 def get_techniques(db):
-        big_t_list = [project['techniques_used'] for project in db]
-        return list(dict.fromkeys(sorted([technique for mini_tech_list in big_t_list for technique in mini_tech_list])))
+        #big_t_list = [project['techniques_used'] for project in db]
+        return list(dict.fromkeys(sorted([technique for mini_tech_list in [project['techniques_used'] for project in db] for technique in mini_tech_list])))
 
 def get_technique_stats(db):
         t_dict = {}
@@ -100,6 +111,7 @@ def get_technique_stats(db):
                         project_techniques = db[p_id]['techniques_used']
                         for p_tech in project_techniques:
                                 t_dict[p_tech].append({'id': p_id + 1, 'name': db[p_id]['project_name']})
+        #print("This is t_dict: ", t_dict, sep='\t')
         return t_dict
 
 def main():

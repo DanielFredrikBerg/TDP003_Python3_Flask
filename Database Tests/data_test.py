@@ -4,7 +4,7 @@
 # Copyright (C) 2011, Torbjörn Lönnemark <tobbez@ryara.net>
 # Copyright (C) 2014, Daniel Persson
 import unittest
-import data     # import the file with your implemented functions
+import daniel_data as data     # import the file with your implemented functions
 import hashlib
 import sys
 from operator import itemgetter
