@@ -31,10 +31,10 @@ def get_project(db, p_id):
         # return None
 
 def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=None, search_fields=None):
-        #search_results = []
+        search_results = []
         #print(techniques, search, search_fields, marker, sep='\t')
         if techniques==None and search==None and search_fields==None:
-                #print('returning whole database')
+                print('returning whole database')
                 search_results = [project for project in db]
                 if sort_order == 'desc':
                         is_reverse = True 
@@ -45,38 +45,42 @@ def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=
                 search = str(search).lower()
                 #print('Search: ' + str(search))
         if techniques != [] and techniques != None:
-                #print('searching in techniques')
-                search_results = [project for project in db for technique in techniques if project['techniques_used'].__contains__(technique)]
+                print('searching in techniques')
+####################Fixa så nedan list comprehension funkar som for-loopen nedan.              
+                #search_results = [project for project in db for technique in techniques if (technique.lower() in project['techniques_used'])]
                 #print('sEarch_result:', search_results, sep='\t')
-                # for project in db:
-                #         for technique in techniques:
-                #                 if project['techniques_used'].__contains__(technique):
-                #                         if search_results.__contains__(project):
-                #                                 break
-                #                         else:
-                #                                 search_results.append(project)
-                #                                 break
-                
+                search_results = []
+                for project in db:
+                        for technique in techniques:
+                                for p_tech in project['techniques_used']:
+                                        if p_tech.__contains__(str(technique).lower()):
+                                                if search_results.__contains__(project):
+                                                        break
+                                                else:
+                                                        search_results.append(project)
+                                                        break
+
         if search_fields == None:
-                #print('searching in all search fields')
-                if search != None:
-###################FRÅGA VARFÖR DEN INTE LÄGGER TILL DUBLETTER!!!!!!
-                        search_results = [project for project in db for key in project.keys() if str(project[key]).lower().__contains__(search)]
+                print('searching in all search fields')
+                #if search != None:
+###################DEN LÄGGER TILL DUBLETTER!!!!!!
+                        # search_results = [project for project in db for key in project.keys() if all(str(project[key]).lower().__contains__(search), project not in search_results)]
+                        # print(len(search_results), 'check', sep='\t')
                 #print('sEarch_result:', search_results, sep='\t')
-                # for project in db:
-                #         for key in project.keys():
-                #                 field_lc = str(project[key]).lower()
-                #                 if search == None:
-                #                         break
-                #                 elif field_lc.__contains__(search):
-                #                         if search_results.__contains__(project):
-                #                                 break
-                #                         else:
-                #                                 search_results.append(project)
-                #                                 #print(field_lc)
-                #                                 break
+                for project in db:
+                        for key in project.keys():
+                                field_lc = str(project[key]).lower()
+                                if search == None:
+                                        break
+                                elif field_lc.__contains__(search):
+                                        if search_results.__contains__(project):
+                                                break
+                                        else:
+                                                search_results.append(project)
+                                                #print(field_lc)
+                                                break
         if search_fields != None:
-                #print('searching in specific search fields')
+                print('searching in specific search fields')
                 search_results = [project for project in db for search_field in search_fields if str(project[search_field]).lower().__contains__(search)]
                 #print('seArch_result:', search_results, sep='\t')
                 # for project in db:
@@ -118,9 +122,9 @@ def main():
         p_list = load(sys.argv[1])
         #print(get_project_count(p_list))
         #print(get_project(p_list, 0))
-        #print(get_techniques(p_list))
-        print(search(p_list))
+        #print(len(get_techniques(p_list)))
         print(len(search(p_list)))
+        #print(len(search(p_list)))
         #print(get_technique_stats(p_list))
         
         

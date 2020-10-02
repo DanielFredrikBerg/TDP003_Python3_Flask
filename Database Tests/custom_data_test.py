@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Copyright (C) 2011, IDA, Linköping University
 # Copyright (C) 2011, Torbjörn Lönnemark <tobbez@ryara.net>
 # Copyright (C) 2014, Daniel Persson
 import unittest
-import data     # import the file with your implemented functions
+import daniel_data as data     # import the file with your implemented functions
 import hashlib
 import sys
 from operator import itemgetter
@@ -147,6 +147,9 @@ class DataTest(unittest.TestCase):
         # Test that loading a non-existing file returns None
         self.assertEqual(data.load("/dev/this_file_does_not_exist"), None)
 
+        #Check that load() returns the list sorted by project_id
+        self.assertEqual(data.load("data.json"), self.loaded_data)
+
     def test_get_project_count(self):
         """ Test the implemented function get_project_count """
 
@@ -177,6 +180,24 @@ class DataTest(unittest.TestCase):
         # 1 project should be returned
         self.assertEqual(len(data.search(self.loaded_data, techniques=['csv'])), 1)
 
+        # Search for project based on technique with both lower and uppercase and part
+        # of technique:
+        # ada - 1 project should be returned.
+        self.assertEqual(len(data.search(self.loaded_data, techniques=['AdA'])), 1)
+        # python - 3 projects should be returned.
+        self.assertEqual(len(data.search(self.loaded_data, techniques=['PyTH'])), 3)
+        # c++ - 1 project should be returned
+        self.assertEqual(len(data.search(self.loaded_data, techniques=['C++'])), 1)
+
+        # Ensure that search does not crash when inserting a number in techniques.
+        # Nothing should be returned.
+        self.assertEqual(len(data.search(self.loaded_data, techniques=[2])), 0)
+
+        # Search for the character: '"' in all search_fields in the database with no techniques selected 
+        # 1 project should be returned
+        res = data.search(self.loaded_data, techniques=[], search='"')
+        self.assertEqual(len(res), 1)
+        
         # Search for projects including Python and sort them in ascending order.
         # Ensure that returned projects are sorted by ascending dates
         res = data.search(self.loaded_data, sort_order='asc',techniques=["python"])
@@ -216,6 +237,25 @@ class DataTest(unittest.TestCase):
         res = data.search(self.loaded_data, search="okänt", search_fields=[])
         self.assertEqual(len(res), 0)
 
+        # Search for 'okänt' without specifying search fields. Sort by project_id
+        # Ensure 3 results in ascending order
+        res = data.search(self.loaded_data, sort_order="asc", sort_by="project_id", search="okänt")
+        self.assertEqual(len(res), 3)
+        self.assertEqual(res[0]['project_id'], 1)
+        self.assertEqual(res[1]['project_id'], 2)
+        self.assertEqual(res[2]['project_id'], 3)
+
+        # Search for lowercase string with uppercase
+        # Ensure correct handling of upper- and lowercase search
+        res = data.search(self.loaded_data, search="NO NO NO")
+        self.assertEqual(len(res), 4)
+
+        # Search for '8' without specifying search fields.
+        # Ensure 3 results
+        res = data.search(self.loaded_data, search="8")
+        self.assertEqual(len(res), 3)
+
+
         # Search with results sorted by group size.
         # Ensure results are in descending order
         res = data.search(self.loaded_data, sort_by='group_size')
@@ -224,11 +264,31 @@ class DataTest(unittest.TestCase):
         self.assertEqual(res[2]['project_id'], 3) #3
         self.assertEqual(res[3]['project_id'], 1) #4
 
+        # Search for 'no n'
+        # Ensure 4 results
+        res = data.search(self.loaded_data, search='no n')
+        self.assertEqual(len(res), 4)
+
+        # Search for integer '09'.
+        # Ensure 4 results sorted by start_date in descending order. 
+        res = data.search(self.loaded_data, sort_by='start_date',
+                          sort_order='desc', search='09')
+        self.assertEqual(len(res), 4)
+        self.assertEqual(res[0]['start_date'], '2009-09-08') 
+        self.assertEqual(res[1]['start_date'], '2009-09-07') 
+        self.assertEqual(res[2]['start_date'], '2009-09-06') 
+        self.assertEqual(res[3]['start_date'], '2009-09-05') 
+
+
     def test_get_techniques(self):
         """ Test the implemented get_techniques function """
 
         res = data.get_techniques(self.loaded_data)
         self.assertEqual(res, self.expected_technique_data)
+
+        # Ensure there are no duplicates in list returned
+        res = data.get_techniques(self.loaded_data)
+        self.assertEqual(len(res), 4)
 
     def test_get_technique_stats(self):
         """ Test the implemented get_technique_stats function """
