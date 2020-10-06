@@ -1,1 +1,15 @@
-<!Html base for webportfolio>
+<!Html base for webportfolio, test>
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Portfolio</title>
+      {% else %}
+      <title>Welcome to TDP003 Portfolio</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>Portfolio: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
