@@ -8,7 +8,7 @@ setup(
         'flask',
     ],
 )
-
+# https://flask.palletsprojects.com/en/1.1.x/patterns/packages/
 #In order to run the application you need to export an environment variable that tells Flask where to find the application instance:
 
 # $ export FLASK_APP=portfolio_app

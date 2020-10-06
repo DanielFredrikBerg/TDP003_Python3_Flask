@@ -1,10 +1,12 @@
+from flask import render_template
 from portfolio_app import app
 
 # /
 @app.route('/')
 @app.route('/home')
 def home():
-    return "Welcome Home"
+    user= {'username': 'Daniel'}
+    return render_template('index.html', title='Home', user='Faggot')
 
 
 # /list
