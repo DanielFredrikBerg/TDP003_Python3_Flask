@@ -86,10 +86,12 @@ def main():
     f = sys.argv[1]
     print(f)
     db = load(f)
-    #print(db)
-    add_project(f, db, project)
-    db = load(f)
     print(db)
+#    db.append(project)
+  #  print(db)
+    #add_project(f, db, project)
+    db = load(f)
+    #print(db)
 
 
 if __name__ == '__main__':

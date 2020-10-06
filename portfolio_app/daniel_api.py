@@ -13,7 +13,7 @@ import sys
 
 def load(json_file):
     try:
-        with open(str(json_file), 'a') as json_file:
+        with open(str(json_file), 'r') as json_file:
             data = json.load(json_file)
             db = sorted(data, key=lambda p_id: p_id['project_id'])
         return db
@@ -164,7 +164,7 @@ def main():
     db = load(f)
     print(get_project_count(db))
     
-    #db = load(sys.argv[1])
+    # db = load(sys.argv[1])
     # print(get_project_count(p_list))
     # print(get_project(p_list, 0))
     # print(len(get_techniques(p_list)))
