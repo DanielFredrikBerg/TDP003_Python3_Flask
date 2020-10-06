@@ -2,6 +2,8 @@ from flask import render_template
 from portfolio_app import app
 import daniel_api
 
+
+
 db = daniel_api.load('data.json')
 
 # /
