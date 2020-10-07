@@ -3,29 +3,35 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	{% block title %}{% endblock %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+	{% block header %}{% endblock %}
 </head>
 <body>
 	<header>
-		<nav>
-			{% block nav %}{% endblock %}
-		</nav>
-		<form action="" method="get">
-			<input type="search" name="search projects" id="navSearch" />
-		</form>
+		<div class="brightTile">
+			<nav>
+				{% block nav %}{% endblock %}
+			</nav>
+			<form action="" method="get">
+				<input type="search" name="search projects" id="navSearch" />
+			</form>
+		</div>
 	</header>
 	<main>
 		{% block content %}{% endblock %}
 	</main>
 	<footer>
-		<div class="darkTile">
-			<p>Author: jenoh242, danhu849</p>
+		<div class="brightTile">
+			<p>Author: jenoh242, danhu849<br>
 			<span >
 				Background by
 				<a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
 					Paweł Czerwiński
 				</a>
+			</p>
 			</span>
 		</div>
 	</footer>
 </body>
+</html>

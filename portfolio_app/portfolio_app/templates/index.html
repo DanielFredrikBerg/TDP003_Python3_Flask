@@ -1,13 +1,13 @@
 {% extends 'base.html'%}
-{% block title %}
+{% block header %}
 	<title>Home</title>
-{% endblock%}
+{% endblock %}
 {% block nav %}
 	<a href="">Tekniker</a>
 	<a href="">Avancerad Sökning</a>
 {% endblock %}
 {% block content %}
-	<article>
+	<article class="darkTile">
 		<h1>{{user.username}}</h1>
 		<img src="https://via.placeholder.com/350" alt="My face">
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ab ipsa, sint atque quam natus eos consequatur fugit tenetur nemo ex excepturi dolor repellat voluptatem reiciendis voluptates blanditiis beatae? Dicta!
@@ -21,11 +21,11 @@
 		Dolorum quia deleniti similique atque, cum accusantium tenetur impedit fugiat explicabo velit architecto modi distinctio facere temporibus, at in eos odit. Quisquam dolor quis debitis aliquam impedit possimus laborum eius.
 		Ducimus officiis quidem ea perferendis iure qui odio, repudiandae facere, eius amet exercitationem quas deserunt illum nihil repellat. Eum quia, reprehenderit voluptatum ratione voluptates vitae minus neque repellat maiores similique.</p>
 		<nav>
-			<a href="">Facebonk</a>
-			<a href="">Myspank</a>
-			<a href="">Twatter</a>
-			<a href="">Githob</a>
-			<a href="">Emale</a>
+			<a href="">Facebook</a>
+			<a href="">Myspace</a>
+			<a href="">Twitter</a>
+			<a href="">Github</a>
+			<a href="">Email</a>
 		</nav>
 	</article>
 {% endblock %}
