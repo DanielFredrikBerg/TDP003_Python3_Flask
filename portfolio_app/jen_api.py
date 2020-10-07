@@ -9,9 +9,9 @@ def load(path):
         with open(path, 'r') as data:
             return sorted(json.load(data), key=lambda project: project['project_id'])
     except Exception as e:
+        print('invalid json: %s' % e)
         return None
-
-
+    
 
 def add_project(db, project):
     db.append(project)
@@ -83,14 +83,14 @@ def main():
         "big_image": "XXX"
     }
     f = sys.argv[1]
-    print(f)
+    
+    db = load(f)    
+    
+    add_project(db, project)
+    # Write will overwrite file f.
+    write_db_to_json(db, f)
     db = load(f)
     print(db)
-#    db.append(project)
-  #  print(db)
-    #add_project(f, db, project)
-    db = load(f)
-    #print(db)
 
 
 if __name__ == '__main__':
