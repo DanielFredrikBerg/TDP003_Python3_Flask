@@ -12,16 +12,15 @@ def load(path):
         return None
 
 
-def add_project(file_name, db, project):
-    try:
-        db.append(project)
-        json_object = json.dumps(
-            db, sort_keys=lambda project: project['project_id'], indent=4)
-        with open(str(file_name), 'a+') as outfile:
-            outfile.write(json_object)      
-    except Exception as e:
-        print('Error: ', e)
 
+def add_project(db, project):
+    db.append(project)
+
+    
+def write_db_to_json(db, save_file):
+    with open(str(save_file), 'w') as json_file:
+        json.dump(db, json_file)
+    
 
 def get_project_count(db): return len(db)
 
