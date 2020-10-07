@@ -1,8 +1,6 @@
 from flask import render_template
 from portfolio_app import app
-import jen_api 
-
-
+import jen_api
 
 db = jen_api.load('data.json')
 
@@ -10,26 +8,25 @@ db = jen_api.load('data.json')
 @app.route('/')
 @app.route('/home')
 def home():
-    user= {'username': 'Daniel'}
-    return render_template('index.html', title='Home', user=user)
-
+	user= {'username': 'Daniel'}
+	return render_template('index.html', user=user)
 
 # /list
 @app.route('/list')
 def list():
-    return render_template('list.html', title='Projects', db=db)
+	return render_template('list.html', title='Projects', db=db)
 
 
 # /project/id
 @app.route('/project/id')
 def project():
-    return "This is /project/id"
+	return "This is /project/id"
 
 
 # /techniques
 @app.route('/techniques')
 def techniques():
-    return "This is /techniques"
+	return "This is /techniques"
 
 
 

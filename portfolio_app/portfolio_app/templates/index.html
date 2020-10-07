@@ -1,8 +1,31 @@
-<html>
-    <head>
-        <title>{{ title }} - Portfolio</title>
-    </head>
-    <body>
-        <h1>Hello, {{ user }}!</h1>
-    </body>
-</html>
+{% extends 'base.html'%}
+{% block title %}
+	<title>Home</title>
+{% endblock%}
+{% block nav %}
+	<a href="">Tekniker</a>
+	<a href="">Avancerad Sökning</a>
+{% endblock %}
+{% block content %}
+	<article>
+		<h1>{{user.username}}</h1>
+		<img src="https://via.placeholder.com/350" alt="My face">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ab ipsa, sint atque quam natus eos consequatur fugit tenetur nemo ex excepturi dolor repellat voluptatem reiciendis voluptates blanditiis beatae? Dicta!
+		Est dolorum placeat, nisi accusantium illum officia alias minima, modi ut veritatis ducimus! Non sapiente, aspernatur culpa veritatis animi repellendus eaque dolor, illo repudiandae expedita aperiam facilis quia atque incidunt.
+		Vitae qui hic error atque deserunt dolorem, harum minima suscipit rerum, mollitia dolore nulla, ipsa numquam rem necessitatibus quidem odit possimus asperiores consequatur corrupti. Impedit accusantium laborum id earum? Facere.
+		Dolorum accusantium magnam nostrum tempora minus quasi inventore sequi eius qui vitae distinctio illo illum nemo minima incidunt iure impedit suscipit, consequatur velit. Excepturi architecto sit, ipsum libero quod totam?
+		Maxime cupiditate, nostrum deleniti repellendus tempore aut? Reiciendis inventore, eius nemo doloribus vitae voluptatibus veniam officia eum fugiat dolorum omnis, voluptatem obcaecati unde iusto architecto illum itaque, deleniti rem beatae.
+		Nulla id odio, consectetur facere possimus ea eius quidem rem expedita explicabo aut soluta aliquid quis maiores vitae cupiditate fugit animi amet tempore ipsam ad sit? Quisquam adipisci architecto nisi!
+		Fugiat accusantium illum non quaerat adipisci sapiente in, debitis, dolor ab consequatur molestias repellendus, asperiores laborum quas! Facilis, fugiat. Laudantium beatae tenetur quam omnis fugit voluptatum architecto explicabo nihil aliquid.
+		Inventore corporis accusantium dicta quia deleniti necessitatibus aliquam ut qui! Sit explicabo, voluptatum ea minus assumenda eveniet quo. Animi, natus? Commodi animi dolor doloribus perspiciatis omnis, voluptatum hic quidem tenetur!
+		Dolorum quia deleniti similique atque, cum accusantium tenetur impedit fugiat explicabo velit architecto modi distinctio facere temporibus, at in eos odit. Quisquam dolor quis debitis aliquam impedit possimus laborum eius.
+		Ducimus officiis quidem ea perferendis iure qui odio, repudiandae facere, eius amet exercitationem quas deserunt illum nihil repellat. Eum quia, reprehenderit voluptatum ratione voluptates vitae minus neque repellat maiores similique.</p>
+		<nav>
+			<a href="">Facebonk</a>
+			<a href="">Myspank</a>
+			<a href="">Twatter</a>
+			<a href="">Githob</a>
+			<a href="">Emale</a>
+		</nav>
+	</article>
+{% endblock %}

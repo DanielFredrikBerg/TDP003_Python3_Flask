@@ -1,15 +1,31 @@
-<!Html base for webportfolio, test>
-<html>
-    <head>
-      {% if title %}
-      <title>{{ title }} - Portfolio</title>
-      {% else %}
-      <title>Welcome to TDP003 Portfolio</title>
-      {% endif %}
-    </head>
-    <body>
-        <div>Portfolio: <a href="/index">Home</a></div>
-        <hr>
-        {% block content %}{% endblock %}
-    </body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% block title %}{% endblock %}
+</head>
+<body>
+	<header>
+		<nav>
+			{% block nav %}{% endblock %}
+		</nav>
+		<form action="" method="get">
+			<input type="search" name="search projects" id="navSearch" />
+		</form>
+	</header>
+	<main>
+		{% block content %}{% endblock %}
+	</main>
+	<footer>
+		<div class="darkTile">
+			<p>Author: jenoh242, danhu849</p>
+			<span >
+				Background by
+				<a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+					Paweł Czerwiński
+				</a>
+			</span>
+		</div>
+	</footer>
+</body>
