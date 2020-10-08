@@ -1,1 +1,13 @@
 {% extends 'base.html'%}
+
+{% block content %}
+
+<article class="darkTile">
+  <div>
+  <h1>{{ project.project_name }}</h1>
+  <img src="https://via.placeholder.com/300" style="float: left;" alt={{ project.project_name }}>
+  <p>{{ project.long_description }}</p>
+  </div>
+</article>
+
+{% endblock %}

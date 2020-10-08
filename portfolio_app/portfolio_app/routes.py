@@ -28,16 +28,22 @@ def list():
 
 
 # /project/id
-@app.route('/project/id')
-def project():
+@app.route('/project/<int:id>', methods=['GET', 'POST'])
+def show_project(id):
     db = jen_api.load(data_path)
-    return render_template('project_page.html', title='Projects', db=db)
+    project = jen_api.get_project(db, id)
+    return render_template('project_page.html', title=project['project_name'], project=project)
 
 
 # /techniques
 @app.route('/techniques')
 def techniques():
     return render_template('techniques.html', title='Techniques', db=db)
+
+# /404
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html', pic=pic), 404
 
 # ERROR SOLUTIONS:
 
