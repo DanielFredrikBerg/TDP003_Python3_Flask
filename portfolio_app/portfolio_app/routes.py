@@ -28,17 +28,19 @@ def list():
 
 
 # /project/id
-@app.route('/project/<int:id>', methods=['GET', 'POST'])
+@app.route('/project/<int:id>', methods=['GET'])
 def show_project(id):
     db = jen_api.load(data_path)
-    project = jen_api.get_project(db, id)
-    return render_template('project_page.html', title=project['project_name'], project=project)
+    chosen_project = jen_api.get_project(db, id)
+    return render_template('project_page.html', title=project['project_name'], project=chosen_project)
 
 
 # /techniques
 @app.route('/techniques')
 def techniques():
-    return render_template('techniques.html', title='Techniques', db=db)
+    db = jen_api.load(data_path)
+    db_techniques = jen_api.get_techniques(db)
+    return render_template('techniques.html', title='Techniques', techniques=db_techniques)
 
 # /404
 @app.errorhandler(404)

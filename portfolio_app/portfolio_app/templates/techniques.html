@@ -1,1 +1,15 @@
 {% extends 'base.html'%}
+
+{% block content %}
+<article class="darkTile">
+  <div>
+    <h1>Press the techniques to sort projects!</h1>
+    {% for technique in techniques %}
+    <form action="" method="get" style="float: left; margin-right: 15px;">
+      <input type="button" class="btn btn-default" value="{{ technique }}"></>
+    </form>
+    {% endfor %}
+    
+    </div>
+</article>
+{% endblock %}
