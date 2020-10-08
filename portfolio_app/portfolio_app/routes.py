@@ -1,8 +1,11 @@
 from flask import render_template
 from portfolio_app import app
 import jen_api
+import os
 
-db = jen_api.load('data.json')
+current_path = os.path.dirname(__name__)
+data_path = os.path.relpath('./data.json', current_path)
+db = jen_api.load(data_path)
 
 # /
 @app.route('/')
@@ -14,19 +17,19 @@ def home():
 # /list
 @app.route('/list')
 def list():
-	return render_template('list.html', title='Projects', db=db)
+	return render_template('list.html', title='Search', db=db)
 
 
 # /project/id
 @app.route('/project/id')
 def project():
-	return "This is /project/id"
+	return render_template('project_page.html', title='Projects', db=db)
 
 
 # /techniques
 @app.route('/techniques')
 def techniques():
-	return "This is /techniques"
+	return render_template('techniques.html', title='Techniques', db=db)
 
 
 

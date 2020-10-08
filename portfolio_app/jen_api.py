@@ -6,7 +6,7 @@ import sys
 
 def load(path):
     try:
-        with open(path, 'r') as data:
+        with open(str(path), 'r') as data:
             return sorted(json.load(data), key=lambda project: project['project_id'])
     except Exception as e:
         print('invalid json: %s' % e)
@@ -16,6 +16,8 @@ def load(path):
 def add_project(db, project):
     db.append(project)
 
+
+#def delete_project(db, project):
     
 def write_db_to_json(db, save_file):
     with open(str(save_file), 'w') as json_file:
