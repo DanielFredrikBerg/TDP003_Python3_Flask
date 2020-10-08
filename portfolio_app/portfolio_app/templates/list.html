@@ -4,7 +4,7 @@
   <h1>Avanderad Sökning</h1>
   <form method="get">
 	<div>
-		<input type="search" name="search">
+		<input type="search" name="search projects">
 		<label for="sort_by">Sortera efter:</label>
 		<select name="sort_by" id="sort_by">
 			{% for search_field in search_fields %}
@@ -20,15 +20,15 @@
 	<h2>Sökfält</h2>
 	<div class="checkboxes">
 		{% for search_field in search_fields %}
-		<input type="checkbox" name="{{ search_field }}" id="{{ search_field }}">
-		<label for="{{ search_field }}"> {{ search_field }}</label>
+		<input type="checkbox" name="search_field" id="{{ search_field }}" value="{{ search_field }}">
+		<label for="{{ search_field }}">{{ search_field }}</label>
 		{% endfor %}
 	</div>
 	<h2>Tekniker</h2>
 	<div class="checkboxes">
 		{% for technique in techniques%}
-		<label for="{{ technique }}"> {{ technique }}</label>
-		<input type="checkbox" name="{{ technique }}" id="{{ technique }}">
+		<input type="checkbox" name="technique" id="{{ technique }}" value="{{ technique }}">
+		<label for="{{ technique }}">{{ technique }}</label>
 		{% endfor %}
 	</div>
 	<input type="submit" value="Sök">

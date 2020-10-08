@@ -21,10 +21,16 @@ def home():
 @app.route('/list')
 def list():
 	search_for = request.args.get("search projects", "")
+	search_fields = request.args.getlist("search_field")
+	if not search_fields:
+		search_fields = None
+	sort_by = request.args.get("sort_by", "")
+	sort_order = request.args.get("sort_order", "")
+	techniques = request.args.getlist("technique")
 	db = jen_api.load(data_path)
+	found = jen_api.search(db, search=search_for, sort_by=sort_by, sort_order=sort_order, techniques=techniques, search_fields=search_fields)
 	techniques = jen_api.get_techniques(db)
 	search_fields = jen_api.get_search_fields(db)
-	found = jen_api.search(db, search=search_for)
 	#print(found)
 	return render_template('list.html', title='Search', search_results=found, search_fields = search_fields, techniques = techniques)
 
