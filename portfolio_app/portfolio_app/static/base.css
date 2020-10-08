@@ -1,21 +1,22 @@
 /* Css style sheet for portfolio webpage */
 :root {
-	font-family: iosevka; 
-}
-@font-face{
 	font-family: iosevka;
-	src:url('Iosevka/ttf/iosevka-thin.ttf');
+}
+@font-face {
+	font-family: iosevka;
+	src: url("Iosevka/ttf/iosevka-thin.ttf");
 	font-weight: 100;
 }
-@font-face{
+@font-face {
 	font-family: iosevka;
-	src:url('Iosevka/ttf/iosevka-medium.ttf');
+	src: url("Iosevka/ttf/iosevka-medium.ttf");
 }
-html, body{
+html,
+body {
 	height: 100%;
 	width: 100%;
 }
-body{
+body {
 	margin: 0;
 	padding: 0;
 	background-image: url("pawel-czerwinski-ncgbTwIZhNU-unsplash.jpg");
@@ -25,15 +26,15 @@ body{
 	flex-direction: column;
 	align-items: center;
 }
-img{
+img {
 	border-radius: 8px;
 	max-width: 100%;
 }
-body > *{
+body > * {
 	width: 100%;
 	padding: 20px 0;
 }
-header{
+header {
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -45,7 +46,7 @@ header > div {
 	grid-template-columns: 20% auto 20%;
 	grid-template-rows: 10px;
 }
-header > div > nav{
+header > div > nav {
 	place-self: center;
 	display: flex;
 	justify-content: center;
@@ -54,13 +55,17 @@ header > div > nav{
 	grid-row-start: 1;
 	grid-row-end: 1;
 }
-@keyframes text_separate{
-	from{letter-spacing: 0px;}
+@keyframes text_separate {
+	from {
+		letter-spacing: 0px;
+	}
 }
-@keyframes text_join{
-	from{letter-spacing: 10px;}
+@keyframes text_join {
+	from {
+		letter-spacing: 10px;
+	}
 }
-header > div > nav > a{
+header > div > nav > a {
 	text-align: center;
 	padding: 0 10px;
 	white-space: nowrap;
@@ -69,11 +74,11 @@ header > div > nav > a{
 	letter-spacing: 0px;
 	animation: text_join 0.1s ease forwards;
 }
-header > div > nav > a:hover{
+header > div > nav > a:hover {
 	letter-spacing: 10px;
 	animation: text_separate 0.1s ease forwards;
 }
-header > div > form{
+header > div > form {
 	display: flex;
 	width: 100%;
 	place-self: center;
@@ -84,63 +89,74 @@ header > div > form{
 	grid-row-end: 1;
 	padding-left: 10px;
 }
-header > div > form > input{
+header > div > form > input {
 	margin: 0;
 	height: 30px;
 	border-radius: 15px;
 	padding: 0 10px;
-	width:100%;
+	width: 100%;
 }
-main{
+main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	flex: 1;
 }
-main > article{
+article{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+main > article {
 	max-width: 800px;
 	width: 90%;
 }
-main > article > *{
+article > * {
 	margin: 16px;
 }
-footer{
+.wideList{
+	display: flex;
+	flex-wrap: wrap;
+}
+.wideList > article {
+	max-width: 300px;
+	margin: 25px;
+}
+footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-footer > div > p{
+footer > div > p {
 	text-align: center;
 }
-.brightTile, .darkTile{
+.brightTile,
+.darkTile {
 	background-attachment: fixed;
 	background-size: cover;
 	border-radius: 16px;
 	padding: 16px;
 }
-.darkTile{
+.darkTile {
 	background-color: black;
 	background-image: url("pawel-czerwinski-ncgbTwIZhNU-unsplash_blur_dark.jpg");
 	color: white;
-	box-shadow: 10px 10px 4px rgba(0,0,0,0.5);
+	box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.5);
 }
-.brightTile{
+.brightTile {
 	background-color: white;
 	background-image: url("pawel-czerwinski-ncgbTwIZhNU-unsplash_blur_bright.jpg");
 	color: black;
-	box-shadow: 10px 10px 4px rgba(0,0,0,0.2);
+	box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.2);
 }
 @media only screen and (max-width: 480px) {
-	header > div{
+	header > div {
 		grid-template-columns: 0% auto 30%;
 	}
-	header > div > nav > a{
+	header > div > nav > a {
 		animation: none;
 	}
-	header > div > nav > a:hover{
+	header > div > nav > a:hover {
 		letter-spacing: 0px;
 		animation: none;
 	}
