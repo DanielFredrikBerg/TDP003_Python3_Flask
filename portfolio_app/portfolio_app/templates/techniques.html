@@ -1,15 +1,35 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<article class="darkTile">
+<article class="darkTile" style="margin-bottom: 15px;">
   <div>
     <h1>Press the techniques to sort projects!</h1>
     {% for technique in techniques %}
-    <form action="" method="GET" style="float: left; margin-right: 15px;">
-      <input type="button" class="btn btn-default" value="{{ technique }}"></>
+    <form action="" method="POST" style="float: left; margin-right: 15px;">
+      <input type="submit" name="{{ technique }}" class="btn btn-default" value="{{ technique }}"></>
     </form>
     {% endfor %}
+</div>
+</article>
+
+{% if search_results %}
+{% for project in search_results %}
+
+<article class="darkTile" style="margin-bottom: 30px;">
+  <div>
+    <a href="{{ url_for("show_project", id=project.project_id) }}"><h2>Project number {{ project.project_id }}: {{ project.project_name }} </h2></a>
+    <a href="{{ url_for("show_project", id=project.project_id) }}"><img src="https://via.placeholder.com/150" style="float: left;" alt={{ project.project_name }}></a>
+    <p>{{ project.end_date }}</p>
+    <p>{{ project.short_description }}</p>
+    <p>Techniques used in this project:
+      {% for technique in project.techniques_used %}
+      {{ technique }}
+    {% endfor %}</p>
     
     </div>
 </article>
+
+{% endfor %}
+{% endif %}
+
 {% endblock %}
