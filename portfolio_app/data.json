@@ -1,7 +1,7 @@
 [
   {
     "start_date": "2009-09-05",
-    "short_description": "no",
+    "short_description": "Project 1: A very very short description of project 1. Where we bla bla blab bla bla bala blabs, ksal.",
     "course_name": "OK\u00c4NT",
     "long_description": "no no no",
     "group_size": 2,
@@ -20,7 +20,7 @@
   },
   {
     "start_date": "2009-09-07",
-    "short_description": "no",
+    "short_description": "Project 3: A very very short description of project 3. Where we bla bla blab bla bla bala blabs, ksal.",
     "course_name": "OK\u00c4NT",
     "long_description": "no no no",
     "group_size": 4,
@@ -41,7 +41,7 @@
   },
   {
     "start_date": "2009-09-08",
-    "short_description": "no",
+    "short_description": "Project 2: A very very short description of project 2. Where we bla bla blab bla bla bala blabs, ksal.",
     "course_name": "OK\u00c4NT",
     "long_description": "no no no",
     "group_size": 6,
@@ -61,7 +61,7 @@
   },
   {
     "start_date": "2009-09-06",
-    "short_description": "no",
+    "short_description": "Project 4: A very very short description of project 4. Where we bla bla blab bla bla bala blabs, ksal.",
     "course_name": "HOHO",
     "long_description": "no no no",
     "group_size": 8,

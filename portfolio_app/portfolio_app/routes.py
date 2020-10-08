@@ -23,12 +23,14 @@ def list():
     search_for = request.args.get("search projects", "")
     db = jen_api.load(data_path)
     found = jen_api.search(db, search=search_for)
-    return render_template('list.html', title='Search', db=found)
+    #print(found)
+    return render_template('list.html', title='Search', search_results=found)
 
 
 # /project/id
 @app.route('/project/id')
 def project():
+    db = jen_api.load(data_path)
     return render_template('project_page.html', title='Projects', db=db)
 
 
