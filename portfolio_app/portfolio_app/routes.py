@@ -34,7 +34,7 @@ def techniques():
 # ERROR SOLUTIONS:
 
 # invalid json: [Errno 2] No such file or directory: data.json
-# Solution: Terminal position and flask app has to be run (flask run) from the same folder where the data.json folder is located. The api file needs to be in the same folder as the portfolio_app.py for some reason? It can't be in the same folder as the __init__ file at least.
+# Solution: Terminal position and flask app has to be run (flask run) from the same folder where the data.json folder is located. The api file needs to be in the same folder as the portfolio_app.py for some reason? It can't be in the same folder as the __init__ file at least. At the moment of this writing the ONLY folder "flask run" can be run from is: tdp003/portfolio_app/
 
 # Kill app with Ctrl c otherwise risk for error below:
 # Solution Error [errno 98] address already in use flask
