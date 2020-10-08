@@ -32,23 +32,30 @@ def list():
 # /project/id
 @app.route('/project/<int:id>', methods=['GET'])
 def show_project(id):
+	print("this is idddddddddd", id)
 	db = jen_api.load(data_path)
 	chosen_project = jen_api.get_project(db, id)
+	print(chosen_project)
 	return render_template('project_page.html', title=chosen_project['project_name'], project=chosen_project)
 
-
 # /techniques
-@app.route('/techniques')
+@app.route('/techniques', methods=['GET', 'POST'])
 def techniques():
 	db = jen_api.load(data_path)
 	db_techniques = jen_api.get_techniques(db)
-	return render_template('techniques.html', title='Techniques', techniques=db_techniques)
+	# Denna skiten är hårdkodad så det funkar, men variation måste fortfarande implementeras!
+	# Det går heller ej att klicka på flera knappar.
+	wanted_technique = request.form.get('ada')
+	if wanted_technique:
+		found = jen_api.search(db, techniques=wanted_technique)
+		return render_template('techniques.html', title='Techniques', techniques=db_techniques, search_results=found)
+	else:
+		return render_template('techniques.html', title='Techniques', techniques=db_techniques)
 
 # /404
 @app.errorhandler(404)
 def not_found_error(error):
-	pic = None
-	return render_template('404.html', pic=pic)
+	return render_template('404.html'), 404
 
 # ERROR SOLUTIONS:
 
