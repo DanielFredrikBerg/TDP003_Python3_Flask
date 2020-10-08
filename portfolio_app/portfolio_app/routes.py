@@ -11,41 +11,44 @@ db = jen_api.load(data_path)
 @app.route('/')
 @app.route('/home')
 def home():
-    if request.args.get("search projects", ""):
-        return redirect(url_for("list"))
-    else:
-        user = {'username': 'jenoh242 & danhu849'}
-        return render_template('index.html', user=user)
+	if request.args.get("search projects", ""):
+		return redirect(url_for("list"))
+	else:
+		user = {'username': 'jenoh242 & danhu849'}
+		return render_template('index.html', user=user)
 
 # /list
 @app.route('/list')
 def list():
-    search_for = request.args.get("search projects", "")
-    db = jen_api.load(data_path)
-    found = jen_api.search(db, search=search_for)
-    #print(found)
-    return render_template('list.html', title='Search', search_results=found)
+	search_for = request.args.get("search projects", "")
+	db = jen_api.load(data_path)
+	techniques = jen_api.get_techniques(db)
+	search_fields = jen_api.get_search_fields(db)
+	found = jen_api.search(db, search=search_for)
+	#print(found)
+	return render_template('list.html', title='Search', search_results=found, search_fields = search_fields, techniques = techniques)
 
 
 # /project/id
 @app.route('/project/<int:id>', methods=['GET'])
 def show_project(id):
-    db = jen_api.load(data_path)
-    chosen_project = jen_api.get_project(db, id)
-    return render_template('project_page.html', title=project['project_name'], project=chosen_project)
+	db = jen_api.load(data_path)
+	chosen_project = jen_api.get_project(db, id)
+	return render_template('project_page.html', title=chosen_project['project_name'], project=chosen_project)
 
 
 # /techniques
 @app.route('/techniques')
 def techniques():
-    db = jen_api.load(data_path)
-    db_techniques = jen_api.get_techniques(db)
-    return render_template('techniques.html', title='Techniques', techniques=db_techniques)
+	db = jen_api.load(data_path)
+	db_techniques = jen_api.get_techniques(db)
+	return render_template('techniques.html', title='Techniques', techniques=db_techniques)
 
 # /404
 @app.errorhandler(404)
 def not_found_error(error):
-    return render_template('404.html', pic=pic), 404
+	pic = None
+	return render_template('404.html', pic=pic)
 
 # ERROR SOLUTIONS:
 

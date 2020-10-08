@@ -1,23 +1,52 @@
 {% extends "base.html" %}
-
 {% block content %}
-{% if search_results %}
-{% for project in search_results %}
-
-<article class="darkTile" style="margin-bottom: 30px;">
-  <div>
-    <a href="/project/{{ project.project_id }}"><h2>Project number {{ project.project_id }}: {{ project.project_name }} </h2></a>
-    <a href="/project/{{ project.project_id }}"><img src="https://via.placeholder.com/150" style="float: left;" alt={{ project.project_name }}></a>
-    <p>{{ project.end_date }}</p>
-    <p>{{ project.short_description }}</p>
-    <p>Techniques used in this project:
-      {% for technique in project.techniques_used %}
-      {{ technique }}
-    {% endfor %}</p>
-    
-    </div>
+<article class = darkTile>
+  <h1>Avanderad Sökning</h1>
+  <form method="get">
+	<div>
+		<input type="search" name="search">
+		<label for="sort_by">Sortera efter:</label>
+		<select name="sort_by" id="sort_by">
+			{% for search_field in search_fields %}
+			<option value="{{ search_field }}">{{ search_field }}</option>
+			{% endfor %}
+		</select>
+		<label for="sort_order">Sortera :</label>
+		<select name="sort_order" id="sort_order">
+			<option value="asc">Uppåt</option>
+			<option value="desc">Nedåt</option>
+		</select>
+	</div>
+	<h2>Sökfält</h2>
+	<div class="checkboxes">
+		{% for search_field in search_fields %}
+		<input type="checkbox" name="{{ search_field }}" id="{{ search_field }}">
+		<label for="{{ search_field }}"> {{ search_field }}</label>
+		{% endfor %}
+	</div>
+	<h2>Tekniker</h2>
+	<div class="checkboxes">
+		{% for technique in techniques%}
+		<label for="{{ technique }}"> {{ technique }}</label>
+		<input type="checkbox" name="{{ technique }}" id="{{ technique }}">
+		{% endfor %}
+	</div>
+  </form>
 </article>
-
+{% if search_results %}
+<div class="wideList">
+{% for project in search_results %}
+	<article class="darkTile" style="margin-bottom: 30px;">
+		<a href="/project/{{ project.project_id }}"><h2>Project number {{ project.project_id }}: {{ project.project_name }} </h2></a>
+		<a href="/project/{{ project.project_id }}"><img src="https://via.placeholder.com/150" style="float: left;" alt={{ project.project_name }}></a>
+		<p>{{ project.end_date }}</p>
+		<p>{{ project.short_description }}</p>
+		<p>Techniques used in this project:
+		  {% for technique in project.techniques_used %}
+		  {{ technique }}
+		{% endfor %}</p>
+	</article>
 {% endfor %}
+</div>
 {% endif %}
 {% endblock %}

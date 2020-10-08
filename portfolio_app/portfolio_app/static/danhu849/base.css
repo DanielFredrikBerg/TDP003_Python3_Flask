@@ -102,7 +102,7 @@ main {
 	align-items: center;
 	flex: 1;
 }
-article{
+article {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -114,7 +114,33 @@ main > article {
 article > * {
 	margin: 16px;
 }
-.wideList{
+article > form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+article form input[type="checkbox"] {
+	display: none;
+}
+.checkboxes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.checkboxes > label {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	border-radius: 25px;
+	margin: 10px;
+	background-color: #a2afff;
+	width: 170px;
+}
+article form input[type="checkbox"]:checked + label {
+	background-color: #a2ffaf;
+}
+.wideList {
 	display: flex;
 	flex-wrap: wrap;
 }
