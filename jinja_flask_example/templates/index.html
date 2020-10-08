@@ -1,0 +1,21 @@
+{% extends "template.html" %}
+{% block body %}
+<h1>Mitt Zoo</h1>
+<form>
+	Sök: <input type="text" name="search" value="{{ search }}" />
+	<input type="submit" value="Sök!" />
+</form>
+<ul>
+	{% for animal in animals %}
+	<li><a href="{{ url_for("show_animal", id=loop.index0) }}">{{ animal.name }}</a>
+		{% for i in animal.legs %}
+		🦵
+		{% endfor %}
+	</li>
+	{% endfor %}
+</ul>
+<p>
+	<a href="{{ url_for("add_animal") }}">Lägg till djur!</a>
+	<img src="/static/flask-logo.png" />
+</p>
+{% endblock %}

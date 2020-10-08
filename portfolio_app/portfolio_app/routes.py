@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request, redirect, url_for
 from portfolio_app import app
 import jen_api
 import os
@@ -11,25 +11,31 @@ db = jen_api.load(data_path)
 @app.route('/')
 @app.route('/home')
 def home():
-	user= {'username': 'jenoh242 & danhu849'}
-	return render_template('index.html', user=user)
+    if request.args.get("search projects", ""):
+        return redirect(url_for("list"))
+    else:
+        user = {'username': 'jenoh242 & danhu849'}
+        return render_template('index.html', user=user)
 
 # /list
 @app.route('/list')
 def list():
-	return render_template('list.html', title='Search', db=db)
+    search_for = request.args.get("search projects", "")
+    db = jen_api.load(data_path)
+    found = jen_api.search(db, search=search_for)
+    return render_template('list.html', title='Search', db=found)
 
 
 # /project/id
 @app.route('/project/id')
 def project():
-	return render_template('project_page.html', title='Projects', db=db)
+    return render_template('project_page.html', title='Projects', db=db)
 
 
 # /techniques
 @app.route('/techniques')
 def techniques():
-	return render_template('techniques.html', title='Techniques', db=db)
+    return render_template('techniques.html', title='Techniques', db=db)
 
 # ERROR SOLUTIONS:
 

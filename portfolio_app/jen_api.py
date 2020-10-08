@@ -37,8 +37,7 @@ def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=
     projects = copy.deepcopy(db)
     try:
         if techniques:
-            projects = [project for project in projects for technique in project['techniques_used'] if all(
-                str(x).lower() in str(technique).lower() for x in techniques)]
+            projects = [project for project in projects for technique in project['techniques_used'] if all(str(x).lower() in str(technique).lower() for x in techniques)]
     except Exception:
         print("Failed searching for techniques.")
     if search:

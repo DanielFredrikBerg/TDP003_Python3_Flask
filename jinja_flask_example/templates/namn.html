@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Mitt fina Zoo</title>
+	</head>
+	<body>
+		<h1>Mitt Zoo</h1>
+		<p>
+			{% if name %}
+			Hej: {{ name }}
+			{% endif %}
+		</p>
+		<form method="POST">
+			Vad heter du?
+			<input type="text" name="name" />
+			<input type="submit" value="Skicka!" />
+		</form>
+	</body>
+</html>
