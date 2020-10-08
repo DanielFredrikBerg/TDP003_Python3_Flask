@@ -11,7 +11,7 @@ db = jen_api.load(data_path)
 @app.route('/')
 @app.route('/home')
 def home():
-	user= {'username': 'Daniel'}
+	user= {'username': 'jenoh242 & danhu849'}
 	return render_template('index.html', user=user)
 
 # /list
