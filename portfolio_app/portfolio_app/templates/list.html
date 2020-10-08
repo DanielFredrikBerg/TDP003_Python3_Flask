@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% if db %}
 {% for project in db %}
-<div><p>Project number {{ project.project_id }}: {{ project.project_name }} </p></div>
+<article class="darkTile">
+  <p>Project number {{ project.project_id }}: {{ project.project_name }} </p>
+</article>
 {% endfor %}
+{% endif %}
 {% endblock %}
