@@ -25,14 +25,17 @@ def list():
 	if not search_fields:
 		search_fields = None
 	sort_by = request.args.get("sort_by", "")
+	if not sort_by:
+		sort_by= "start_date"
 	sort_order = request.args.get("sort_order", "")
+	if not sort_order:
+		sort_order = "desc"
 	techniques = request.args.getlist("technique")
 	db = jen_api.load(data_path)
 	found = jen_api.search(db, search=search_for, sort_by=sort_by, sort_order=sort_order, techniques=techniques, search_fields=search_fields)
-	techniques = jen_api.get_techniques(db)
 	search_fields = jen_api.get_search_fields(db)
 	#print(found)
-	return render_template('list.html', title='Search', search_results=found, search_fields = search_fields, techniques = techniques)
+	return render_template('list.html', title='Search', search_results=found, search_fields = search_fields)
 
 
 # /project/id
