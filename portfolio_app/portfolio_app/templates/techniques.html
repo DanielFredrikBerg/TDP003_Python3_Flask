@@ -15,20 +15,7 @@
 </article>
 
 {% if search_results %}
-  
-  {% for project in search_results %}
-  
-<article class="darkTile" style="margin-top: 20px;">
-  <div>
-    <h1>{{ project.project_name }}</h1> <img src="https://via.placeholder.com/100" style="float: left;" alt={{ project.project_name }}>
-    <p>{{ project.long_description }}</p>
-    </div>
-  </article>
-  
-  {% endfor %}
-  
 <div class="wideList">
-  <! Använda detta nedan som template för att skriva ut projekt? >
 	{% include 'project.html' ignore missing %}
 </div>
 {% endif %}
