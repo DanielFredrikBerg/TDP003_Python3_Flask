@@ -47,16 +47,6 @@ header > nav {
 	grid-row-start: 1;
 	grid-row-end: 1;
 }
-@keyframes text_separate {
-	from {
-		letter-spacing: 0px;
-	}
-}
-@keyframes text_join {
-	from {
-		letter-spacing: 10px;
-	}
-}
 header > nav > a {
 	text-align: center;
 	padding: 0 10px;
@@ -64,11 +54,16 @@ header > nav > a {
 	text-decoration: none;
 	color: black;
 	letter-spacing: 0px;
-	animation: text_join 0.1s ease forwards;
+	width: 150px;
+	margin: 0 20px;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	transition: padding 0.5s, margin 0.5s, letter-spacing 0.5s;
 }
 header > nav > a:hover {
-	letter-spacing: 10px;
-	animation: text_separate 0.1s ease forwards;
+	padding: 0 30px;
+	margin: 0;
+	letter-spacing: 1pt;
 }
 header > form {
 	display: flex;
