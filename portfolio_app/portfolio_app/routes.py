@@ -11,48 +11,51 @@ db = jen_api.load(data_path)
 @app.route('/')
 @app.route('/home')
 def home():
-	if request.args.get("search projects", ""):
-		return redirect(url_for("list"))
-	else:
-		user = {'username': 'jenoh242 & danhu849'}
-		return render_template('index.html', user=user)
+    if request.args.get("search projects", ""):
+        return redirect(url_for("list"))
+    else:
+        user = {'username': 'jenoh242 & danhu849'}
+        return render_template('index.html', user=user)
 
 # /list
 @app.route('/list')
 def list():
-	search_for = request.args.get("search projects", "")
-	search_fields = request.args.getlist("search_field")
-	if not search_fields:
-		search_fields = None
-	sort_by = request.args.get("sort_by", "")
-	if not sort_by:
-		sort_by= "start_date"
-	sort_order = request.args.get("sort_order", "")
-	if not sort_order:
-		sort_order = "desc"
-	found = jen_api.search(db, search=search_for, sort_by=sort_by, sort_order=sort_order, search_fields=search_fields)
-	return render_template('list.html', title='Search', search_results=found, search_fields = jen_api.get_search_fields(db))
+    search_for = request.args.get("search projects", "")
+    search_fields = request.args.getlist("search_field")
+    if not search_fields:
+        search_fields = None
+    sort_by = request.args.get("sort_by", "")
+    if not sort_by:
+        sort_by = "start_date"
+    sort_order = request.args.get("sort_order", "")
+    if not sort_order:
+        sort_order = "desc"
+    found = jen_api.search(db, search=search_for, sort_by=sort_by,
+                           sort_order=sort_order, search_fields=search_fields)
+    #print("This is found: ", found)
+    return render_template('list.html', title='Search', search_results=found, search_fields=jen_api.get_search_fields(db))
 
 
 # /project/id
 @app.route('/project/<int:id>', methods=['GET'])
 def show_project(id):
-	print("this is idddddddddd", id)
-	chosen_project = jen_api.get_project(db, id)
-	print(chosen_project)
-	return render_template('project_page.html', title=chosen_project['project_name'], project=chosen_project)
+    #print("this is idddddddddd", id)
+    project = jen_api.get_project(db, id)
+    #print(project)
+    return render_template('project_page.html', title=project['project_name'], project=project)
 
 # /techniques
 @app.route('/techniques', methods=['GET', 'POST'])
 def techniques():
-	techniques = request.args.getlist("technique")
-	found = jen_api.search(db, techniques=techniques)
-	return render_template('techniques.html', title='Techniques', techniques=jen_api.get_techniques(db), search_results=found)
+    techniques = request.args.getlist("technique")
+    found = jen_api.search(db, techniques=techniques)
+    print("techniques found: ", len(found))
+    return render_template('techniques.html', title='Techniques', techniques=jen_api.get_techniques(db), search_results=found)
 
 # /404
 @app.errorhandler(404)
 def not_found_error(error):
-	return render_template('404.html'), 404
+    return render_template('404.html'), 404
 
 # ERROR SOLUTIONS:
 
