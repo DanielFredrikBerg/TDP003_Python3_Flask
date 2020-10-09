@@ -137,6 +137,9 @@ article form input[type="checkbox"] {
 	background-color: #a2afff;
 	width: 170px;
 }
+input[type="submit"], select, label{
+	cursor: pointer;
+}
 article form input[type="checkbox"]:checked + label {
 	background-color: #a2ffaf;
 }

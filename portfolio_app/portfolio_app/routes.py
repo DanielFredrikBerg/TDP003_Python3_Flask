@@ -30,19 +30,14 @@ def list():
 	sort_order = request.args.get("sort_order", "")
 	if not sort_order:
 		sort_order = "desc"
-	techniques = request.args.getlist("technique")
-	db = jen_api.load(data_path)
-	found = jen_api.search(db, search=search_for, sort_by=sort_by, sort_order=sort_order, techniques=techniques, search_fields=search_fields)
-	search_fields = jen_api.get_search_fields(db)
-	#print(found)
-	return render_template('list.html', title='Search', search_results=found, search_fields = search_fields)
+	found = jen_api.search(db, search=search_for, sort_by=sort_by, sort_order=sort_order, search_fields=search_fields)
+	return render_template('list.html', title='Search', search_results=found, search_fields = jen_api.get_search_fields(db))
 
 
 # /project/id
 @app.route('/project/<int:id>', methods=['GET'])
 def show_project(id):
 	print("this is idddddddddd", id)
-	db = jen_api.load(data_path)
 	chosen_project = jen_api.get_project(db, id)
 	print(chosen_project)
 	return render_template('project_page.html', title=chosen_project['project_name'], project=chosen_project)
@@ -50,16 +45,9 @@ def show_project(id):
 # /techniques
 @app.route('/techniques', methods=['GET', 'POST'])
 def techniques():
-	db = jen_api.load(data_path)
-	db_techniques = jen_api.get_techniques(db)
-	# Denna skiten är hårdkodad så det funkar, men variation måste fortfarande implementeras!
-	# Det går heller ej att klicka på flera knappar.
-	wanted_technique = request.form.get('ada')
-	if wanted_technique:
-		found = jen_api.search(db, techniques=wanted_technique)
-		return render_template('techniques.html', title='Techniques', techniques=db_techniques, search_results=found)
-	else:
-		return render_template('techniques.html', title='Techniques', techniques=db_techniques)
+	techniques = request.args.getlist("technique")
+	found = jen_api.search(db, techniques=techniques)
+	return render_template('techniques.html', title='Techniques', techniques=jen_api.get_techniques(db), search_results=found)
 
 # /404
 @app.errorhandler(404)

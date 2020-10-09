@@ -30,7 +30,7 @@ def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=
 	projects = copy.deepcopy(db)
 	try:
 		if techniques:
-			projects = [project for project in projects for technique in project['techniques_used'] if all(str(x).lower() in str(technique).lower() for x in techniques)]
+			projects = [project for project in projects if set([str(technique).lower() for technique in techniques]).issubset(project['techniques_used'])]
 	except Exception:
 		print("Failed searching for techniques.")
 	if search:
@@ -46,8 +46,7 @@ def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=
 		isreverse = False
 	return sorted(projects, key=lambda results: results[sort_by], reverse=isreverse)
 
-def get_technique_stats(db): return {technique: [{'id': project['project_id'], 'name': project['project_name']} for project in search(
-	db, search=technique, search_fields=['techniques_used'])] for technique in get_techniques(db)}
+def get_technique_stats(db): return {technique: [{'id': project['project_id'], 'name': project['project_name']} for project in search(db, search=technique, search_fields=['techniques_used'])] for technique in get_techniques(db)}
 
 def get_search_fields(db):
 	return db[0].keys()

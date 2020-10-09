@@ -1,45 +1,22 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<<<<<<< HEAD
 <article class="darkTile">
-	<h1>Press the techniques to sort projects!</h1>
-	<form action="" method="GET" style="float: left; margin-right: 15px;">
-	{% for technique in techniques %}
-	  <input type="button" class="btn btn-default" value="{{ technique }}"></>
-	{% endfor %}
+	<form method="get">
+		<h1>Press the techniques to sort projects!</h1>
+		<div class="checkboxes">
+			{% for technique in techniques%}
+			<input type="checkbox" name="technique" id="{{ technique }}" value="{{ technique }}">
+			<label for="{{ technique }}">{{ technique }}</label>
+			{% endfor %}
+		</div>
+		<input type="submit" value="Sök">
 	</form>
-=======
-<article class="darkTile" style="margin-bottom: 15px;">
-  <div>
-    <h1>Press the techniques to sort projects!</h1>
-    {% for technique in techniques %}
-    <form action="" method="POST" style="float: left; margin-right: 15px;">
-      <input type="submit" name="{{ technique }}" class="btn btn-default" value="{{ technique }}"></>
-    </form>
-    {% endfor %}
-</div>
 </article>
 
 {% if search_results %}
-{% for project in search_results %}
-
-<article class="darkTile" style="margin-bottom: 30px;">
-  <div>
-    <a href="{{ url_for("show_project", id=project.project_id) }}"><h2>Project number {{ project.project_id }}: {{ project.project_name }} </h2></a>
-    <a href="{{ url_for("show_project", id=project.project_id) }}"><img src="https://via.placeholder.com/150" style="float: left;" alt={{ project.project_name }}></a>
-    <p>{{ project.end_date }}</p>
-    <p>{{ project.short_description }}</p>
-    <p>Techniques used in this project:
-      {% for technique in project.techniques_used %}
-      {{ technique }}
-    {% endfor %}</p>
-    
-    </div>
->>>>>>> 1bd39d5cfa182cea817f2a7adc94246d61e74de8
-</article>
-
-{% endfor %}
+<div class="wideList">
+	{% include 'project.html' %}
+</div>
 {% endif %}
-
 {% endblock %}

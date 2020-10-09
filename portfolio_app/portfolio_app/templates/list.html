@@ -24,30 +24,12 @@
 		<label for="{{ search_field }}">{{ search_field }}</label>
 		{% endfor %}
 	</div>
-	<h2>Tekniker</h2>
-	<div class="checkboxes">
-		{% for technique in techniques%}
-		<input type="checkbox" name="technique" id="{{ technique }}" value="{{ technique }}">
-		<label for="{{ technique }}">{{ technique }}</label>
-		{% endfor %}
-	</div>
 	<input type="submit" value="Sök">
   </form>
 </article>
 {% if search_results %}
 <div class="wideList">
-{% for project in search_results %}
-	<article class="darkTile" style="margin-bottom: 30px;">
-		<a href="/project/{{ project.project_id }}"><h2>Project number {{ project.project_id }}: {{ project.project_name }} </h2></a>
-		<a href="/project/{{ project.project_id }}"><img src="https://via.placeholder.com/150" style="float: left;" alt={{ project.project_name }}></a>
-		<p>{{ project.end_date }}</p>
-		<p>{{ project.short_description }}</p>
-		<p>Techniques used in this project:
-		  {% for technique in project.techniques_used %}
-		  {{ technique }}
-		{% endfor %}</p>
-	</article>
-{% endfor %}
+	{% include 'project.html' %}
 </div>
 {% endif %}
 {% endblock %}
