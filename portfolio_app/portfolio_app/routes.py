@@ -37,22 +37,31 @@ def list():
 # /project/id
 @app.route('/project/<int:id>', methods=['GET'])
 def show_project(id):
-	print("this is idddddddddd", id)
-	chosen_project = jen_api.get_project(db, id)
-	print(chosen_project)
-	return render_template('project_page.html', title=chosen_project['project_name'], project=chosen_project)
+	if request.args.get("search projects", ""):
+		return redirect(url_for("list"))
+	else:
+		print("this is idddddddddd", id)
+		chosen_project = jen_api.get_project(db, id)
+		print(chosen_project)
+		return render_template('project_page.html', title=chosen_project['project_name'], project=chosen_project)
 
 # /techniques
 @app.route('/techniques', methods=['GET', 'POST'])
 def techniques():
-	techniques = request.args.getlist("technique")
-	found = jen_api.search(db, techniques=techniques)
-	return render_template('techniques.html', title='Techniques', techniques=jen_api.get_techniques(db), search_results=found)
+	if request.args.get("search projects", ""):
+		return redirect(url_for("list"))
+	else:
+		techniques = request.args.getlist("technique")
+		found = jen_api.search(db, techniques=techniques)
+		return render_template('techniques.html', title='Techniques', techniques=jen_api.get_techniques(db), search_results=found)
 
 # /404
 @app.errorhandler(404)
 def not_found_error(error):
-	return render_template('404.html'), 404
+	if request.args.get("search projects", ""):
+		return redirect(url_for("list"))
+	else:
+		return render_template('404.html'), 404
 
 # ERROR SOLUTIONS:
 

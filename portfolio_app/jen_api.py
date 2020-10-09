@@ -31,15 +31,15 @@ def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=
 	try:
 		if techniques:
 			projects = [project for project in projects if set([str(technique).lower() for technique in techniques]).issubset(project['techniques_used'])]
+			#projects = [project for project in projects for technique in project['techniques_used'] if all(str(x).lower() in str(technique).lower() for x in techniques)]
+			#projects = [project for project in projects if all(str(x).lower() in str(technique).lower() for technique in project['techniques_used'] for x in techniques)]
 	except Exception:
 		print("Failed searching for techniques.")
 	if search:
 		if search_fields == None:
-			projects = [project for project in projects if str(
-				search).lower() in str(project).lower()]
+			projects = [project for project in projects if str(search).lower() in " ".join([str(item[1]) for item in project.items()]).lower()]
 		elif isinstance(search_fields, list):
-			projects = [project for project in projects for search_field in search_fields if str(
-				search).lower() in str(project[search_field]).lower()]
+			projects = [project for project in projects for search_field in search_fields if str(search).lower() in str(project[search_field]).lower()]
 	if sort_order == 'desc':
 		isreverse = True
 	elif sort_order == 'asc':

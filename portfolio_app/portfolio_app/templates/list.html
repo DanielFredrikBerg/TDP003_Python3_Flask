@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<article class = darkTile>
-  <h1>Avanderad Sökning</h1>
-  <form method="get">
+<form method="get" class="darkTile">
+	<h1>Avanderad Sökning</h1>
 	<div>
 		<input type="search" name="search projects">
 		<label for="sort_by">Sortera efter:</label>
@@ -25,8 +24,7 @@
 		{% endfor %}
 	</div>
 	<input type="submit" value="Sök">
-  </form>
-</article>
+</form>
 {% if search_results %}
 <div class="wideList">
 	{% include 'project.html' %}

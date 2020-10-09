@@ -1,0 +1,14 @@
+{% for project in search_results %}
+	<a href="/project/{{ project.project_id }}">
+		<article class="darkTile">
+			<h2>Project number {{ project.project_id }}: {{ project.project_name }} </h2>
+			<img src="https://via.placeholder.com/150" style="float: left;" alt={{ project.project_name }}>
+			<p>{{ project.end_date }}</p>
+			<p>{{ project.short_description }}</p>
+			<p>Techniques used in this project:
+			  {% for technique in project.techniques_used %}
+			  {{ technique }}
+			{% endfor %}</p>
+		</article>
+	</a>
+{% endfor %}

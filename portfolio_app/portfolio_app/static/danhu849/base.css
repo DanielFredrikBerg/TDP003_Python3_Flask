@@ -30,23 +30,15 @@ img {
 	border-radius: 8px;
 	max-width: 100%;
 }
-body > * {
-	width: 100%;
-	padding: 20px 0;
-}
+main{width: 100%;}
 header {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-}
-header > div {
 	max-width: 1500px;
 	width: 95%;
 	display: grid;
 	grid-template-columns: 20% auto 20%;
 	grid-template-rows: 10px;
 }
-header > div > nav {
+header > nav {
 	place-self: center;
 	display: flex;
 	justify-content: center;
@@ -65,7 +57,7 @@ header > div > nav {
 		letter-spacing: 10px;
 	}
 }
-header > div > nav > a {
+header > nav > a {
 	text-align: center;
 	padding: 0 10px;
 	white-space: nowrap;
@@ -74,11 +66,11 @@ header > div > nav > a {
 	letter-spacing: 0px;
 	animation: text_join 0.1s ease forwards;
 }
-header > div > nav > a:hover {
+header > nav > a:hover {
 	letter-spacing: 10px;
 	animation: text_separate 0.1s ease forwards;
 }
-header > div > form {
+header > form {
 	display: flex;
 	width: 100%;
 	place-self: center;
@@ -89,7 +81,7 @@ header > div > form {
 	grid-row-end: 1;
 	padding-left: 10px;
 }
-header > div > form > input {
+header > form > input {
 	margin: 0;
 	height: 30px;
 	border-radius: 15px;
@@ -101,25 +93,26 @@ main {
 	flex-direction: column;
 	align-items: center;
 	flex: 1;
+	padding-bottom: 50px;
 }
 article {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-main > article {
+main > .darkTile{
 	max-width: 800px;
 	width: 90%;
 }
-article > * {
+.darkTile > * {
 	margin: 16px;
 }
-article > form {
+form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-article form input[type="checkbox"] {
+form input[type="checkbox"] {
 	display: none;
 }
 .checkboxes {
@@ -140,26 +133,29 @@ article form input[type="checkbox"] {
 input[type="submit"], select, label{
 	cursor: pointer;
 }
-article form input[type="checkbox"]:checked + label {
+form input[type="checkbox"]:checked + label {
 	background-color: #a2ffaf;
 }
 .wideList {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-around;
 }
-.wideList > article {
-	max-width: 300px;
-	margin: 25px;
+.wideList .darkTile{
+	margin: 30px;
+	width: 300px;
+	height: 500px;
 }
 footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	max-width: 250px;
 }
-footer > div > p {
+footer > p {
 	text-align: center;
 }
-.brightTile,
+header, footer,
 .darkTile {
 	background-attachment: fixed;
 	background-size: cover;
@@ -172,20 +168,21 @@ footer > div > p {
 	color: white;
 	box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.5);
 }
-.brightTile {
+header, footer{
 	background-color: white;
 	background-image: url("pawel-czerwinski-ncgbTwIZhNU-unsplash_blur_bright.jpg");
 	color: black;
 	box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.2);
+	margin: 20px;
 }
 @media only screen and (max-width: 480px) {
-	header > div {
+	header {
 		grid-template-columns: 0% auto 30%;
 	}
-	header > div > nav > a {
+	header > nav > a {
 		animation: none;
 	}
-	header > div > nav > a:hover {
+	header > nav > a:hover {
 		letter-spacing: 0px;
 		animation: none;
 	}
