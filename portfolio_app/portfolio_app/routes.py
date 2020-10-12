@@ -51,8 +51,8 @@ def show_project(id):
 
             
 # /techniques
-@app.route('/techniques/', methods=['GET', 'POST'])
 @app.route('/techniques', methods=['GET', 'POST'])
+@app.route('/techniques/', methods=['GET', 'POST'])
 def techniques():
 	if request.args.get("search projects", ""):
 		return redirect(url_for("list"))
