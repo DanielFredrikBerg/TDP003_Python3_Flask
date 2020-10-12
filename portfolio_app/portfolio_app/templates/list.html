@@ -3,7 +3,7 @@
 <form method="get" class="darkTile">
 	<h1>Avanderad Sökning</h1>
 	<div>
-		<input type="search" name="search projects">
+		<input type="search" name="search projects" value="{{ search }}">
 		<label for="sort_by">Sortera efter:</label>
 		<select name="sort_by" id="sort_by">
 			{% for search_field in search_fields %}
@@ -29,5 +29,13 @@
 <div class="wideList">
   {% include 'project.html' ignore missing %}
 </div>
+{% else %}
+<article class="darkTile" style="margin-top: 15px">
+  {% if searched_search_fields %}
+  <p>Searching for {{ search }} in search fields: {% for field in searched_search_fields %} {{ field }}, {% endfor %} generated no results.</p>
+  {% else %}
+  <p>Searching for {{ search }} generated no results.</p>
+  {% endif %}
+</article>
 {% endif %}
 {% endblock %}

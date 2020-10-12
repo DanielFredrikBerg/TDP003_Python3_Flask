@@ -10,6 +10,7 @@ db = jen_api.load(data_path)
 # /
 @app.route('/')
 @app.route('/home')
+@app.route('/home/')
 def home():
     if request.args.get("search projects", ""):
         return redirect(url_for("list"))
@@ -17,8 +18,10 @@ def home():
         user = {'username': 'jenoh242 & danhu849'}
         return render_template('index.html', user=user)
 
+    
 # /list
 @app.route('/list')
+@app.route('/list/')
 def list():
     search_for = request.args.get("search projects", "")
     search_fields = request.args.getlist("search_field")
@@ -32,19 +35,23 @@ def list():
         sort_order = "desc"
     found = jen_api.search(db, search=search_for, sort_by=sort_by,
                            sort_order=sort_order, search_fields=search_fields)
-    #print("This is found: ", found)
-    return render_template('list.html', title='Search', search_results=found, search_fields=jen_api.get_search_fields(db))
+    print("This is found: ", found)
+    return render_template('list.html', title='Search', search=search_for, search_results=found, search_fields=jen_api.get_search_fields(db), searched_search_fields=search_fields)
 
 
 # /project/id
 @app.route('/project/<int:id>', methods=['GET'])
+@app.route('/project/<int:id>/', methods=['GET'])
 def show_project(id):
 	if request.args.get("search projects", ""):
 		return redirect(url_for("list"))
 	else:
 		chosen_project = jen_api.get_project(db, id)
 		return render_template('project_page.html', title=chosen_project['project_name'], project=chosen_project)
+
+            
 # /techniques
+@app.route('/techniques/', methods=['GET', 'POST'])
 @app.route('/techniques', methods=['GET', 'POST'])
 def techniques():
 	if request.args.get("search projects", ""):
@@ -53,6 +60,8 @@ def techniques():
 		techniques = request.args.getlist("technique")
 		found = jen_api.search(db, techniques=techniques)
 		return render_template('techniques.html', title='Techniques', techniques=jen_api.get_techniques(db), search_results=found)
+
+            
 # /404
 @app.errorhandler(404)
 def not_found_error(error):
