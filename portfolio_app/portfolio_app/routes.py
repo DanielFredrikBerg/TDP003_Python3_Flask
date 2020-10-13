@@ -35,7 +35,7 @@ def list():
         sort_order = "desc"
     found = jen_api.search(db, search=search_for, sort_by=sort_by,
                            sort_order=sort_order, search_fields=search_fields)
-    print("This is found: ", found)
+    #print("This is found: ", found)
     return render_template('list.html', title='Search', search=search_for, search_results=found, search_fields=jen_api.get_search_fields(db), searched_search_fields=search_fields)
 
 
