@@ -46,8 +46,11 @@ def show_project(id):
 	if request.args.get("search projects", ""):
 		return redirect(url_for("list"))
 	else:
-		chosen_project = jen_api.get_project(db, id)
-		return render_template('project_page.html', title=chosen_project['project_name'], project=chosen_project)
+            if id > 0 and id < jen_api.get_project_count(db):
+                chosen_project = jen_api.get_project(db, id)
+                return render_template('project_page.html', title=chosen_project['project_name'], project=chosen_project)
+            else:
+                return render_template('404.html', project_id=id), 404
 
             
 # /techniques

@@ -3,6 +3,10 @@
 {% block content %}
 <article class="darkTile">
   <h1>ERROR 404</h1>
+  {% if project_id %}
+  <h2>Project with project id: {{ project_id }} does not exist.</h2>
+  {% else %}
   <h2>The page you are trying to reach does not exist.</h2>
+  {% endif %}
 </article>
 {% endblock %}
