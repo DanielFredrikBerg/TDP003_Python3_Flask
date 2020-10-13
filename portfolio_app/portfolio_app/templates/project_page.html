@@ -2,7 +2,8 @@
 
 {% block content %}
   <article class="darkTile">
-    <h1>{{ project.project_name }}</h1> <img src="https://via.placeholder.com/300" style="float: left;" alt={{ project.project_name }}>
+    <h1>Project number {{ project.project_id }}: {{ project.project_name }}</h1> <img src="https://via.placeholder.com/300" alt="{{ project.big_image }}" style="float: left;" alt={{ project.project_name }}>
     <p>{{ project.long_description }}</p>
+    <p>Techniques used in this project: {% for technique in project.techniques_used %} {{ technique }} {% endfor %} </p>
   </article>
 {% endblock %}
