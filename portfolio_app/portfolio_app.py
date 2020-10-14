@@ -1,1 +1,1 @@
-from app import app
+from portfolio_app import app
