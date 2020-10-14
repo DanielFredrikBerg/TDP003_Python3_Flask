@@ -1,0 +1,35 @@
+2020-10-14 19:37:34,574 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) datefmt=
+2020-10-14 19:37:34,575 INFO werkzeug MainThread :  * Restarting with stat datefmt=
+2020-10-14 19:37:34,743 WARNING werkzeug MainThread :  * Debugger is active! datefmt=
+2020-10-14 19:37:34,743 INFO werkzeug MainThread :  * Debugger PIN: 112-419-750 datefmt=
+2020-10-14 19:37:36,453 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2020 19:37:36] "[37mGET /techniques/ HTTP/1.1[0m" 200 - datefmt=
+2020-10-14 19:37:36,573 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2020 19:37:36] "[37mGET /static/danhu849/Iosevka/ttf/iosevka-medium.ttf HTTP/1.1[0m" 200 - datefmt=
+2020-10-14 19:37:37,942 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2020 19:37:37] "[37mGET /home/ HTTP/1.1[0m" 200 - datefmt=
+2020-10-14 19:37:38,927 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2020 19:37:38] "[37mGET /techniques/ HTTP/1.1[0m" 200 - datefmt=
+2020-10-14 19:37:40,865 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2020 19:37:40] "[37mGET /list/ HTTP/1.1[0m" 200 - datefmt=
+2020-10-14 19:37:43,317 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2020 19:37:43] "[37mGET /home/ HTTP/1.1[0m" 200 - datefmt=
+2020-10-14 19:37:44,236 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2020 19:37:44] "[37mGET /techniques/ HTTP/1.1[0m" 200 - datefmt=
+2020-10-14 19:37:45,322 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2020 19:37:45] "[37mGET /list/ HTTP/1.1[0m" 200 - datefmt=
+2020-10-14 19:38:04,431 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) datefmt=
+2020-10-14 19:38:08,307 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2020 19:38:08] "[37mGET /techniques/ HTTP/1.1[0m" 200 - datefmt=
+2020-10-14 19:38:09,534 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2020 19:38:09] "[37mGET /home/ HTTP/1.1[0m" 200 - datefmt=
+2020-10-14 19:38:10,235 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2020 19:38:10] "[37mGET /list/ HTTP/1.1[0m" 200 - datefmt=
+2020-10-14 19:38:11,012 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2020 19:38:11] "[37mGET /techniques/ HTTP/1.1[0m" 200 - datefmt=
+2020-10-14 19:38:12,540 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2020 19:38:12] "[37mGET /techniques/?technique=c%2B%2B HTTP/1.1[0m" 200 - datefmt=
+2020-10-14 19:38:14,309 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2020 19:38:14] "[37mGET /techniques/?technique=csv&technique=python HTTP/1.1[0m" 200 - datefmt=
+2020-10-14 19:38:15,253 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2020 19:38:15] "[37mGET /project/3/ HTTP/1.1[0m" 200 - datefmt=
+2020-10-14 19:38:16,867 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2020 19:38:16] "[37mGET /home/ HTTP/1.1[0m" 200 - datefmt=
+2020-10-14 19:39:39,885 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-10-14 19:39:46,138 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2020 19:39:46] "[37mGET /techniques/ HTTP/1.1[0m" 200 -
+2020-10-14 19:39:48,600 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2020 19:39:48] "[37mGET /techniques/?technique=c%2B%2B&technique=csv HTTP/1.1[0m" 200 -
+2020-10-14 19:42:33,852 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-10-14 19:42:36,472 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2020 19:42:36] "[37mGET /techniques/?technique=c%%2B&technique=csv HTTP/1.1[0m" 200 -
+2020-10-14 19:42:41,047 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2020 19:42:41] "[37mGET /techniques/?technique=c%%2B&tea%20rwe%20afwchnique=csv HTTP/1.1[0m" 200 -
+2020-10-14 19:42:53,460 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2020 19:42:53] "[37mGET /techniques/?technique=sas23c%%2B&tea%20rwe%20afwchnique=csv HTTP/1.1[0m" 200 -
+2020-10-14 19:42:56,978 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2020 19:42:56] "[37mGET /techniques/?technique=python HTTP/1.1[0m" 200 -
+2020-10-14 19:43:02,176 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2020 19:43:02] "[37mGET /techniques/?technique=python3 HTTP/1.1[0m" 200 -
+2020-10-14 19:43:04,118 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2020 19:43:04] "[37mGET /list/ HTTP/1.1[0m" 200 -
+2020-10-14 19:43:05,805 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2020 19:43:05] "[37mGET /home/ HTTP/1.1[0m" 200 -
+2020-10-14 19:43:07,188 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2020 19:43:07] "[37mGET /techniques/ HTTP/1.1[0m" 200 -
+2020-10-14 19:43:09,589 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2020 19:43:09] "[37mGET /techniques/?technique=python HTTP/1.1[0m" 200 -
+2020-10-14 19:43:18,459 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2020 19:43:18] "[37mGET /techniques/?technique=c%2B%2B&technique=csv HTTP/1.1[0m" 200 -
