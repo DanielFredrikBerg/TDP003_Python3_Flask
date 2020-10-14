@@ -1,11 +1,14 @@
 from flask import render_template, request, redirect, url_for
 from portfolio_app import app
+from logging.config import fileConfig
 import jen_api
 import os
 
 current_path = os.path.dirname(__name__)
 data_path = os.path.relpath('data.json', current_path)
 db = jen_api.load(data_path)
+
+fileConfig('logging.cfg')
 
 # /
 @app.route('/')

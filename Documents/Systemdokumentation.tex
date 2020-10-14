@@ -7,7 +7,7 @@
 \author{Daniel Huber, \url{danhu849@liu.se}\\
   Jens Öhnell, \url{jenoh242@liu.se}}
 \title{Planeringsdokument}
-\date{2020-10-13}
+\date{2020-10-15}
 \rhead{Daniel Huber\\
 Jens Öhnell}
 
@@ -20,35 +20,26 @@ Jens Öhnell}
 \begin{tabularx}{\linewidth}{|l|X|l|}
 \hline
 Ver. & Revisionsbeskrivning & Datum \\\hline
-1.0 & Systemdokumentation för Portfolio TDP003 & 131020 \\\hline
+1.0 & Systemdokumentation för Portfolio TDP003 & 151020 \\\hline
 \end{tabularx}
 \end{table}
 
 
-\section{Översikt}
-Projektets mål är att skapa, presentera och underhålla en webbaserad portfolio. Portfolion innehåller de projekt som vi i och utanför universitetet kommer fullgöra under de kommande 3 åren. Kravspecifikationen är skriven av programledningen. För de avsnitt där det antingen är vagt eller inte alls specificerat vad eller hur något ska göras förväntas det att studenten tar egna initiativ. Exempel på detta är utseendet på användargränssnittet där nästintill fria tyglar ges.
+\section{Översiktsbild}
+
+\section{Specifikation - Presentationslagret}
+
+\section{Sekvensdiagram - Sökning}
 
 
-\section{Kravspecifikation}
-Projektet utgörs av två delar. Dels det slutanvändaren kan se, det presentativa, och dels det som denne inte kan se, datalagringen och datahämtningen.
 
-Projektet kräver att webbplatsen utrustas med fyra html-sidor skrivna i HTML5 och CSS3. En huvudsida/första sida som antingen kan vara statiskt eller dynamisk samt 3 stycken dynamiska sidor. De tre sistnämnda utgörs av en söksida, en projektsida och en tekniksida. Det är krav på att huvudsidan har bilder. Söksidan ska inneha funktionaliteten att kunna sortera projekt på projekt id samt göra det möjligt att kunna söka efter dem med hjälp av söktermer i ett formulär. Projektsidan ska visa fullständig information om det specifika projektet med en stor relevant bild. Om projektet inte finns visas relevant flekod i.e. status 404 'This page does not exist'. Tekniksidan innehåller information om projekten utifrån vilka tekniker och i hur stor omfattning dessa används i projekten. Varje projekt ska i listningar på söksidan och tekniksidan visas med en liten bild bredvid sig. Bildtext måste finnas till varje bild. Fel ska hanteras på ett, för slutanvändaren, informativt sätt så att denne kan förstå vad som gått fel.
+\section{Felhantering}
+Beskrivning av metoder och program för felsökning. Print() och utskrifter i portfoliologgen (flask debug mode). Sidan man kommer till vid fel.
 
-Utöver det presentativa utgörs projektets andra del av datalagring och implementering av funktioner som hämtar lagrad data och presenterar detta för användaren. Vi kallar detta för simpelhetens skull för back-end. Varje projekt-data-del i portföljen utgörs av projektnamn, projekt-id i form av ett unikt heltalsnummer, startdatum, slutdatum, kurskod, kursnamn, kurspoäng, nyttjade tekniker, sammanfattning, full beskrivning, liten och stor bild, antal gruppmedlemmar och länk till projektsida. Back-end ska kunna hantera samtliga innan nämnda informationsdelar om respektive projekt.
-
-Sökning med godtyckliga termer om projektets information genererar träffar och presenterar slutanvändaren med en lista där det mest förmodade objektet presenteras högst upp eller längst ner. Söklistan ska också kunna gå att sortera på använda tekniker. Det ska noteras att funktionaliteten ska möjliggöra sökning på ett ord, sortering och filtrering av tekniker kan ske samtidigt. Datan finns lagrad med UTF-8 teckenkodning i JSON-filen data.json. Datum är i formatet ISO 8601. Tilläggning av data i data.json filen är tänkt att antingen ske manuellt eller av andra verktyg i systemet. Förändringar i data.json filen ska presenteras direkt utan nödvändig omstart av webbservern. En frivillighet och alltså inte ett krav är att lägga till en administrativ sida för redigering av data.
-
-De sex funktioner som hanterar back-end ska följa en bestämd standard. Denna standard möjliggör att delsystemen kan bytas ut. Samtliga namn ska vara skrivna på engelska. Funktionerna kommer vara: load(filename), get\_project\_count(db), get\_project(db, id), search(db, sort\_by='start date', sort\_order='desc', techniques=None, search=None), get\_techniques(db), get\_technique\_stats(db).
-
-Projektet ska versionshanteras med git.
-
-Systemet ska testas av två personer som inte ingår i utvecklarteamet för projektet. Testpersonerna är tänkta att testa de funktioner projektet huvudsakligen tillhandahåller. Systemtesten och uppkomna fel ska dokumenteras och vara åtgärdade i den slutgiltiga versionen av projektet. Testerna ska skrivas in i systemdokumentationen.
+De gemensamma enhetstesterna för datalagret
+Standardiserade enhetstester för datalagret
 
 
-\section{Tidsplanering med grov uppskattning på tidsåtgång}
-Nedan följer en grov uppskattning av tidsåtgång för de olika momenten nödvändiga att behandla innan projektet kan anses slutfört. Tidsuppskattningen baseras på att gruppens medlemmar dels skummat igenom innehållet för respektive ämne och sedan efter diskussion kommit fram till en förväntad tidsåtgång för att bemästra sagt ämne. Uppskattningen anses vara grov då det utgås ifrån nuvarande kunskap idag (2020-09-09).
-
-\subsection{Schema/Deadlines}
 
 \begin{tabular}{|l|l|l|l|l|}
   \hline
