@@ -27,23 +27,28 @@ Ver. & Revisionsbeskrivning & Datum \\\hline
 
 \section{Översiktsbild}
 Hemsidans syfte är att presentera information om hemsidans ägare, och presentera projekt som denna har gjort på ett sökbart sätt. Hemsidan byggs upp av ett datalager samt ett presentationslager.
+\begin{figure}[h]
+  \centerline{\includegraphics[width=\textwidth, height=10cm]{/home/danhu849/tdp003/Pictures/oversight_pic.png}}
+  \caption{Översiktsbild för portfolion. \label{fig:1}}
+\end{figure}
+
 
 \subsection{Datalagret}
-Datalagrets syfte är att gör information om olika projekt åtkommlig och sökbar. Det är skrivet i Python 3, och söker mot en json-fil.
+I datalagret görs information om olika projekt åtkommlig och sökbar. Det skrevs i Python3 och projekten sparas i JSON i en JSON fil.
 
 \subsection{Presentationslagret}
-Presentationslagrets syfte är att göra informationen tillgänglig till slutanvändaren på ett enkelt och intuitivt sätt. Det är skrivet i Python 3 med ramverket Flask samt templatemotorn Jinja2.
+I presentationslagret görs informationen tillgänglig för slutanvändaren på ett enkelt och intuitivt sätt. Lagret skrevs i Python 3 med ramverket Flask samt templatemotorn Jinja2.
 
 \section{Specifikation - Presentationslagret}
-Skapandet av hemsidan har utgått från en kravspecifikation. Denna har varit vägledande i vilken funktionalitet sidan skall ha. Den fulla specifikationen kan hittas i dokumentet \textit{Systemspecifikation av portfoliosystem}.
+Skapandet av hemsidan har utgått från en kravspecifikation. Denna har varit vägledande i vilken funktionalitet sidan skall ha. Den fulla specifikationen kan hittas i dokumentet \textit{Systemspecifikation av portfoliosystem} som återfinns på kurshemsidan.
 
-Sammanfattningsvis skall dock följande ingå i hemsidan:
+Sammanfattningsvis utgörs hemsidan av följande:
 \begin{itemize}
     \item En förstasida med bilder.
     \item En söksida som gör det möjligt att söka och sortera på diverse fält för projekten.
     \item En tekniksida som gör det möjligt att sortera projekt på använda tekniker.
-    \item Bilder, både "thumbnails" och fullstora, för all projekt.
-    \item Begripliga felmedelanden.
+    \item Bilder, både "thumbnails" och fullstora, för alla projekt.
+    \item För slutanvändaren begripliga felmedelanden.
     \item Korrekta statuskoder.
 \end{itemize}
 
@@ -52,10 +57,10 @@ Sammanfattningsvis skall dock följande ingå i hemsidan:
 
 \begin{figure}[h]
   \centerline{\includegraphics[width=\textwidth, height=10cm]{/home/danhu849/tdp003/Pictures/Sekvensdiagram.png}}
-  \caption{Sekvensdiagram för Sökning \label{fig:1}}
+  \caption{Sekvensdiagram för Sökning \label{fig:2}}
 \end{figure}
 
-I sekvensdiagram \ref{fig:1} visas det översiktligt hur användaren från (/home, /) presenteras med sökresultat.
+I sekvensdiagram \ref{fig:2} visas det översiktligt hur användaren från (/home, /) presenteras med sökresultat.
 
 \section{Felhantering och Loggar}
 Samtliga portfoliohändelser loggas med hjälp av Pythons logging.config modul. Konfigurationen för loggningen definieras i filen <logging.cfg>. Loggar skrevs till filen <portfolio\_log.log> i kronologisk ordning. Senast log längst ner. Båda filerna finns i root katalogen för portfolio-appen. Loggar sparas med datumstämpel, viktighet, namn, tråd och meddelande. Alla loggar skrivs in i logfilen oavsett viktighet, men kan ändras vid behov genom att ändra <level=DEBUG> under <[logger\_root]> i konfigurationsfilen <logging.cfg>. En nivå som filtrerar bort mer än DEBUG rekommenderas ej då händelser som lett upp till kraschen kan ha filtrerats bort. Logfilen finns tillgänglig även när flask inte körs. Vid ny körning av flask skrivs inte portfolio\_log.log över utan nya loggar skrivs in längst ner i filen.
