@@ -50,26 +50,28 @@ Sammanfattningsvis skall dock följande ingå i hemsidan:
 
 \section{Sekvensdiagram - Sökning}
 
+\begin{figure}[h!]
+  \centerline{\includegraphics{/home/danhu849/tdp003/Pictures/Sekvensdiagram.png}}
+  \caption{Sekvensdiagram för Sökning\label{fig1}}
+\end{figure}
 
+\ref{fig1}
 
 \section{Felhantering och Loggar}
 Samtliga portfoliohändelser loggas med hjälp av Pythons logging.config modul. Konfigurationen för loggningen definieras i filen <logging.cfg>. Loggar skrevs till filen <portfolio\_log.log> i kronologisk ordning. Senast log längst ner. Båda filerna finns i root katalogen för portfolio-appen. Loggar sparas med datumstämpel, viktighet, namn, tråd och meddelande. Alla loggar skrivs in i logfilen oavsett viktighet, men kan ändras vid behov genom att ändra <level=DEBUG> under <[logger\_root]> i konfigurationsfilen <logging.cfg>. En nivå som filtrerar bort mer än DEBUG rekommenderas ej då händelser som lett upp till kraschen kan ha filtrerats bort. Logfilen finns tillgänglig även när flask inte körs. Vid ny körning av flask skrivs inte portfolio\_log.log över utan nya loggar skrivs in längst ner i filen.
 
 Terminalkommandot tail med flaggan -f används vid flask run för att i realtid övervaka de senast tillagda loggarna i <portfolio\_log.log>. Vid behov används flaggan -nN där N definieras av antalet rader som visas. Utan flaggan -n visas de sista 10 raderna från filen i terminalen. Att alltid de 10 sista raderna visas från filen möjliggörs av flaggan -f.
 
-<code>tail -n15 -f /path/to/portfolio_app/portfolio_log.log</code>
+<code>tail -n15 -f /path/to/portfolio\_app/portfolio\_log.log</code>
 
-Utöver logfilen hanteras fel med hjälp av pythons print() funktion som kan skrivas in i varje @app.route() funktion, men också egendefinierade funktioner. Informationen skrivs ut i terminalfönstret när funktioner aktiveras under en flask run körning. Med print() kan variabler från bland annat databasen kommas åt. Flasks egen debug mode aktiveras genom att FLASK_DEBUG variabeln sätts till 1 innan flask run:
+Utöver logfilen hanteras fel med hjälp av pythons print() funktion som kan skrivas in i varje @app.route() funktion, men också egendefinierade funktioner. Informationen skrivs ut i terminalfönstret när funktioner aktiveras under en flask run körning. Med print() kan variabler från bland annat databasen kommas åt. Flasks egen debug mode aktiveras genom att FLASK\_DEBUG variabeln sätts till 1 innan flask run:
 
-<code>export FLASK_DEBUG=1</code>
+<code>export FLASK\_DEBUG=1</code>
 
 \subsection{Testning/felsökning - Databas}
-Testning av datalagrets funktioner tillhandahålls av kursledningen. Utöver de initiella testerna har fler med tiden lagts till. Testerna skrevs i unittest (Unit testing framework)
+Testning av datalagrets funktioner tillhandahålls av kursledningen och benämns enhetstester. Utöver de initiella enhetstesterna har fler med tiden lagts till. Enhetstesterna skrevs i python3 där pythons modul unittest (Unit testing framework) används. Testerna skrevs med kravspecifikationen i åtanke. Körning av testerna utan fel bevisar att funktionens krav uppfylls.
 
-De gemensamma enhetstesterna för datalagret
-Standardiserade enhetstester för datalagret
-
-\subsection{Lokal Docker Testning}
+\subsection{Docker Testning Lokalt}
 ''Om ni vill får ni gärna ha med hur man startar en lokal Docker-avbild och testar den'' - Filip Strömbäck
 
 

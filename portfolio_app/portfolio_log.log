@@ -33,3 +33,7 @@
 2020-10-14 19:43:07,188 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2020 19:43:07] "[37mGET /techniques/ HTTP/1.1[0m" 200 -
 2020-10-14 19:43:09,589 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2020 19:43:09] "[37mGET /techniques/?technique=python HTTP/1.1[0m" 200 -
 2020-10-14 19:43:18,459 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2020 19:43:18] "[37mGET /techniques/?technique=c%2B%2B&technique=csv HTTP/1.1[0m" 200 -
+2020-10-15 17:31:30,919 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-10-15 17:31:30,920 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-15 17:31:31,103 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-15 17:31:31,171 INFO werkzeug MainThread :  * Debugger PIN: 465-584-587

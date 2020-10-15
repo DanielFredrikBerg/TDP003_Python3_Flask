@@ -1,0 +1,14 @@
+title Sekvensdiagram - Sökning
+
+participant Användare
+participant Presentationslager
+participant Datalager
+
+Användare->Presentationslager:Trycker på knappen, Avancerad Sökning
+Presentationslager->Användare: @app.route("/list")\n return template("/list.html")
+Användare->Presentationslager: Sökmetod och söksträng
+Presentationslager->Datalager: api.search()
+Datalager->Presentationslager: Sökresultat
+Presentationslager->Användare: Sökresultat presenterade\ni html med jinja2, html och css
+
+https://sequencediagram.org/

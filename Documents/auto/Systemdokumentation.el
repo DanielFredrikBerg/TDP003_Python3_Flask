@@ -10,6 +10,8 @@
     "inputenc"
     "babel")
    (TeX-add-symbols
-    "version"))
+    "version")
+   (LaTeX-add-labels
+    "fig1"))
  :latex)
 
