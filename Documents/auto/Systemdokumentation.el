@@ -12,6 +12,6 @@
    (TeX-add-symbols
     "version")
    (LaTeX-add-labels
-    "fig1"))
+    "fig:1"))
  :latex)
 
