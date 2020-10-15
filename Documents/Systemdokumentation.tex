@@ -6,7 +6,7 @@
 \newcommand{\version}{Version 1.0}
 \author{Daniel Huber, \url{danhu849@liu.se}\\
   Jens Öhnell, \url{jenoh242@liu.se}}
-\title{Planeringsdokument}
+\title{Systemdokumentation}
 \date{2020-10-15}
 \rhead{Daniel Huber\\
 Jens Öhnell}
@@ -26,8 +26,27 @@ Ver. & Revisionsbeskrivning & Datum \\\hline
 
 
 \section{Översiktsbild}
+Hemsidans syfte är att presentera information om hemsidans ägare, och presentera project som denna har gjort på ett sökbart sätt. Den består av ett datalager samt ett presentationslager.
+
+\subsection{Datalagret}
+Datalagrets syfte är att gör information om olika projekt åtkommlig och sökbar. Det är skrivet i Python 3, och söker mot en json-fil.
+
+\subsection{Presentationslagret}
+Presentationslagrets syfte är att göra informationen tillgänglig till slutanvändaren på ett enkelt och intuitivt sätt. Det är skrivet i Python 3 med ramverket Flask samt templatemotorn Jinja2.
 
 \section{Specifikation - Presentationslagret}
+Skapandet av hemsidan har utgått från en kravspecifikation. Denna har varit vägledande i vilken funktionalitet sidan skall ha. Den fulla specifikationen kan hittas i dokumentet \textit{Systemspecifikation av portfoliosystem}.
+
+Sammanfattningsvis skall dock följande ingå i hemsidan:
+\begin{itemize}
+    \item En förstasida med bilder.
+    \item En söksida som gör det möjligt att söka och sortera på diverse fält för projekten.
+    \item En tekniksida som gör det möjligt att sortera projekt på använda tekniker.
+    \item Bilder, både "thumbnails" och fullstora, för all projekt.
+    \item Begripliga felmedelanden.
+    \item Korrekta statuskoder.
+\end{itemize}
+
 
 \section{Sekvensdiagram - Sökning}
 
