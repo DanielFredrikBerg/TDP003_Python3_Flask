@@ -33,14 +33,19 @@ Ver. & Revisionsbeskrivning & Datum \\\hline
 
 
 
-\section{Felhantering}
-Samtliga portfolio händelser loggas med hjälp av logging.config modulen. Konfigurationen för loggningen definieras i logging.cfg filen. 
+\section{Felhantering och Loggar}
+Samtliga portfoliohändelser loggas med hjälp av Pythons logging.config modul. Konfigurationen för loggningen definieras i filen <logging.cfg>. Loggar skrevs till filen <portfolio\_log.log> i kronologisk ordning. Senast log längst ner. Båda filerna finns i root katalogen för portfolio-appen. Loggar sparas med datumstämpel, viktighet, namn, tråd och meddelande. Alla loggar skrivs in i logfilen oavsett viktighet, men kan ändras vid behov genom att ändra <level=DEBUG> under <[logger\_root]> i konfigurationsfilen <logging.cfg>. En nivå som filtrerar bort mer än DEBUG rekommenderas ej då händelser som lett upp till kraschen kan ha filtrerats bort. Logfilen finns tillgänglig även när flask inte körs. Vid ny körning av flask skrivs inte portfolio\_log.log över utan nya loggar skrivs in längst ner i filen.
+
+Terminalkommandot tail -f används vid flask run för att i realtid övervaka de senast tillagda loggarna i portfolio\_log.log. tail används med flaggan -f och vid behov flaggan -n.
+
 
 Beskrivning av metoder och program för felsökning. Print() och utskrifter i portfoliologgen (flask debug mode). Sidan man kommer till vid fel.
 
 De gemensamma enhetstesterna för datalagret
 Standardiserade enhetstester för datalagret
 
+\subsection{Lokal Docker Testning}
+''Om ni vill får ni gärna ha med hur man startar en lokal Docker-avbild och testar den'' - Filip Strömbäck
 
 
 \begin{tabular}{|l|l|l|l|l|}
