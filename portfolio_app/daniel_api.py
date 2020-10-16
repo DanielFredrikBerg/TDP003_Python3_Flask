@@ -15,23 +15,23 @@ def load(json_file):
     try:
         with open(str(json_file), 'r') as json_file:
             data = json.load(json_file)
-            db = sorted(data, key=lambda p_id: p_id['project_id'])
-        return db
+        return sorted(data, key=lambda p_id: p_id['project_id'])
     except Exception as e:
+        print('invalid json: %s' % e)
         return None
 
 
 def add_project(db, project):
-    try:
-        db.append(project)
-        json.dumps(
-            db, sort_keys=lambda project: project['project_id'], indent=2)
-    except Exception as e:
-        print('Error: ', e)
-        
+    db.append(project)
+
+
+def write_db_to_json(db, save_file):
+    with open(str(save_file), 'w') as json_file:
+        json.dump(db, json_file)
+
 
 def get_project_count(db):
-    return len([project['project_id'] for project in db])
+    return len(db)
 
 
 def get_project(db, p_id):
@@ -116,6 +116,10 @@ def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=
     return sorted(search_results, key=lambda results: results[sort_by], reverse=is_reverse)
 
 
+def get_search_fields(db):
+    return db[0].keys()
+
+
 def get_techniques(db):
     #big_t_list = [project['techniques_used'] for project in db]
     return list(dict.fromkeys(sorted([technique for mini_tech_list in [project['techniques_used'] for project in db] for technique in mini_tech_list])))
@@ -163,7 +167,7 @@ def main():
     add_project(db, project)
     db = load(f)
     print(get_project_count(db))
-    
+
     # db = load(sys.argv[1])
     # print(get_project_count(p_list))
     # print(get_project(p_list, 0))

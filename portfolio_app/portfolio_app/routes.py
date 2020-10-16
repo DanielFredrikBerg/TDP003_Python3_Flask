@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for
 from portfolio_app import app
 from logging.config import fileConfig
-import jen_api
+import daniel_api as jen_api
 import os
 
 current_path = os.path.dirname(__name__)
