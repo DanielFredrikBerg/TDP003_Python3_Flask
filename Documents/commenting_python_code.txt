@@ -1,0 +1,44 @@
+Double Triple quotes underneath the definition of a python function 
+sets the functions' __doc__ value to info within said quotes.
+***********************************************************************************
+Example:
+
+def some_function(x):
+"""Simple function that does y with x."""
+
+Multi-lined docstrings are used to further elaborate on the object beyond the summary. All multi-lined docstrings have the following parts:
+
+    A one-line summary line
+    A blank line proceeding the summary
+    Any further elaboration for the docstring
+    Another blank line
+
+***********************************************************************************
+
+""This is the summary line
+
+This is the further elaboration of the docstring. Within this section,
+you can elaborate further on details as appropriate for the situation.
+Notice that the summary and the elaboration is separated by a blank new
+line.
+"""
+
+# Notice the blank line above. Code should continue on this line.
+***********************************************************************************
+
+Epytext example:
+
+"""Gets and prints the spreadsheet's header columns
+
+@type file_loc: str
+@param file_loc: The file location of the spreadsheet
+@type print_cols: bool
+@param print_cols: A flag used to print the columns to the console
+    (default is False)
+@rtype: list
+@returns: a list of strings representing the header columns
+"""
+
+***********************************************************************************
+
+https://realpython.com/documenting-python-code/#commenting-vs-documenting-code
