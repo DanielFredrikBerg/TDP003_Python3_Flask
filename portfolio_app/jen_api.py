@@ -7,7 +7,7 @@ def load(path):
 	"""Loads json from `path` and returns list sorted on projects ID"""
 	try:
 		with open(str(path), 'r') as data:
-			return sorted(json.load(data), key=lambda project: project['project_id'])
+                        return sorted(json.load(data), key=lambda project: project['project_id'])
 	except Exception as e:
 		print('invalid json: %s' % e)
 		return None
@@ -16,9 +16,14 @@ def add_project(db, project):
 	"""Adds project to `db`"""
 	db.append(project)
 
-#def delete_project(db, project):
+def remove_project(db, id_):
+        """Removes project from 'db' if id matches project."""
+        for project in db:
+                if project['project_id'] == id_:
+                        db.remove(project)
+        
 def write_db_to_json(db, save_file):
-	"""Writes `db` to file with path `save_file`, overwriting excisting data."""
+	"""Writes `db` to file with path `save_file`, overwriting existing data."""
 	with open(str(save_file), 'w') as json_file:
 		json.dump(db, json_file)
 
@@ -26,19 +31,19 @@ def get_project_count(db):
 	"""Returns int of how many projects in `db`'"""
 	return len(db)
 
-def get_project(db, id):
-	"""Returns first `project` in `db` mathing `id`."""
+def get_project(db, id_):
+	"""Returns `project` matching `id` in `db`."""
 	for project in db:
-		if project['project_id'] == id:
+		if project['project_id'] == id_:
 			return project
 
 def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=None, search_fields=None):
 	"""##Search
-	Will return a list of projects in `db` mathing **all** search requirements:
+	Will return a list of projects in `db` matching **all** search requirements:
 
 	1. Only match projects containing all `techniques`.
 
-	2.  Only match projects containing string `search` in atleast **one** field in `search_fields`.
+	2. Only match projects containing string `search` in atleast **one** field in `search_fields`.
 		If `search_fields` is empty, all fields will be checked.
 
 	Will sort by field `sort_by`. In ascending order if `sort_order` has value `desc`, descending if value is `asc`.
