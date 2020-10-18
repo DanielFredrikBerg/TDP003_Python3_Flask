@@ -1,0 +1,1 @@
+{'os.walk(str(top_dir)):', 'print()', 'files_in_dir(top_dir,', 'subdirs."""', 'of', 'file_.endswith(str(end)):', 'file_))', 'files:', 'def', 'root,', 'path_list', 'dirs,', 'end):', 'top_dir', '"""Returns', '\\', 'file_', 'path_list.append(os.path.join(root,', '[]', '='}
