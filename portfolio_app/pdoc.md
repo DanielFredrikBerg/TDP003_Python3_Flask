@@ -378,7 +378,7 @@ Will return a list of projects in <code>db</code> matching all of the following 
 
 1. Only match projects containing all <code>techniques</code>.
 
-2. Only match projects containing string <code>[search()](#jen\_api.search "jen\_api.search")</code> in atleast one field in <code>search\_fields</code>.
+2. Only match projects containing string <code>search()</code> in atleast one field in <code>search\_fields</code>.
         If <code>search\_fields</code> is empty, all fields will be checked.
 
 **Parameters**:
@@ -387,7 +387,7 @@ Will return a list of projects in <code>db</code> matching all of the following 
 * <code>sort\_by</code> (string) - Field of projects to sort by.
 * <code>sort\_order</code> (string) - Order to sort in. 'asc' for ascending order, 'desc' for descending.
 * <code>techniques</code> (list) - Techniques that must be in project to be returned. Field is ignored if empty or None.
-* <code>[search()](#jen\_api.search "jen\_api.search")</code> (string) - Free text search.
+* <code>search()</code> (string) - Free text search.
 * <code>search\_fields</code> (list) - Fields to be searched. If empty, no fields are searched. If None, all fields are searched.
 
 **Returns**:
