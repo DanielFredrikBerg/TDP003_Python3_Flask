@@ -13,7 +13,19 @@ fileConfig('logging.cfg')
 @app.route('/')
 @app.route('/home/')
 def home():
-    """Homepage. Contains info on author."""
+    """
+    Homepage. Contains info on author.
+
+    **Arguments**:
+
+    * None
+
+    **Returns**:
+
+    * If search has been used, redirect to `list()`. Otherwize:
+
+    * Render home page.
+    """
     if request.args.get("search projects", ""):
         return redirect(url_for("list"))
     else:
@@ -23,7 +35,17 @@ def home():
 # /list
 @app.route('/list/')
 def list():
-    """List of projects, with advanced search."""
+    """
+    List of projects, with advanced search.
+
+    **Arguments**:
+
+    * None
+
+    **Returns**:
+
+    * Render list page.
+    """
     search_for = request.args.get("search projects", "")
     search_fields = request.args.getlist("search_field")
     if not search_fields:
@@ -43,7 +65,19 @@ def list():
 # /project/id
 @app.route('/project/<int:id>/', methods=['GET'])
 def show_project(id):
-    """Projectpage. Shows info on project with id `id`."""
+    """
+    Projectpage. Shows info on project with id `id`.
+
+    **Arguments**:
+
+    * `id` (int) - Id of project to show.
+
+    **Returns**:
+
+    * If search has been used, redirect to `list()`. Otherwize:
+
+    * Render 404 page.
+    """
     if request.args.get("search projects", ""):
         return redirect(url_for("list"))
     else:
@@ -57,7 +91,19 @@ def show_project(id):
 # /techniques
 @app.route('/techniques/', methods=['GET', 'POST'])
 def techniques():
-    """Techniques page. Shows projects pased on techniques used."""
+    """
+    Techniques page. Shows projects pased on techniques used
+
+    **Arguments**:
+
+    * None
+
+    **Returns**:
+
+    * If search has been used, redirect to `list()`. Otherwize:
+
+    * Render techniques page.
+    """
     if request.args.get("search projects", ""):
         return redirect(url_for("list"))
     else:
@@ -68,7 +114,21 @@ def techniques():
 # /404
 @app.errorhandler(404)
 def not_found_error(error):
-    """404 Page. Shows if page no found."""
+    """
+    404 Page. Shows if page no found.
+
+    **Arguments**:
+
+    * `error` (int) - Error code.
+
+    **Returns**:
+
+    *  If search has been used, redirect to `list()`. Otherwize:
+
+    *  Render 404 page. And:
+
+    * `404` (int), Error code 404.
+    """
     if request.args.get("search projects", ""):
         return redirect(url_for("list"))
     else:

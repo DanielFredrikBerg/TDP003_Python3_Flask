@@ -310,3 +310,167 @@ AttributeError: module 'daniel_api' has no attribute 'get_search_fields'
 2020-10-19 13:35:05,183 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.smarty.SmartyExtension".
 2020-10-19 13:35:05,184 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.toc".
 2020-10-19 13:35:05,184 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.toc.TocExtension".
+2020-10-19 15:39:20,146 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.abbr".
+2020-10-19 15:39:20,146 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+2020-10-19 15:39:20,152 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.attr_list".
+2020-10-19 15:39:20,152 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+2020-10-19 15:39:20,153 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.def_list".
+2020-10-19 15:39:20,153 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+2020-10-19 15:39:20,155 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.fenced_code".
+2020-10-19 15:39:20,155 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+2020-10-19 15:39:20,156 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.footnotes".
+2020-10-19 15:39:20,156 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+2020-10-19 15:39:20,157 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.tables".
+2020-10-19 15:39:20,157 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.tables.TableExtension".
+2020-10-19 15:39:20,157 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.admonition".
+2020-10-19 15:39:20,158 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
+2020-10-19 15:39:20,158 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.smarty".
+2020-10-19 15:39:20,158 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.smarty.SmartyExtension".
+2020-10-19 15:39:20,159 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.toc".
+2020-10-19 15:39:20,159 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.toc.TocExtension".
+2020-10-19 15:41:29,209 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.abbr".
+2020-10-19 15:41:29,209 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+2020-10-19 15:41:29,215 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.attr_list".
+2020-10-19 15:41:29,215 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+2020-10-19 15:41:29,215 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.def_list".
+2020-10-19 15:41:29,215 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+2020-10-19 15:41:29,217 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.fenced_code".
+2020-10-19 15:41:29,217 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+2020-10-19 15:41:29,218 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.footnotes".
+2020-10-19 15:41:29,219 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+2020-10-19 15:41:29,219 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.tables".
+2020-10-19 15:41:29,219 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.tables.TableExtension".
+2020-10-19 15:41:29,220 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.admonition".
+2020-10-19 15:41:29,220 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
+2020-10-19 15:41:29,221 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.smarty".
+2020-10-19 15:41:29,221 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.smarty.SmartyExtension".
+2020-10-19 15:41:29,222 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.toc".
+2020-10-19 15:41:29,222 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.toc.TocExtension".
+2020-10-19 15:42:04,807 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.abbr".
+2020-10-19 15:42:04,807 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+2020-10-19 15:42:04,813 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.attr_list".
+2020-10-19 15:42:04,813 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+2020-10-19 15:42:04,814 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.def_list".
+2020-10-19 15:42:04,814 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+2020-10-19 15:42:04,816 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.fenced_code".
+2020-10-19 15:42:04,816 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+2020-10-19 15:42:04,817 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.footnotes".
+2020-10-19 15:42:04,817 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+2020-10-19 15:42:04,818 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.tables".
+2020-10-19 15:42:04,818 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.tables.TableExtension".
+2020-10-19 15:42:04,818 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.admonition".
+2020-10-19 15:42:04,819 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
+2020-10-19 15:42:04,819 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.smarty".
+2020-10-19 15:42:04,819 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.smarty.SmartyExtension".
+2020-10-19 15:42:04,820 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.toc".
+2020-10-19 15:42:04,820 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.toc.TocExtension".
+2020-10-19 15:43:47,076 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.abbr".
+2020-10-19 15:43:47,076 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+2020-10-19 15:43:47,081 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.attr_list".
+2020-10-19 15:43:47,081 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+2020-10-19 15:43:47,082 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.def_list".
+2020-10-19 15:43:47,082 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+2020-10-19 15:43:47,084 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.fenced_code".
+2020-10-19 15:43:47,084 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+2020-10-19 15:43:47,085 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.footnotes".
+2020-10-19 15:43:47,085 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+2020-10-19 15:43:47,086 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.tables".
+2020-10-19 15:43:47,086 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.tables.TableExtension".
+2020-10-19 15:43:47,087 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.admonition".
+2020-10-19 15:43:47,087 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
+2020-10-19 15:43:47,087 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.smarty".
+2020-10-19 15:43:47,088 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.smarty.SmartyExtension".
+2020-10-19 15:43:47,088 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.toc".
+2020-10-19 15:43:47,089 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.toc.TocExtension".
+2020-10-19 15:45:57,338 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.abbr".
+2020-10-19 15:45:57,338 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+2020-10-19 15:45:57,343 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.attr_list".
+2020-10-19 15:45:57,343 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+2020-10-19 15:45:57,344 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.def_list".
+2020-10-19 15:45:57,344 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+2020-10-19 15:45:57,346 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.fenced_code".
+2020-10-19 15:45:57,346 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+2020-10-19 15:45:57,347 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.footnotes".
+2020-10-19 15:45:57,347 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+2020-10-19 15:45:57,348 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.tables".
+2020-10-19 15:45:57,348 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.tables.TableExtension".
+2020-10-19 15:45:57,349 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.admonition".
+2020-10-19 15:45:57,349 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
+2020-10-19 15:45:57,349 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.smarty".
+2020-10-19 15:45:57,350 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.smarty.SmartyExtension".
+2020-10-19 15:45:57,351 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.toc".
+2020-10-19 15:45:57,351 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.toc.TocExtension".
+2020-10-19 16:30:52,728 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.abbr".
+2020-10-19 16:30:52,729 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+2020-10-19 16:30:52,734 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.attr_list".
+2020-10-19 16:30:52,734 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+2020-10-19 16:30:52,735 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.def_list".
+2020-10-19 16:30:52,735 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+2020-10-19 16:30:52,737 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.fenced_code".
+2020-10-19 16:30:52,737 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+2020-10-19 16:30:52,738 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.footnotes".
+2020-10-19 16:30:52,738 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+2020-10-19 16:30:52,739 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.tables".
+2020-10-19 16:30:52,739 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.tables.TableExtension".
+2020-10-19 16:30:52,740 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.admonition".
+2020-10-19 16:30:52,740 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
+2020-10-19 16:30:52,740 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.smarty".
+2020-10-19 16:30:52,741 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.smarty.SmartyExtension".
+2020-10-19 16:30:52,741 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.toc".
+2020-10-19 16:30:52,741 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.toc.TocExtension".
+2020-10-19 17:17:33,531 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-10-19 17:17:33,533 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-19 17:20:37,088 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.abbr".
+2020-10-19 17:20:37,089 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+2020-10-19 17:20:37,094 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.attr_list".
+2020-10-19 17:20:37,094 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+2020-10-19 17:20:37,094 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.def_list".
+2020-10-19 17:20:37,095 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+2020-10-19 17:20:37,097 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.fenced_code".
+2020-10-19 17:20:37,097 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+2020-10-19 17:20:37,098 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.footnotes".
+2020-10-19 17:20:37,098 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+2020-10-19 17:20:37,099 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.tables".
+2020-10-19 17:20:37,099 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.tables.TableExtension".
+2020-10-19 17:20:37,099 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.admonition".
+2020-10-19 17:20:37,100 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
+2020-10-19 17:20:37,100 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.smarty".
+2020-10-19 17:20:37,100 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.smarty.SmartyExtension".
+2020-10-19 17:20:37,101 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.toc".
+2020-10-19 17:20:37,101 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.toc.TocExtension".
+2020-10-19 17:21:08,553 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.abbr".
+2020-10-19 17:21:08,553 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+2020-10-19 17:21:08,559 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.attr_list".
+2020-10-19 17:21:08,559 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+2020-10-19 17:21:08,559 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.def_list".
+2020-10-19 17:21:08,559 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+2020-10-19 17:21:08,561 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.fenced_code".
+2020-10-19 17:21:08,561 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+2020-10-19 17:21:08,562 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.footnotes".
+2020-10-19 17:21:08,563 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+2020-10-19 17:21:08,563 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.tables".
+2020-10-19 17:21:08,563 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.tables.TableExtension".
+2020-10-19 17:21:08,564 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.admonition".
+2020-10-19 17:21:08,564 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
+2020-10-19 17:21:08,565 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.smarty".
+2020-10-19 17:21:08,565 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.smarty.SmartyExtension".
+2020-10-19 17:21:08,566 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.toc".
+2020-10-19 17:21:08,566 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.toc.TocExtension".
+2020-10-19 17:21:58,531 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.abbr".
+2020-10-19 17:21:58,532 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+2020-10-19 17:21:58,537 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.attr_list".
+2020-10-19 17:21:58,537 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+2020-10-19 17:21:58,537 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.def_list".
+2020-10-19 17:21:58,537 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+2020-10-19 17:21:58,540 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.fenced_code".
+2020-10-19 17:21:58,540 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+2020-10-19 17:21:58,541 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.footnotes".
+2020-10-19 17:21:58,541 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+2020-10-19 17:21:58,542 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.tables".
+2020-10-19 17:21:58,542 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.tables.TableExtension".
+2020-10-19 17:21:58,542 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.admonition".
+2020-10-19 17:21:58,543 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
+2020-10-19 17:21:58,543 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.smarty".
+2020-10-19 17:21:58,543 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.smarty.SmartyExtension".
+2020-10-19 17:21:58,544 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.toc".
+2020-10-19 17:21:58,544 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.toc.TocExtension".
