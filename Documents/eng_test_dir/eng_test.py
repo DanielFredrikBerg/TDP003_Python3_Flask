@@ -7,12 +7,12 @@ import os
 import re
 
 
-def load_wordlist(word_list_file):
+def load_wordlist(wordlist_file):
     """Makes a set of a '\n' separated wordlist file."""
-    with open(str(word_list_file), 'r') as data_file:
+    with open(str(wordlist_file), 'r') as data_file:
         content = data_file.read()
-        word_list = content.split('\n')
-    return set(word_list)
+        wordlist = content.split('\n')
+    return set(wordlist)
 
 
 def is_english(word, word_list):
@@ -21,7 +21,7 @@ def is_english(word, word_list):
 
 
 def files_in_dir(top_dir, end):
-    """Returns list of path of files with ending end in 'top_dir' and all subdirs."""
+    """Returns list of path of files with ending end in top_dir and all subdirs."""
     path_list = []
     for root, dirs, files in os.walk(str(top_dir)):
         for file_ in files:
@@ -35,11 +35,11 @@ def unknown_words_to_file(file_path, word_list, save_dir=''):
     unknown_words = set()
     with open(str(file_path), 'r') as file_:
         file_words = re.findall('[a-zA-Z]+', str(file_.read()))
-        #print(file_words)
+        print(file_words)
         for word in file_words:
             if not is_english(word, word_list):
                 unknown_words.add(word)
-    #print("unknown words: ", unknown_words)
+    print("unknown words: ", unknown_words)
     if len(unknown_words) > 0:
         with open(''.join((save_dir, os.path.basename(file_path).split('.')[0] + '_uwords_.txt')), 'w') as file_:
             file_.write(str(file_path) + '\n\n' + str(unknown_words))
@@ -53,7 +53,6 @@ def create_uword_dir(path=os.getcwd()):
     uword_dir_path = os.path.join(str(path), 'uword_directory/')
     try:
         os.mkdir(uword_dir_path)
-        print("Creating uword_directory")
     except FileExistsError:
         print("uword directory already exists")
     finally:
@@ -66,15 +65,15 @@ def is_path_valid(path):
 
     
 def check_uword_of_file_type_in_path(path, word_list, file_type='.py', save_dir='uword_directory'):
-    """Writes words from all file/s of 'file_type' on 'path' to 'file_name_uwords_.txt' in 'save_dir' not included in 'word_list'."""
+    """Writes words from all file/s of 'file_type' on 'path' to 'filename_uwords_.txt' in 'save_dir' not included in 'word_list'."""
     if os.path.isfile(path):
-        print("Scanning file:", path)
+        print("Scanning file: ", path)
         unknown_words_to_file(path, word_list, save_dir)
     elif os.path.isdir(path):
-        print("Scanning directory:", path)
+        print("Scanning directory: ", path)
         for files in files_in_dir(path, str(file_type)):
             unknown_words_to_file(files, word_list, save_dir)
-    print('All files checked.')
+
 
 def main():
     print("Loading variables.")
@@ -87,18 +86,14 @@ def main():
     print("Checking valid path")
     if is_path_valid(path):
         check_uword_of_file_type_in_path(path, eng_set, file_type='.py', save_dir=uword_dir)
-        print("Done")
     else:
         print('Error: ' + str(sys.argv[2]) + ' is neither file nor directory.')
         exit()
 
         
 if __name__ == '__main__':
-    print("First argument is this file.\n\
-Second argument is the word list to be used.\n\
-Third argument is the path, either file or dir, to be checked.")
     main()
 else:
     print('Running as module')
     
-    
+
