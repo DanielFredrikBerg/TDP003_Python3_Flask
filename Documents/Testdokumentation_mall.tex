@@ -1,0 +1,307 @@
+\documentclass{TDP003mall}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+
+
+\newcommand{\version}{Version 1.0}
+\author{Author 1, \url{author1@liu.se}\\
+  Author 2, \url{author2@liu.se}}
+\title{Testdokumentation}
+\date{2020-10-18}
+\rhead{Daniel Huber\\
+Jens Öhnell}
+
+
+\begin{document}
+\projectpage
+\tableofcontents
+\section{Revisionshistorik}
+\begin{table}[!h]
+\begin{tabularx}{\linewidth}{|l|X|l|}
+\hline
+Ver. & Revisionsbeskrivning & Datum \\\hline
+1.0 & Mall för Testdokumentation Portfolio TDP003 & 181020 \\\hline
+\end{tabularx}
+\end{table}
+
+\section{Information om denna mall}
+Författare av dokument som baseras på denna mall är införstådda med reglerna för dess användande. Reglerna återfinns i detta stycke. Varje dokument som är en påbyggnation eller använder delar av detta dokument eller någon av dess senare eller tidigare versioner ska inkludera detta stycke.
+
+Individuella påbyggnationer eller omskrivningar av denna mall förutsätts ha indata och resultat specifierade specifikt för det egna portfolioprojektet. Endast upphovsrättsmannen, Daniel Huber (danhu849) och personer listade nedanför får använda denna mall. Dokumentet får ej delas till andra eller tredje part. Förbrytelser skickas till Diciplinnnämnden vid Linköpings Universitet.
+\begin{itemize}
+\item Jens Öhrnell, jenoh242
+\item Michael Lake, micla389
+\item Robin Edlund, robed441
+\item Jim Teräväinen, jimte145
+\item Ahmed Sikh, ahmsi881
+\end{itemize}
+
+Detta samarbete har gjorts möjlig efter mejlkonversation med Examinator för Kursen TDP003, Filip Strömbäck Fredagen 16:e Oktober 2020. Frågor rörande överenskommelsens validitet hänvisas till Filip Strömbäck.
+
+\section{Testspecifikation}
+
+\subsection{Tester mot presentationslagrets krav}
+\subsubsection*{Test 1.1 (Krav 1.1)}
+\begin{itemize}
+\item[]\textbf{Indata} Öppna portfolion första sidan (URL: /).
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 1. (Krav 1.2)}
+\begin{itemize}
+\item[]\textbf{Indata} Öppna portfolio projektlista (URL: /list).
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 1. (Krav 1.2)}
+\begin{itemize}
+\item[]\textbf{Indata} Sökning i sökfältet. Endast text, exakt inmatning: '[valfritt projektnamn]' i sidan '/list'.
+\item[]\textbf{Resultat} 
+\end{itemize} 
+\subsubsection*{Test 1. (Krav 1.2)}
+\begin{itemize}
+\item[]\textbf{Indata} Sökning i sökfältet. Endast text, exakt inmatning: 'python' på sidan '/list'.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 1. (Krav 1.2)}
+\begin{itemize}
+\item[]\textbf{Indata} Klicka på 'ascending' och sedan 'Search' på sidan '/list'.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 1. (Krav 1.2)}
+\begin{itemize}
+\item[]\textbf{Indata} Ändrar sorteringen från 'fallande' till 'stigande' feter sökning på '/list' med fler än ett resultat. Trycker sedan enter.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 1. (Krav 1.2)}
+\begin{itemize}
+\item[]\textbf{Indata} På /list. Ändrar search\_field I URL:en till något som inte finns. Trycker enter.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 1. (Krav 1.2)}
+\begin{itemize}
+\item[]\textbf{Indata} Markerar alla searchfields genom att klicka på dem. Skriver sedan 'e' i sökfältet och trycker sedan enter.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 1. (Krav 1.2)}
+\begin{itemize}
+\item[]\textbf{Indata} Klicka i 'checkbox' för 'Python' samt 'ada' och sedan 'Search' på sidan '/list'.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 1. (Krav 1.3)}
+\begin{itemize}
+\item[]\textbf{Indata} Klicka på ett projekt i listan på sidan '/list'
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 1. (Krav 1.3)}
+\begin{itemize}
+\item[]\textbf{Indata} Ändrar URL på projektsidan från 'project/id=3' till 'project/id=4'.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 1. (Krav 1.3)}
+\begin{itemize}
+\item[]\textbf{Indata} Ändrar URL på projektsidan från 'project/3' till 'project/4'.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 1. (Krav 1.4)}
+\begin{itemize}
+\item[]\textbf{Indata} Markerar alla tekniker på '/techniques' sidan. Trycker sedan enter.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 1. (Krav 1.5)}
+\begin{itemize}%Addera bild för exakt indata, och inställningar
+\item[]\textbf{Indata} Kontrollera att sökresultaten på sidan '/list/?search+projects=python\&sort\_by=start\_date\&sort\_order=asc' har små bilder med w3 validator 'https://validator.w3.org'.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 1. (Krav 1.5)}
+\begin{itemize}%Addera bild för exakt indata, och inställningar
+\item[]\textbf{Indata} Kontrollera att projektsidan '/project/1/' har minst en stor bild med w3 validator 'https://validator.w3.org'.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 1. (Krav 1.6)}
+\begin{itemize}
+\item[]\textbf{Indata} Efter valfri sökning på '/list'. Sätt 'search\_field' variabeln i URL:en till 'lKAsm32105,saölf'.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 1. (Krav 1.7)}
+\begin{itemize}
+\item[]\textbf{Indata} Ändra URL:en på projektsidan 'project/3' till 'project/a'.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 1. (Krav 1.7)}
+\begin{itemize}
+\item[]\textbf{Indata} Ändra URL:en på projektsidan 'project/3' till 'project/854965625'.
+\item[]\textbf{Resultat} 
+\end{itemize}
+
+
+\subsection{Tester mot datalagrets krav}
+\subsubsection*{Test 2.1 (Krav 2.1)}
+\begin{itemize}
+\item[]\textbf{Indata} Testas med data\_testet mot kraven, det vill säga load\_test och test\_get\_project.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 2. (Krav 2.2)}
+\begin{itemize}
+\item[]\textbf{Indata} Testas med data\_testet mot kraven, det vill säga test\_get\_project\_count och test\_get\_project.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 2. (Krav 2.3)}
+\begin{itemize}
+\item[]\textbf{Indata} Testas med data\_testet mot kraven, det vill säga test\_get\_techniques
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 2. (Krav 2.4)}
+\begin{itemize}
+\item[]\textbf{Indata} Testas med data\_testet mot kraven, det vill säga test\_search.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 2. (Krav 2.7)}
+\begin{itemize}%Bild på terminalen med indata och programmet.
+\item[]\textbf{Indata} data.json körs som argument i utf-8\_tester.py
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 2. (Krav 2.9)}
+\begin{itemize}
+\item[]\textbf{Indata} flask session startas utan debug\_mode och ett femte projekt läggs till manuellt i data.json 
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 2. (Krav 2.8)}
+\begin{itemize}
+\item[]\textbf{Indata} Lägg till ett projekt eller ett till fält på ett projekt i din JSON fil, exempel - 'Företagsnamn'. Testa sedan filen genom att köra programmet, d.v.s hemsidan. Sök på projekten med nya de fälten/fält som du har lagt till.  
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 2. (Krav 2.)}
+\begin{itemize}
+\item[]\textbf{Indata}
+\item[]\textbf{Resultat} 
+\end{itemize}
+
+
+
+
+
+
+\subsection{Tester mot Icke-funktionella Krav}
+\subsubsection*{Test 3.1 (Krav 3.1)}
+\begin{itemize}
+\item[]\textbf{Indata} Validera Jinja2 i samtliga HTML filer i '/templates' genom att köra dem genom en Jinja2 parser.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 3. (Krav 3.1)}
+\begin{itemize}
+\item[]\textbf{Indata} Validera att pythonscriptens utdata formateras rätt av Jinja2 i samtliga HTML filer i '/templates' med pythonscript.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 3. (Krav 3.2)}
+\begin{itemize}%Addera bild för valda alternativ.
+\item[]\textbf{Indata} Validera portfoliosidans css3 med hjälp av w3 css validerare (https://jigsaw.w3.org/css-validator/). Sätt 'Profile: CSS level 3', 'Medium: All', 'Warnings: Normal report', 'Vendor Extensions: Default'.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 3. (Krav 3.2)}
+\begin{itemize}%Addera bild för valda alternativ.
+\item[]\textbf{Indata} Validera portfoliosidans HTML5 med hjälp av w3 HTML5 validerare (https://jigsaw.w3.org/css-validator/). 
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 3. (Krav 3.3)}
+\begin{itemize}
+\item[]\textbf{Indata} I terminal: cd till projektets katalog. Skriv ut katalogens innehåll med 'tree .'
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 3. (Krav 3.4)}
+\begin{itemize}
+\item[]\textbf{Indata} Bevisa att projektet versionhanteras med git genom att visa print screen över commit historik från portfolions repo.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 3. (Krav 3.5)}
+\begin{itemize}
+\item[]\textbf{Indata} Bevisa att presentationen av systemet är godkänd och lägg till kommentarer från användare från klassens portfolio presentation.
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 3. (Krav 3.6)}
+\begin{itemize}
+\item[]\textbf{Indata} Kör varje python docstring från varje .py fil genom check_if_english.py
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 3. (Krav 3.7)}
+\begin{itemize}
+\item[]\textbf{Indata} Kör alla pythonprograms rader genom ett check_if_english.py som räknar orden och kollar om de är engelska. 
+\item[]\textbf{Resultat} 
+\end{itemize}
+\subsubsection*{Test 3. (Krav 3.8, 3.9 och 3.10)}
+\begin{itemize}
+\item[] Se dokumentet: \texttt{Systemdokumentationen}
+\end{itemize}
+
+
+
+
+
+\section{Testlogg}
+
+\begin{tabular}{|l|l|l|l|l|}
+  \hline
+  Datum & Commit & Godkända & Avvikande & Kommentar \\ [0.5ex]
+  \hline
+  2019-10-15 &  &  &  & \\
+  \hline
+  \hline
+  2019-10-15 &  &  &  & \\
+  \hline
+  \hline
+  2019-10-15 &  &  &  & \\
+  \hline
+  \hline
+  2019-10-15 &  &  &  & \\
+  \hline
+  \hline
+  2019-10-15 &  &  &  & \\
+  \hline
+  \hline
+  2019-10-15 &  &  &  & \\
+  \hline
+  \hline
+  2019-10-15 &  &  &  & \\
+  \hline
+  \hline
+  2019-10-15 &  &  &  & \\
+  \hline
+  \hline
+  2019-10-15 &  &  &  & \\
+  \hline
+  \hline
+  2019-10-15 &  &  &  & \\
+  \hline
+  \hline
+  2019-10-15 &  &  &  & \\
+  \hline
+  \hline
+  2019-10-15 &  &  &  & \\
+  \hline
+  \hline
+  2019-10-15 &  &  &  & \\
+  \hline
+  \hline
+  2019-10-15 &  &  &  & \\
+  \hline
+\end{tabular}
+
+
+%Formateringsexempel
+
+%% \begin{itemize}
+%%     \item 
+%%     \item 
+%%     \item 
+%%     \item 
+%%     \item 
+%%     \item 
+%% \end{itemize}
+
+%% \begin{figure}[h]
+%%   \centerline{\includegraphics[width=\textwidth, height=10cm]{ida.png}}
+%%   \caption{ \label{fig:2}}
+%% \end{figure}
+
+%% \ref{fig:2} 
+
+
+\end{document}
