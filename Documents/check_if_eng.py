@@ -27,7 +27,7 @@ def files_in_dir(top_dir, end):
     return path_list
 
 
-def unknown_words_to_file(file_path, wordlist, save_dir=None):
+def unknown_words_to_file(file_path, wordlist, save_dir=''):
     """Writes words from 'file_path' not in wordlist to '_uwords_file_path.txt)"""
     unknown_words = set()
     with open(str(file_path), 'r') as file_:
@@ -36,20 +36,24 @@ def unknown_words_to_file(file_path, wordlist, save_dir=None):
         for word in file_words:
             if not is_english(word, wordlist):
                 unknown_words.add(word)
-    print("unknown word: ", unknown_words)
+    print("unknown words: ", unknown_words)
     if len(unknown_words) > 0:
-        with open(''.join(('_uwords_', os.path.basename(file_path).split('.')[0] + '.txt')), 'w') as file_:
+        with open(''.join((save_dir, '_uwords_' + os.path.basename(file_path).split('.')[0] + '.txt')), 'w') as file_:
             file_.write(str(file_path) + '\n\n' + str(unknown_words))
     else:
         print("No unknown words in file: ", file_path)
     return 0
 
+
 def create_uword_dir(path=os.getcwd()):
-    """Creates directory in current working directory."""
+    """Creates directory in current working directory if it does not exist."""
+    uword_dir_path = os.path.join(str(path), 'uword_directory/')
     try:
-        os.mkdir(os.path.join(str(path), 'uword_directory/'))
+        os.mkdir(uword_dir_path)
     except FileExistsError:
         print("uword directory already exists")
+    finally:
+        return uword_dir_path
 
 
 def main():
@@ -57,7 +61,9 @@ def main():
     w_list = sys.argv[1]
     file_or_dir = sys.argv[2]
     eng_set = load_wordlist(w_list)
-    create_uword_dir()
+
+    uword_dir = create_uword_dir()
+    
     print("Checking file or directory")
     if os.path.isfile(file_or_dir):
         print("Scanning file: ", file_)
@@ -65,9 +71,9 @@ def main():
     elif os.path.isdir(file_or_dir):
         print("Scanning directory: ", file_or_dir)
         for files in files_in_dir(file_or_dir, '.py'):
-            unknown_words_to_file(files, eng_set)
+            unknown_words_to_file(files, eng_set, save_dir=uword_dir)
     else:
-        print('Argument is neither file nor dir')
+        print('Error: Third argument is neither file nor directory')
         exit()
 
 if __name__ == '__main__':
