@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for
 from portfolio_app import app
 from logging.config import fileConfig
-import daniel_api as jen_api
+import jen_api
 import os
 
 current_path = os.path.dirname(__name__)
@@ -9,23 +9,21 @@ data_path = os.path.relpath('data.json', current_path)
 db = jen_api.load(data_path)
 
 fileConfig('logging.cfg')
-
 # /
 @app.route('/')
-@app.route('/home')
 @app.route('/home/')
 def home():
+    """Homepage. Contains info on author."""
     if request.args.get("search projects", ""):
         return redirect(url_for("list"))
     else:
         user = {'username': 'jenoh242 & danhu849'}
         return render_template('index.html', user=user)
 
-    
 # /list
-@app.route('/list')
 @app.route('/list/')
 def list():
+    """List of projects, with advanced search."""
     search_for = request.args.get("search projects", "")
     search_fields = request.args.getlist("search_field")
     if not search_fields:
@@ -43,38 +41,38 @@ def list():
 
 
 # /project/id
-@app.route('/project/<int:id>', methods=['GET'])
 @app.route('/project/<int:id>/', methods=['GET'])
 def show_project(id):
-	if request.args.get("search projects", ""):
-		return redirect(url_for("list"))
-	else:
+    """Projectpage. Shows info on project with id `id`."""
+    if request.args.get("search projects", ""):
+        return redirect(url_for("list"))
+    else:
             if id > 0 and id <= jen_api.get_project_count(db):
                 chosen_project = jen_api.get_project(db, id)
                 return render_template('project_page.html', title=chosen_project['project_name'], project=chosen_project)
             else:
                 return render_template('404.html', project_id=id), 404
 
-            
+
 # /techniques
-@app.route('/techniques', methods=['GET', 'POST'])
 @app.route('/techniques/', methods=['GET', 'POST'])
 def techniques():
-	if request.args.get("search projects", ""):
-		return redirect(url_for("list"))
-	else:
-		techniques = request.args.getlist("technique")
-		found = jen_api.search(db, techniques=techniques)
-		return render_template('techniques.html', title='Techniques', techniques=jen_api.get_techniques(db), search_results=found)
+    """Techniques page. Shows projects pased on techniques used."""
+    if request.args.get("search projects", ""):
+        return redirect(url_for("list"))
+    else:
+        techniques = request.args.getlist("technique")
+        found = jen_api.search(db, techniques=techniques)
+        return render_template('techniques.html', title='Techniques', techniques=jen_api.get_techniques(db), search_results=found)
 
-            
 # /404
 @app.errorhandler(404)
 def not_found_error(error):
-	if request.args.get("search projects", ""):
-		return redirect(url_for("list"))
-	else:
-		return render_template('404.html'), 404
+    """404 Page. Shows if page no found."""
+    if request.args.get("search projects", ""):
+        return redirect(url_for("list"))
+    else:
+        return render_template('404.html'), 404
 
 # ERROR SOLUTIONS:
 
