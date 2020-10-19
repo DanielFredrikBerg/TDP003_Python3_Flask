@@ -4,18 +4,17 @@ import os
 import re
 
 
-   
-
-def is_english(word, word_list):
-    """Checks if word is in word_list"""
-    return word in word_list
-
 def load_wordlist(wordlist_file):
     """Makes a set of a '\n' separated wordlist file."""
     with open(str(wordlist_file), 'r') as data_file:
         content = data_file.read()
         wordlist = content.split('\n')
     return set(wordlist)
+
+
+def is_english(word, word_list):
+    """Checks if lower case word is in word_list"""
+    return word.lower() in word_list
 
 
 def files_in_dir(top_dir, end):
@@ -28,40 +27,48 @@ def files_in_dir(top_dir, end):
     return path_list
 
 
-def unknown_words_to_file(file_path, wordlist):
-    """Writes words from 'file_path' not in wordlist to 'file_path.txt)"""
+def unknown_words_to_file(file_path, wordlist, save_dir=None):
+    """Writes words from 'file_path' not in wordlist to '_uwords_file_path.txt)"""
     unknown_words = set()
     with open(str(file_path), 'r') as file_:
-        file_words = re.findall(r'\S+', str(file_.read()))
+        file_words = re.findall('[a-zA-Z]+', str(file_.read()))
+        print(file_words)
         for word in file_words:
             if not is_english(word, wordlist):
                 unknown_words.add(word)
+    print("unknown word: ", unknown_words)
     if len(unknown_words) > 0:
-        with open(''.join((str(file_path.strip('.')[0]), '_words.txt')), 'w') as file_:
-            file_.write(str(unknown_words))
+        with open(''.join(('_uwords_', os.path.basename(file_path).split('.')[0] + '.txt')), 'w') as file_:
+            file_.write(str(file_path) + '\n\n' + str(unknown_words))
+    else:
+        print("No unknown words in file: ", file_path)
     return 0
-                                 
+
+def create_uword_dir(path=os.getcwd()):
+    """Creates directory in current working directory."""
+    try:
+        os.mkdir(os.path.join(str(path), 'uword_directory/'))
+    except FileExistsError:
+        print("uword directory already exists")
+
+
 def main():
     print("Loading variables.")
     w_list = sys.argv[1]
     file_or_dir = sys.argv[2]
     eng_set = load_wordlist(w_list)
-    print("Defining file or directory")
+    create_uword_dir()
+    print("Checking file or directory")
     if os.path.isfile(file_or_dir):
-        file_ = file_or_dir
-    elif os.path.isdir(file_or_dir):
-        dir_ = file_or_dir
-    else:
-        print('Neither file nor dir')
-        exit()
-
-    if file_:
         print("Scanning file: ", file_)
-        unknown_words_to_file(file_, eng_set)
-    elif dir_:
-        print("Scanning directory: ", dir_)
-        for files in files_in_dir(dir_, '.py'):
+        unknown_words_to_file(file_or_dir, eng_set)
+    elif os.path.isdir(file_or_dir):
+        print("Scanning directory: ", file_or_dir)
+        for files in files_in_dir(file_or_dir, '.py'):
             unknown_words_to_file(files, eng_set)
+    else:
+        print('Argument is neither file nor dir')
+        exit()
 
 if __name__ == '__main__':
     main()
