@@ -51,31 +51,31 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \subsubsection*{Test 1.1 (Krav 1.1)}
 \begin{itemize}
 \item[]\textbf{Indata} Öppna portfolion första sida (URL: /).
-\item[]\textbf{Resultat} 
+\item[]\textbf{Resultat} Möts av en header med länkar till: Home, Tekniker och Avancerad Sökning. Nedanför finns sidtitel, en stor bild, introduktionstext, sociala media länkar samt footer med författar info och länk till upphovsrättshavaren av bakgrundsbilden.
 \end{itemize}
 \subsubsection*{Test 1.2 (Krav 1.2)}
 \begin{itemize}
 \item[]\textbf{Indata} Öppna portfolio projektlista (URL: /list).
-\item[]\textbf{Resultat} 
+\item[]\textbf{Resultat} Dirigeras till /list sidan och möts av sökfältsknappar, sökbar, en sökknapp och två sorteringslistor. Finns också footer med författar info och länk till upphovsrättshavaren av bakgrundsbilden.
 \end{itemize}
 \subsubsection*{Test 1.3 (Krav 1.2)}
 \begin{itemize}
-\item[]\textbf{Indata} Sökning i sökfältet. Endast text, exakt inmatning: '[valfritt projektnamn]' i sidan '/list'.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Indata} Sökning i sökfältet. Endast text, exakt inmatning: 'NEJ' på sidan '/list'.
+\item[]\textbf{Resultat} Project number 3: NEJ visas som sökresultat.
 \end{itemize} 
 \subsubsection*{Test 1.4 (Krav 1.2)}
 \begin{itemize}
 \item[]\textbf{Indata} Sökning i sökfältet. Endast text, exakt inmatning: 'python' på sidan '/list'.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Resultat} Project number 1, 2 och 3 visas som sökresultat.
 \end{itemize}
 \subsubsection*{Test 1.5 (Krav 1.2)}
 \begin{itemize}
 \item[]\textbf{Indata} Klicka på 'ascending' och sedan 'Search' på sidan '/list'.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Resultat} 4 projekt visas med stigande datum från vänster till höger.
 \end{itemize}
 \subsubsection*{Test 1.6 (Krav 1.2)}
 \begin{itemize}
-\item[]\textbf{Indata} Ändrar sorteringen från 'fallande' till 'stigande' feter sökning på '/list' med fler än ett resultat. Trycker sedan enter.
+\item[]\textbf{Indata} Ändrar sorteringen från 'fallande' till 'stigande' efter sökning på '/list' med fler än ett resultat. Trycker sedan enter.
 \item[]\textbf{Resultat} 
 \end{itemize}
 \subsubsection*{Test 1.7 (Krav 1.2)}
@@ -83,57 +83,57 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \item[]\textbf{Indata} På /list. Ändrar search\_field I URL:en till något som inte finns. Trycker enter.
 \item[]\textbf{Resultat} 
 \end{itemize}
-\subsubsection*{Test 1. (Krav 1.2)}
+\subsubsection*{Test 1.8 (Krav 1.2)}
 \begin{itemize}
 \item[]\textbf{Indata} Markerar alla searchfields genom att klicka på dem. Skriver sedan 'e' i sökfältet och trycker sedan enter.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Resultat} 10 projekt listas i sökresultaten.
 \end{itemize}
-\subsubsection*{Test 1.8 (Krav 1.2)}
+\subsubsection*{Test 1.9 (Krav 1.2)}
 \begin{itemize}
 \item[]\textbf{Indata} Klicka i 'checkbox' för 'Python' samt 'ada' och sedan 'Search' på sidan '/list'.
 \item[]\textbf{Resultat} 
 \end{itemize}
-\subsubsection*{Test 1.9 (Krav 1.3)}
-\begin{itemize}
-\item[]\textbf{Indata} Klicka på ett projekt i listan på sidan '/list'
-\item[]\textbf{Resultat} 
-\end{itemize}
 \subsubsection*{Test 1.10 (Krav 1.3)}
 \begin{itemize}
-\item[]\textbf{Indata} Ändrar URL på projektsidan från 'project/id=3' till 'project/id=4'.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Indata} Klicka på ett projekt i listan på sidan '/list'
+\item[]\textbf{Resultat} Projektsidan visas.
 \end{itemize}
 \subsubsection*{Test 1.11 (Krav 1.3)}
 \begin{itemize}
-\item[]\textbf{Indata} Ändrar URL på projektsidan från 'project/3' till 'project/4'.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Indata} Ändrar URL på projektsidan från 'project/id=3' till 'project/id=4'.
+\item[]\textbf{Resultat} Omdirigeras till 404 sida med texten ERROR 404 The page you are trying to reach does not exist.
 \end{itemize}
-\subsubsection*{Test 1.12 (Krav 1.4)}
+\subsubsection*{Test 1.12 (Krav 1.3)}
 \begin{itemize}
-\item[]\textbf{Indata} Markerar alla tekniker på '/techniques' sidan. Trycker sedan enter.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Indata} Ändrar URL på projektsidan från 'project/3' till 'project/4'.
+\item[]\textbf{Resultat} Projektsidan byts om från projektsidan för projekt 3 till projektsidan för projekt 4.
 \end{itemize}
-\subsubsection*{Test 1.13 (Krav 1.5)}
-\begin{itemize}%Addera bild för exakt indata, och inställningar
-\item[]\textbf{Indata} Kontrollera att sökresultaten på sidan '/list/?search+projects=python\&sort\_by=start\_date\&sort\_order=asc' har små bilder med w3 validator 'https://validator.w3.org'.
-\item[]\textbf{Resultat} 
+\subsubsection*{Test 1.13 (Krav 1.4)}
+\begin{itemize}
+\item[]\textbf{Indata} Alla tekniker på '/techniques' sidan markeras. Sedan trycks enter.
+\item[]\textbf{Resultat} Inga projekt visas.
 \end{itemize}
 \subsubsection*{Test 1.14 (Krav 1.5)}
-\begin{itemize}%Addera bild för exakt indata, och inställningar
-\item[]\textbf{Indata} Kontrollera att projektsidan '/project/1/' har minst en stor bild genom att inspektera element på sidan.
-\item[]\textbf{Resultat} Inspektion av element ger: <img src=''https://via.placeholder.com/300'' alt=''XXX'' style=''float: left;'' data-module='''' test='''' script=''''> 
+\begin{itemize}
+\item[]\textbf{Indata} Kontrollera att ett sökresultat på sidan /list har små bilder genom att inspektera element. 
+\item[]\textbf{Resultat} Inspektion av element ger: <img src="https://via.placeholder.com/300" alt="XXX" style="float: left;"> Bilden är 150px stor.
 \end{itemize}
-\subsubsection*{Test 1.15 (Krav 1.6)}
+\subsubsection*{Test 1.15 (Krav 1.5)}
+\begin{itemize}
+\item[]\textbf{Indata} Kontrollera att projektsidan '/project/1/' har minst en stor bild genom att inspektera element på sidan.
+\item[]\textbf{Resultat} Inspektion av element ger: <img src=''https://via.placeholder.com/300'' alt=''XXX'' style=''float: left;'' data-module='''' test='''' script=''''> Bilden är 300px stor.
+\end{itemize}
+\subsubsection*{Test 1.16 (Krav 1.6)}
 \begin{itemize}
 \item[]\textbf{Indata} Efter valfri sökning på '/list'. Sätt 'search\_field' variabeln i URL:en till 'lKAsm32105,saölf'.
 \item[]\textbf{Resultat} Internal Server Error
 \end{itemize}
-\subsubsection*{Test 1.16 (Krav 1.7)}
+\subsubsection*{Test 1.17 (Krav 1.7)}
 \begin{itemize}
 \item[]\textbf{Indata} Ändra URL:en på projektsidan 'project/3' till 'project/a'.
 \item[]\textbf{Resultat} Sidan omdirigeras till en sida med texten ERROR 404 The page your are trying to reach does not exist.
 \end{itemize}
-\subsubsection*{Test 1.17 (Krav 1.7)}
+\subsubsection*{Test 1.18 (Krav 1.7)}
 \begin{itemize}
 \item[]\textbf{Indata} Ändra URL:en på projektsidan 'project/3' till 'project/854965625'.
 \item[]\textbf{Resultat} Sidan omdirigeras till en sida med texten ERROR 404 Project with project id: 854965625 does not exist. 
