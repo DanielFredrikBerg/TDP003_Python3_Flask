@@ -41,10 +41,12 @@ Individuella påbyggnationer eller omskrivningar av denna mall förutsätts ha i
 Detta samarbete har gjorts möjlig efter mejlkonversation med Examinator för Kursen TDP003, Filip Strömbäck Fredagen 16:e Oktober 2020. Frågor rörande överenskommelsens validitet hänvisas till Filip Strömbäck.
 
 \section{Valideringsprogram}
-För att uppfylla kraven om korrekt JSON, UTF-8 och Jinja2 i projektet har validerare skrivits i python. JSON valideras av JSON_tester.py, UTF-8 valideras av utf-8_tester.py och Jinja2 valideras av jinja2_validator.py . Även ett program som kontrollerar att alla programfiler skrivits på engelska har skrivits. Koden för samtliga program återfinns i projektrepot.  
+För att uppfylla kraven om korrekt JSON, UTF-8 och Jinja2 i projektet har validerare skrivits i python. JSON valideras av JSON\_tester.py, UTF-8 valideras av utf-8\_tester.py och Jinja2 valideras av jinja2\_validator.py . Även ett program som kontrollerar att alla programfiler skrivits på engelska har skrivits. Koden för samtliga program återfinns i projektrepot.  
 
 \section{Testspecifikation}
-Nedan följer tester i ordningen x.n där x motsvaras av det övergripande kravstycket i Universitetes \texttt{systemspecifikation} och n representerar 
+Nedan följer tester i ordningen x.n där x motsvaras av det övergripande kravstycket i Universitets \texttt{Systemspecifikation} och n representerar testet i ordningen. Kravet testet uppfyller visas därefter.
+
+Indatan presenteras alltid först. Undertill visas det verkliga resultatet av senaste portfolioversionen ibland av en beskrivning, ibland av en bild och ibland av både och.
 \subsection{Tester mot presentationslagrets krav}
 \subsubsection*{Test 1.1 (Krav 1.1)}
 \begin{itemize}
@@ -118,23 +120,23 @@ Nedan följer tester i ordningen x.n där x motsvaras av det övergripande kravs
 \end{itemize}
 \subsubsection*{Test 1.14 (Krav 1.5)}
 \begin{itemize}%Addera bild för exakt indata, och inställningar
-\item[]\textbf{Indata} Kontrollera att projektsidan '/project/1/' har minst en stor bild med w3 validator 'https://validator.w3.org'.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Indata} Kontrollera att projektsidan '/project/1/' har minst en stor bild genom att inspektera element på sidan.
+\item[]\textbf{Resultat} Inspektion av element ger: <img src=''https://via.placeholder.com/300'' alt=''XXX'' style=''float: left;'' data-module='''' test='''' script=''''> 
 \end{itemize}
 \subsubsection*{Test 1.15 (Krav 1.6)}
 \begin{itemize}
 \item[]\textbf{Indata} Efter valfri sökning på '/list'. Sätt 'search\_field' variabeln i URL:en till 'lKAsm32105,saölf'.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Resultat} Internal Server Error
 \end{itemize}
 \subsubsection*{Test 1.16 (Krav 1.7)}
 \begin{itemize}
 \item[]\textbf{Indata} Ändra URL:en på projektsidan 'project/3' till 'project/a'.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Resultat} Sidan omdirigeras till en sida med texten ERROR 404 The page your are trying to reach does not exist.
 \end{itemize}
 \subsubsection*{Test 1.17 (Krav 1.7)}
 \begin{itemize}
 \item[]\textbf{Indata} Ändra URL:en på projektsidan 'project/3' till 'project/854965625'.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Resultat} Sidan omdirigeras till en sida med texten ERROR 404 Project with project id: 854965625 does not exist. 
 \end{itemize}
 
 
@@ -160,9 +162,17 @@ Nedan följer tester i ordningen x.n där x motsvaras av det övergripande kravs
 \item[]\textbf{Resultat} 
 \end{itemize}
 \subsubsection*{Test 2.5 (Krav 2.7)}
-\begin{itemize}%Bild på terminalen med indata och programmet.
-\item[]\textbf{Indata} data.json körs som argument i utf-8\_tester.py
-\item[]\textbf{Resultat} 
+\begin{itemize}
+\item[]\textbf{Indata:}
+\begin{figure}[h]
+\centerline{\includegraphics[width=\textwidth, height=3.5cm]{../Pictures/utf-8_tester_test.png}}
+\caption{Hur programmet utf-8\_tester.py körs i terminalen.\label{fig:}}
+\end{figure}
+\item[]\textbf{Resultat:}
+\begin{figure}[h]
+\centerline{\includegraphics[width=\textwidth, height=3.5cm]{../Pictures/utf-8_tester_valid.png}}
+\caption{Resultat från att köra utf-8\_tester.py\label{fig:}}
+\end{figure}
 \end{itemize}
 \subsubsection*{Test 2.6 (Krav 2.9)}
 \begin{itemize}
@@ -246,10 +256,10 @@ Nedan följer tester i ordningen x.n där x motsvaras av det övergripande kravs
   \hline
   Datum & Commit & Godkända & Avvikande & Kommentar \\ [0.5ex]
   \hline
-  2019-10-15 &  &  &  & \\
+  2019-10-15 &  &  & - & - \\
   \hline
   \hline
-  2019-10-15 &  &  &  & \\
+  2019-10-15 &  &  &  & 12 projekt kommer upp istället för de förväntade 4. Måste åtgärdas snarast.\\
   \hline
   \hline
   2019-10-15 &  &  &  & \\
