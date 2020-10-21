@@ -5,10 +5,18 @@ participant Presentationslager
 participant Datalager
 
 Användare->Presentationslager:Trycker på knappen, Avancerad Sökning
+activate Presentationslager
 Presentationslager->Användare: @app.route("/list")\n return template("/list.html")
+deactivate Presentationslager
 Användare->Presentationslager: Sökmetod och söksträng
+activate Presentationslager
 Presentationslager->Datalager: api.search()
+deactivate Presentationslager
+activate Datalager
 Datalager->Presentationslager: Sökresultat
+deactivate Datalager
+activate Presentationslager
 Presentationslager->Användare: Sökresultat presenterade\ni html med jinja2, html och css
+deactivate Presentationslager
 
 https://sequencediagram.org/
