@@ -198,21 +198,24 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \subsection{Tester mot Icke-funktionella Krav}
 \subsubsection*{Test 3.1 (Krav 3.1)}
 \begin{itemize}
-\item[]\textbf{Indata} Validera Jinja2 i samtliga HTML filer i '/templates' genom att köra Jinja2 valideraren: jinja2\_validator.py.
-\item[]\textbf{Resultat} 
-\end{itemize}
-\subsubsection*{Test 3.2 (Krav 3.1)}
-\begin{itemize}
-\item[]\textbf{Indata} Validera att pythonscriptens utdata formateras rätt av Jinja2 i samtliga HTML filer i '/templates' med pythonscript.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Indata} Validera Jinja2 i samtliga HTML filer i '/templates' genom att köra Jinja2 valideraren: jinja2\_validator.py med /templates mappen som argument i terminalen:
+\item[]\textbf{Resultat:}
+\begin{figure}[h]
+\centerline{\includegraphics[width=\textwidth, height=5cm]{../Pictures/jinja2_validated.png}}
+\caption{Resultat från att köra jinja2\_validator.py\label{fig:}}
+\end{figure}
 \end{itemize}
 \subsubsection*{Test 3.3 (Krav 3.2)}
-\begin{itemize}%Addera bild för valda alternativ.
-\item[]\textbf{Indata} Validera portfoliosidans css3 med hjälp av w3 css validerare (https://jigsaw.w3.org/css-validator/). Sätt 'Profile: CSS level 3', 'Medium: All', 'Warnings: Normal report', 'Vendor Extensions: Default'.
-\item[]\textbf{Resultat} 
+\begin{itemize}
+\item[]\textbf{Indata} Validera portfoliosidans css3 med hjälp av w3 css3 validerare (https://jigsaw.w3.org/css-validator/). Sätt 'Profile: CSS level 3', 'Medium: All', 'Warnings: Normal report', 'Vendor Extensions: Default'.
+\item[]\textbf{Resultat:}
+\begin{figure}[h]
+\centerline{\includegraphics[width=\textwidth, height=5cm]{../Pictures/css3_validation.png}}
+\caption{Resultat från att köra w3 css3 validerare.\label{fig:}}
+\end{figure}
 \end{itemize}
 \subsubsection*{Test 3.4 (Krav 3.2)}
-\begin{itemize}%Addera bild för valda alternativ.
+\begin{itemize}
 \item[]\textbf{Indata} Validera portfoliosidans HTML5 med hjälp av w3 HTML5 validerare (https://jigsaw.w3.org/css-validator/). 
 \item[]\textbf{Resultat} 
 \end{itemize}
