@@ -1,0 +1,22 @@
+Fick referenser att funka för mig med följande paket:
+\documentclass{TDP003mall}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+
+\usepackage[style=authoryear,backend=biber]{biblatex}
+\addbibresource{cc_referens.bib}
+\usepackage{csquotes}
+
+
+Har kopierat in referensfilen jag använde för att referera till Code Complete, cc_referens.bib till /tdp003/Documents/
+
+
+Använd \textcite{mcconnell:2004} för vart du vill lägga citering. Notera att detta citat används mitt i text. Se: https://sv.overleaf.com/latex/examples/a-simple-example-showing-how-to-create-harvard-style-referencing-in-latex/mnwzgkyvdbyy för samtliga exempel.
+
+
+Skriv:
+
+\newpage
+\printbibliography
+
+För vart du vill att referenslistan ska hamna. Enklast precis över \end{document}
