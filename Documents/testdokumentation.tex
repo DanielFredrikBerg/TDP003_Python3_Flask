@@ -75,13 +75,13 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{itemize}
 \subsubsection*{Test 1.6 (Krav 1.2)}
 \begin{itemize}
-\item[]\textbf{Indata} Ändrar sorteringen från 'fallande' till 'stigande' efter sökning på '/list' med fler än ett resultat. Trycker sedan enter.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Indata} Ändrar sorteringen från 'fallande' till 'stigande' efter sökning på '/list' med fler än ett resultat. Sorteras på datum. Sedan trycks enter.
+\item[]\textbf{Resultat} 4 projekt visas med stigande datum från höger till vänster.
 \end{itemize}
 \subsubsection*{Test 1.7 (Krav 1.2)}
 \begin{itemize}
-\item[]\textbf{Indata} På /list. Ändrar search\_field I URL:en till något som inte finns. Trycker enter.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Indata}Först söks det efter python i sökfältet techniques\_used på /list. techniques\_used i URL:en ändras sedan till enstorkorv. Enter trycks.
+\item[]\textbf{Resultat} Internal Server Error
 \end{itemize}
 \subsubsection*{Test 1.8 (Krav 1.2)}
 \begin{itemize}
@@ -90,13 +90,13 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{itemize}
 \subsubsection*{Test 1.9 (Krav 1.2)}
 \begin{itemize}
-\item[]\textbf{Indata} Klicka i 'checkbox' för 'Python' samt 'ada' och sedan 'Search' på sidan '/list'.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Indata}python samt ada markeras på /techniques och sedan klickas det på 'Sök'-knappen.
+\item[]\textbf{Resultat} Projekt nummer 2 visas i sökresultaten.
 \end{itemize}
 \subsubsection*{Test 1.10 (Krav 1.3)}
 \begin{itemize}
-\item[]\textbf{Indata} Klicka på ett projekt i listan på sidan '/list'
-\item[]\textbf{Resultat} Projektsidan visas.
+\item[]\textbf{Indata} Klicka på ett projekt 1 i listan på sidan '/list'
+\item[]\textbf{Resultat} Projektsidan för projekt 1 visas.
 \end{itemize}
 \subsubsection*{Test 1.11 (Krav 1.3)}
 \begin{itemize}
