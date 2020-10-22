@@ -10,7 +10,8 @@
     "inputenc"
     "babel"
     "listings"
-    "xcolor")
+    "xcolor"
+    "caption")
    (TeX-add-symbols
     "version")
    (LaTeX-add-labels

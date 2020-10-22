@@ -39,6 +39,8 @@
       {[}{{{\color{delim}{[}}}}{1}
       {]}{{{\color{delim}{]}}}}{1},
 }
+\usepackage{caption}
+\captionsetup[lstlisting]{font={normal,tt}}
 
 \newcommand{\version}{Version 1.0}
 \author{Daniel Huber, \url{danhu849@liu.se}\\
@@ -77,7 +79,7 @@ Individuella påbyggnationer eller omskrivningar av denna mall förutsätts ha i
 Detta samarbete har gjorts möjlig efter mejlkonversation med Examinator för Kursen TDP003, Filip Strömbäck Fredagen 16:e Oktober 2020. Frågor rörande överenskommelsens validitet hänvisas till Filip Strömbäck.
 \newpage
 \section{Valideringsprogram}
-För att uppfylla kraven om korrekt JSON, UTF-8 och Jinja2 i projektet har validerare skrivits i python. JSON valideras av JSON\_tester.py, UTF-8 valideras av utf-8\_tester.py och Jinja2 valideras av jinja2\_validator.py . Även ett program som kontrollerar att alla programfiler skrivits på engelska har skrivits. Koden för samtliga program återfinns i projektrepot.  
+För att uppfylla kraven om korrekt JSON, UTF-8 och Jinja2 i projektet har validerare skrivits i python av Daniel Huber. Frågor hänvisas till densamme. JSON valideras av JSON\_tester.py, UTF-8 valideras av utf-8\_tester.py och Jinja2 valideras av jinja2\_validator.py . Även ett program som kontrollerar att alla programfiler skrivits på engelska har skrivits. Koddokumentation återfinns i mappen \texttt{/tdp003/Documents/validation\_documentation/}  
 
 \section{Testspecifikation}
 Nedan följer tester i ordningen x.n där x motsvaras av det övergripande kravstycket i Universitets \texttt{Systemspecifikation} och n representerar testet i ordningen. Kravet testet uppfyller visas därefter.
@@ -306,8 +308,7 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \newpage
 \appendix
 \section{Data.json\label{json}}
-\caption{Utskrift av innehållet i filen data.json}
-\lstinputlisting[language=JSON]{data.json}
+\lstinputlisting[language=JSON, caption=Utskrift av innehållet i filen data.json]{data.json}
 \newpage
 \section{Feedback - Presentation av Portfolio}
 \begin{figure}[h!]
