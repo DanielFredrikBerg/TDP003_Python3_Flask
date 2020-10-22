@@ -86,20 +86,18 @@ def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=
                         search_results.append(project)
                         break
     if search_fields != None:
-        #print('searching in specific search fields')
-        # Search results returns too many projects when many search_fields are chosen.
-        #search_results = [project for project in db for search_field in search_fields if str(
-        #    project[search_field]).lower().__contains__(search)]
-        #print('seArch_result:', search_results, sep='\t')
+        #print('Searching in specific search fields')
         for project in db:
+            #print(all(field in project.keys() for field in search_fields))
+            if all(field in project.keys() for field in search_fields):
                 for search_field in search_fields:
-                        search_field_lc = str(project[search_field]).lower()
-                        if search_field_lc.__contains__(search):
-                                if search_results.__contains__(project):
-                                        break
-                                else:
-                                        search_results.append(project)
-                                        break
+                    search_field_lc = str(project[search_field]).lower()
+                    if search_field_lc.__contains__(search):
+                        if search_results.__contains__(project):
+                            break
+                        else:
+                            search_results.append(project)
+                            break
     if sort_order == 'desc':
         is_reverse = True
 
@@ -137,34 +135,35 @@ def get_technique_stats(db):
 
 
 def main():
-    """Used for testing functions."""
-    project = {
-        "start_date": "2019-09-08",
-        "short_description": "no",
-        "course_name": "tdp003",
-        "long_description": "no no no",
-        "group_size": 3,
-        "academic_credits": "WUT?",
-        "lulz_had": "medium",
-        "external_link": "YY",
-        "small_image": "X",
-        "techniques_used": [
-            "ada",
-            "python"
-        ],
-        "project_name": "Daniel Test",
-        "course_id": "TDP003",
-        "end_date": "2009-09-09",
-        "project_id": 5,
-        "big_image": "XXX"
-    }
+    # """Used for testing functions."""
+    # project = {
+    #     "start_date": "2019-09-08",
+    #     "short_description": "no",
+    #     "course_name": "tdp003",
+    #     "long_description": "no no no",
+    #     "group_size": 3,
+    #     "academic_credits": "WUT?",
+    #     "lulz_had": "medium",
+    #     "external_link": "YY",
+    #     "small_image": "X",
+    #     "techniques_used": [
+    #         "ada",
+    #         "python"
+    #     ],
+    #     "project_name": "Daniel Test",
+    #     "course_id": "TDP003",
+    #     "end_date": "2009-09-09",
+    #     "project_id": 5,
+    #     "big_image": "XXX"
+    # }
     f = sys.argv[1]
     db = load(f)
     #print(db)
-    add_project(db, project)
+    #add_project(db, project)
     db = load(f)
-    print(get_project_count(db))
-    print(get_search_fields(db))
+    #print(get_project_count(db))
+    #print(get_search_fields(db))
+    print('Search returned:', search(db, sort_by='start_date', sort_order='desc', techniques=None, search='new', search_fields=['techniques_used', 'new_search_field']))
     # db = load(sys.argv[1])
     # print(get_project_count(p_list))
     # print(get_project(p_list, 0))

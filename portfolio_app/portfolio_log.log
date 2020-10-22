@@ -487,3 +487,146 @@ AttributeError: module 'daniel_api' has no attribute 'get_search_fields'
 2020-10-22 11:15:38,355 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2020-10-22 11:15:41,856 INFO werkzeug Thread-1 : 127.0.0.1 - - [22/Oct/2020 11:15:41] "[37mGET /list/ HTTP/1.1[0m" 200 -
 2020-10-22 11:15:51,336 INFO werkzeug Thread-2 : 127.0.0.1 - - [22/Oct/2020 11:15:51] "[37mGET /list/ HTTP/1.1[0m" 200 -
+2020-10-22 11:29:29,994 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-10-22 11:29:35,505 INFO werkzeug Thread-1 : 127.0.0.1 - - [22/Oct/2020 11:29:35] "[37mGET /list/ HTTP/1.1[0m" 200 -
+2020-10-22 11:29:59,049 ERROR portfolio_app Thread-2 : Exception on /list/ [GET]
+Traceback (most recent call last):
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/danhu849/tdp003/portfolio_app/portfolio_app/routes.py", line 59, in list
+    found = jen_api.search(db, search=search_for, sort_by=sort_by,
+  File "/home/danhu849/tdp003/portfolio_app/daniel_api.py", line 96, in search
+    search_field_lc = str(project[search_field]).lower()
+KeyError: 'new_search_field'
+2020-10-22 11:29:59,053 INFO werkzeug Thread-2 : 127.0.0.1 - - [22/Oct/2020 11:29:59] "[35m[1mGET /list/?search+projects=new&sort_by=start_date&sort_order=asc&search_field=new_search_field HTTP/1.1[0m" 500 -
+2020-10-22 11:30:10,211 ERROR portfolio_app Thread-3 : Exception on /list/ [GET]
+Traceback (most recent call last):
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/danhu849/tdp003/portfolio_app/portfolio_app/routes.py", line 59, in list
+    found = jen_api.search(db, search=search_for, sort_by=sort_by,
+  File "/home/danhu849/tdp003/portfolio_app/daniel_api.py", line 96, in search
+    search_field_lc = str(project[search_field]).lower()
+KeyError: 'new_search_field'
+2020-10-22 11:30:10,212 INFO werkzeug Thread-3 : 127.0.0.1 - - [22/Oct/2020 11:30:10] "[35m[1mGET /list/?search+projects=&sort_by=start_date&sort_order=asc&search_field=new_search_field HTTP/1.1[0m" 500 -
+2020-10-22 11:37:12,224 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-10-22 11:37:15,996 INFO werkzeug Thread-1 : 127.0.0.1 - - [22/Oct/2020 11:37:15] "[37mGET /list/ HTTP/1.1[0m" 200 -
+2020-10-22 11:37:26,428 INFO werkzeug Thread-2 : 127.0.0.1 - - [22/Oct/2020 11:37:26] "[37mGET /list/?search+projects=&sort_by=start_date&sort_order=asc&search_field=new_search_field HTTP/1.1[0m" 200 -
+2020-10-22 11:37:32,912 INFO werkzeug Thread-3 : 127.0.0.1 - - [22/Oct/2020 11:37:32] "[37mGET /list/?search+projects=s&sort_by=course_name&sort_order=asc&search_field=new_search_field HTTP/1.1[0m" 200 -
+2020-10-22 11:37:39,711 INFO werkzeug Thread-4 : 127.0.0.1 - - [22/Oct/2020 11:37:39] "[37mGET /list/?search+projects=new&sort_by=course_name&sort_order=asc&search_field=new_search_field HTTP/1.1[0m" 200 -
+2020-10-22 11:37:51,919 INFO werkzeug Thread-5 : 127.0.0.1 - - [22/Oct/2020 11:37:51] "[37mGET /list/?search+projects=new&sort_by=course_name&sort_order=asc&search_field=new_search_field HTTP/1.1[0m" 200 -
+2020-10-22 11:37:53,629 INFO werkzeug Thread-6 : 127.0.0.1 - - [22/Oct/2020 11:37:53] "[37mGET /list/?search+projects=new&sort_by=course_name&sort_order=asc&search_field=group_size HTTP/1.1[0m" 200 -
+2020-10-22 11:38:00,963 INFO werkzeug Thread-7 : 127.0.0.1 - - [22/Oct/2020 11:38:00] "[37mGET /list/?search+projects=&sort_by=course_name&sort_order=asc&search_field=new_search_field HTTP/1.1[0m" 200 -
+2020-10-22 11:38:02,936 INFO werkzeug Thread-8 : 127.0.0.1 - - [22/Oct/2020 11:38:02] "[37mGET /list/?search+projects=&sort_by=course_name&sort_order=asc&search_field=course_name HTTP/1.1[0m" 200 -
+2020-10-22 11:38:08,532 INFO werkzeug Thread-9 : 127.0.0.1 - - [22/Oct/2020 11:38:08] "[37mGET /list/?search+projects=sasf&sort_by=course_name&sort_order=asc&search_field=course_name&search_field=start_date HTTP/1.1[0m" 200 -
+2020-10-22 11:38:12,814 INFO werkzeug Thread-10 : 127.0.0.1 - - [22/Oct/2020 11:38:12] "[37mGET /list/?search+projects=python&sort_by=course_name&sort_order=asc HTTP/1.1[0m" 200 -
+2020-10-22 11:38:17,264 INFO werkzeug Thread-11 : 127.0.0.1 - - [22/Oct/2020 11:38:17] "[37mGET /list/?search+projects=python&sort_by=course_name&sort_order=asc&search_field=techniques_used HTTP/1.1[0m" 200 -
+2020-10-22 11:40:29,218 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-10-22 11:40:29,219 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 11:40:29,387 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 11:40:29,456 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 11:40:39,520 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/daniel_api.py', reloading
+2020-10-22 11:40:39,539 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 11:45:01,536 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 11:45:46,077 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 11:47:50,119 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 11:47:50,297 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 11:47:50,298 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 11:49:45,113 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/daniel_api.py', reloading
+2020-10-22 11:49:45,156 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 11:51:00,903 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 11:52:55,952 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 11:52:56,139 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 11:52:56,141 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 11:53:15,007 INFO werkzeug Thread-3 : 127.0.0.1 - - [22/Oct/2020 11:53:15] "[35m[1mGET /list/?search+projects=new&sort_by=long_description&sort_order=asc&search_field=new_search_field HTTP/1.1[0m" 500 -
+2020-10-22 11:53:15,033 INFO werkzeug Thread-4 : 127.0.0.1 - - [22/Oct/2020 11:53:15] "[37mGET /list/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2020-10-22 11:53:15,035 INFO werkzeug Thread-5 : 127.0.0.1 - - [22/Oct/2020 11:53:15] "[37mGET /list/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2020-10-22 11:53:15,035 INFO werkzeug Thread-6 : 127.0.0.1 - - [22/Oct/2020 11:53:15] "[37mGET /list/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2020-10-22 11:53:15,163 INFO werkzeug Thread-7 : 127.0.0.1 - - [22/Oct/2020 11:53:15] "[37mGET /list/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2020-10-22 11:56:53,689 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/daniel_api.py', reloading
+2020-10-22 11:56:53,720 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 11:56:53,892 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 11:56:53,892 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 11:58:16,467 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/daniel_api.py', reloading
+2020-10-22 11:58:16,486 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 11:58:16,661 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 11:58:16,661 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 11:58:47,882 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/daniel_api.py', reloading
+2020-10-22 11:58:47,900 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:00:15,736 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:00:15,909 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 12:00:15,909 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 12:01:06,286 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/daniel_api.py', reloading
+2020-10-22 12:01:06,328 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:03:41,630 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:03:41,800 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 12:03:41,800 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 12:04:50,332 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/daniel_api.py', reloading
+2020-10-22 12:04:50,377 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:09:06,323 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:09:34,751 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:11:30,809 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:11:30,980 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 12:11:30,981 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 12:12:10,279 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/daniel_api.py', reloading
+2020-10-22 12:12:10,323 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:12:10,499 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 12:12:10,499 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 12:12:31,555 INFO werkzeug Thread-3 : 127.0.0.1 - - [22/Oct/2020 12:12:31] "[37mGET / HTTP/1.1[0m" 200 -
+2020-10-22 12:12:33,618 INFO werkzeug Thread-4 : 127.0.0.1 - - [22/Oct/2020 12:12:33] "[37mGET /list/ HTTP/1.1[0m" 200 -
+2020-10-22 12:12:56,809 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/daniel_api.py', reloading
+2020-10-22 12:12:56,854 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:12:57,028 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 12:12:57,030 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 12:13:23,218 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/daniel_api.py', reloading
+2020-10-22 12:13:23,260 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:13:23,434 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 12:13:23,435 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 12:13:33,517 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/daniel_api.py', reloading
+2020-10-22 12:13:33,535 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:13:33,703 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 12:13:33,703 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 12:14:58,291 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/daniel_api.py', reloading
+2020-10-22 12:14:58,333 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:14:58,502 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 12:14:58,502 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 12:16:02,974 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/daniel_api.py', reloading
+2020-10-22 12:16:03,018 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:16:39,476 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:16:55,795 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:16:55,964 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 12:16:55,964 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 12:18:06,425 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/daniel_api.py', reloading
+2020-10-22 12:18:06,463 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:33:45,914 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:33:46,086 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 12:33:46,088 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 12:34:26,389 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/daniel_api.py', reloading
+2020-10-22 12:34:26,424 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:34:43,770 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:34:43,951 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 12:34:43,951 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 12:37:52,292 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/daniel_api.py', reloading
+2020-10-22 12:37:52,333 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-22 12:37:52,505 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-22 12:37:52,505 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
