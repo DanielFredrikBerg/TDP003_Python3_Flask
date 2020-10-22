@@ -143,7 +143,7 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \subsection{Tester mot datalagrets krav}
 \subsubsection*{Test 2.1 (Krav 2.1)}
 \begin{itemize}
-\item[]\textbf{Indata} Testas med data\_testet mot kraven, det vill säga load\_test och test\_get\_project.
+\item[]\textbf{Indata} Testas med data\_test.py mot kraven, det vill säga load\_test och test\_get\_project.
 \item[]\textbf{Resultat} 
 \end{itemize}
 \subsubsection*{Test 2.2 (Krav 2.2)}
@@ -181,7 +181,7 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{itemize}
 \subsubsection*{Test 2.7 (Krav 2.8)}
 \begin{itemize}
-\item[]\textbf{Indata} Lägg till ett projekt eller ett till fält på ett projekt i din JSON fil, exempel - 'Företagsnamn'. Testa sedan filen genom att köra programmet, d.v.s hemsidan. Sök på projekten med nya de fälten/fält som du har lagt till.  
+\item[]\textbf{Indata} Lägg till ett projekt eller ett till sökfält på ett projekt i din JSON fil, exempel - 'Företagsnamn'. Testa sedan filen genom att köra programmet, d.v.s hemsidan. Sök på projekten med nya de fälten/fält som du har lagt till.  
 \item[]\textbf{Resultat} 
 \end{itemize}
 \subsubsection*{Test 2.8 (Krav 2.)}
@@ -216,15 +216,23 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{itemize}
 \subsubsection*{Test 3.4 (Krav 3.2)}
 \begin{itemize}
-\item[]\textbf{Indata} Validera portfoliosidans HTML5 med hjälp av w3:s HTML5 validerare (https://validator.w3.org/\#validate\_by\_uri+with\_options). 
-\item[]\textbf{Resultat} 
+\item[]\textbf{Indata} Validera portfoliosidans HTML5 med hjälp av w3:s HTML5 validerare (https://validator.w3.org/\#validate\_by\_uri+with\_options).
+  \begin{figure}[h]
+\centerline{\includegraphics[width=\textwidth, height=5cm]{../Pictures/HTML5_check.png}}
+\caption{Inställningar för w3 HTML5 validering.\label{fig:}}
+\end{figure}
+\item[]\textbf{Resultat:}
+    \begin{figure}[h]
+\centerline{\includegraphics[width=\textwidth, height=5cm]{../Pictures/HTML5_check_result.png}}
+\caption{Resultat av w3 HTML5 validering.\label{fig:}}
+\end{figure}
 \end{itemize}
 \subsubsection*{Test 3.5 (Krav 3.3)}
 \begin{itemize}
-\item[]\textbf{Indata} I terminal: cd till projektets katalog. Skriv ut katalogens innehåll med 'tree . -I 'venv\|Iosevka\|\_\_pycache\_\_\|html\|portfolio\_app.egg-info'
+\item[]\textbf{Indata} I terminalen: cd till projektets katalog. Skriv ut katalogens innehåll med tree kommandot som syns på resultatbilden. 
 \item[]\textbf{Resultat:}
   \begin{figure}[h]
-\centerline{\includegraphics[width=\textwidth, height=5cm]{../Pictures/app_tree.png}}
+\centerline{\includegraphics[width=\textwidth, height=12cm]{../Pictures/app_tree.png}}
 \caption{Resultat från att trädkommandot tree i terminalen.\label{fig:}}
 \end{figure}
 \end{itemize}
