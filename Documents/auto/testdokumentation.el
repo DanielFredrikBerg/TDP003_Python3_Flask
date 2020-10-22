@@ -8,10 +8,20 @@
     "TDP003mall"
     "TDP003mall10"
     "inputenc"
-    "babel")
+    "babel"
+    "listings"
+    "xcolor")
    (TeX-add-symbols
     "version")
    (LaTeX-add-labels
-    "fig:"))
+    "fig:1"
+    "fig:2"
+    "fig:3"
+    "fig:4"
+    "fig:5"
+    "fig:6"
+    "fig:7"
+    "fig:8"
+    "fig:9"))
  :latex)
 

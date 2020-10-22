@@ -2,7 +2,43 @@
 \documentclass{TDP003mall}
 \usepackage[utf8]{inputenc}
 \usepackage[swedish]{babel}
+%For displaying JSON code in Latex
+\usepackage{listings}
+\usepackage{xcolor}
 
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
 
 \newcommand{\version}{Version 1.0}
 \author{Daniel Huber, \url{danhu849@liu.se}\\
@@ -39,7 +75,7 @@ Individuella påbyggnationer eller omskrivningar av denna mall förutsätts ha i
 \end{itemize}
 
 Detta samarbete har gjorts möjlig efter mejlkonversation med Examinator för Kursen TDP003, Filip Strömbäck Fredagen 16:e Oktober 2020. Frågor rörande överenskommelsens validitet hänvisas till Filip Strömbäck.
-
+\newpage
 \section{Valideringsprogram}
 För att uppfylla kraven om korrekt JSON, UTF-8 och Jinja2 i projektet har validerare skrivits i python. JSON valideras av JSON\_tester.py, UTF-8 valideras av utf-8\_tester.py och Jinja2 valideras av jinja2\_validator.py . Även ett program som kontrollerar att alla programfiler skrivits på engelska har skrivits. Koden för samtliga program återfinns i projektrepot.  
 
@@ -149,20 +185,21 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \item[]\textbf{Resultat:}
 \begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=4cm]{../Pictures/utf-8_tester_test.png}}
-\caption{Resultatet av data\_test.py körning.\label{fig:}}
+\caption{Resultatet av data\_test.py körning.\label{fig:1}}
 \end{figure}
 \end{itemize}
+\newpage
 \subsubsection*{Test 2.2 (Krav 2.7)}
 \begin{itemize}
 \item[]\textbf{Indata:}
 \begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=3.5cm]{../Pictures/utf-8_tester_test.png}}
-\caption{Hur programmet utf-8\_tester.py körs i terminalen.\label{fig:}}
+\caption{Hur programmet utf-8\_tester.py körs i terminalen.\label{fig:2}}
 \end{figure}
 \item[]\textbf{Resultat:}
 \begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=3.5cm]{../Pictures/utf-8_tester_valid.png}}
-\caption{Resultat från att köra utf-8\_tester.py\label{fig:}}
+\caption{Resultat från att köra utf-8\_tester.py\label{fig:3}}
 \end{figure}
 \end{itemize}
 \subsubsection*{Test 2.3 (Krav 2.8)}
@@ -177,15 +214,15 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{itemize}
 
 
-
+\newpage
 \subsection{Tester för Icke-funktionella Krav}
 \subsubsection*{Test 3.1 (Krav 3.1)}
 \begin{itemize}
-\item[]\textbf{Indata} Validera Jinja2 i samtliga HTML filer i '/templates' genom att köra Jinja2 valideraren: jinja2\_validator.py med /templates mappen som argument i terminalen:
+\item[]\textbf{Indata} Validera Jinja2 i samtliga HTML filer i '/templates' genom att köra Jinja2 valideraren: jinja2\_validator.py med /templates mappen som argument i terminalen.
 \item[]\textbf{Resultat:}
 \begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=5cm]{../Pictures/jinja2_validated.png}}
-\caption{Resultat från att köra jinja2\_validator.py\label{fig:}}
+\caption{Resultat från att köra jinja2\_validator.py\label{fig:4}}
 \end{figure}
 \end{itemize}
 \subsubsection*{Test 3.3 (Krav 3.2)}
@@ -194,40 +231,44 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \item[]\textbf{Resultat:}
 \begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=5cm]{../Pictures/css3_validation.png}}
-\caption{Resultat från att köra w3:s css3 validerare.\label{fig:}}
+\caption{Resultat från att köra w3:s css3 validerare.\label{fig:5}}
 \end{figure}
 \end{itemize}
+\newpage
 \subsubsection*{Test 3.4 (Krav 3.2)}
 \begin{itemize}
 \item[]\textbf{Indata} Validera portfoliosidans HTML5 med hjälp av w3:s HTML5 validerare:\\\texttt{https://validator.w3.org/\#validate\_by\_uri+with\_options}
   \begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=5cm]{../Pictures/HTML5_check.png}}
-\caption{Inställningar för w3 HTML5 validering.\label{fig:}}
+\caption{Inställningar för w3 HTML5 validering.\label{fig:6}}
 \end{figure}
 \item[]\textbf{Resultat:}
     \begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=5cm]{../Pictures/HTML5_check_result.png}}
-\caption{Resultat av w3 HTML5 validering.\label{fig:}}
+\caption{Resultat av w3 HTML5 validering.\label{fig:7}}
 \end{figure}
 \end{itemize}
+\newpage
 \subsubsection*{Test 3.5 (Krav 3.3)}
 \begin{itemize}
-\item[]\textbf{Indata} I terminalen: cd till projektets katalog. Skriv ut katalogens innehåll med tree kommandot som syns på resultatbilden. 
+\item[]\textbf{Indata} I terminalen: cd till projektets katalog. Skriv ut katalogens innehåll med tree kommandot som syns på resultatbilden \ref{fig:8}. 
 \item[]\textbf{Resultat:}
   \begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=12cm]{../Pictures/app_tree.png}}
-\caption{Resultat från att trädkommandot tree i terminalen.\label{fig:}}
+\caption{Resultat från att trädkommandot tree i terminalen.\label{fig:8}}
 \end{figure}
 \end{itemize}
+\newpage
 \subsubsection*{Test 3.6 (Krav 3.4)}
 \begin{itemize}
 \item[]\textbf{Indata} Bevisa att projektet versionhanteras med git genom att visa print screen över repots 'Value Stream Analytics'.
 \item[]\textbf{Resultat:}
 \begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=3cm]{../Pictures/value_stream.png}}
-\caption{Print Screen över Value Stream Analytics portfolio repots Analytics tab.\label{fig:}}
+\caption{Print Screen över Value Stream Analytics portfolio repots Analytics tab.\label{fig:9}}
 \end{figure}
 \end{itemize}
+
 \subsubsection*{Test 3.7 (Krav 3.5)}
 \begin{itemize}
 \item[]\textbf{Indata} Bevisa att presentationen av systemet är godkänd och lägg till kommentarer från användare från klassens portfolio presentation.
@@ -235,7 +276,7 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{itemize}
 \subsubsection*{Test 3.8 (Krav 3.6, 3.7)}
 \begin{itemize}
-\item[]\textbf{Indata} cd till \texttt{/tdp003/Documents}. chmod check\_if\_english.py om det behövs för att göra \\check\_if\_english.py exekverbar. Kör programmet i terminalen: \texttt{./check\_if\_eng.py wordlist\_eng.txt ../portfolio\_app/} Skriv ut innehållet för alla filer med \texttt{cat uword\_directory/*} och kontrollera att de okända orden endast kan vara programmeringstermer.
+\item[]\textbf{Indata} cd till \texttt{/tdp003/Documents}. chmod check\_if\_english.py om det behövs för att göra \\check\_if\_english.py exekverbar. Kör programmet i terminalen: \texttt{./check\_if\_eng.py wordlist\_eng.txt ../portfolio\_app/} Skriv ut innehållet för alla filer med \texttt{cat uword\_directory/*} och kontrollera att de okända orden endast är programmeringstermer.
 \item[]\textbf{Resultat} 
 \end{itemize}
 \subsubsection*{Test 3.9 (Krav 3.8, 3.9 och 3.10)}
@@ -262,8 +303,10 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
   \hline
 \end{tabular}
 
+\newpage
 \appendix
 \section{Data.json}
+\lstinputlisting[language=JSON]{data.json}
 \section{Feedback - Presentation av Portfolio}
 
 
