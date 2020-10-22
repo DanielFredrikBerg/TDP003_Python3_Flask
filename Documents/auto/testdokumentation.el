@@ -22,6 +22,8 @@
     "fig:6"
     "fig:7"
     "fig:8"
-    "fig:9"))
+    "fig:9"
+    "json"
+    "fig:10"))
  :latex)
 

@@ -203,9 +203,9 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{figure}
 \end{itemize}
 \subsubsection*{Test 2.3 (Krav 2.8)}
-\begin{itemize}%Lägga till data.json i Appendix A
-\item[]\textbf{Indata} Lägg till ett projekt med ett till sökfält, 'new\_search\_field' i data.json. Se Appendix B. Testa sedan att köra hemsidan med flask run. Sök på 'new' med sökfältet 'new\_search\_list' markerat i /list.
-\item[]\textbf{Resultat} Bara det nyligen tillagda projektet ges som sökresultat.
+\begin{itemize}
+\item[]\textbf{Indata} Lägg till ett projekt med ett till sökfält, 'new\_search\_field' i data.json. Se Appendix \ref{json}. Testa sedan att köra hemsidan med flask run. Sök på 'new' med sökfältet 'new\_search\_list' markerat i /list.
+\item[]\textbf{Resultat} Bara det tillagda projektet ges som sökresultat. 
 \end{itemize}
 \subsubsection*{Test 2.4 (Krav 2.9)}
 \begin{itemize}
@@ -271,8 +271,8 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 
 \subsubsection*{Test 3.7 (Krav 3.5)}
 \begin{itemize}
-\item[]\textbf{Indata} Bevisa att presentationen av systemet är godkänd och lägg till kommentarer från användare från klassens portfolio presentation.
-\item[]\textbf{Resultat} %Inscanning av det dokumentet i appendix 
+\item[]\textbf{Indata} Lägg till kommentarer från användare från klassens portfolio presentation.
+\item[]\textbf{Resultat} Se Figur \ref{fig:10} i Appendix. 
 \end{itemize}
 \subsubsection*{Test 3.8 (Krav 3.6, 3.7)}
 \begin{itemize}
@@ -305,10 +305,15 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 
 \newpage
 \appendix
-\section{Data.json}
+\section{Data.json\label{json}}
+\caption{Utskrift av innehållet i filen data.json}
 \lstinputlisting[language=JSON]{data.json}
+\newpage
 \section{Feedback - Presentation av Portfolio}
-
+\begin{figure}[h!]
+  \caption{Inscannade dokumentet med feed-back från portfolio presentationen.\label{fig:10}}
+  \centerline{\includegraphics[width=\textwidth, height=16cm]{../Pictures/presentation-feedback.jpg}}
+\end{figure}
 
 \end{document}
 %Formateringsexempel
