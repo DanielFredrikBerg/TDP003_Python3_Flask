@@ -1,0 +1,3 @@
+../portfolio_app/daniel_api.py
+
+{'dict', 'loopen', 's', 'elif', 'GGER', 'YY', 'args', 'kwargs', 'funkar', 'json', 'fromkeys', 'of', 'XXX', 'db', 'L', 'aquired', 'nedan', 'f', 'id', 'TDP', 't', 'by', 'Fixa', 'r', 'som', 'asc', 'lulz', 'str', 'e', 'to', 'lc', 'tdp', 'desc', 'WUT', 'argv', 'w', 'X', 'usr', 'p', 'len', 'DUBLETTER', 'ada', 'def', 'func', 'sys', 'API'}

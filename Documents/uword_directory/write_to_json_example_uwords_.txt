@@ -1,0 +1,3 @@
+../portfolio_app/write_to_json_example.py
+
+{'WUT', 'XXX', 'argv', 'db', 'X', 'w', 'usr', 'lulz', 'str', 'YY', 'ada', 'id', 'TDP', 'json', 'int', 'tdp', 'sys', 'r'}

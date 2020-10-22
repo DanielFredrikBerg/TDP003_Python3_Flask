@@ -1,0 +1,3 @@
+../portfolio_app/portfolio_app/__init__.py
+
+{'of', 'https', 'miguelgrinberg', 'mega', 'blog', 'to', 'a', 't', 'predefined', 'it', 'Flask', 'doesn', 'flask'}

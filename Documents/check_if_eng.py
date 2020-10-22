@@ -23,7 +23,9 @@ def is_english(word, word_list):
 def files_in_dir(top_dir, end):
     """Returns list of path of files with ending end in 'top_dir' and all subdirs."""
     path_list = []
+    exclude = set(['venv', 'Iosevka'])
     for root, dirs, files in os.walk(str(top_dir)):
+        dirs[:] = [dir_ for dir_ in dirs if dir_ not in exclude]
         for file_ in files:
             if file_.endswith(str(end)):
                 path_list.append(os.path.join(root, file_))
@@ -31,11 +33,11 @@ def files_in_dir(top_dir, end):
 
 
 def unknown_words_to_file(file_path, word_list, save_dir=''):
-    """Writes words from 'file_path' not in word_list to 'file_path_uwords_.txt' in dir save_dir)"""
+    """Writes words from 'file_path' not in word_list to 'file_path_uwords_.txt' in dir save_dir. Progress is printed in terminal.)"""
     unknown_words = set()
     with open(str(file_path), 'r') as file_:
+        print('Checking file: ' + str(file_path))
         file_words = re.findall('[a-zA-Z]+', str(file_.read()))
-        #print(file_words)
         for word in file_words:
             if not is_english(word, word_list):
                 unknown_words.add(word)
