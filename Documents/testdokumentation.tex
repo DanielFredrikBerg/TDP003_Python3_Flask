@@ -81,12 +81,12 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \subsubsection*{Test 1.7 (Krav 1.2)}
 \begin{itemize}
 \item[]\textbf{Indata}Först söks det efter python i sökfältet techniques\_used på /list. techniques\_used i URL:en ändras sedan till enstorkorv. Enter trycks.
-\item[]\textbf{Resultat} Internal Server Error
+\item[]\textbf{Resultat} Det står: Searching for python in search fields: enstorkorv, generated no results.
 \end{itemize}
 \subsubsection*{Test 1.8 (Krav 1.2)}
 \begin{itemize}
 \item[]\textbf{Indata} Markerar alla searchfields genom att klicka på dem. Skriver sedan 'e' i sökfältet och trycker sedan enter.
-\item[]\textbf{Resultat} 10 projekt listas i sökresultaten.
+\item[]\textbf{Resultat} Alla projekt visas i sökresultaten.
 \end{itemize}
 \subsubsection*{Test 1.9 (Krav 1.2)}
 \begin{itemize}
@@ -125,8 +125,8 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{itemize}
 \subsubsection*{Test 1.16 (Krav 1.6)}
 \begin{itemize}
-\item[]\textbf{Indata} Efter valfri sökning på '/list'. Sätt 'search\_field' variabeln i URL:en till 'lKAsm32105,saölf'.
-\item[]\textbf{Resultat} Internal Server Error
+\item[]\textbf{Indata} Efter sökning med search\_field small\_image i '/list'. Sätt 'search\_field' variabeln i URL:en till 'lKAsm32105,saölf'.
+\item[]\textbf{Resultat} Följande text visas: Searching for in search fields: lKAsm32105,saölf, generated no results.
 \end{itemize}
 \subsubsection*{Test 1.17 (Krav 1.7)}
 \begin{itemize}
@@ -166,7 +166,7 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{figure}
 \end{itemize}
 \subsubsection*{Test 2.3 (Krav 2.8)}
-\begin{itemize}%Lägga till data.json i Appendix B
+\begin{itemize}%Lägga till data.json i Appendix A
 \item[]\textbf{Indata} Lägg till ett projekt med ett till sökfält, 'new\_search\_field' i data.json. Se Appendix B. Testa sedan att köra hemsidan med flask run. Sök på 'new' med sökfältet 'new\_search\_list' markerat i /list.
 \item[]\textbf{Resultat} Bara det nyligen tillagda projektet ges som sökresultat.
 \end{itemize}
@@ -254,50 +254,20 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
   \hline
   Datum & Commit & Godkända & Avvikande & Kommentar \\ [0.5ex]
   \hline
-  2019-10-15 & bfc02812 & Alla & - & - \\
+  2019-10-22 & bfc02812 & Alla & - & - \\
   \hline
   \hline
-  2019-10-21 & 13926161 &  &  & 12 projekt kommer upp istället för de förväntade 4. Måste åtgärdas snarast.\\
+  2019-10-21 & 13926161 & - & 1.7, 1.8, 1.16 &10 projekt kommer upp istället för de förväntade 4.\\
   \hline
-  \hline
-  2019-10-15 &  &  &  & \\
-  \hline
-  \hline
-  2019-10-15 &  &  &  & \\
-  \hline
-  \hline
-  2019-10-15 &  &  &  & \\
-  \hline
-  \hline
-  2019-10-15 &  &  &  & \\
-  \hline
-  \hline
-  2019-10-15 &  &  &  & \\
-  \hline
-  \hline
-  2019-10-15 &  &  &  & \\
-  \hline
-  \hline
-  2019-10-15 &  &  &  & \\
-  \hline
-  \hline
-  2019-10-15 &  &  &  & \\
-  \hline
-  \hline
-  2019-10-15 &  &  &  & \\
-  \hline
-  \hline
-  2019-10-15 &  &  &  & \\
-  \hline
-  \hline
-  2019-10-15 &  &  &  & \\
-  \hline
-  \hline
-  2019-10-15 &  &  &  & \\
   \hline
 \end{tabular}
 
+\appendix
+\section{Data.json}
+\section{Feedback - Presentation av Portfolio}
 
+
+\end{document}
 %Formateringsexempel
 
 %% \begin{itemize}
@@ -317,7 +287,6 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 %% \ref{fig:2} 
 
 
-\end{document}
 
 %%% Local Variables: 
 %%% coding: utf-8
