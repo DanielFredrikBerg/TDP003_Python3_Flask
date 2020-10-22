@@ -474,3 +474,16 @@ AttributeError: module 'daniel_api' has no attribute 'get_search_fields'
 2020-10-19 17:21:58,543 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.smarty.SmartyExtension".
 2020-10-19 17:21:58,544 DEBUG MARKDOWN MainThread : Successfully imported extension module "markdown.extensions.toc".
 2020-10-19 17:21:58,544 DEBUG MARKDOWN MainThread : Successfully loaded extension "markdown.extensions.toc.TocExtension".
+2020-10-22 11:06:03,446 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-10-22 11:06:19,573 INFO werkzeug Thread-1 : 127.0.0.1 - - [22/Oct/2020 11:06:19] "[37mGET / HTTP/1.1[0m" 200 -
+2020-10-22 11:06:19,666 INFO werkzeug Thread-2 : 127.0.0.1 - - [22/Oct/2020 11:06:19] "[37mGET /static/reset.css HTTP/1.1[0m" 200 -
+2020-10-22 11:06:19,666 INFO werkzeug Thread-3 : 127.0.0.1 - - [22/Oct/2020 11:06:19] "[37mGET /static/danhu849/base.css HTTP/1.1[0m" 200 -
+2020-10-22 11:06:19,781 INFO werkzeug Thread-4 : 127.0.0.1 - - [22/Oct/2020 11:06:19] "[37mGET /static/danhu849/pawel-czerwinski-ncgbTwIZhNU-unsplash.jpg HTTP/1.1[0m" 200 -
+2020-10-22 11:06:19,781 INFO werkzeug Thread-5 : 127.0.0.1 - - [22/Oct/2020 11:06:19] "[37mGET /static/danhu849/pawel-czerwinski-ncgbTwIZhNU-unsplash_blur_bright.jpg HTTP/1.1[0m" 200 -
+2020-10-22 11:06:19,794 INFO werkzeug Thread-6 : 127.0.0.1 - - [22/Oct/2020 11:06:19] "[37mGET /static/danhu849/pawel-czerwinski-ncgbTwIZhNU-unsplash_blur_dark.jpg HTTP/1.1[0m" 200 -
+2020-10-22 11:06:19,799 INFO werkzeug Thread-7 : 127.0.0.1 - - [22/Oct/2020 11:06:19] "[37mGET /static/danhu849/Iosevka/ttf/iosevka-medium.ttf HTTP/1.1[0m" 200 -
+2020-10-22 11:06:21,922 INFO werkzeug Thread-8 : 127.0.0.1 - - [22/Oct/2020 11:06:21] "[32mGET /list HTTP/1.1[0m" 308 -
+2020-10-22 11:06:21,937 INFO werkzeug Thread-9 : 127.0.0.1 - - [22/Oct/2020 11:06:21] "[37mGET /list/ HTTP/1.1[0m" 200 -
+2020-10-22 11:15:38,355 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-10-22 11:15:41,856 INFO werkzeug Thread-1 : 127.0.0.1 - - [22/Oct/2020 11:15:41] "[37mGET /list/ HTTP/1.1[0m" 200 -
+2020-10-22 11:15:51,336 INFO werkzeug Thread-2 : 127.0.0.1 - - [22/Oct/2020 11:15:51] "[37mGET /list/ HTTP/1.1[0m" 200 -

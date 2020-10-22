@@ -161,8 +161,8 @@ def main():
     f = sys.argv[1]
     db = load(f)
     print(db)
-    add_project(db, project)
-    db = load(f)
+    # add_project(db, project)
+    # db = load(f)
     print(get_project_count(db))
 
     # db = load(sys.argv[1])

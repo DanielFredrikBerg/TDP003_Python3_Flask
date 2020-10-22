@@ -1,9 +1,9 @@
 [
   {
     "start_date": "2009-09-05",
-    "short_description": "Project 1: A very very short description of project 1. Where we bla bla blab bla bla bala blabs, ksal.",
+    "short_description": "no",
     "course_name": "OK\u00c4NT",
-    "long_description": "Long description of project. Very long. Can't you see? no no no",
+    "long_description": "no no no",
     "group_size": 2,
     "academic_credits": "WUT?",
     "lulz_had": "many",
@@ -19,8 +19,28 @@
     "big_image": "XXX"
   },
   {
+    "start_date": "2009-09-05",
+    "short_description": "no",
+    "course_name": "OK\u00c4NT",
+    "long_description": "no no no",
+    "group_size": 2,
+    "academic_credits": "WUT?",
+    "lulz_had": "many",
+    "external_link": "YY",
+    "small_image": "X",
+    "techniques_used": [
+      "python"
+    ],
+    "new_search_field": "This is a new search field!",
+    "project_name": "python data-module test script",
+    "course_id": "TDP003",
+    "end_date": "2009-09-06",
+    "project_id": 5,
+    "big_image": "XXX"
+  },
+  {
     "start_date": "2009-09-07",
-    "short_description": "Project 3: A very very short description of project 3. Where we bla bla blab bla bla bala blabs, ksal.",
+    "short_description": "no",
     "course_name": "OK\u00c4NT",
     "long_description": "no no no",
     "group_size": 4,
@@ -41,7 +61,7 @@
   },
   {
     "start_date": "2009-09-08",
-    "short_description": "Project 2: A very very short description of project 2. Where we bla bla blab bla bla bala blabs, ksal.",
+    "short_description": "no",
     "course_name": "OK\u00c4NT",
     "long_description": "no no no",
     "group_size": 6,
@@ -61,7 +81,7 @@
   },
   {
     "start_date": "2009-09-06",
-    "short_description": "Project 4: A very very short description of project 4. Where we bla bla blab bla bla bala blabs, ksal.",
+    "short_description": "no",
     "course_name": "HOHO",
     "long_description": "no no no",
     "group_size": 8,

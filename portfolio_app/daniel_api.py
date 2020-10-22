@@ -111,7 +111,7 @@ def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=
 
 def get_search_fields(db):
     """Returns list of search_fields used by projects in project list."""
-    return db[0].keys()
+    return list(set([key for keylist in [project.keys() for project in db] for key in keylist]))
 
 
 def get_techniques(db):
@@ -160,11 +160,11 @@ def main():
     }
     f = sys.argv[1]
     db = load(f)
-    print(db)
+    #print(db)
     add_project(db, project)
     db = load(f)
     print(get_project_count(db))
-
+    print(get_search_fields(db))
     # db = load(sys.argv[1])
     # print(get_project_count(p_list))
     # print(get_project(p_list, 0))
