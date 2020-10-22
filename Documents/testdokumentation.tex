@@ -116,12 +116,12 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \subsubsection*{Test 1.14 (Krav 1.5)}
 \begin{itemize}
 \item[]\textbf{Indata} Kontrollera att ett sökresultat på sidan /list har små bilder genom att inspektera element. 
-\item[]\textbf{Resultat} Inspektion av element ger: <img src="https://via.placeholder.com/300" alt="XXX" style="float: left;"> Bilden är 150px stor.
+\item[]\textbf{Resultat} Inspektion av element ger:\\ \texttt{<img src="https://via.placeholder.com/300" alt="XXX" style="float: left;">} Bilden är 150px stor.
 \end{itemize}
 \subsubsection*{Test 1.15 (Krav 1.5)}
 \begin{itemize}
 \item[]\textbf{Indata} Kontrollera att projektsidan '/project/1/' har minst en stor bild genom att inspektera element på sidan.
-\item[]\textbf{Resultat} Inspektion av element ger: <img src=''https://via.placeholder.com/300'' alt=''XXX'' style=''float: left;'' data-module='''' test='''' script=''''> Bilden är 300px stor.
+\item[]\textbf{Resultat} Inspektion av element ger:\\ \texttt{<img src=''https://via.placeholder.com/300'' alt=''XXX'' style=''float: left;''\\ data-module='''' test='''' script=''''>} Bilden är 300px stor.
 \end{itemize}
 \subsubsection*{Test 1.16 (Krav 1.6)}
 \begin{itemize}
@@ -130,7 +130,7 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{itemize}
 \subsubsection*{Test 1.17 (Krav 1.7)}
 \begin{itemize}
-\item[]\textbf{Indata} Ändra URL:en på projektsidan 'project/3' till 'project/a'.
+\item[]\textbf{Indata} Ändra URL:en på projektsidan \texttt{'project/3' till 'project/a'}
 \item[]\textbf{Resultat} Sidan omdirigeras till en sida med texten ERROR 404 The page your are trying to reach does not exist.
 \end{itemize}
 \subsubsection*{Test 1.18 (Krav 1.7)}
@@ -140,13 +140,15 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{itemize}
 
 
+
+
 \subsection{Tester för datalagrets krav}
 \subsubsection*{Test 2.1 (Krav 2.1, 2.2, 2.3, 2.4)}
 \begin{itemize}
-\item[]\textbf{Indata} Ändra import datalager as data till import daniel_data as data i filen data_test.py. Skriv \texttt{./data\_test.py} i terminalen.
+\item[]\textbf{Indata} Ändra import datalager as data till import daniel\_data as data i filen data\_test.py. Skriv \texttt{./data\_test.py} i terminalen.
 \item[]\textbf{Resultat} 
 \end{itemize}
-\subsubsection*{Test 2.5 (Krav 2.7)}
+\subsubsection*{Test 2.2 (Krav 2.7)}
 \begin{itemize}
 \item[]\textbf{Indata:}
 \begin{figure}[h!]
@@ -159,24 +161,16 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \caption{Resultat från att köra utf-8\_tester.py\label{fig:}}
 \end{figure}
 \end{itemize}
-\subsubsection*{Test 2.6 (Krav 2.9)}
+\subsubsection*{Test 2.3 (Krav 2.8)}
 \begin{itemize}
-\item[]\textbf{Indata} flask session startas utan debug\_mode och ett femte projekt läggs till manuellt i data.json. Sedan öppnas /list i webläsaren.
+\item[]\textbf{Indata} Lägg till ett projekt och ett till sökfält på ett projekt i din JSON fil. Se Appendix B. Testa sedan att köra hemsidan med flask run. Sök på projekten i /list i de nya sökfält som lagts till.  
 \item[]\textbf{Resultat} 
 \end{itemize}
-\subsubsection*{Test 2.7 (Krav 2.8)}
+\subsubsection*{Test 2.4 (Krav 2.9)}
 \begin{itemize}
-\item[]\textbf{Indata} Lägg till ett projekt eller ett till sökfält på ett projekt i din JSON fil, exempel - 'Företagsnamn'. Testa sedan filen genom att köra programmet, d.v.s hemsidan. Sök på projekten med nya de fälten/fält som du har lagt till.  
+\item[]\textbf{Indata} flask session startas utan debug\_mode och ett femte projekt läggs till manuellt i data.json medan flask kör. Sedan öppnas /list i webläsaren.
 \item[]\textbf{Resultat} 
 \end{itemize}
-\subsubsection*{Test 2.8 (Krav 2.)}
-\begin{itemize}
-\item[]\textbf{Indata}
-\item[]\textbf{Resultat} 
-\end{itemize}
-
-
-
 
 
 
@@ -192,7 +186,7 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{itemize}
 \subsubsection*{Test 3.3 (Krav 3.2)}
 \begin{itemize}
-\item[]\textbf{Indata} Validera portfoliosidans css3 med hjälp av w3 css3 validerare (https://jigsaw.w3.org/css-validator/). Sätt 'Profile: CSS level 3', 'Medium: All', 'Warnings: Normal report', 'Vendor Extensions: Default'.
+\item[]\textbf{Indata} Validera portfoliosidans css3 med hjälp av w3 css3 validerare:\\ \texttt{https://jigsaw.w3.org/css-validator/}\\Sätt 'Profile: CSS level 3', 'Medium: All', 'Warnings: Normal report', 'Vendor Extensions: Default'.
 \item[]\textbf{Resultat:}
 \begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=5cm]{../Pictures/css3_validation.png}}
@@ -201,7 +195,7 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{itemize}
 \subsubsection*{Test 3.4 (Krav 3.2)}
 \begin{itemize}
-\item[]\textbf{Indata} Validera portfoliosidans HTML5 med hjälp av w3:s HTML5 validerare (https://validator.w3.org/\#validate\_by\_uri+with\_options).
+\item[]\textbf{Indata} Validera portfoliosidans HTML5 med hjälp av w3:s HTML5 validerare:\\\texttt{https://validator.w3.org/\#validate\_by\_uri+with\_options}
   \begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=5cm]{../Pictures/HTML5_check.png}}
 \caption{Inställningar för w3 HTML5 validering.\label{fig:}}
@@ -237,12 +231,13 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{itemize}
 \subsubsection*{Test 3.8 (Krav 3.6, 3.7)}
 \begin{itemize}
-\item[]\textbf{Indata} cd till \texttt{/tdp003/Documents}. chmod check\_if\_english.py om det behövs för att göra den exekverbar. Kör programmet: \texttt{./check_if_eng.py wordlist_eng.txt ../portfolio_app/} Skriv ut innehållet för alla filer med \texttt{cat uword_directory/*} och kontrollera att de okända orden endast kan vara programmeringstermer.
+\item[]\textbf{Indata} cd till \texttt{/tdp003/Documents}. chmod check\_if\_english.py om det behövs för att göra \\check\_if\_english.py exekverbar. Kör programmet i terminalen: \texttt{./check\_if\_eng.py wordlist\_eng.txt ../portfolio\_app/} Skriv ut innehållet för alla filer med \texttt{cat uword\_directory/*} och kontrollera att de okända orden endast kan vara programmeringstermer.
 \item[]\textbf{Resultat} 
 \end{itemize}
 \subsubsection*{Test 3.9 (Krav 3.8, 3.9 och 3.10)}
 \begin{itemize}
-\item[] Se dokumentet \texttt{danhu849_jenoh242_Systemdokumentation.pdf} i portfolions repo \texttt{https://gitlab.liu.se/jenoh242/tdp003/-/tree/master/Documents}
+\item[] Se dokumentet \texttt{danhu849\_jenoh242\_Systemdokumentation.pdf} i portfolions repo:\\
+  \texttt{https://gitlab.liu.se/jenoh242/tdp003/-/tree/master/Documents}
 \end{itemize}
 
 
