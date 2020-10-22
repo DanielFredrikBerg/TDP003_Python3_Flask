@@ -4,7 +4,7 @@
 # Copyright (C) 2011, Torbjörn Lönnemark <tobbez@ryara.net>
 # Copyright (C) 2014, Daniel Persson
 import unittest
-import daniel_data as data # change 'datalager' to your own .py file
+import datalager as data # change 'datalager' to your own file
 #import data
 import hashlib
 import sys

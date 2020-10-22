@@ -22,7 +22,7 @@ def home():
 
     **Returns**:
 
-    * If search has been used, redirect to `list()`. Otherwize:
+    * If search has been used, redirect to `list()`. Otherwise:
 
     * Render home page.
     """
@@ -74,7 +74,7 @@ def show_project(id):
 
     **Returns**:
 
-    * If search has been used, redirect to `list()`. Otherwize:
+    * If search has been used, redirect to `list()`. Otherwise:
 
     * Render 404 page.
     """
@@ -100,7 +100,7 @@ def techniques():
 
     **Returns**:
 
-    * If search has been used, redirect to `list()`. Otherwize:
+    * If search has been used, redirect to `list()`. Otherwise:
 
     * Render techniques page.
     """
@@ -123,7 +123,7 @@ def not_found_error(error):
 
     **Returns**:
 
-    *  If search has been used, redirect to `list()`. Otherwize:
+    *  If search has been used, redirect to `list()`. Otherwise:
 
     *  Render 404 page. And:
 

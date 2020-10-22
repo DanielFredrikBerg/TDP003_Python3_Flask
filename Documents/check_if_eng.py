@@ -44,7 +44,7 @@ def unknown_words_to_file(file_path, word_list, save_dir=''):
     #print("unknown words: ", unknown_words)
     if len(unknown_words) > 0:
         with open(''.join((save_dir, os.path.basename(file_path).split('.')[0] + '_uwords_.txt')), 'w') as file_:
-            file_.write(str(file_path) + '\n\n' + str(unknown_words))
+            file_.write('\n' + str(file_path) + '\n\n' + str(unknown_words) + '\n\n')
     else:
         print("No unknown words in file: ", file_path)
     return 0

@@ -1,3 +1,5 @@
+
 ../portfolio_app/setup.py
 
-{'https', 'x', 'setuptools', 'ENV', 'en', 'to', 'flask', 'FLASK', 'Flask', 'palletsprojects'}
+{'to', 'x', 'Flask', 'FLASK', 'en', 'ENV', 'flask', 'https', 'setuptools', 'palletsprojects'}
+

@@ -1,3 +1,5 @@
+
 ../portfolio_app/daniel_api.py
 
-{'dict', 'loopen', 's', 'elif', 'GGER', 'YY', 'args', 'kwargs', 'funkar', 'json', 'fromkeys', 'of', 'XXX', 'db', 'L', 'aquired', 'nedan', 'f', 'id', 'TDP', 't', 'by', 'Fixa', 'r', 'som', 'asc', 'lulz', 'str', 'e', 'to', 'lc', 'tdp', 'desc', 'WUT', 'argv', 'w', 'X', 'usr', 'p', 'len', 'DUBLETTER', 'ada', 'def', 'func', 'sys', 'API'}
+{'XXX', 'dict', 'JSON', 'e', 's', 'X', 'fromkeys', 'of', 'usr', 'to', 'w', 'sys', 'def', 'by', 'WUT', 'Datalayer', 'asc', 'lulz', 'aquired', 'desc', 'elif', 'lc', 'tdp', 'TDP', 'argv', 'p', 't', 'id', 'f', 'str', 'db', 'len', 'it', 'YY', 'r', 'json', 'ada'}
+
