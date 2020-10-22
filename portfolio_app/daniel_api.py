@@ -2,16 +2,10 @@
 import json
 import sys
 
-# ******This file includes the implemented functions for our API*********************
-
-# def catch(func, handle=lambda e: e, *args, **kwargs):
-#         try:
-#                 return func(*args, **kwargs)
-#         except Exception as e:
-#                 return handle(e)
-
+# ******This file includes the implemented functions for our Datalayer*********************
 
 def load(json_file):
+    """Attempts to load JSON file json_file. Returns project list sorted by key project_id. Returns None if unsuccessful."""
     try:
         with open(str(json_file), 'r') as json_file:
             data = json.load(json_file)
@@ -22,19 +16,23 @@ def load(json_file):
 
 
 def add_project(db, project):
+    """Adds project to current project list."""
     db.append(project)
 
 
 def write_db_to_json(db, save_file):
+    """Writes current project list in JSON format to save_file"""
     with open(str(save_file), 'w') as json_file:
         json.dump(db, json_file)
 
 
 def get_project_count(db):
+    """Returns amount of projects in project list."""
     return len(db)
 
 
 def get_project(db, p_id):
+    """Returns project with 'project_id' p_id if it exists in project list otherwise returns None"""
     aquired_project = [
         project for project in db if project['project_id'] == p_id]
     return aquired_project[0] if len(aquired_project) > 0 else None
@@ -45,6 +43,8 @@ def get_project(db, p_id):
 
 
 def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=None, search_fields=None):
+    """Returns sorted unique project list matching techniques, search and search_fields requirements.
+    If all are None, returns whole project list."""
     search_results = []
     #print(techniques, search, search_fields, marker, sep='\t')
     if techniques == None and search == None and search_fields == None:
@@ -59,9 +59,7 @@ def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=
         search = str(search).lower()
         #print('Search: ' + str(search))
     if techniques != [] and techniques != None:
-        #print('searching in techniques')
-        # Fixa så nedan list comprehension funkar som for-loopen nedan.
-        #search_results = [project for project in db for technique in techniques if (technique.lower() in project['techniques_used'])]
+        #print('searching in techniques')        
         #print('sEarch_result:', search_results, sep='\t')
         search_results = []
         for project in db:
@@ -76,11 +74,6 @@ def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=
 
     if search_fields == None:
         #print('searching in all search fields')
-        # if search != None:
-        # DEN LÄGGER TILL DUBLETTER!!!!!!
-        # search_results = [project for project in db for key in project.keys() if all(str(project[key]).lower().__contains__(search), project not in search_results)]
-        # print(len(search_results), 'check', sep='\t')
-        #print('sEarch_result:', search_results, sep='\t')
         for project in db:
             for key in project.keys():
                 field_lc = str(project[key]).lower()
@@ -91,22 +84,22 @@ def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=
                         break
                     else:
                         search_results.append(project)
-                        # print(field_lc)
                         break
     if search_fields != None:
         #print('searching in specific search fields')
-        search_results = [project for project in db for search_field in search_fields if str(
-            project[search_field]).lower().__contains__(search)]
+        # Search results returns too many projects when many search_fields are chosen.
+        #search_results = [project for project in db for search_field in search_fields if str(
+        #    project[search_field]).lower().__contains__(search)]
         #print('seArch_result:', search_results, sep='\t')
-        # for project in db:
-        #         for search_field in search_fields:
-        #                 search_field_lc = str(project[search_field]).lower()
-        #                 if search_field_lc.__contains__(search):
-        #                         if search_results.__contains__(project):
-        #                                 break
-        #                         else:
-        #                                 search_results.append(project)
-        #                                 break
+        for project in db:
+                for search_field in search_fields:
+                        search_field_lc = str(project[search_field]).lower()
+                        if search_field_lc.__contains__(search):
+                                if search_results.__contains__(project):
+                                        break
+                                else:
+                                        search_results.append(project)
+                                        break
     if sort_order == 'desc':
         is_reverse = True
 
@@ -117,15 +110,18 @@ def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=
 
 
 def get_search_fields(db):
+    """Returns list of search_fields used by projects in project list."""
     return db[0].keys()
 
 
 def get_techniques(db):
+    """Returns list of all techniques used in project list."""
     #big_t_list = [project['techniques_used'] for project in db]
     return list(dict.fromkeys(sorted([technique for mini_tech_list in [project['techniques_used'] for project in db] for technique in mini_tech_list])))
 
 
 def get_technique_stats(db):
+    """Returns dict with statistics for all techniques used in project list."""
     t_dict = {}
     technique_list = get_techniques(db)
     for technique in technique_list:
@@ -141,6 +137,7 @@ def get_technique_stats(db):
 
 
 def main():
+    """Used for testing functions."""
     project = {
         "start_date": "2019-09-08",
         "short_description": "no",
