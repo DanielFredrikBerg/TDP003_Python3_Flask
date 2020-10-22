@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+# Copyright 2020, Daniel Huber, All rights reserved.
+
 import sys
 import os
 from jinja2 import Environment, FileSystemLoader, select_autoescape

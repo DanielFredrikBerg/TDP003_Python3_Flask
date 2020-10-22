@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+# Copyright 2020, Daniel Huber, All rights reserved.
 import json
 import sys
 
