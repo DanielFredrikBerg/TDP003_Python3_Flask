@@ -1,3 +1,0 @@
-eng_test_dir/eng_test.py
-
-{'str', 'argv', 'w', 'txt', 'mkdir', 'endswith', 'isfile', 'sys', 'usr', 's', 'dirs', 'findall', 'subdirs', 'of', 'FileExistsError', 'basename', 're', 'filename', 'def', 'wordlist', 'elif', 'getcwd', 'r', 'Huber', 'zA', 'dir', 'len', 'n', 'uword', 'a', 'it', 'py', 'eng', 'isdir', 'Z', 'uwords', 'to'}

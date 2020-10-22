@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm ./*.log ./*.aux ./*.out ./*~ ./*# ./*.toc ./*.fls ./*.fdb* ./*.b*
+rm ./*.log ./*.aux ./*.out ./*~ ./*# ./*.toc ./*.fls ./*.fdb*

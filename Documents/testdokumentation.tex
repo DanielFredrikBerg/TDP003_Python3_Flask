@@ -8,7 +8,7 @@
 \author{Daniel Huber, \url{danhu849@liu.se}\\
   Jens Öhrnell, \url{jenoh242@liu.se}}
 \title{Testdokumentation}
-\date{2020-10-21}
+\date{2020-10-22}
 \rhead{Daniel Huber\\
 Jens Öhrnell}
 
@@ -21,7 +21,7 @@ Jens Öhrnell}
 \begin{tabularx}{\linewidth}{|l|X|l|}
 \hline
 Ver. & Revisionsbeskrivning & Datum \\\hline
-1.1 & Testdokumentation Portfolio TDP003 & 211020 \\\hline
+1.1 & Testdokumentation Portfolio TDP003 & 221020 \\\hline
 1.0 & Mall för Testdokumentation Portfolio TDP003 & 181020 \\\hline
 \end{tabularx}
 \end{table}
@@ -47,7 +47,7 @@ För att uppfylla kraven om korrekt JSON, UTF-8 och Jinja2 i projektet har valid
 Nedan följer tester i ordningen x.n där x motsvaras av det övergripande kravstycket i Universitets \texttt{Systemspecifikation} och n representerar testet i ordningen. Kravet testet uppfyller visas därefter.
 
 Indatan presenteras alltid först. Undertill visas det verkliga resultatet av senaste portfolioversionen ibland av en beskrivning, ibland av en bild och ibland av både och.
-\subsection{Tester mot presentationslagrets krav}
+\subsection{Tester för presentationslagrets krav}
 \subsubsection*{Test 1.1 (Krav 1.1)}
 \begin{itemize}
 \item[]\textbf{Indata} Öppna portfolion första sida (URL: /).
@@ -140,7 +140,7 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{itemize}
 
 
-\subsection{Tester mot datalagrets krav}
+\subsection{Tester för datalagrets krav}
 \subsubsection*{Test 2.1 (Krav 2.1)}
 \begin{itemize}
 \item[]\textbf{Indata} Testas med data\_test.py mot kraven, det vill säga load\_test och test\_get\_project.
@@ -164,12 +164,12 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \subsubsection*{Test 2.5 (Krav 2.7)}
 \begin{itemize}
 \item[]\textbf{Indata:}
-\begin{figure}[h]
+\begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=3.5cm]{../Pictures/utf-8_tester_test.png}}
 \caption{Hur programmet utf-8\_tester.py körs i terminalen.\label{fig:}}
 \end{figure}
 \item[]\textbf{Resultat:}
-\begin{figure}[h]
+\begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=3.5cm]{../Pictures/utf-8_tester_valid.png}}
 \caption{Resultat från att köra utf-8\_tester.py\label{fig:}}
 \end{figure}
@@ -195,12 +195,12 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 
 
 
-\subsection{Tester mot Icke-funktionella Krav}
+\subsection{Tester för Icke-funktionella Krav}
 \subsubsection*{Test 3.1 (Krav 3.1)}
 \begin{itemize}
 \item[]\textbf{Indata} Validera Jinja2 i samtliga HTML filer i '/templates' genom att köra Jinja2 valideraren: jinja2\_validator.py med /templates mappen som argument i terminalen:
 \item[]\textbf{Resultat:}
-\begin{figure}[h]
+\begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=5cm]{../Pictures/jinja2_validated.png}}
 \caption{Resultat från att köra jinja2\_validator.py\label{fig:}}
 \end{figure}
@@ -209,7 +209,7 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \begin{itemize}
 \item[]\textbf{Indata} Validera portfoliosidans css3 med hjälp av w3 css3 validerare (https://jigsaw.w3.org/css-validator/). Sätt 'Profile: CSS level 3', 'Medium: All', 'Warnings: Normal report', 'Vendor Extensions: Default'.
 \item[]\textbf{Resultat:}
-\begin{figure}[h]
+\begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=5cm]{../Pictures/css3_validation.png}}
 \caption{Resultat från att köra w3:s css3 validerare.\label{fig:}}
 \end{figure}
@@ -217,12 +217,12 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \subsubsection*{Test 3.4 (Krav 3.2)}
 \begin{itemize}
 \item[]\textbf{Indata} Validera portfoliosidans HTML5 med hjälp av w3:s HTML5 validerare (https://validator.w3.org/\#validate\_by\_uri+with\_options).
-  \begin{figure}[h]
+  \begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=5cm]{../Pictures/HTML5_check.png}}
 \caption{Inställningar för w3 HTML5 validering.\label{fig:}}
 \end{figure}
 \item[]\textbf{Resultat:}
-    \begin{figure}[h]
+    \begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=5cm]{../Pictures/HTML5_check_result.png}}
 \caption{Resultat av w3 HTML5 validering.\label{fig:}}
 \end{figure}
@@ -231,15 +231,19 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \begin{itemize}
 \item[]\textbf{Indata} I terminalen: cd till projektets katalog. Skriv ut katalogens innehåll med tree kommandot som syns på resultatbilden. 
 \item[]\textbf{Resultat:}
-  \begin{figure}[h]
+  \begin{figure}[h!]
 \centerline{\includegraphics[width=\textwidth, height=12cm]{../Pictures/app_tree.png}}
 \caption{Resultat från att trädkommandot tree i terminalen.\label{fig:}}
 \end{figure}
 \end{itemize}
 \subsubsection*{Test 3.6 (Krav 3.4)}
 \begin{itemize}
-\item[]\textbf{Indata} Bevisa att projektet versionhanteras med git genom att visa print screen över commit historik från portfolions repo.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Indata} Bevisa att projektet versionhanteras med git genom att visa print screen över repots 'Value Stream Analytics'.
+\item[]\textbf{Resultat:}
+\begin{figure}[h!]
+\centerline{\includegraphics[width=\textwidth, height=3cm]{../Pictures/value_stream.png}}
+\caption{Print Screen över Value Stream Analytics portfolio repots Analytics tab.\label{fig:}}
+\end{figure}
 \end{itemize}
 \subsubsection*{Test 3.7 (Krav 3.5)}
 \begin{itemize}
@@ -253,12 +257,12 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{itemize}
 \subsubsection*{Test 3.9 (Krav 3.7)}
 \begin{itemize}
-\item[]\textbf{Indata} Kör alla pythonprograms rader genom ett check\_if\_english.py som räknar orden och kollar om de är engelska. 
+\item[]\textbf{Indata} cd till \texttt{/tdp003/Documents}. chmod check\_if\_english.py om det behövs för att göra den exekverbar. Kör programmet: \texttt{./check_if_eng.py ../portfolio_app/}
 \item[]\textbf{Resultat} 
 \end{itemize}
 \subsubsection*{Test 3.10 (Krav 3.8, 3.9 och 3.10)}
 \begin{itemize}
-\item[] Se dokumentet: \texttt{Systemdokumentationen}
+\item[] Se dokumentet \texttt{danhu849_jenoh242_Systemdokumentation.pdf} i portfolions repo \texttt{https://gitlab.liu.se/jenoh242/tdp003/-/tree/master/Documents}
 \end{itemize}
 
 
