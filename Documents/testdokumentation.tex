@@ -166,14 +166,14 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
 \end{figure}
 \end{itemize}
 \subsubsection*{Test 2.3 (Krav 2.8)}
-\begin{itemize}%Lägga till för Appendix B
-\item[]\textbf{Indata} Lägg till ett projekt med ett till sökfält på ett projekt i data.json. Se Appendix B. Testa sedan att köra hemsidan med flask run. Sök på projekten i /list i de nya sökfält som lagts till.  
-\item[]\textbf{Resultat} 
+\begin{itemize}%Lägga till data.json i Appendix B
+\item[]\textbf{Indata} Lägg till ett projekt med ett till sökfält, 'new\_search\_field' i data.json. Se Appendix B. Testa sedan att köra hemsidan med flask run. Sök på 'new' med sökfältet 'new\_search\_list' markerat i /list.
+\item[]\textbf{Resultat} Bara det nyligen tillagda projektet ges som sökresultat.
 \end{itemize}
 \subsubsection*{Test 2.4 (Krav 2.9)}
 \begin{itemize}
 \item[]\textbf{Indata} flask session startas utan debug\_mode och ett femte projekt läggs till manuellt i data.json medan flask kör. Sedan öppnas /list i webläsaren.
-\item[]\textbf{Resultat} 
+\item[]\textbf{Resultat} Alla fem projekt laddas in.
 \end{itemize}
 
 
@@ -254,10 +254,10 @@ Indatan presenteras alltid först. Undertill visas det verkliga resultatet av se
   \hline
   Datum & Commit & Godkända & Avvikande & Kommentar \\ [0.5ex]
   \hline
-  2019-10-15 &  &  & - & - \\
+  2019-10-15 & bfc02812 & Alla & - & - \\
   \hline
   \hline
-  2019-10-15 &  &  &  & 12 projekt kommer upp istället för de förväntade 4. Måste åtgärdas snarast.\\
+  2019-10-21 & 13926161 &  &  & 12 projekt kommer upp istället för de förväntade 4. Måste åtgärdas snarast.\\
   \hline
   \hline
   2019-10-15 &  &  &  & \\

@@ -630,3 +630,20 @@ KeyError: 'new_search_field'
 2020-10-22 12:37:52,333 INFO werkzeug MainThread :  * Restarting with stat
 2020-10-22 12:37:52,505 WARNING werkzeug MainThread :  * Debugger is active!
 2020-10-22 12:37:52,505 INFO werkzeug MainThread :  * Debugger PIN: 190-601-290
+2020-10-22 12:42:07,768 INFO werkzeug Thread-3 : 127.0.0.1 - - [22/Oct/2020 12:42:07] "[37mGET /list/ HTTP/1.1[0m" 200 -
+2020-10-22 12:42:15,773 INFO werkzeug Thread-4 : 127.0.0.1 - - [22/Oct/2020 12:42:15] "[37mGET /list/?search+projects=new&sort_by=project_name&sort_order=asc&search_field=new_search_field HTTP/1.1[0m" 200 -
+2020-10-22 12:42:23,049 INFO werkzeug Thread-5 : 127.0.0.1 - - [22/Oct/2020 12:42:23] "[37mGET /list/?search+projects=&sort_by=techniques_used&sort_order=asc HTTP/1.1[0m" 200 -
+2020-10-22 12:42:25,724 INFO werkzeug Thread-6 : 127.0.0.1 - - [22/Oct/2020 12:42:25] "[37mGET /list/?search+projects=&sort_by=techniques_used&sort_order=asc&search_field=new_search_field HTTP/1.1[0m" 200 -
+2020-10-22 12:42:28,076 INFO werkzeug Thread-7 : 127.0.0.1 - - [22/Oct/2020 12:42:28] "[37mGET /list/?search+projects=&sort_by=techniques_used&sort_order=asc&search_field=short_description&search_field=project_name HTTP/1.1[0m" 200 -
+2020-10-22 12:42:33,301 INFO werkzeug Thread-8 : 127.0.0.1 - - [22/Oct/2020 12:42:33] "[37mGET /list/?search+projects=&sort_by=techniques_used&sort_order=asc&search_field=new_search_field HTTP/1.1[0m" 200 -
+2020-10-22 12:42:39,153 INFO werkzeug Thread-9 : 127.0.0.1 - - [22/Oct/2020 12:42:39] "[37mGET /list/?search+projects=5&sort_by=techniques_used&sort_order=asc&search_field=project_id HTTP/1.1[0m" 200 -
+2020-10-22 12:42:43,632 INFO werkzeug Thread-10 : 127.0.0.1 - - [22/Oct/2020 12:42:43] "[32mGET /project/5 HTTP/1.1[0m" 308 -
+2020-10-22 12:42:43,650 INFO werkzeug Thread-11 : 127.0.0.1 - - [22/Oct/2020 12:42:43] "[37mGET /project/5/ HTTP/1.1[0m" 200 -
+2020-10-22 12:42:48,178 INFO werkzeug Thread-12 : 127.0.0.1 - - [22/Oct/2020 12:42:48] "[37mGET /project/2/ HTTP/1.1[0m" 200 -
+2020-10-22 12:42:52,425 INFO werkzeug Thread-13 : 127.0.0.1 - - [22/Oct/2020 12:42:52] "[37mGET /list/ HTTP/1.1[0m" 200 -
+2020-10-22 12:45:07,171 INFO werkzeug Thread-14 : 127.0.0.1 - - [22/Oct/2020 12:45:07] "[37mGET /list/?search+projects=&sort_by=techniques_used&sort_order=asc&search_field=new_search_field HTTP/1.1[0m" 200 -
+2020-10-22 12:45:14,409 INFO werkzeug Thread-15 : 127.0.0.1 - - [22/Oct/2020 12:45:14] "[37mGET /list/?search+projects=&sort_by=techniques_used&sort_order=asc&search_field=lKAsm32105,saöl HTTP/1.1[0m" 200 -
+2020-10-22 12:45:22,466 INFO werkzeug Thread-16 : 127.0.0.1 - - [22/Oct/2020 12:45:22] "[37mGET /list/?search+projects=asfsfa&sort_by=techniques_used&sort_order=asc HTTP/1.1[0m" 200 -
+2020-10-22 12:45:27,130 INFO werkzeug Thread-17 : 127.0.0.1 - - [22/Oct/2020 12:45:27] "[37mGET /list/?search+projects=asfsfa&sort_by=techniques_used&sort_order=asc&search_field=big_image&search_field=new_search_field HTTP/1.1[0m" 200 -
+2020-10-22 12:45:38,323 INFO werkzeug Thread-18 : 127.0.0.1 - - [22/Oct/2020 12:45:38] "[37mGET /list/?search+projects=e&sort_by=techniques_used&sort_order=asc&search_field=techniques_used&search_field=big_image&search_field=new_search_field&search_field=long_description&search_field=external_link&search_field=course_id&search_field=academic_credits&search_field=project_id&search_field=start_date&search_field=small_image&search_field=short_description&search_field=lulz_had&search_field=group_size&search_field=course_name&search_field=project_name&search_field=end_date HTTP/1.1[0m" 200 -
+2020-10-22 12:45:52,655 INFO werkzeug Thread-19 : 127.0.0.1 - - [22/Oct/2020 12:45:52] "[37mGET /list/?search+projects=e&sort_by=techniques_used&sort_order=asc&search_field=techniques_used&search_field=big_image&search_field=long_description&search_field=external_link&search_field=course_id&search_field=academic_credits&search_field=project_id&search_field=start_date&search_field=small_image&search_field=short_description&search_field=lulz_had&search_field=group_size&search_field=course_name&search_field=project_name&search_field=end_date HTTP/1.1[0m" 200 -
