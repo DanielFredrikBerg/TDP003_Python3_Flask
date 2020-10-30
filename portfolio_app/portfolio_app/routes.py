@@ -9,6 +9,23 @@ data_path = os.path.relpath('data.json', current_path)
 db = jen_api.load(data_path)
 
 fileConfig('logging.cfg')
+
+def render_search(req):
+    search_for = req.get("search projects", "")
+    search_fields = req.getlist("search_field")
+    if not search_fields:
+        search_fields = None
+    sort_by = req.get("sort_by", "")
+    if not sort_by:
+        sort_by = "start_date"
+    sort_order = req.get("sort_order", "")
+    if not sort_order:
+        sort_order = "desc"
+    found = jen_api.search(db, search=search_for, sort_by=sort_by,
+                           sort_order=sort_order, search_fields=search_fields)
+    print(req)
+    return render_template('list.html', title='Search', search=search_for, search_results=found, search_fields=jen_api.get_search_fields(db), searched_search_fields=search_fields)
+
 # /
 @app.route('/')
 @app.route('/home/')
@@ -27,7 +44,7 @@ def home():
     * Render home page.
     """
     if request.args.get("search projects", ""):
-        return redirect(url_for("list"))
+        return render_search(request.args)
     else:
         user = {'username': 'jenoh242 & danhu849'}
         return render_template('index.html', user=user)
@@ -46,20 +63,7 @@ def list():
 
     * Render list page.
     """
-    search_for = request.args.get("search projects", "")
-    search_fields = request.args.getlist("search_field")
-    if not search_fields:
-        search_fields = None
-    sort_by = request.args.get("sort_by", "")
-    if not sort_by:
-        sort_by = "start_date"
-    sort_order = request.args.get("sort_order", "")
-    if not sort_order:
-        sort_order = "desc"
-    found = jen_api.search(db, search=search_for, sort_by=sort_by,
-                           sort_order=sort_order, search_fields=search_fields)
-    #print("This is found: ", found)
-    return render_template('list.html', title='Search', search=search_for, search_results=found, search_fields=jen_api.get_search_fields(db), searched_search_fields=search_fields)
+    return render_search(request.args)
 
 
 # /project/id
@@ -79,13 +83,13 @@ def show_project(id):
     * Render 404 page.
     """
     if request.args.get("search projects", ""):
-        return redirect(url_for("list"))
+        return render_search(request.args)
     else:
-            if id > 0 and id <= jen_api.get_project_count(db):
-                chosen_project = jen_api.get_project(db, id)
-                return render_template('project_page.html', title=chosen_project['project_name'], project=chosen_project)
-            else:
-                return render_template('404.html', project_id=id), 404
+        if id > 0 and id <= jen_api.get_project_count(db):
+            chosen_project = jen_api.get_project(db, id)
+            return render_template('project_page.html', title=chosen_project['project_name'], project=chosen_project)
+        else:
+            return render_template('404.html', project_id=id), 404
 
 
 # /techniques
@@ -105,7 +109,7 @@ def techniques():
     * Render techniques page.
     """
     if request.args.get("search projects", ""):
-        return redirect(url_for("list"))
+        return render_search(request.args)
     else:
         techniques = request.args.getlist("technique")
         found = jen_api.search(db, techniques=techniques)
@@ -130,7 +134,7 @@ def not_found_error(error):
     * `404` (int), Error code 404.
     """
     if request.args.get("search projects", ""):
-        return redirect(url_for("list"))
+        return render_search(request.args)
     else:
         return render_template('404.html'), 404
 

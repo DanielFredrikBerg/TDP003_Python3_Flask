@@ -664,3 +664,123 @@ KeyError: 'new_search_field'
 2020-10-22 13:26:29,867 INFO werkzeug Thread-10 : 127.0.0.1 - - [22/Oct/2020 13:26:29] "[33mGET /project/id=2/ HTTP/1.1[0m" 404 -
 2020-10-22 13:29:46,092 INFO werkzeug Thread-11 : 127.0.0.1 - - [22/Oct/2020 13:29:46] "[37mGET /list/ HTTP/1.1[0m" 200 -
 2020-10-22 13:30:08,448 INFO werkzeug Thread-12 : 127.0.0.1 - - [22/Oct/2020 13:30:08] "[37mGET /list/?search+projects=e&sort_by=start_date&sort_order=asc&search_field=group_size&search_field=lulz_had&search_field=project_id&search_field=small_image&search_field=start_date&search_field=academic_credits&search_field=external_link&search_field=long_description&search_field=end_date&search_field=short_description&search_field=course_name&search_field=course_id&search_field=techniques_used&search_field=project_name&search_field=big_image HTTP/1.1[0m" 200 -
+2020-10-30 09:07:47,807 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-10-30 09:09:12,919 INFO werkzeug Thread-1 : 127.0.0.1 - - [30/Oct/2020 09:09:12] "[37mGET / HTTP/1.1[0m" 200 -
+2020-10-30 09:09:13,038 INFO werkzeug Thread-2 : 127.0.0.1 - - [30/Oct/2020 09:09:13] "[36mGET /static/reset.css HTTP/1.1[0m" 304 -
+2020-10-30 09:09:13,039 INFO werkzeug Thread-3 : 127.0.0.1 - - [30/Oct/2020 09:09:13] "[36mGET /static/danhu849/base.css HTTP/1.1[0m" 304 -
+2020-10-30 09:09:13,132 INFO werkzeug Thread-4 : 127.0.0.1 - - [30/Oct/2020 09:09:13] "[36mGET /static/danhu849/pawel-czerwinski-ncgbTwIZhNU-unsplash.jpg HTTP/1.1[0m" 304 -
+2020-10-30 09:09:13,140 INFO werkzeug Thread-5 : 127.0.0.1 - - [30/Oct/2020 09:09:13] "[36mGET /static/danhu849/pawel-czerwinski-ncgbTwIZhNU-unsplash_blur_bright.jpg HTTP/1.1[0m" 304 -
+2020-10-30 09:09:13,141 INFO werkzeug Thread-6 : 127.0.0.1 - - [30/Oct/2020 09:09:13] "[36mGET /static/danhu849/pawel-czerwinski-ncgbTwIZhNU-unsplash_blur_dark.jpg HTTP/1.1[0m" 304 -
+2020-10-30 09:09:13,150 INFO werkzeug Thread-7 : 127.0.0.1 - - [30/Oct/2020 09:09:13] "[36mGET /static/danhu849/Iosevka/ttf/iosevka-medium.ttf HTTP/1.1[0m" 304 -
+2020-10-30 09:09:38,980 INFO werkzeug Thread-8 : 127.0.0.1 - - [30/Oct/2020 09:09:38] "[37mGET /list/ HTTP/1.1[0m" 200 -
+2020-10-30 09:09:48,161 INFO werkzeug Thread-9 : 127.0.0.1 - - [30/Oct/2020 09:09:48] "[37mGET /list/?search+projects=sea&sort_by=course_id&sort_order=asc HTTP/1.1[0m" 200 -
+2020-10-30 09:10:41,275 INFO werkzeug Thread-10 : 127.0.0.1 - - [30/Oct/2020 09:10:41] "[37mGET /list/?search+projects=sea&sort_by=project_id&sort_order=desc&search_field=project_name HTTP/1.1[0m" 200 -
+2020-10-30 09:11:00,462 INFO werkzeug Thread-11 : 127.0.0.1 - - [30/Oct/2020 09:11:00] "[37mGET /list/?search+projects=sea&sort_by=course_id&sort_order=asc&search_field=long_description&search_field=short_description&search_field=project_name HTTP/1.1[0m" 200 -
+2020-10-30 09:11:14,054 INFO werkzeug Thread-12 : 127.0.0.1 - - [30/Oct/2020 09:11:14] "[37mGET /list/?search+projects=sea&sort_by=course_id&sort_order=asc&search_field=long_description&search_field=short_description&search_field=project_name HTTP/1.1[0m" 200 -
+2020-10-30 09:11:16,760 INFO werkzeug Thread-13 : 127.0.0.1 - - [30/Oct/2020 09:11:16] "[32mGET /home HTTP/1.1[0m" 308 -
+2020-10-30 09:11:16,775 INFO werkzeug Thread-14 : 127.0.0.1 - - [30/Oct/2020 09:11:16] "[37mGET /home/ HTTP/1.1[0m" 200 -
+2020-10-30 09:11:18,769 INFO werkzeug Thread-15 : 127.0.0.1 - - [30/Oct/2020 09:11:18] "[37mGET /techniques/ HTTP/1.1[0m" 200 -
+2020-10-30 09:11:20,598 INFO werkzeug Thread-16 : 127.0.0.1 - - [30/Oct/2020 09:11:20] "[37mGET /list/ HTTP/1.1[0m" 200 -
+2020-10-30 09:15:41,182 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-10-30 09:15:43,603 INFO werkzeug Thread-1 : 127.0.0.1 - - [30/Oct/2020 09:15:43] "[37mGET /techniques/ HTTP/1.1[0m" 200 -
+2020-10-30 09:15:44,421 ERROR portfolio_app Thread-2 : Exception on /list/ [GET]
+Traceback (most recent call last):
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/danhu849/tdp003/portfolio_app/portfolio_app/routes.py", line 66, in list
+    search_request(requests.args)
+NameError: name 'search_request' is not defined
+2020-10-30 09:15:44,424 INFO werkzeug Thread-2 : 127.0.0.1 - - [30/Oct/2020 09:15:44] "[35m[1mGET /list/ HTTP/1.1[0m" 500 -
+2020-10-30 09:15:53,005 INFO werkzeug Thread-3 : 127.0.0.1 - - [30/Oct/2020 09:15:53] "[37mGET /techniques/?technique=python HTTP/1.1[0m" 200 -
+2020-10-30 09:15:58,631 INFO werkzeug Thread-4 : 127.0.0.1 - - [30/Oct/2020 09:15:58] "[37mGET /techniques/?technique=c%2B%2B&technique=csv HTTP/1.1[0m" 200 -
+2020-10-30 09:16:00,873 INFO werkzeug Thread-5 : 127.0.0.1 - - [30/Oct/2020 09:16:00] "[37mGET /techniques/?technique=python HTTP/1.1[0m" 200 -
+2020-10-30 09:16:02,713 ERROR portfolio_app Thread-6 : Exception on /list/ [GET]
+Traceback (most recent call last):
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/danhu849/tdp003/portfolio_app/portfolio_app/routes.py", line 66, in list
+    search_request(requests.args)
+NameError: name 'search_request' is not defined
+2020-10-30 09:16:02,713 INFO werkzeug Thread-6 : 127.0.0.1 - - [30/Oct/2020 09:16:02] "[35m[1mGET /list/ HTTP/1.1[0m" 500 -
+2020-10-30 09:16:40,253 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-10-30 09:16:42,496 ERROR portfolio_app Thread-1 : Exception on /list/ [GET]
+Traceback (most recent call last):
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/danhu849/tdp003/portfolio_app/portfolio_app/routes.py", line 66, in list
+    search_request(requests.args)
+NameError: name 'search_request' is not defined
+2020-10-30 09:16:42,497 INFO werkzeug Thread-1 : 127.0.0.1 - - [30/Oct/2020 09:16:42] "[35m[1mGET /list/ HTTP/1.1[0m" 500 -
+2020-10-30 09:18:29,789 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-10-30 09:18:32,528 ERROR portfolio_app Thread-1 : Exception on /list/ [GET]
+Traceback (most recent call last):
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/danhu849/.local/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/danhu849/tdp003/portfolio_app/portfolio_app/routes.py", line 66, in list
+    search_request(request.args)
+NameError: name 'search_request' is not defined
+2020-10-30 09:18:32,529 INFO werkzeug Thread-1 : 127.0.0.1 - - [30/Oct/2020 09:18:32] "[35m[1mGET /list/ HTTP/1.1[0m" 500 -
+2020-10-30 09:18:45,263 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-10-30 09:18:45,264 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-30 09:18:45,432 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-30 09:18:45,511 INFO werkzeug MainThread :  * Debugger PIN: 180-778-093
+2020-10-30 09:18:50,713 INFO werkzeug Thread-3 : 127.0.0.1 - - [30/Oct/2020 09:18:50] "[35m[1mGET /list/ HTTP/1.1[0m" 500 -
+2020-10-30 09:18:50,746 INFO werkzeug Thread-4 : 127.0.0.1 - - [30/Oct/2020 09:18:50] "[37mGET /list/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2020-10-30 09:18:50,746 INFO werkzeug Thread-6 : 127.0.0.1 - - [30/Oct/2020 09:18:50] "[37mGET /list/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2020-10-30 09:18:50,747 INFO werkzeug Thread-5 : 127.0.0.1 - - [30/Oct/2020 09:18:50] "[37mGET /list/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2020-10-30 09:18:50,853 INFO werkzeug Thread-7 : 127.0.0.1 - - [30/Oct/2020 09:18:50] "[37mGET /list/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2020-10-30 09:18:50,877 INFO werkzeug Thread-8 : 127.0.0.1 - - [30/Oct/2020 09:18:50] "[37mGET /list/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2020-10-30 09:19:21,753 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/portfolio_app/routes.py', reloading
+2020-10-30 09:19:21,773 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-30 09:20:10,364 INFO werkzeug MainThread :  * Restarting with stat
+2020-10-30 09:20:10,544 WARNING werkzeug MainThread :  * Debugger is active!
+2020-10-30 09:20:10,545 INFO werkzeug MainThread :  * Debugger PIN: 180-778-093
+2020-10-30 09:20:17,998 INFO werkzeug Thread-3 : 127.0.0.1 - - [30/Oct/2020 09:20:17] "[37mGET /list/ HTTP/1.1[0m" 200 -
+2020-10-30 09:20:18,127 INFO werkzeug Thread-4 : 127.0.0.1 - - [30/Oct/2020 09:20:18] "[36mGET /static/danhu849/Iosevka/ttf/iosevka-medium.ttf HTTP/1.1[0m" 304 -
+2020-10-30 09:20:46,177 INFO werkzeug Thread-5 : 127.0.0.1 - - [30/Oct/2020 09:20:46] "[37mGET /list/?search+projects=&sort_by=external_link&sort_order=asc&search_field=external_link&search_field=lulz_had&search_field=techniques_used&search_field=course_id&search_field=academic_credits&search_field=big_image&search_field=end_date&search_field=small_image&search_field=long_description&search_field=start_date&search_field=project_id&search_field=short_description&search_field=course_name&search_field=group_size&search_field=project_name HTTP/1.1[0m" 200 -
+2020-10-30 09:20:59,675 INFO werkzeug Thread-6 : 127.0.0.1 - - [30/Oct/2020 09:20:59] "[37mGET /list/?search+projects=e&sort_by=external_link&sort_order=asc&search_field=external_link&search_field=lulz_had&search_field=techniques_used&search_field=course_id&search_field=academic_credits&search_field=big_image&search_field=end_date&search_field=small_image&search_field=long_description&search_field=start_date&search_field=project_id&search_field=short_description&search_field=course_name&search_field=group_size&search_field=project_name HTTP/1.1[0m" 200 -
+2020-10-30 09:21:03,693 INFO werkzeug Thread-7 : 127.0.0.1 - - [30/Oct/2020 09:21:03] "[37mGET /list/ HTTP/1.1[0m" 200 -
+2020-10-30 09:21:05,472 INFO werkzeug Thread-8 : 127.0.0.1 - - [30/Oct/2020 09:21:05] "[37mGET /techniques/ HTTP/1.1[0m" 200 -
+2020-10-30 09:21:06,280 INFO werkzeug Thread-9 : 127.0.0.1 - - [30/Oct/2020 09:21:06] "[37mGET /list/ HTTP/1.1[0m" 200 -
+2020-10-30 09:23:10,840 INFO werkzeug MainThread :  * Detected change in '/home/danhu849/tdp003/portfolio_app/portfolio_app/routes.py', reloading
+2020-10-30 09:23:10,884 INFO werkzeug MainThread :  * Restarting with stat
