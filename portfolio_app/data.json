@@ -19,26 +19,6 @@
     "big_image": "XXX"
   },
   {
-    "start_date": "2009-09-05",
-    "short_description": "no",
-    "course_name": "OK\u00c4NT",
-    "long_description": "no no no",
-    "group_size": 2,
-    "academic_credits": "WUT?",
-    "lulz_had": "many",
-    "external_link": "YY",
-    "small_image": "X",
-    "techniques_used": [
-      "python"
-    ],
-    "new_search_field": "This is a new search field!",
-    "project_name": "python data-module test script",
-    "course_id": "TDP003",
-    "end_date": "2009-09-06",
-    "project_id": 5,
-    "big_image": "XXX"
-  },
-  {
     "start_date": "2009-09-07",
     "short_description": "no",
     "course_name": "OK\u00c4NT",
@@ -97,5 +77,28 @@
     "end_date": "2009-09-07",
     "project_id": 4,
     "big_image": "XXX"
+  },
+  {
+    "start_date": "2020-11-02",
+    "short_description": "A 2D platformer made with C++ and the SFML library.",
+    "course_name": "TDP005: Object Oriented System",
+    "long_description": "Spelet Lava Escape handlar om att undfly den dödliga lavan och att så snabbt det är möjligt ta sig till nivåns högsta platform, men det är svårt! På vägen finns dödliga fiender som rör sig i oberäkneliga rörelsemönster och varje möjlig väg upp kanske istället visar sig vara dödlig? Det finns ett flertal olika stretegier för att ta sig upp och det kommer krävas många försök innan den ultimata vägen hittas.",
+    "long_descr_2": "Den viktigaste lärdomen som getts av detta projekt är hur pass stor skillnad självdefinierade krav- och designspecifikationer gör i gruppens förhållningssätt till projektets kodbas. Det är enklare att förklara med hjälp av bilder och UML diagram där pilar och kuber förenklar samt förkortar tiden att förklara olika ideer över tid inom projektgruppen.",
+    "long_descr_3": "En andra lärdom är insikten om hur olika klasser kan interagera med varandra utan att veta om innehållet i dem. Innan projektet var det oklart hur ett objekt kunde fås att förflytta sig över skärmen och hur objekthanteringen gick till vid kollision av dessa två objekt.",
+    "group_size": 2,
+    "academic_credits": "6.0 hp",
+    "lulz_had": "over 9000",
+    "external_link": "YY",
+    "small_image": "X",
+    "techniques_used": [
+        "C++",
+        "CLion",
+        "Make"
+    ],
+    "project_name": "Lava Escape - A 2D Platformer",
+    "course_id": "TDP005",
+    "end_date": "2020-11-18",
+    "project_id": 5,
+    "big_image": "Bild av nivå 1."
   }
 ]

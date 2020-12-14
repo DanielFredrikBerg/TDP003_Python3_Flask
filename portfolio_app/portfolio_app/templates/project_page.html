@@ -2,8 +2,11 @@
 
 {% block content %}
   <article class="darkTile">
-    <h1>Project number {{ project.project_id }}: {{ project.project_name }}</h1> <img src="https://via.placeholder.com/300" alt="{{ project.big_image }}" style="float: left;" alt={{ project.project_name }}>
+    <h1>Project number {{ project.project_id }}: {{ project.project_name }}</h1> <img src={{ url_for('static', filename='lvl1.png') }} alt="{{ project.big_image }}" style="float: left;">
     <p>{{ project.long_description }}</p>
+    <p>{{ project.long_descr_2 }}</p>
+    <p>{{ project.long_descr_3 }}</p>
+    <img src={{ url_for('static', filename='gameOver.png') }} alt="{{ project.small_image }}" style="float: left;">
     <p>Techniques used in this project: {% for technique in project.techniques_used %} {{ technique }} {% endfor %} </p>
   </article>
 {% endblock %}

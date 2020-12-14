@@ -1,5 +1,0 @@
-
-../portfolio_app/jen_api.py
-
-{'XXX', 'deepcopy', 'isreverse', 'A', 'int', 'dict', 'overwriting', 'e', 's', 'X', 'issubset', 'fromkeys', 'of', 'usr', 'to', 'atleast', 'w', 'IDs', 'sys', 'def', 'by', 'WUT', 'a', 'asc', 'ID', 'lulz', 'desc', 'elif', 'tdp', 'TDP', 'argv', 'id', 'f', 'str', 'db', 'x', 'len', 'isinstance', 'YY', 'r', 'json', 'ada'}
-

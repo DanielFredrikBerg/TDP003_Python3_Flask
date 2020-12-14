@@ -1,5 +1,0 @@
-
-../portfolio_app/portfolio_app/routes.py
-
-{'Errno', 'api', 'py', 'int', 'pased', 'of', 'to', 'danhu', 'by', 'def', 'errorhandler', 'Projectpage', 'Id', 'It', 'args', 'desc', 'tdp', 'dirname', 'jenoh', 'c', 't', 'ps', 'getlist', 'id', 'Ctrl', 'cfg', 'flask', 'db', 'config', 'fileConfig', 'relpath', 'username', 'errno', 'grep', 'pid', 'json', 'fA', 'Homepage', 'url', 'init', 'html'}
-

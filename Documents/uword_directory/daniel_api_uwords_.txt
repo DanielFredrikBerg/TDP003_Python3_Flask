@@ -1,5 +1,0 @@
-
-../portfolio_app/daniel_api.py
-
-{'XXX', 'dict', 'JSON', 'e', 's', 'X', 'fromkeys', 'of', 'usr', 'to', 'w', 'sys', 'def', 'by', 'WUT', 'Datalayer', 'asc', 'lulz', 'aquired', 'desc', 'elif', 'lc', 'tdp', 'TDP', 'argv', 'p', 't', 'id', 'f', 'str', 'db', 'len', 'it', 'YY', 'r', 'json', 'ada'}
-

@@ -2,7 +2,11 @@
 	<a href="/project/{{ project.project_id }}">
 		<article class="darkTile">
 			<h2>Project number {{ project.project_id }}: {{ project.project_name }} </h2>
-			<img src="https://via.placeholder.com/150" style="float: left;" alt={{ project.project_name }}>
+                        {% if loop.index == 1 %}
+			  <img src={{ url_for('static', filename='lvl1-150px.png') }} style="float: left;" alt={{ project.project_name }}>
+                        {% else %}
+                          <img src="https://via.placeholder.com/150" style="float: left;" alt={{ project.project_name }}>
+                        {% endif %}
 			<p>{{ project.end_date }}</p>
 			<p>{{ project.short_description }}</p>
 			<p>Techniques used in this project:

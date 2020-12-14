@@ -108,8 +108,8 @@ def search(db, sort_by='start_date', sort_order='desc', techniques=None, search=
 
 
 def get_search_fields(db):
-    """Returns list of search_fields used by projects in project list."""
-    return list(set([key for keylist in [project.keys() for project in db] for key in keylist]))
+    """Returns sorted list of search_fields used by projects in project list."""
+    return sorted(list(set([key for keylist in [project.keys() for project in db] for key in keylist])))
 
 
 def get_techniques(db):
@@ -175,5 +175,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-else:
-    print('nothing')

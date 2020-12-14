@@ -1,5 +1,0 @@
-
-../portfolio_app/portfolio_app/__init__.py
-
-{'of', 'to', 'it', 'predefined', 'Flask', 'blog', 't', 'doesn', 'a', 'flask', 'miguelgrinberg', 'https', 'mega'}
-

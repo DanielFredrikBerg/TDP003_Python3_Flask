@@ -49,6 +49,7 @@ def home():
         user = {'username': 'jenoh242 & danhu849'}
         return render_template('index.html', user=user)
 
+
 # /list
 @app.route('/list/')
 def list():
